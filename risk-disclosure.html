@@ -19,7 +19,8 @@
             --glass-border: rgba(218, 165, 32, 0.2);
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
-            --red-warning: #ff4444;
+            --warning-bg: rgba(255, 100, 0, 0.1);
+            --warning-border: rgba(255, 100, 0, 0.5);
         }
 
         * {
@@ -166,7 +167,7 @@
         }
 
         .policy-section {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .policy-section h2 {
@@ -174,8 +175,8 @@
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 1.25rem;
-            color: var(--red-warning);
-            border-bottom: 2px solid var(--red-warning);
+            color: var(--gold-primary);
+            border-bottom: 2px solid var(--glass-border);
             padding-bottom: 0.5rem;
         }
 
@@ -183,8 +184,16 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.3rem;
             font-weight: 600;
-            margin: 1.5rem 0 1rem;
+            margin: 2rem 0 1rem;
             color: var(--gold-secondary);
+        }
+
+        .policy-section h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
         }
 
         .policy-section p {
@@ -217,46 +226,44 @@
         }
 
         .warning-box {
-            background: rgba(255, 68, 68, 0.1);
-            border-left: 4px solid var(--red-warning);
-            padding: 1.25rem;
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
         }
 
-        .warning-box h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--red-warning);
-            margin-bottom: 0.75rem;
+        .warning-box h3 {
+            color: #ff6400;
+            margin-bottom: 1rem;
         }
 
         .warning-box p {
-            color: #ffaaaa;
-            margin-bottom: 0;
-            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
         }
 
-        .risk-level {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
+        .warning-box strong {
+            color: var(--gold-light);
         }
 
-        .risk-high {
-            background: rgba(255, 68, 68, 0.2);
-            color: var(--red-warning);
-            border: 1px solid var(--red-warning);
+        .disclaimer-box {
+            background: rgba(218, 165, 32, 0.05);
+            border: 2px solid var(--gold-primary);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            text-align: center;
         }
 
-        .risk-medium {
-            background: rgba(218, 165, 32, 0.2);
-            color: var(--gold-primary);
-            border: 1px solid var(--gold-primary);
+        .disclaimer-box h3 {
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer-box p {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
         .back-to-top {
@@ -411,13 +418,12 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#security">Security</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Community</a></li>
                 </ul>
             </nav>
-            <a href="#get-started" class="cta-button">Get Started</a>
+            <a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -431,11 +437,10 @@
         <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#security">Security</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#get-started" class="cta-button">Get Started</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a></li>
         </ul>
     </nav>
 
@@ -446,209 +451,231 @@
                 <p class="last-updated">Last Updated: June 27, 2026 | Effective Date: June 27, 2026</p>
             </div>
 
-            <div class="warning-box">
-                <h4>⚠️ Important Risk Warning</h4>
-                <p>Cryptocurrency trading involves substantial risk of loss and may not be suitable for all investors. The value of cryptocurrencies can be extremely volatile. You should carefully consider whether trading or holding cryptocurrencies is suitable for you in light of your financial condition and investment objectives. You could lose all or part of your investment. Past performance is not indicative of future results.</p>
+            <div class="disclaimer-box">
+                <h3>IMPORTANT DISCLOSURE</h3>
+                <p><strong>CRYPTOCURRENCIES, INCLUDING THE BEASTSNETWORK TOKEN, ARE HIGHLY SPECULATIVE, VOLATILE, AND HIGH-RISK INVESTMENTS.</strong></p>
+                <p><strong>YOU COULD LOSE ALL OF YOUR INVESTMENT. PLEASE READ THIS DOCUMENT CAREFULLY BEFORE ACQUIRING OR HOLDING THE BEASTSNETWORK TOKEN.</strong></p>
             </div>
 
             <section class="policy-section">
-                <h2>1. General Risk Warning</h2>
-                <p>Trading cryptocurrencies carries a high level of risk and may not be suitable for all investors. Before deciding to trade cryptocurrencies, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment.</p>
-                <p>You should be aware of all the risks associated with cryptocurrency trading and seek advice from an independent financial advisor if you have any doubts.</p>
+                <h2>1. Introduction</h2>
+                <p>This Risk Disclosure Statement ("Statement") is provided by BeastsNetwork ("we," "our," or "us") to inform you about the significant risks associated with acquiring, holding, and using the BeastsNetwork cryptocurrency token ("BeastsNetwork Token" or "Token").</p>
+                <p><strong>This is not financial advice.</strong> You should consult with your own financial, legal, and tax advisors before making any decisions related to the Token.</p>
             </section>
 
             <section class="policy-section">
-                <h2>2. Market Volatility Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
-                <p>Cryptocurrency markets are highly volatile. Prices can fluctuate dramatically within very short periods of time. This volatility can result in significant gains or losses.</p>
-                <p><strong>Factors contributing to volatility:</strong></p>
+                <h2>2. General Investment Risks</h2>
+                
+                <div class="warning-box">
+                    <h3>&#9888; HIGH VOLATILITY</h3>
+                    <p>The price of cryptocurrencies, including the BeastsNetwork Token, can be extremely volatile. The value of the Token may fluctuate significantly over short periods of time. <strong>You may experience rapid and substantial losses.</strong></p>
+                </div>
+
+                <h3>2.1 Market Risk</h3>
+                <p>The cryptocurrency market is highly speculative and can be affected by various factors, including but not limited to:</p>
                 <ul>
-                    <li>Market sentiment and speculation</li>
-                    <li>Regulatory news and government actions</li>
-                    <li>Technological developments and security issues</li>
+                    <li>Market sentiment and investor confidence</li>
+                    <li>Regulatory developments and government actions</li>
+                    <li>Technological changes or vulnerabilities</li>
                     <li>Macroeconomic factors</li>
-                    <li>Liquidity constraints</li>
-                    <li>Media coverage and social media trends</li>
+                    <li>Media coverage and public perception</li>
+                    <li>Competition from other cryptocurrencies</li>
                 </ul>
-                <p>You should be prepared to accept the risk of total loss of your investment.</p>
+                <p><strong>These factors can cause the value of the Token to increase or decrease rapidly, unpredictably, and without warning.</strong></p>
+                
+                <h3>2.2 No Guaranteed Value</h3>
+                <p><strong>THE BEASTSNETWORK TOKEN HAS NO INTRINSIC VALUE.</strong> Its value is based solely on supply and demand in the market. There is no guarantee that the Token will have any value in the future.</p>
+                <p><strong>The value of the Token could drop to zero at any time.</strong></p>
+                
+                <h3>2.3 Liquidity Risk</h3>
+                <p>There may be limited liquidity for the BeastsNetwork Token. You may not be able to sell your Tokens when you want to, or at a price you consider fair. <strong>In extreme cases, you may be unable to sell your Tokens at all.</strong></p>
             </section>
 
             <section class="policy-section">
-                <h2>3. Liquidity Risk <span class="risk-level risk-medium">MEDIUM RISK</span></h2>
-                <p>Some cryptocurrencies may have low liquidity, which means there may not be sufficient buyers or sellers at any given time to execute your trades at desired prices. Low liquidity can result in:</p>
+                <h2>3. Technology Risks</h2>
+                
+                <div class="warning-box">
+                    <h3>&#9888; BLOCKCHAIN TECHNOLOGY RISKS</h3>
+                    <p>The BeastsNetwork Token operates on blockchain technology, which is still relatively new and evolving. <strong>There may be unknown vulnerabilities, bugs, or defects in the blockchain or smart contract code that could result in the loss of your Tokens.</strong></p>
+                </div>
+
+                <h3>3.1 Smart Contract Risk</h3>
+                <p>The BeastsNetwork Token is governed by smart contracts. While we have taken steps to ensure the security of these smart contracts:</p>
                 <ul>
-                    <li>Difficulty in executing trades at desired prices</li>
-                    <li>Slippage (difference between expected price and execution price)</li>
-                    <li>Inability to exit positions quickly</li>
-                    <li>Wider bid-ask spreads</li>
+                    <li>Smart contracts may contain bugs or vulnerabilities</li>
+                    <li>Once deployed, smart contracts generally cannot be modified</li>
+                    <li>Any vulnerability in the smart contract could be exploited, potentially resulting in the loss of Tokens</li>
+                    <li>We cannot guarantee that the smart contracts are free from errors or that they will function as intended</li>
                 </ul>
-                <p>Illiquid markets can amplify price movements and increase volatility.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>4. Technology and Security Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
-                <p>Cryptocurrency trading relies on technology, including blockchain networks, smart contracts, and our trading platform. This technology is subject to various risks:</p>
+                
+                <h3>3.2 Blockchain Network Risk</h3>
+                <p>The blockchain network on which the Token operates may experience:</p>
                 <ul>
-                    <li><strong>Blockchain Risks:</strong> Smart contract vulnerabilities, 51% attacks, consensus mechanism failures</li>
-                    <li><strong>Platform Risks:</strong> System failures, downtime, cyber attacks, DDoS attacks</li>
-                    <li><strong>Wallet Risks:</strong> Loss of private keys, wallet hacking, phishing attacks</li>
-                    <li><strong>Internet Risks:</strong> Connectivity issues, data transmission errors</li>
-                    <li><strong>Software Risks:</strong> Bugs, errors, or vulnerabilities in software</li>
+                    <li>Network congestion, leading to slow transaction times and high fees</li>
+                    <li>Forks or splits in the blockchain, which could result in multiple versions of the Token</li>
+                    <li>Attacks on the network, including 51% attacks or other consensus-based attacks</li>
+                    <li>Changes to the network's protocol or rules that could affect the Token</li>
                 </ul>
-                <p>While we implement industry-standard security measures, no system is 100% secure. You acknowledge and accept the risks associated with using technology-based trading systems.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>5. Regulatory Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
-                <p>The regulatory environment for cryptocurrencies is still developing and varies significantly by jurisdiction. Regulatory changes or actions can have a significant impact on cryptocurrency prices and the ability to trade them.</p>
-                <p><strong>Regulatory risks include:</strong></p>
+                
+                <h3>3.3 Wallet and Private Key Risk</h3>
+                <p><strong>YOU ARE SOLELY RESPONSIBLE FOR THE SECURITY OF YOUR WALLET AND PRIVATE KEYS.</strong></p>
+                <p>If you lose your private keys, you will lose access to your Tokens permanently. There is no way to recover lost private keys. Additionally:</p>
                 <ul>
-                    <li>Changes in laws or regulations that may adversely affect the use, transfer, or value of cryptocurrencies</li>
-                    <li>Regulatory bans or restrictions on cryptocurrency trading or ownership</li>
-                    <li>Taxation changes that may affect the profitability of cryptocurrency investments</li>
-                    <li>Licensing and compliance requirements that may affect our ability to provide Services</li>
-                    <li>Government seizures or confiscations of cryptocurrencies</li>
-                    <li>Restrictions on the ability to convert cryptocurrencies to fiat currencies</li>
+                    <li>If your wallet is compromised, your Tokens could be stolen</li>
+                    <li>If you send Tokens to the wrong address, the transaction cannot be reversed</li>
+                    <li>If you use a third-party wallet service, you are subject to that service's terms and security practices</li>
                 </ul>
-                <p>We may be required to suspend or terminate Services in certain jurisdictions due to regulatory requirements.</p>
             </section>
 
             <section class="policy-section">
-                <h2>6. Counterparty Risk <span class="risk-level risk-medium">MEDIUM RISK</span></h2>
-                <p>When you trade on BeastsNetwork, you are trading with us as the counterparty, not with other users directly. This means you are exposed to our credit risk and ability to fulfill our obligations.</p>
-                <p><strong>Counterparty risks include:</strong></p>
+                <h2>4. Regulatory Risks</h2>
+                
+                <div class="warning-box">
+                    <h3>&#9888; LEGAL AND REGULATORY UNCERTAINTY</h3>
+                    <p>The legal and regulatory status of cryptocurrencies is uncertain and subject to change. <strong>New laws or regulations could negatively impact the value, utility, or legality of the BeastsNetwork Token.</strong></p>
+                </div>
+
+                <h3>4.1 Regulatory Changes</h3>
+                <p>Governments around the world are still developing their approaches to cryptocurrency regulation. Regulatory changes could include:</p>
                 <ul>
-                    <li>Our insolvency or financial difficulties</li>
-                    <li>Our failure to execute trades or process withdrawals</li>
-                    <li>Our inability to maintain adequate liquidity</li>
-                    <li>Operational failures on our part</li>
+                    <li>Restrictions or bans on the purchase, sale, or use of cryptocurrencies</li>
+                    <li>Taxation of cryptocurrency transactions</li>
+                    <li>Requirements for licensing, registration, or compliance</li>
+                    <li>Restrictions on who can acquire or hold cryptocurrencies</li>
                 </ul>
-                <p>We maintain reserves and implement risk management procedures to mitigate these risks, but we cannot guarantee that we will always be able to fulfill our obligations.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>7. Leverage and Margin Trading Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
-                <p>If you engage in margin trading or use leverage, you are exposed to additional risks, including:</p>
+                <p><strong>These changes could make it illegal for you to acquire, hold, or use the Token, or could impose significant costs or restrictions on your ability to do so.</strong></p>
+                
+                <h3>4.2 Compliance Risk</h3>
+                <p>BeastsNetwork is committed to complying with all applicable laws and regulations. However:</p>
                 <ul>
-                    <li><strong>Amplified Losses:</strong> Leverage can magnify both gains and losses. A small price movement against your position can result in significant losses.</li>
-                    <li><strong>Margin Calls:</strong> If the value of your collateral falls below required levels, we may liquidate your positions without notice.</li>
-                    <li><strong>Liquidation Risk:</strong> In volatile markets, your positions may be liquidated at prices worse than your liquidation price due to slippage.</li>
-                    <li><strong>Interest Charges:</strong> You may be charged interest on borrowed funds, which can increase your losses.</li>
-                    <li><strong>Forced Liquidations:</strong> We may liquidate your positions to meet margin requirements without prior notice.</li>
+                    <li>We may need to restrict access to the Token or our Site in certain jurisdictions</li>
+                    <li>We may need to implement Know Your Customer (KYC) or Anti-Money Laundering (AML) procedures</li>
+                    <li>We may need to report certain transactions to regulatory authorities</li>
+                    <li>We may need to freeze or restrict certain wallets or addresses</li>
                 </ul>
-                <p>Margin trading is only suitable for experienced traders who understand the risks involved and can afford to lose their entire investment.</p>
+                <p><strong>Our compliance efforts could affect your ability to acquire or use the Token.</strong></p>
             </section>
 
             <section class="policy-section">
-                <h2>8. Operational Risk <span class="risk-level risk-medium">MEDIUM RISK</span></h2>
-                <p>Our ability to provide Services may be affected by operational issues, including but not limited to:</p>
+                <h2>5. Financial Risks</h2>
+                
+                <h3>5.1 No Dividends or Returns</h3>
+                <p><strong>THE BEASTSNETWORK TOKEN DOES NOT REPRESENT AN INVESTMENT IN BEASTSNETWORK AND DOES NOT ENTITLE YOU TO ANY DIVIDENDS, REVENUE SHARE, OR OTHER FINANCIAL RETURNS.</strong></p>
+                <p>Holding the Token does not give you any ownership interest in BeastsNetwork, any rights to our assets or profits, or any other financial rights.</p>
+                
+                <h3>5.2 Tax Risks</h3>
+                <p>The tax treatment of cryptocurrencies is uncertain and may vary by jurisdiction. You are solely responsible for:</p>
                 <ul>
-                    <li>System maintenance and upgrades</li>
-                    <li>Technical failures or errors</li>
-                    <li>Third-party service provider failures</li>
-                    <li>Banking and payment processor issues</li>
-                    <li>Telecommunications failures</li>
-                    <li>Power outages or natural disasters</li>
+                    <li>Determining the tax implications of acquiring, holding, and disposing of Tokens</li>
+                    <li>Reporting and paying any taxes owed in connection with Token transactions</li>
+                    <li>Complying with all applicable tax laws and regulations</li>
                 </ul>
-                <p>During periods of operational disruption, you may be unable to access your account, execute trades, or withdraw funds.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>9. Irreversible Transactions Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
-                <p>Cryptocurrency transactions are typically irreversible. Once a transaction is confirmed on the blockchain, it cannot be reversed. This means:</p>
+                <p><strong>Failure to properly report and pay taxes could result in penalties or legal consequences.</strong></p>
+                
+                <h3>5.3 No Recourse</h3>
+                <p>Unlike traditional financial instruments, cryptocurrencies like the BeastsNetwork Token:</p>
                 <ul>
-                    <li>If you send cryptocurrencies to the wrong address, you may permanently lose those funds</li>
-                    <li>If you fall victim to a scam or fraud, you may not be able to recover your funds</li>
-                    <li>If you make a trading error, you may not be able to undo the trade</li>
-                    <li>There is no central authority that can reverse or refund transactions</li>
+                    <li>Are not insured by any government or private entity</li>
+                    <li>Are not backed by any assets or reserves</li>
+                    <li>Do not have any guaranteed buyer or market maker</li>
+                    <li>Cannot be recovered if lost, stolen, or sent to the wrong address</li>
                 </ul>
-                <p>You are solely responsible for ensuring the accuracy of all transaction details, including wallet addresses.</p>
+                <p><strong>If you lose your Tokens or they lose value, you have no recourse against BeastsNetwork or any other party.</strong></p>
             </section>
 
             <section class="policy-section">
-                <h2>10. Custody Risk</h2>
-                <p>When you deposit cryptocurrencies with us, you are relying on us to safeguard those assets. While we implement industry-leading security measures, including cold storage and multi-signature wallets, custody of cryptocurrencies involves risks:</p>
+                <h2>6. Project-Specific Risks</h2>
+                
+                <h3>6.1 Development Risks</h3>
+                <p>BeastsNetwork is a project in development. There are risks associated with our ability to:</p>
                 <ul>
-                    <li><strong>Hot Wallet Risks:</strong> Cryptocurrencies stored in hot wallets (connected to the internet) are vulnerable to hacking and theft.</li>
-                    <li><strong>Cold Storage Risks:</strong> Even cold storage solutions can be compromised through physical access or social engineering.</li>
-                    <li><strong>Insurance Limitations:</strong> Our insurance may not cover all types of losses or all cryptocurrencies.</li>
-                    <li><strong>Key Management:</strong> Loss or compromise of private keys can result in permanent loss of funds.</li>
+                    <li>Successfully develop and implement our roadmap and planned features</li>
+                    <li>Achieve widespread adoption of the Token</li>
+                    <li>Maintain and grow our community</li>
+                    <li>Compete effectively with other cryptocurrency projects</li>
                 </ul>
-                <p>We maintain a significant portion of user funds in cold storage and implement strict security procedures, but we cannot guarantee absolute security.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>11. Fork and Protocol Risk</h2>
-                <p>Cryptocurrency networks may undergo changes, upgrades, or forks that can affect the value and functionality of cryptocurrencies:</p>
+                <p><strong>If we fail to achieve our goals, the value and utility of the Token could be negatively affected.</strong></p>
+                
+                <h3>6.2 Team Risks</h3>
+                <p>The success of BeastsNetwork depends on the skills, experience, and efforts of our team. There are risks associated with:</p>
                 <ul>
-                    <li><strong>Hard Forks:</strong> A permanent divergence in the blockchain that can result in two separate networks and cryptocurrencies.</li>
-                    <li><strong>Soft Forks:</strong> Backward-compatible changes to the protocol that may affect functionality.</li>
-                    <li><strong>Protocol Changes:</strong> Updates to the underlying protocol that may affect the value or utility of a cryptocurrency.</li>
-                    <li><strong>Airdrops:</strong> Distribution of new tokens that may or may not have value.</li>
+                    <li>Key team members leaving the project</li>
+                    <li>Errors or misconduct by team members</li>
+                    <li>Conflicts of interest among team members</li>
+                    <li>Insufficient resources or funding</li>
                 </ul>
-                <p>In the event of a fork, we will determine in our sole discretion which version of the blockchain to support. We are not obligated to support both versions or to credit your account with any new cryptocurrencies resulting from a fork.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>12. Tax Risk</h2>
-                <p>Cryptocurrency transactions may have tax implications that vary by jurisdiction. You are solely responsible for:</p>
+                
+                <h3>6.3 Competition Risks</h3>
+                <p>The cryptocurrency space is highly competitive. Other projects may offer similar or superior features, which could:</p>
                 <ul>
-                    <li>Understanding and complying with all applicable tax laws in your jurisdiction</li>
-                    <li>Reporting and paying any taxes owed on cryptocurrency transactions</li>
-                    <li>Keeping accurate records of all transactions for tax purposes</li>
-                    <li>Consulting with tax professionals regarding your specific situation</li>
+                    <li>Reduce demand for the BeastsNetwork Token</li>
+                    <li>Make it difficult for us to achieve our goals</li>
+                    <li>Render our technology or approach obsolete</li>
                 </ul>
-                <p>Tax laws and regulations regarding cryptocurrencies are evolving and may change. We do not provide tax advice.</p>
             </section>
 
             <section class="policy-section">
-                <h2>13. No Guarantees</h2>
-                <p><strong>WE DO NOT GUARANTEE:</strong></p>
+                <h2>7. Security Risks</h2>
+                
+                <div class="warning-box">
+                    <h3>&#9888; CYBERSECURITY THREATS</h3>
+                    <p>Cryptocurrencies and blockchain networks are frequent targets of cyberattacks. <strong>Security breaches could result in the theft or loss of your Tokens.</strong></p>
+                </div>
+
+                <h3>7.1 Hacking and Exploits</h3>
+                <p>The BeastsNetwork Token, our Site, or third-party services we use may be targeted by:</p>
                 <ul>
-                    <li>That you will make any profits or that you will not incur losses from trading cryptocurrencies</li>
-                    <li>That the value of any cryptocurrency will increase or decrease</li>
-                    <li>That our Services will be available at all times or that they will be error-free</li>
-                    <li>That any information provided through our Services is accurate, complete, or up-to-date</li>
-                    <li>That any cryptocurrency will maintain its value or utility</li>
-                    <li>That you will be able to withdraw your funds at any time</li>
+                    <li>Hackers attempting to steal Tokens or funds</li>
+                    <li>Phishing attacks to obtain your private keys or credentials</li>
+                    <li>Malware designed to compromise your wallet or device</li>
+                    <li>Exploits of vulnerabilities in smart contracts or blockchain networks</li>
                 </ul>
-                <p>All trades and investments are made at your own risk.</p>
+                
+                <h3>7.2 Third-Party Risks</h3>
+                <p>If you use third-party services to acquire, store, or trade the Token, you are subject to:</p>
+                <ul>
+                    <li>The security practices and vulnerabilities of those services</li>
+                    <li>The terms and conditions of those services</li>
+                    <li>The risk that those services may be compromised or go out of business</li>
+                </ul>
+                <p><strong>We have no control over third-party services and cannot be held responsible for any losses resulting from their use.</strong></p>
             </section>
 
             <section class="policy-section">
-                <h2>14. Risk Acknowledgment</h2>
-                <p>By using our Services, you acknowledge and accept that:</p>
+                <h2>8. Disclaimer</h2>
+                <div class="disclaimer-box">
+                    <h3>NO GUARANTEES OR WARRANTIES</h3>
+                    <p><strong>THE BEASTSNETWORK TOKEN IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS.</strong></p>
+                    <p><strong>BEASTSNETWORK EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION:</strong></p>
+                    <ul>
+                        <li>Any warranties of merchantability, fitness for a particular purpose, or non-infringement</li>
+                        <li>Any warranties that the Token will achieve any particular purpose or result</li>
+                        <li>Any warranties that the Token will retain any particular value</li>
+                        <li>Any warranties related to the accuracy, reliability, or completeness of any information provided</li>
+                    </ul>
+                    <p><strong>YOU ACQUIRE AND HOLD THE TOKEN AT YOUR OWN RISK.</strong></p>
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Acknowledgment and Acceptance</h2>
+                <p>By acquiring or holding the BeastsNetwork Token, you acknowledge that:</p>
                 <ol>
-                    <li>You understand all the risks described in this Risk Disclosure;</li>
-                    <li>You have sufficient knowledge and experience to evaluate the risks of cryptocurrency trading;</li>
-                    <li>You can afford to lose your entire investment and any additional losses;</li>
-                    <li>You will not hold BeastsNetwork liable for any losses, damages, or claims arising from or related to your use of our Services or cryptocurrency trading in general;</li>
-                    <li>You are solely responsible for your trading decisions and the consequences thereof.</li>
+                    <li>You have read and understood this Risk Disclosure Statement;</li>
+                    <li>You understand the risks associated with cryptocurrencies and the Token;</li>
+                    <li>You have the financial capacity to absorb a complete loss of your investment;</li>
+                    <li>You will not hold BeastsNetwork or any other party liable for any losses or damages arising from your acquisition or holding of the Token;</li>
+                    <li>You are solely responsible for your investment decisions and the security of your Tokens.</li>
                 </ol>
+                <p><strong>IF YOU DO NOT UNDERSTAND OR ACCEPT THESE RISKS, YOU SHOULD NOT ACQUIRE OR HOLD THE BEASTSNETWORK TOKEN.</strong></p>
             </section>
 
             <section class="policy-section">
-                <h2>15. Seek Independent Advice</h2>
-                <p>Before using our Services or engaging in cryptocurrency trading, you should:</p>
-                <ul>
-                    <li>Consult with independent financial, legal, and tax advisors</li>
-                    <li>Carefully consider your financial situation and investment objectives</li>
-                    <li>Understand the nature and extent of your exposure to risk</li>
-                    <li>Only invest funds that you can afford to lose</li>
-                    <li>Monitor your investments and positions regularly</li>
-                </ul>
-                <p>The information provided in this Risk Disclosure is not exhaustive, and you should conduct your own due diligence and research.</p>
+                <h2>10. Contact Us</h2>
+                <p>If you have any questions about the risks associated with the BeastsNetwork Token, please contact us at:</p>
+                <p><strong>Email:</strong> support@beastsnetwork.win</p>
+                <p><strong>This is not financial advice.</strong> Always consult with your own advisors before making investment decisions.</p>
             </section>
-
-            <section class="policy-section">
-                <h2>16. Contact Us</h2>
-                <p>If you have any questions about this Risk Disclosure or the risks associated with cryptocurrency trading, please contact us:</p>
-                <ul>
-                    <li><strong>Email:</strong> <a href="mailto:risk@beastsnetwork.com">risk@beastsnetwork.com</a></li>
-                    <li><strong>Support:</strong> <a href="mailto:support@beastsnetwork.com">support@beastsnetwork.com</a></li>
-                </ul>
-            </section>
-
-            <p><em>This Risk Disclosure is effective as of the date stated at the top and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</em></p>
 
             <a href="#" class="back-to-top">Back to Top</a>
         </div>
@@ -658,7 +685,13 @@
         <div class="footer-container">
             <div class="footer-content">
                 <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
-                <p><a href="/">Back to Home</a> | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/risk-disclosure.html">Risk Disclosure</a></p>
+                <p style="margin-top: 1rem;">
+                    <a href="/">Home</a> | 
+                    <a href="privacy-policy.html">Privacy Policy</a> | 
+                    <a href="cookie-policy.html">Cookie Policy</a> | 
+                    <a href="terms-of-service.html">Terms of Service</a> | 
+                    <a href="risk-disclosure.html">Risk Disclosure</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -669,38 +702,25 @@
         const mobileNavClose = document.getElementById('mobileNavClose');
         const mobileNavOverlay = document.getElementById('mobileNavOverlay');
 
-        function toggleMobileNav() {
+        hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             mobileNav.classList.toggle('active');
             mobileNavOverlay.classList.toggle('active');
             document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-
-        hamburger.addEventListener('click', toggleMobileNav);
-        mobileNavClose.addEventListener('click', toggleMobileNav);
-        mobileNavOverlay.addEventListener('click', toggleMobileNav);
-
-        const mobileNavLinks = mobileNav.querySelectorAll('a');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileNav.classList.remove('active');
-                mobileNavOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        mobileNavClose.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavOverlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
     </script>
 </body>
