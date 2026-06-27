@@ -1,7 +1,1236 @@
-{
-  "type": "success",
-  "value": {
-    "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>BeastsNetwork | Premium Crypto Trading Platform</title>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        :root {\n            --deep-black: #0a0a0a;\n            --deep-black-light: #141414;\n            --gold-primary: #daa520;\n            --gold-secondary: #b8860b;\n            --gold-light: #ffd700;\n            --electric-blue: #00d4ff;\n            --glass-bg: rgba(10, 10, 10, 0.6);\n            --glass-border: rgba(218, 165, 32, 0.2);\n            --text-primary: #ffffff;\n            --text-secondary: #a0a0a0;\n        }\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        html {\n            scroll-behavior: smooth;\n        }\n\n        body {\n            font-family: 'Inter', sans-serif;\n            background: var(--deep-black);\n            color: var(--text-primary);\n            overflow-x: hidden;\n            line-height: 1.6;\n        }\n\n        .glass {\n            background: var(--glass-bg);\n            backdrop-filter: blur(20px);\n            -webkit-backdrop-filter: blur(20px);\n            border: 1px solid var(--glass-border);\n        }\n\n        .glow-on-hover {\n            position: relative;\n            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n        }\n\n        .glow-on-hover::before {\n            content: '';\n            position: absolute;\n            inset: 0;\n            background: radial-gradient(circle at center, var(--gold-primary) 0%, transparent 70%);\n            opacity: 0;\n            transition: opacity 0.4s ease;\n            z-index: -1;\n            border-radius: inherit;\n        }\n\n        .glow-on-hover:hover::before {\n            opacity: 0.3;\n        }\n\n        .glow-on-hover-blue::before {\n            background: radial-gradient(circle at center, var(--electric-blue) 0%, transparent 70%);\n        }\n\n        .header {\n            position: fixed;\n            top: 0;\n            left: 0;\n            right: 0;\n            z-index: 1000;\n            padding: 1rem 2rem;\n            background: rgba(10, 10, 10, 0.8);\n            backdrop-filter: blur(10px);\n            border-bottom: 1px solid var(--glass-border);\n        }\n\n        .nav-container {\n            max-width: 1400px;\n            margin: 0 auto;\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n        }\n\n        .nav-logo {\n            height: 40px;\n            width: auto;\n        }\n\n        .nav-links {\n            display: flex;\n            gap: 2rem;\n            list-style: none;\n        }\n\n        .nav-links a {\n            color: var(--text-secondary);\n            text-decoration: none;\n            font-size: 0.95rem;\n            font-weight: 500;\n            transition: color 0.3s ease;\n            position: relative;\n        }\n\n        .nav-links a::after {\n            content: '';\n            position: absolute;\n            bottom: -5px;\n            left: 0;\n            width: 0;\n            height: 2px;\n            background: var(--gold-primary);\n            transition: width 0.3s ease;\n        }\n\n        .nav-links a:hover {\n            color: var(--text-primary);\n        }\n\n        .nav-links a:hover::after {\n            width: 100%;\n        }\n\n        .cta-button {\n            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));\n            color: var(--deep-black);\n            padding: 0.75rem 1.5rem;\n            border: none;\n            border-radius: 50px;\n            font-family: 'Space Grotesk', sans-serif;\n            font-weight: 600;\n            cursor: pointer;\n            text-decoration: none;\n            display: inline-block;\n            transition: all 0.3s ease;\n            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);\n        }\n\n        .cta-button:hover {\n            transform: translateY(-2px);\n            box-shadow: 0 0 30px rgba(218, 165, 32, 0.6);\n        }\n\n        .hamburger {\n            display: none;\n            flex-direction: column;\n            gap: 5px;\n            cursor: pointer;\n            padding: 5px;\n        }\n\n        .hamburger span {\n            width: 25px;\n            height: 2px;\n            background: var(--gold-primary);\n            transition: all 0.3s ease;\n        }\n\n        .hero {\n            min-height: 100vh;\n            display: flex;\n            align-items: center;\n            padding: 8rem 2rem 4rem;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .hero::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            background: \n                radial-gradient(ellipse at 20% 80%, rgba(218, 165, 32, 0.1) 0%, transparent 50%),\n                radial-gradient(ellipse at 80% 20%, rgba(218, 165, 32, 0.1) 0%, transparent 50%),\n                radial-gradient(ellipse at 50% 50%, rgba(218, 165, 32, 0.05) 0%, transparent 70%);\n            pointer-events: none;\n        }\n\n        .hero-container {\n            max-width: 1400px;\n            margin: 0 auto;\n            width: 100%;\n            position: relative;\n            z-index: 1;\n        }\n\n        .hero-grid {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: 4rem;\n            align-items: center;\n        }\n\n        .hero-content {\n            text-align: left;\n        }\n\n        .hero-content h1 {\n            font-family: 'Space Grotesk', sans-serif;\n            font-size: 3.5rem;\n            font-weight: 700;\n            line-height: 1.1;\n            margin-bottom: 1.5rem;\n        }\n\n        .hero-content h1 .gradient-text {\n            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: transparent;\n            background-clip: text;\n        }\n\n        .hero-content p {\n            font-size: 1.2rem;\n            color: var(--text-secondary);\n            max-width: 500px;\n            margin-bottom: 2rem;\n        }\n\n        .hero-buttons {\n            display: flex;\n            gap: 1rem;\n            margin-bottom: 3rem;\n        }\n\n        .btn-secondary {\n            background: transparent;\n            color: var(--text-primary);\n            padding: 0.75rem 1.5rem;\n            border: 1px solid var(--glass-border);\n            border-radius: 50px;\n            font-family: 'Inter', sans-serif;\n            font-weight: 500;\n            cursor: pointer;\n            text-decoration: none;\n            display: inline-block;\n            transition: all 0.3s ease;\n        }\n\n        .btn-secondary:hover {\n            background: var(--glass-bg);\n            border-color: var(--gold-primary);\n        }\n\n        .btc-ticker {\n            background: var(--glass-bg);\n            border: 1px solid var(--glass-border);\n            border-radius: 20px;\n            padding: 1.5rem;\n            margin-bottom: 2rem;\n            backdrop-filter: blur(20px);\n        }\n\n        .ticker-header {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            margin-bottom: 1rem;\n        }\n\n        .ticker-icon {\n            width: 40px;\n            height: 40px;\n            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 1.2rem;\n        }\n\n        .ticker-price {\n            font-family: 'Space Grotesk', sans-serif;\n            font-size: 2rem;\n            font-weight: 700;\n            color: var(--gold-light);\n        }\n\n        .ticker-details {\n            display: flex;\n            gap: 1.5rem;\n            flex-wrap: wrap;\n        }\n\n        .ticker-detail {\n            text-align: center;\n        }\n\n        .ticker-detail .label {\n            font-size: 0.8rem;\n            color: var(--text-secondary);\n            margin-bottom: 0.25rem;\n        }\n\n        .ticker-detail .value {\n            font-size: 1rem;\n            font-weight: 600;\n        }\n\n        .ticker-detail.positive .value {\n            color: var(--gold-light);\n        }\n\n        .ticker-detail.negative .value {\n            color: #ff3333;\n        }\n\n        .hero-visual {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            height: 500px;\n        }\n\n        .lion-logo {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n\n        .lion-image {\n            max-width: 100%;\n            height: auto;\n            max-height: 450px;\n            filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.7));\n            animation: lion-glow 3s ease-in-out infinite;\n        }\n\n        @keyframes lion-glow {\n            0%, 100% { filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.7)); }\n            50% { filter: drop-shadow(0 0 50px rgba(218, 165, 32, 0.9)); }\n        }\n\n        .features {\n            padding: 6rem 2rem;\n            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.3), transparent);\n        }\n\n        .features-container {\n            max-width: 1400px;\n            margin: 0 auto;\n        }\n\n        .section-header {\n            text-align: center;\n            margin-bottom: 4rem;\n        }\n\n        .section-header .badge {\n            background: var(--glass-bg);\n            border: 1px solid var(--glass-border);\n            padding: 0.5rem 1rem;\n            border-radius: 50px;\n            font-size: 0.85rem;\n            color: var(--gold-primary);\n            display: inline-block;\n            margin-bottom: 1rem;\n        }\n\n        .section-header h2 {\n            font-family: 'Space Grotesk', sans-serif;\n            font-size: 2.5rem;\n            font-weight: 700;\n            margin-bottom: 1rem;\n        }\n\n        .section-header p {\n            color: var(--text-secondary);\n            max-width: 600px;\n            margin: 0 auto;\n        }\n\n        .features-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 2rem;\n        }\n\n        .feature-card {\n            background: var(--glass-bg);\n            border: 1px solid var(--glass-border);\n            border-radius: 20px;\n            padding: 2rem;\n            transition: all 0.4s ease;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .feature-card::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 0;\n            right: 0;\n            height: 3px;\n            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);\n            transform: scaleX(0);\n            transition: transform 0.4s ease;\n        }\n\n        .feature-card:hover {\n            transform: translateY(-5px);\n            border-color: rgba(218, 165, 32, 0.4);\n        }\n\n        .feature-card:hover::before {\n            transform: scaleX(1);\n        }\n\n        .feature-icon {\n            width: 60px;\n            height: 60px;\n            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));\n            border-radius: 15px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 1.5rem;\n            margin-bottom: 1.5rem;\n        }\n\n        .feature-card h3 {\n            font-family: 'Space Grotesk', sans-serif;\n            font-size: 1.3rem;\n            font-weight: 600;\n            margin-bottom: 0.75rem;\n        }\n\n        .feature-card p {\n            color: var(--text-secondary);\n            margin-bottom: 1.5rem;\n        }\n\n        .feature-link {\n            color: var(--gold-primary);\n            text-decoration: none;\n            font-weight: 500;\n            display: inline-flex;\n            align-items: center;\n            gap: 0.5rem;\n            transition: gap 0.3s ease;\n        }\n\n        .feature-link:hover {\n            gap: 0.75rem;\n        }\n\n        .security {\n            padding: 6rem 2rem;\n        }\n\n        .security-container {\n            max-width: 1400px;\n            margin: 0 auto;\n        }\n\n        .security-content {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: 4rem;\n            align-items: center;\n        }\n\n        .security-badges {\n            display: grid;\n            grid-template-columns: repeat(2, 1fr);\n            gap: 1.5rem;\n        }\n\n        .badge-card {\n            background: var(--glass-bg);\n            border: 1px solid var(--glass-border);\n            border-radius: 15px;\n            padding: 1.5rem;\n            display: flex;\n            align-items: center;\n            gap: 1rem;\n            transition: all 0.3s ease;\n        }\n\n        .badge-card:hover {\n            border-color: var(--gold-primary);\n            transform: translateY(-3px);\n        }\n\n        .badge-icon {\n            width: 50px;\n            height: 50px;\n            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 1.2rem;\n            flex-shrink: 0;\n        }\n\n        .badge-info h4 {\n            font-size: 1rem;\n            font-weight: 600;\n            margin-bottom: 0.25rem;\n        }\n\n        .badge-info p {\n            font-size: 0.85rem;\n            color: var(--text-secondary);\n        }\n\n        .security-visual {\n            position: relative;\n            height: 400px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        .security-shield {\n            width: 250px;\n            height: 250px;\n            background: \n                conic-gradient(from 0deg, var(--gold-primary), var(--gold-light), var(--gold-primary));\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            position: relative;\n            animation: shield-pulse 3s ease-in-out infinite;\n        }\n\n        .security-shield::before {\n            content: '';\n            position: absolute;\n            inset: 10px;\n            background: var(--deep-black);\n            border-radius: 50%;\n        }\n\n        .security-shield::after {\n            content: '';\n            position: absolute;\n            inset: 20px;\n            background: \n                conic-gradient(from 0deg, var(--gold-primary), var(--gold-light), var(--gold-primary));\n            border-radius: 50%;\n            opacity: 0.7;\n        }\n\n        .shield-icon {\n            font-size: 3rem;\n            color: var(--gold-light);\n            z-index: 1;\n            animation: float 2s ease-in-out infinite;\n        }\n\n        @keyframes shield-pulse {\n            0%, 100% { filter: drop-shadow(0 0 20px var(--gold-primary)); }\n            50% { filter: drop-shadow(0 0 40px var(--gold-light)); }\n        }\n\n        @keyframes float {\n            0%, 100% { transform: translateY(0); }\n            50% { transform: translateY(-10px); }\n        }\n\n        .cta-section {\n            padding: 6rem 2rem;\n            text-align: center;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .cta-section::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 50%;\n            transform: translateX(-50%);\n            width: 1000px;\n            height: 500px;\n            background: radial-gradient(ellipse, rgba(218, 165, 32, 0.1) 0%, transparent 70%);\n            pointer-events: none;\n        }\n\n        .cta-section h2 {\n            font-family: 'Space Grotesk', sans-serif;\n            font-size: 2.5rem;\n            font-weight: 700;\n            margin-bottom: 1rem;\n            position: relative;\n        }\n\n        .cta-section p {\n            color: var(--text-secondary);\n            max-width: 600px;\n            margin: 0 auto 2rem;\n        }\n\n        .cta-section .cta-button {\n            font-size: 1.1rem;\n            padding: 1rem 2rem;\n            box-shadow: 0 0 40px rgba(218, 165, 32, 0.4);\n        }\n\n        .cta-section .cta-button:hover {\n            box-shadow: 0 0 60px rgba(218, 165, 32, 0.7);\n        }\n\n        .footer {\n            padding: 4rem 2rem 2rem;\n            border-top: 1px solid var(--glass-border);\n            background: rgba(10, 10, 10, 0.5);\n        }\n\n        .footer-container {\n            max-width: 1400px;\n            margin: 0 auto;\n        }\n\n        .footer-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n            gap: 3rem;\n            margin-bottom: 3rem;\n        }\n\n        .footer-column h4 {\n            font-family: 'Space Grotesk', sans-serif;\n            font-size: 1.1rem;\n            font-weight: 600;\n            margin-bottom: 1rem;\n            color: var(--gold-primary);\n        }\n\n        .footer-column ul {\n            list-style: none;\n        }\n\n        .footer-column ul li {\n            margin-bottom: 0.75rem;\n        }\n\n        .footer-column ul li a {\n            color: var(--text-secondary);\n            text-decoration: none;\n            transition: color 0.3s ease;\n        }\n\n        .footer-column ul li a:hover {\n            color: var(--gold-primary);\n        }\n\n        .footer-bottom {\n            text-align: center;\n            padding-top: 2rem;\n            border-top: 1px solid var(--glass-border);\n            color: var(--text-secondary);\n            font-size: 0.9rem;\n        }\n\n        .mobile-nav {\n            position: fixed;\n            top: 0;\n            right: -100%;\n            width: 80%;\n            max-width: 350px;\n            height: 100vh;\n            background: var(--deep-black-light);\n            backdrop-filter: blur(20px);\n            border-left: 1px solid var(--glass-border);\n            padding: 5rem 2rem 2rem;\n            transition: right 0.4s ease;\n            z-index: 2000;\n        }\n\n        .mobile-nav.active {\n            right: 0;\n        }\n\n        .mobile-nav-close {\n            position: absolute;\n            top: 1.5rem;\n            right: 1.5rem;\n            font-size: 2rem;\n            color: var(--gold-primary);\n            cursor: pointer;\n            background: none;\n            border: none;\n        }\n\n        .mobile-nav ul {\n            list-style: none;\n        }\n\n        .mobile-nav ul li {\n            margin-bottom: 1.5rem;\n        }\n\n        .mobile-nav ul li a {\n            color: var(--text-primary);\n            text-decoration: none;\n            font-size: 1.1rem;\n            font-weight: 500;\n            transition: color 0.3s ease;\n        }\n\n        .mobile-nav ul li a:hover {\n            color: var(--gold-primary);\n        }\n\n        .mobile-nav-overlay {\n            position: fixed;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            background: rgba(0, 0, 0, 0.7);\n            backdrop-filter: blur(5px);\n            z-index: 1500;\n            opacity: 0;\n            visibility: hidden;\n            transition: all 0.4s ease;\n        }\n\n        .mobile-nav-overlay.active {\n            opacity: 1;\n            visibility: visible;\n        }\n\n        @media (max-width: 1024px) {\n            .hero-grid {\n                grid-template-columns: 1fr;\n                gap: 3rem;\n            }\n\n            .hero-content {\n                text-align: center;\n            }\n\n            .hero-content h1 {\n                font-size: 2.8rem;\n            }\n\n            .hero-content p {\n                margin-left: auto;\n                margin-right: auto;\n            }\n\n            .hero-buttons {\n                justify-content: center;\n            }\n\n            .hero-visual {\n                height: 350px;\n            }\n\n            .lion-image {\n                max-height: 300px;\n            }\n\n            .security-content {\n                grid-template-columns: 1fr;\n                gap: 2rem;\n            }\n\n            .security-badges {\n                grid-template-columns: 1fr;\n            }\n\n            .security-visual {\n                height: 300px;\n            }\n\n            .security-shield {\n                width: 200px;\n                height: 200px;\n            }\n        }\n\n        @media (max-width: 768px) {\n            .nav-links {\n                display: none;\n            }\n\n            .hamburger {\n                display: flex;\n            }\n\n            .hamburger.active span:nth-child(1) {\n                transform: rotate(45deg) translate(5px, 5px);\n            }\n\n            .hamburger.active span:nth-child(2) {\n                opacity: 0;\n            }\n\n            .hamburger.active span:nth-child(3) {\n                transform: rotate(-45deg) translate(5px, -5px);\n            }\n\n            .hero {\n                padding: 7rem 2rem 4rem;\n            }\n\n            .hero-content h1 {\n                font-size: 2.2rem;\n            }\n\n            .hero-content p {\n                font-size: 1rem;\n            }\n\n            .section-header h2 {\n                font-size: 2rem;\n            }\n\n            .features-grid {\n                grid-template-columns: 1fr;\n            }\n\n            .btc-ticker {\n                margin-left: auto;\n                margin-right: auto;\n                max-width: 400px;\n            }\n\n            .ticker-price {\n                font-size: 1.5rem;\n            }\n        }\n\n        @media (max-width: 480px) {\n            .header {\n                padding: 1rem;\n            }\n\n            .nav-container {\n                padding: 0 1rem;\n            }\n\n            .hero-content h1 {\n                font-size: 1.8rem;\n            }\n\n            .cta-section h2 {\n                font-size: 1.8rem;\n            }\n\n            .cta-section p {\n                font-size: 1rem;\n            }\n\n            .footer-grid {\n                grid-template-columns: 1fr;\n                text-align: center;\n            }\n        }\n    </style>\n</head>\n<body>\n    <header class=\"header\">\n        <div class=\"nav-container\">\n            <a href=\"#\" class=\"logo\">\n                <img src=\"https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D\" alt=\"BeastsNetwork Logo\" class=\"nav-logo\">\n            </a>\n            <nav>\n                <ul class=\"nav-links\">\n                    <li><a href=\"#features\">Features</a></li>\n                    <li><a href=\"#security\">Security</a></li>\n                    <li><a href=\"#pricing\">Pricing</a></li>\n                    <li><a href=\"#about\">About</a></li>\n                </ul>\n            </nav>\n            <a href=\"#get-started\" class=\"cta-button\">Get Started</a>\n            <div class=\"hamburger\" id=\"hamburger\">\n                <span></span>\n                <span></span>\n                <span></span>\n            </div>\n        </div>\n    </header>\n\n    <div class=\"mobile-nav-overlay\" id=\"mobileNavOverlay\"></div>\n    <nav class=\"mobile-nav\" id=\"mobileNav\">\n        <button class=\"mobile-nav-close\" id=\"mobileNavClose\">&times;</button>\n        <ul>\n            <li><a href=\"#features\">Features</a></li>\n            <li><a href=\"#security\">Security</a></li>\n            <li><a href=\"#pricing\">Pricing</a></li>\n            <li><a href=\"#about\">About</a></li>\n            <li><a href=\"#get-started\" class=\"cta-button\">Get Started</a></li>\n        </ul>\n    </nav>\n\n    <section class=\"hero\">\n        <div class=\"hero-container\">\n            <div class=\"hero-grid\">\n                <div class=\"hero-content\">\n                    <h1>Trade Like a <span class=\"gradient-text\">Beast</span> on BeastsNetwork</h1>\n                    <p>Join the pack. Trade Bitcoin, Ethereum, and 500+ altcoins with bank-grade security and lightning-fast execution.</p>\n                    <div class=\"hero-buttons\">\n                        <a href=\"#get-started\" class=\"cta-button\">Start Trading Now</a>\n                        <a href=\"#features\" class=\"btn-secondary\">Learn More</a>\n                    </div>\n                    \n                    <div class=\"btc-ticker glass glow-on-hover\">\n                        <div class=\"ticker-header\">\n                            <div class=\"ticker-icon\">&#8383;</div>\n                            <span style=\"font-weight: 600;\">Bitcoin (BTC/USD)</span>\n                        </div>\n                        <div class=\"ticker-price\" id=\"btcPrice\">$69,420.50</div>\n                        <div class=\"ticker-details\">\n                            <div class=\"ticker-detail positive\">\n                                <div class=\"label\">24h Change</div>\n                                <div class=\"value\">+2.45%</div>\n                            </div>\n                            <div class=\"ticker-detail\">\n                                <div class=\"label\">24h High</div>\n                                <div class=\"value\">$70,123.45</div>\n                            </div>\n                            <div class=\"ticker-detail\">\n                                <div class=\"label\">24h Low</div>\n                                <div class=\"value\">$68,234.56</div>\n                            </div>\n                            <div class=\"ticker-detail\">\n                                <div class=\"label\">24h Volume</div>\n                                <div class=\"value\">12.3M BTC</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"hero-visual\">\n                    <div class=\"lion-logo\">\n                        <img src=\"https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D\" alt=\"BeastsNetwork Lion\" class=\"lion-image\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <section class=\"features\" id=\"features\">\n        <div class=\"features-container\">\n            <div class=\"section-header\">\n                <span class=\"badge\">Powerful Features</span>\n                <h2>Everything You Need to Trade Smarter</h2>\n                <p>Our platform combines cutting-edge technology with an intuitive interface, giving you the tools to execute trades with precision and confidence.</p>\n            </div>\n            <div class=\"features-grid\">\n                <div class=\"feature-card glass glow-on-hover\">\n                    <div class=\"feature-icon\">&#128200;</div>\n                    <h3>Lightning-Fast Execution</h3>\n                    <p>Execute trades in milliseconds with our high-performance matching engine. Never miss an opportunity with ultra-low latency.</p>\n                    <a href=\"#\" class=\"feature-link\">\n                        Explore Speed\n                        <span>&#8594;</span>\n                    </a>\n                </div>\n                <div class=\"feature-card glass glow-on-hover\">\n                    <div class=\"feature-icon\">&#128274;</div>\n                    <h3>Advanced Charting Tools</h3>\n                    <p>Professional-grade charts with 100+ indicators. Customize your workspace with drawing tools and multiple timeframes.</p>\n                    <a href=\"#\" class=\"feature-link\">\n                        View Charts\n                        <span>&#8594;</span>\n                    </a>\n                </div>\n                <div class=\"feature-card glass glow-on-hover\">\n                    <div class=\"feature-icon\">&#128179;</div>\n                    <h3>500+ Trading Pairs</h3>\n                    <p>Access Bitcoin, Ethereum, and hundreds of altcoins. Trade the most popular pairs with deep liquidity and tight spreads.</p>\n                    <a href=\"#\" class=\"feature-link\">\n                        See Markets\n                        <span>&#8594;</span>\n                    </a>\n                </div>\n                <div class=\"feature-card glass glow-on-hover\">\n                    <div class=\"feature-icon\">&#128272;</div>\n                    <h3>Competitive Fees</h3>\n                    <p>Start trading with fees as low as 0.1%. Volume-based discounts available for active traders.</p>\n                    <a href=\"#\" class=\"feature-link\">\n                        View Pricing\n                        <span>&#8594;</span>\n                    </a>\n                </div>\n                <div class=\"feature-card glass glow-on-hover\">\n                    <div class=\"feature-icon\">&#128232;</div>\n                    <h3>Mobile Trading</h3>\n                    <p>Trade on the go with our iOS and Android apps. Full functionality with the same great experience.</p>\n                    <a href=\"#\" class=\"feature-link\">\n                        Download Apps\n                        <span>&#8594;</span>\n                    </a>\n                </div>\n                <div class=\"feature-card glass glow-on-hover\">\n                    <div class=\"feature-icon\">&#128181;</div>\n                    <h3>24/7 Support</h3>\n                    <p>Our dedicated support team is available around the clock to assist you with any questions or issues.</p>\n                    <a href=\"#\" class=\"feature-link\">\n                        Contact Us\n                        <span>&#8594;</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <section class=\"security\" id=\"security\">\n        <div class=\"security-container\">\n            <div class=\"section-header\" style=\"text-align: left; margin-bottom: 0;\">\n                <span class=\"badge\">Enterprise-Grade Security</span>\n                <h2>Your Assets Are Safe With Us</h2>\n                <p>We implement bank-level security measures to protect your funds and personal information. Your trust is our top priority.</p>\n            </div>\n            <div class=\"security-content\">\n                <div class=\"security-badges\">\n                    <div class=\"badge-card glass glow-on-hover\">\n                        <div class=\"badge-icon\">&#10003;</div>\n                        <div class=\"badge-info\">\n                            <h4>SOC 2 Type II Certified</h4>\n                            <p>Independently audited for security, availability, and confidentiality.</p>\n                        </div>\n                    </div>\n                    <div class=\"badge-card glass glow-on-hover\">\n                        <div class=\"badge-icon\">&#128274;</div>\n                        <div class=\"badge-info\">\n                            <h4>Proof of Reserves</h4>\n                            <p>100% backed reserves verified by leading audit firms.</p>\n                        </div>\n                    </div>\n                    <div class=\"badge-card glass glow-on-hover\">\n                        <div class=\"badge-icon\">&#128272;</div>\n                        <div class=\"badge-info\">\n                            <h4>Cold Storage</h4>\n                            <p>95% of funds stored in offline, air-gapped cold wallets.</p>\n                        </div>\n                    </div>\n                    <div class=\"badge-card glass glow-on-hover\">\n                        <div class=\"badge-icon\">&#128218;</div>\n                        <div class=\"badge-info\">\n                            <h4>2FA & Biometrics</h4>\n                            <p>Multiple authentication methods to secure your account.</p>\n                        </div>\n                    </div>\n                    <div class=\"badge-card glass glow-on-hover\">\n                        <div class=\"badge-icon\">&#128279;</div>\n                        <div class=\"badge-info\">\n                            <h4>Bug Bounty Program</h4>\n                            <p>Continuous security testing by ethical hackers worldwide.</p>\n                        </div>\n                    </div>\n                    <div class=\"badge-card glass glow-on-hover\">\n                        <div class=\"badge-icon\">&#128222;</div>\n                        <div class=\"badge-info\">\n                            <h4>Insurance Coverage</h4>\n                            <p>Comprehensive insurance policy protecting user funds.</p>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"security-visual\">\n                    <div class=\"security-shield\">\n                        <div class=\"shield-icon\">&#128737;</div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <section class=\"cta-section\" id=\"get-started\">\n        <div class=\"footer-container\">\n            <h2>Ready to Join the Pack?</h2>\n            <p>Join thousands of traders who trust BeastsNetwork for their cryptocurrency trading needs. Create your account in minutes and start trading today.</p>\n            <a href=\"#\" class=\"cta-button glow-on-hover\">Get Started Now</a>\n        </div>\n    </section>\n\n    <footer class=\"footer\">\n        <div class=\"footer-container\">\n            <div class=\"footer-grid\">\n                <div class=\"footer-column\">\n                    <img src=\"https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D\" alt=\"BeastsNetwork Logo\" style=\"height: 40px; margin-bottom: 1rem;\">\n                    <p style=\"color: var(--text-secondary); margin-bottom: 1rem;\">Your premium cryptocurrency trading platform.</p>\n                </div>\n                <div class=\"footer-column\">\n                    <h4>Products</h4>\n                    <ul>\n                        <li><a href=\"#\">Spot Trading</a></li>\n                        <li><a href=\"#\">Margin Trading</a></li>\n                        <li><a href=\"#\">Futures</a></li>\n                        <li><a href=\"#\">Staking</a></li>\n                        <li><a href=\"#\">Earn</a></li>\n                    </ul>\n                </div>\n                <div class=\"footer-column\">\n                    <h4>Company</h4>\n                    <ul>\n                        <li><a href=\"#\">About Us</a></li>\n                        <li><a href=\"#\">Careers</a></li>\n                        <li><a href=\"#\">Blog</a></li>\n                        <li><a href=\"#\">Press</a></li>\n                        <li><a href=\"#\">Partners</a></li>\n                    </ul>\n                </div>\n                <div class=\"footer-column\">\n                    <h4>Support</h4>\n                    <ul>\n                        <li><a href=\"#\">Help Center</a></li>\n                        <li><a href=\"#\">Contact Us</a></li>\n                        <li><a href=\"#\">Status</a></li>\n                        <li><a href=\"#\">API Docs</a></li>\n                        <li><a href=\"#\">Feedback</a></li>\n                    </ul>\n                </div>\n                <div class=\"footer-column\">\n                    <h4>Legal</h4>\n                    <ul>\n                        <li><a href=\"#\">Terms of Service</a></li>\n                        <li><a href=\"privacy-policy.html\">Privacy Policy</a></li>\n                        <li><a href=\"#\">Privacy Policy</a></li>\n                        <li><a href=\"#\">Cookie Policy</a></li>\n                        <li><a href=\"#\">Risk Disclosure</a></li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"footer-bottom\">\n                <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>\n            </div>\n        </div>\n    </footer>\n\n    <script>\n        const hamburger = document.getElementById('hamburger');\n        const mobileNav = document.getElementById('mobileNav');\n        const mobileNavClose = document.getElementById('mobileNavClose');\n        const mobileNavOverlay = document.getElementById('mobileNavOverlay');\n\n        function toggleMobileNav() {\n            hamburger.classList.toggle('active');\n            mobileNav.classList.toggle('active');\n            mobileNavOverlay.classList.toggle('active');\n            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';\n        }\n\n        hamburger.addEventListener('click', toggleMobileNav);\n        mobileNavClose.addEventListener('click', toggleMobileNav);\n        mobileNavOverlay.addEventListener('click', toggleMobileNav);\n\n        const mobileNavLinks = mobileNav.querySelectorAll('a');\n        mobileNavLinks.forEach(link => {\n            link.addEventListener('click', () => {\n                hamburger.classList.remove('active');\n                mobileNav.classList.remove('active');\n                mobileNavOverlay.classList.remove('active');\n                document.body.style.overflow = '';\n            });\n        });\n\n        const btcPriceElement = document.getElementById('btcPrice');\n        const priceChanges = [\n            { price: '$69,512.34', change: '+2.78%', high: '$70,245.67', low: '$68,345.21', volume: '12.5M BTC' },\n            { price: '$69,487.21', change: '+2.65%', high: '$70,198.45', low: '$68,298.34', volume: '12.4M BTC' },\n            { price: '$69,545.89', change: '+2.91%', high: '$70,312.89', low: '$68,212.45', volume: '12.6M BTC' },\n            { price: '$69,420.50', change: '+2.45%', high: '$70,123.45', low: '$68,234.56', volume: '12.3M BTC' }\n        ];\n\n        let currentPriceIndex = 0;\n\n        function updateBtcPrice() {\n            const priceData = priceChanges[currentPriceIndex];\n            btcPriceElement.textContent = priceData.price;\n            const tickerDetails = document.querySelectorAll('.ticker-detail');\n            if (tickerDetails.length >= 4) {\n                tickerDetails[0].querySelector('.value').textContent = priceData.change;\n                tickerDetails[1].querySelector('.value').textContent = priceData.high;\n                tickerDetails[2].querySelector('.value').textContent = priceData.low;\n                tickerDetails[3].querySelector('.value').textContent = priceData.volume;\n            }\n            currentPriceIndex = (currentPriceIndex + 1) % priceChanges.length;\n        }\n\n        setInterval(updateBtcPrice, 5000);\n\n        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {\n            anchor.addEventListener('click', function (e) {\n                e.preventDefault();\n                const target = document.querySelector(this.getAttribute('href'));\n                if (target) {\n                    target.scrollIntoView({\n                        behavior: 'smooth',\n                        block: 'start'\n                    });\n                }\n            });\n        });\n\n        window.addEventListener('scroll', () => {\n            const scrolled = window.pageYOffset;\n            const parallax = document.querySelector('.hero-visual');\n            if (parallax) {\n                const speed = scrolled * 0.5;\n                parallax.style.transform = `translateY(${speed}px)`;\n            }\n        });\n\n        const observerOptions = {\n            threshold: 0.1,\n            rootMargin: '0px 0px -50px 0px'\n        };\n\n        const observer = new IntersectionObserver((entries) => {\n            entries.forEach(entry => {\n                if (entry.isIntersecting) {\n                    entry.target.style.opacity = '1';\n                    entry.target.style.transform = 'translateY(0)';\n                }\n            });\n        }, observerOptions);\n\n        document.querySelectorAll('.feature-card, .badge-card').forEach(card => {\n            card.style.opacity = '0';\n            card.style.transform = 'translateY(20px)';\n            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';\n            observer.observe(card);\n        });\n    </script>\n</body>\n</html>\n",
-    "sha": "f222b8ed1ca4bb14849155df521cb32ec428909c"
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeastsNetwork | Premium Crypto Trading Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-black: #0a0a0a;
+            --deep-black-light: #141414;
+            --gold-primary: #daa520;
+            --gold-secondary: #b8860b;
+            --gold-light: #ffd700;
+            --electric-blue: #00d4ff;
+            --glass-bg: rgba(10, 10, 10, 0.6);
+            --glass-border: rgba(218, 165, 32, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .glow-on-hover {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glow-on-hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, var(--gold-primary) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            border-radius: inherit;
+        }
+
+        .glow-on-hover:hover::before {
+            opacity: 0.3;
+        }
+
+        .glow-on-hover-blue::before {
+            background: radial-gradient(circle at center, var(--electric-blue) 0%, transparent 70%);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--deep-black);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(218, 165, 32, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(218, 165, 32, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(218, 165, 32, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 .gradient-text {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass-bg);
+            border-color: var(--gold-primary);
+        }
+
+        .btc-ticker {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .ticker-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .ticker-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .ticker-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        .ticker-details {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .ticker-detail {
+            text-align: center;
+        }
+
+        .ticker-detail .label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .ticker-detail .value {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .ticker-detail.positive .value {
+            color: var(--gold-light);
+        }
+
+        .ticker-detail.negative .value {
+            color: #ff3333;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        .lion-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lion-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.7));
+            animation: lion-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes lion-glow {
+            0%, 100% { filter: drop-shadow(0 0 30px rgba(218, 165, 32, 0.7)); }
+            50% { filter: drop-shadow(0 0 50px rgba(218, 165, 32, 0.9)); }
+        }
+
+        .features {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.3), transparent);
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .badge {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--gold-primary);
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(218, 165, 32, 0.4);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-link {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .feature-link:hover {
+            gap: 0.75rem;
+        }
+
+        .security {
+            padding: 6rem 2rem;
+        }
+
+        .security-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .security-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .security-badges {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .badge-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .badge-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-3px);
+        }
+
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .badge-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .security-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .security-shield {
+            width: 250px;
+            height: 250px;
+            background: 
+                conic-gradient(from 0deg, var(--gold-primary), var(--gold-light), var(--gold-primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: shield-pulse 3s ease-in-out infinite;
+        }
+
+        .security-shield::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            background: var(--deep-black);
+            border-radius: 50%;
+        }
+
+        .security-shield::after {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            background: 
+                conic-gradient(from 0deg, var(--gold-primary), var(--gold-light), var(--gold-primary));
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .shield-icon {
+            font-size: 3rem;
+            color: var(--gold-light);
+            z-index: 1;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes shield-pulse {
+            0%, 100% { filter: drop-shadow(0 0 20px var(--gold-primary)); }
+            50% { filter: drop-shadow(0 0 40px var(--gold-light)); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-section .cta-button {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            box-shadow: 0 0 40px rgba(218, 165, 32, 0.4);
+        }
+
+        .cta-section .cta-button:hover {
+            box-shadow: 0 0 60px rgba(218, 165, 32, 0.7);
+        }
+
+        .footer {
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(10, 10, 10, 0.5);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gold-primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--gold-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: var(--deep-black-light);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--glass-border);
+            padding: 5rem 2rem 2rem;
+            transition: right 0.4s ease;
+            z-index: 2000;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: var(--gold-primary);
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                height: 350px;
+            }
+
+            .lion-image {
+                max-height: 300px;
+            }
+
+            .security-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .security-badges {
+                grid-template-columns: 1fr;
+            }
+
+            .security-visual {
+                height: 300px;
+            }
+
+            .security-shield {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .hero {
+                padding: 7rem 2rem 4rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btc-ticker {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 400px;
+            }
+
+            .ticker-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D" alt="BeastsNetwork Logo" class="nav-logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <a href="#get-started" class="cta-button">Get Started</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#get-started" class="cta-button">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Trade Like a <span class="gradient-text">Beast</span> on BeastsNetwork</h1>
+                    <p>Join the pack. Trade Bitcoin, Ethereum, and 500+ altcoins with bank-grade security and lightning-fast execution.</p>
+                    <div class="hero-buttons">
+                        <a href="#get-started" class="cta-button">Start Trading Now</a>
+                        <a href="#features" class="btn-secondary">Learn More</a>
+                    </div>
+                    
+                    <div class="btc-ticker glass glow-on-hover">
+                        <div class="ticker-header">
+                            <div class="ticker-icon">&#8383;</div>
+                            <span style="font-weight: 600;">Bitcoin (BTC/USD)</span>
+                        </div>
+                        <div class="ticker-price" id="btcPrice">$69,420.50</div>
+                        <div class="ticker-details">
+                            <div class="ticker-detail positive">
+                                <div class="label">24h Change</div>
+                                <div class="value">+2.45%</div>
+                            </div>
+                            <div class="ticker-detail">
+                                <div class="label">24h High</div>
+                                <div class="value">$70,123.45</div>
+                            </div>
+                            <div class="ticker-detail">
+                                <div class="label">24h Low</div>
+                                <div class="value">$68,234.56</div>
+                            </div>
+                            <div class="ticker-detail">
+                                <div class="label">24h Volume</div>
+                                <div class="value">12.3M BTC</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="lion-logo">
+                        <img src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D" alt="BeastsNetwork Lion" class="lion-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <span class="badge">Powerful Features</span>
+                <h2>Everything You Need to Trade Smarter</h2>
+                <p>Our platform combines cutting-edge technology with an intuitive interface, giving you the tools to execute trades with precision and confidence.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass glow-on-hover">
+                    <div class="feature-icon">&#128200;</div>
+                    <h3>Lightning-Fast Execution</h3>
+                    <p>Execute trades in milliseconds with our high-performance matching engine. Never miss an opportunity with ultra-low latency.</p>
+                    <a href="#" class="feature-link">
+                        Explore Speed
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+                <div class="feature-card glass glow-on-hover">
+                    <div class="feature-icon">&#128274;</div>
+                    <h3>Advanced Charting Tools</h3>
+                    <p>Professional-grade charts with 100+ indicators. Customize your workspace with drawing tools and multiple timeframes.</p>
+                    <a href="#" class="feature-link">
+                        View Charts
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+                <div class="feature-card glass glow-on-hover">
+                    <div class="feature-icon">&#128179;</div>
+                    <h3>500+ Trading Pairs</h3>
+                    <p>Access Bitcoin, Ethereum, and hundreds of altcoins. Trade the most popular pairs with deep liquidity and tight spreads.</p>
+                    <a href="#" class="feature-link">
+                        See Markets
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+                <div class="feature-card glass glow-on-hover">
+                    <div class="feature-icon">&#128272;</div>
+                    <h3>Competitive Fees</h3>
+                    <p>Start trading with fees as low as 0.1%. Volume-based discounts available for active traders.</p>
+                    <a href="#" class="feature-link">
+                        View Pricing
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+                <div class="feature-card glass glow-on-hover">
+                    <div class="feature-icon">&#128232;</div>
+                    <h3>Mobile Trading</h3>
+                    <p>Trade on the go with our iOS and Android apps. Full functionality with the same great experience.</p>
+                    <a href="#" class="feature-link">
+                        Download Apps
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+                <div class="feature-card glass glow-on-hover">
+                    <div class="feature-icon">&#128181;</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock to assist you with any questions or issues.</p>
+                    <a href="#" class="feature-link">
+                        Contact Us
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="security" id="security">
+        <div class="security-container">
+            <div class="section-header" style="text-align: left; margin-bottom: 0;">
+                <span class="badge">Enterprise-Grade Security</span>
+                <h2>Your Assets Are Safe With Us</h2>
+                <p>We implement bank-level security measures to protect your funds and personal information. Your trust is our top priority.</p>
+            </div>
+            <div class="security-content">
+                <div class="security-badges">
+                    <div class="badge-card glass glow-on-hover">
+                        <div class="badge-icon">&#10003;</div>
+                        <div class="badge-info">
+                            <h4>SOC 2 Type II Certified</h4>
+                            <p>Independently audited for security, availability, and confidentiality.</p>
+                        </div>
+                    </div>
+                    <div class="badge-card glass glow-on-hover">
+                        <div class="badge-icon">&#128274;</div>
+                        <div class="badge-info">
+                            <h4>Proof of Reserves</h4>
+                            <p>100% backed reserves verified by leading audit firms.</p>
+                        </div>
+                    </div>
+                    <div class="badge-card glass glow-on-hover">
+                        <div class="badge-icon">&#128272;</div>
+                        <div class="badge-info">
+                            <h4>Cold Storage</h4>
+                            <p>95% of funds stored in offline, air-gapped cold wallets.</p>
+                        </div>
+                    </div>
+                    <div class="badge-card glass glow-on-hover">
+                        <div class="badge-icon">&#128218;</div>
+                        <div class="badge-info">
+                            <h4>2FA & Biometrics</h4>
+                            <p>Multiple authentication methods to secure your account.</p>
+                        </div>
+                    </div>
+                    <div class="badge-card glass glow-on-hover">
+                        <div class="badge-icon">&#128279;</div>
+                        <div class="badge-info">
+                            <h4>Bug Bounty Program</h4>
+                            <p>Continuous security testing by ethical hackers worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="badge-card glass glow-on-hover">
+                        <div class="badge-icon">&#128222;</div>
+                        <div class="badge-info">
+                            <h4>Insurance Coverage</h4>
+                            <p>Comprehensive insurance policy protecting user funds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="security-visual">
+                    <div class="security-shield">
+                        <div class="shield-icon">&#128737;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="get-started">
+        <div class="footer-container">
+            <h2>Ready to Join the Pack?</h2>
+            <p>Join thousands of traders who trust BeastsNetwork for their cryptocurrency trading needs. Create your account in minutes and start trading today.</p>
+            <a href="#" class="cta-button glow-on-hover">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <img src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D" alt="BeastsNetwork Logo" style="height: 40px; margin-bottom: 1rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Your premium cryptocurrency trading platform.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Spot Trading</a></li>
+                        <li><a href="#">Margin Trading</a></li>
+                        <li><a href="#">Futures</a></li>
+                        <li><a href="#">Staking</a></li>
+                        <li><a href="#">Earn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function toggleMobileNav() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMobileNav);
+        mobileNavClose.addEventListener('click', toggleMobileNav);
+        mobileNavOverlay.addEventListener('click', toggleMobileNav);
+
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        const btcPriceElement = document.getElementById('btcPrice');
+        const priceChanges = [
+            { price: '$69,512.34', change: '+2.78%', high: '$70,245.67', low: '$68,345.21', volume: '12.5M BTC' },
+            { price: '$69,487.21', change: '+2.65%', high: '$70,198.45', low: '$68,298.34', volume: '12.4M BTC' },
+            { price: '$69,545.89', change: '+2.91%', high: '$70,312.89', low: '$68,212.45', volume: '12.6M BTC' },
+            { price: '$69,420.50', change: '+2.45%', high: '$70,123.45', low: '$68,234.56', volume: '12.3M BTC' }
+        ];
+
+        let currentPriceIndex = 0;
+
+        function updateBtcPrice() {
+            const priceData = priceChanges[currentPriceIndex];
+            btcPriceElement.textContent = priceData.price;
+            const tickerDetails = document.querySelectorAll('.ticker-detail');
+            if (tickerDetails.length >= 4) {
+                tickerDetails[0].querySelector('.value').textContent = priceData.change;
+                tickerDetails[1].querySelector('.value').textContent = priceData.high;
+                tickerDetails[2].querySelector('.value').textContent = priceData.low;
+                tickerDetails[3].querySelector('.value').textContent = priceData.volume;
+            }
+            currentPriceIndex = (currentPriceIndex + 1) % priceChanges.length;
+        }
+
+        setInterval(updateBtcPrice, 5000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-visual');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .badge-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
