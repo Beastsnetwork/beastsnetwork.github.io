@@ -165,7 +165,7 @@
         }
 
         .policy-section {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .policy-section h2 {
@@ -182,8 +182,16 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.3rem;
             font-weight: 600;
-            margin: 1.5rem 0 1rem;
+            margin: 2rem 0 1rem;
             color: var(--gold-secondary);
+        }
+
+        .policy-section h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
         }
 
         .policy-section p {
@@ -219,42 +227,22 @@
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            background: var(--glass-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         .cookie-table th {
-            background: rgba(218, 165, 32, 0.1);
-            padding: 1rem;
-            text-align: left;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
             color: var(--gold-primary);
-            border-bottom: 1px solid var(--glass-border);
+            font-weight: 600;
         }
 
-        .cookie-table td {
-            padding: 1rem;
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .cookie-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .cookie-category {
-            display: inline-block;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--gold-secondary);
-            margin-right: 0.5rem;
+        .cookie-table tr:hover {
+            background: rgba(218, 165, 32, 0.05);
         }
 
         .back-to-top {
@@ -399,8 +387,7 @@
             }
 
             .cookie-table {
-                display: block;
-                overflow-x: auto;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -414,13 +401,12 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#security">Security</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Community</a></li>
                 </ul>
             </nav>
-            <a href="#get-started" class="cta-button">Get Started</a>
+            <a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -434,11 +420,10 @@
         <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#security">Security</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#get-started" class="cta-button">Get Started</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a></li>
         </ul>
     </nav>
 
@@ -451,169 +436,126 @@
 
             <section class="policy-section">
                 <h2>1. Introduction</h2>
-                <p>This Cookie Policy explains how BeastsNetwork ("we," "our," or "us") uses cookies and similar technologies when you visit our website at https://beastsnetwork.github.io (the "Site") and use our cryptocurrency trading services (the "Services").</p>
-                <p>By using our Site and Services, you consent to our use of cookies in accordance with this Cookie Policy.</p>
+                <p>This Cookie Policy explains how BeastsNetwork ("we," "our," or "us") uses cookies and similar tracking technologies when you visit our website at https://beastsnetwork.win (the "Site"). This policy is part of our commitment to transparency and your right to privacy.</p>
+                <p>By using our Site, you consent to the use of cookies as described in this policy.</p>
             </section>
 
             <section class="policy-section">
                 <h2>2. What Are Cookies?</h2>
-                <p>Cookies are small text files that are placed on your device (computer, tablet, or mobile) when you visit a website. They allow the website to recognize your device and store information about your preferences or past actions.</p>
-                <p>We also use similar technologies such as:</p>
+                <p>Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently, provide information to website owners, and enhance the user experience.</p>
+                <p>Cookies can be "persistent" or "session" cookies:</p>
                 <ul>
-                    <li><strong>Web beacons:</strong> Small graphic images that help us understand how users interact with our Site</li>
-                    <li><strong>Pixel tags:</strong> Small blocks of code that allow us to track user activity</li>
-                    <li><strong>Local storage:</strong> Data stored directly on your device</li>
-                    <li><strong>Session storage:</strong> Data stored temporarily during your browsing session</li>
+                    <li><strong>Persistent cookies</strong> remain on your device until they expire or you delete them</li>
+                    <li><strong>Session cookies</strong> are deleted when you close your browser</li>
                 </ul>
             </section>
 
             <section class="policy-section">
-                <h2>3. Types of Cookies We Use</h2>
-                <p>We use the following types of cookies on our Site:</p>
+                <h2>3. How We Use Cookies</h2>
+                <p>We use cookies for the following purposes on our Site:</p>
+                
+                <h3>3.1 Essential Cookies</h3>
+                <p>These cookies are necessary for the Site to function properly. They enable basic functions like page navigation, security features, and access to secure areas. Without these cookies, the Site may not function properly.</p>
+                <p><strong>We do not require your consent for essential cookies</strong> as they are necessary for the Site to operate.</p>
+                
+                <h3>3.2 Performance Cookies</h3>
+                <p>These cookies help us understand how you interact with our Site by collecting and reporting information anonymously. This helps us improve the performance and functionality of our Site.</p>
+                
+                <h3>3.3 Functionality Cookies</h3>
+                <p>These cookies allow our Site to remember choices you make (such as your language preference) and provide enhanced, more personalized features.</p>
+                
+                <h3>3.4 Analytics Cookies</h3>
+                <p>These cookies help us understand how visitors use our Site, which pages are most popular, and how users navigate through the Site. This information helps us improve our Site and provide a better user experience.</p>
+            </section>
 
+            <section class="policy-section">
+                <h2>4. Types of Cookies We Use</h2>
+                <p>Below is a detailed list of the cookies we use on our Site:</p>
+                
                 <table class="cookie-table">
                     <thead>
                         <tr>
-                            <th>Category</th>
+                            <th>Cookie Name</th>
                             <th>Purpose</th>
+                            <th>Type</th>
                             <th>Duration</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="cookie-category">Strictly Necessary</span></td>
-                            <td>These cookies are essential for the Site to function properly. They enable basic functions like page navigation, access to secure areas, and form submission. Without these cookies, the Site cannot function properly.</td>
-                            <td>Session or persistent</td>
+                            <td>_ga</td>
+                            <td>Google Analytics - tracks visitor behavior and site usage</td>
+                            <td>Analytics</td>
+                            <td>2 years</td>
                         </tr>
                         <tr>
-                            <td><span class="cookie-category">Performance</span></td>
-                            <td>These cookies help us understand how you interact with our Site by collecting and reporting information anonymously. They allow us to count visits and traffic sources to measure and improve the performance of our Site.</td>
-                            <td>Persistent (up to 2 years)</td>
+                            <td>_gid</td>
+                            <td>Google Analytics - identifies unique visitors</td>
+                            <td>Analytics</td>
+                            <td>24 hours</td>
                         </tr>
                         <tr>
-                            <td><span class="cookie-category">Functional</span></td>
-                            <td>These cookies allow the Site to remember choices you make (such as your language preference) and provide enhanced, more personal features. They may also be used to provide services you have asked for, such as watching a video.</td>
-                            <td>Persistent (up to 2 years)</td>
+                            <td>_gat_*</td>
+                            <td>Google Analytics - used to throttle request rate</td>
+                            <td>Analytics</td>
+                            <td>1 minute</td>
                         </tr>
                         <tr>
-                            <td><span class="cookie-category">Targeting/Advertising</span></td>
-                            <td>These cookies are used to make advertising messages more relevant to you and your interests. They may be used to deliver targeted advertising or to limit the number of times you see an advertisement.</td>
-                            <td>Persistent (up to 2 years)</td>
-                        </tr>
-                        <tr>
-                            <td><span class="cookie-category">Security</span></td>
-                            <td>These cookies help identify and prevent security risks. They may be used to detect fraudulent activity or to protect user data from unauthorized access.</td>
-                            <td>Session or persistent</td>
+                            <td>sessionid</td>
+                            <td>Maintains user session for Site functionality</td>
+                            <td>Essential</td>
+                            <td>Session</td>
                         </tr>
                     </tbody>
                 </table>
+                
+                <p><em>Note: This list may be updated from time to time as we add or remove cookies.</em></p>
             </section>
 
             <section class="policy-section">
-                <h2>4. Cookies We Use</h2>
-                <p>Below is a list of the specific cookies we use on our Site:</p>
-
-                <h3>4.1 First-Party Cookies</h3>
-                <p>These are cookies set by our Site directly:</p>
-                <ul>
-                    <li><strong>Session ID:</strong> Used to maintain your session state. <span class="cookie-category">Strictly Necessary</span></li>
-                    <li><strong>Authentication Token:</strong> Used to verify your logged-in status. <span class="cookie-category">Strictly Necessary</span> <span class="cookie-category">Security</span></li>
-                    <li><strong>Preference Settings:</strong> Remembers your display preferences (e.g., dark mode). <span class="cookie-category">Functional</span></li>
-                    <li><strong>CSRF Token:</strong> Protects against cross-site request forgery attacks. <span class="cookie-category">Security</span></li>
-                </ul>
-
-                <h3>4.2 Third-Party Cookies</h3>
-                <p>These are cookies set by third-party services we use:</p>
-                <ul>
-                    <li><strong>Google Analytics:</strong> Helps us analyze how users interact with our Site. <span class="cookie-category">Performance</span></li>
-                    <li><strong>Google Fonts:</strong> Used to display fonts on our Site. <span class="cookie-category">Functional</span></li>
-                    <li><strong>Hotjar (if enabled):</strong> Provides heatmaps and session recordings to help us improve user experience. <span class="cookie-category">Performance</span></li>
-                </ul>
-            </section>
-
-            <section class="policy-section">
-                <h2>5. How We Use Cookies</h2>
-                <p>We use cookies for the following purposes:</p>
-                <ul>
-                    <li><strong>Authentication:</strong> To verify your identity and maintain your logged-in session</li>
-                    <li><strong>Security:</strong> To detect and prevent fraudulent activity and protect your account</li>
-                    <li><strong>Preferences:</strong> To remember your settings and preferences</li>
-                    <li><strong>Analytics:</strong> To understand how users interact with our Site and identify areas for improvement</li>
-                    <li><strong>Performance:</strong> To monitor Site performance and ensure it functions properly</li>
-                    <li><strong>Marketing:</strong> To deliver relevant content and advertisements (with your consent where required)</li>
-                </ul>
+                <h2>5. Third-Party Cookies</h2>
+                <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Site, deliver advertisements on and through the Site, and so on. These third-party cookies are subject to the respective privacy policies of those third parties.</p>
+                <p>We do not control the placement of these cookies or the information they collect. You should check the relevant third-party website for more information about these cookies.</p>
             </section>
 
             <section class="policy-section">
                 <h2>6. Your Cookie Choices</h2>
                 <p>You have several options to manage cookies on our Site:</p>
-
+                
                 <h3>6.1 Browser Settings</h3>
-                <p>You can control cookies through your browser settings. Most browsers allow you to:</p>
+                <p>You can control or delete cookies through your browser settings. Most browsers allow you to:</p>
                 <ul>
-                    <li>See what cookies you have and delete them on an individual basis</li>
+                    <li>See what cookies you have</li>
+                    <li>Delete cookies individually or all at once</li>
                     <li>Block third-party cookies</li>
-                    <li>Block all cookies from particular websites</li>
-                    <li>Block all cookies from being set</li>
-                    <li>Delete all cookies when you close your browser</li>
+                    <li>Block all cookies</li>
+                    <li>Block specific sites from setting cookies</li>
+                    <li>Delete cookies when you close your browser</li>
                 </ul>
-                <p>Please note that if you block or delete cookies, some features of our Site may not function properly.</p>
-
-                <h3>6.2 Cookie Consent Banner</h3>
-                <p>When you first visit our Site, you may see a cookie consent banner. This banner allows you to:</p>
+                <p><strong>Please note:</strong> If you delete or block cookies, some features of our Site may not work properly.</p>
+                
+                <h3>6.2 Opt-Out Tools</h3>
+                <p>For third-party analytics cookies, you can use the following opt-out tools:</p>
                 <ul>
-                    <li>Accept all cookies</li>
-                    <li>Reject non-essential cookies</li>
-                    <li>Customize your cookie preferences</li>
-                </ul>
-
-                <h3>6.3 Opt-Out Options</h3>
-                <p>For third-party cookies, you can also opt out through the following services:</p>
-                <ul>
-                    <li><strong>Google Analytics:</strong> You can opt out of Google Analytics cookies by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</li>
-                    <li><strong>Digital Advertising Alliance:</strong> You can opt out of interest-based advertising by visiting <a href="https://optout.aboutads.info/" target="_blank">aboutads.info</a>.</li>
-                    <li><strong>Network Advertising Initiative:</strong> You can opt out of targeted advertising by visiting <a href="https://optout.networkadvertising.org/" target="_blank">networkadvertising.org</a>.</li>
+                    <li>Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out Browser Add-on</a></li>
                 </ul>
             </section>
 
             <section class="policy-section">
-                <h2>7. Cookie Retention</h2>
-                <p>Different cookies have different lifespans:</p>
-                <ul>
-                    <li><strong>Session cookies:</strong> Expire when you close your browser</li>
-                    <li><strong>Persistent cookies:</strong> Remain on your device until they expire or you delete them</li>
-                    <li><strong>First-party cookies:</strong> Typically expire within 1-2 years</li>
-                    <li><strong>Third-party cookies:</strong> Retention periods are determined by the third party</li>
-                </ul>
+                <h2>7. Do Not Track</h2>
+                <p>Some browsers incorporate a "Do Not Track" (DNT) feature that signals to websites you visit that you do not want to have your online activity tracked. Currently, there is no universally accepted standard for responding to DNT signals. As such, our Site does not currently respond to DNT signals.</p>
             </section>
 
             <section class="policy-section">
-                <h2>8. International Data Transfers</h2>
-                <p>Information collected through cookies may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that are different from those in your country.</p>
-                <p>For users in the European Economic Area (EEA), we ensure appropriate safeguards are in place for such transfers, including Standard Contractual Clauses where applicable.</p>
+                <h2>8. Changes to This Cookie Policy</h2>
+                <p>We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page and updating the "Last Updated" date at the top. You are advised to review this Cookie Policy periodically for any changes.</p>
             </section>
 
             <section class="policy-section">
-                <h2>9. Children's Privacy</h2>
-                <p>Our Site and Services are not intended for use by children under the age of 18. We do not knowingly collect personal information through cookies from children under 18.</p>
+                <h2>9. Contact Us</h2>
+                <p>If you have any questions about this Cookie Policy or our use of cookies, please contact us at:</p>
+                <p><strong>Email:</strong> privacy@beastsnetwork.win</p>
             </section>
-
-            <section class="policy-section">
-                <h2>10. Changes to This Cookie Policy</h2>
-                <p>We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page and updating the "Last Updated" date at the top.</p>
-                <p>Your continued use of our Site after any changes constitutes your acceptance of the new Cookie Policy.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>11. Contact Us</h2>
-                <p>If you have any questions about this Cookie Policy or our use of cookies, please contact us:</p>
-                <ul>
-                    <li><strong>Email:</strong> <a href="mailto:privacy@beastsnetwork.com">privacy@beastsnetwork.com</a></li>
-                    <li><strong>Support:</strong> <a href="mailto:support@beastsnetwork.com">support@beastsnetwork.com</a></li>
-                </ul>
-            </section>
-
-            <p><em>This Cookie Policy is effective as of the date stated at the top and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</em></p>
 
             <a href="#" class="back-to-top">Back to Top</a>
         </div>
@@ -623,7 +565,13 @@
         <div class="footer-container">
             <div class="footer-content">
                 <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
-                <p><a href="/">Back to Home</a> | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a> | <a href="#">Terms of Service</a></p>
+                <p style="margin-top: 1rem;">
+                    <a href="/">Home</a> | 
+                    <a href="privacy-policy.html">Privacy Policy</a> | 
+                    <a href="cookie-policy.html">Cookie Policy</a> | 
+                    <a href="terms-of-service.html">Terms of Service</a> | 
+                    <a href="risk-disclosure.html">Risk Disclosure</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -634,38 +582,25 @@
         const mobileNavClose = document.getElementById('mobileNavClose');
         const mobileNavOverlay = document.getElementById('mobileNavOverlay');
 
-        function toggleMobileNav() {
+        hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             mobileNav.classList.toggle('active');
             mobileNavOverlay.classList.toggle('active');
             document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-
-        hamburger.addEventListener('click', toggleMobileNav);
-        mobileNavClose.addEventListener('click', toggleMobileNav);
-        mobileNavOverlay.addEventListener('click', toggleMobileNav);
-
-        const mobileNavLinks = mobileNav.querySelectorAll('a');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileNav.classList.remove('active');
-                mobileNavOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        mobileNavClose.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavOverlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
     </script>
 </body>
