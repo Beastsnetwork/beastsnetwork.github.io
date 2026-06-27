@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Disclosure | BeastsNetwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-black: #0a0a0a;
+            --deep-black-light: #141414;
+            --gold-primary: #daa520;
+            --gold-secondary: #b8860b;
+            --gold-light: #ffd700;
+            --electric-blue: #00d4ff;
+            --glass-bg: rgba(10, 10, 10, 0.6);
+            --glass-border: rgba(218, 165, 32, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --red-warning: #ff4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--deep-black);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: all 0.3s ease;
+        }
+
+        .main-content {
+            padding-top: 80px;
+        }
+
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .policy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .policy-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .policy-header .last-updated {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .policy-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--red-warning);
+            border-bottom: 2px solid var(--red-warning);
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--gold-secondary);
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-section ul li strong {
+            color: var(--text-primary);
+        }
+
+        .policy-section a {
+            color: var(--gold-primary);
+            text-decoration: none;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
+        }
+
+        .warning-box {
+            background: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid var(--red-warning);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--red-warning);
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box p {
+            color: #ffaaaa;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .risk-level {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .risk-high {
+            background: rgba(255, 68, 68, 0.2);
+            color: var(--red-warning);
+            border: 1px solid var(--red-warning);
+        }
+
+        .risk-medium {
+            background: rgba(218, 165, 32, 0.2);
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: rgba(218, 165, 32, 0.1);
+            border-color: var(--gold-primary);
+        }
+
+        .footer {
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(10, 10, 10, 0.5);
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: var(--deep-black-light);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--glass-border);
+            padding: 5rem 2rem 2rem;
+            transition: right 0.4s ease;
+            z-index: 2000;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: var(--gold-primary);
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .policy-container {
+                padding: 2rem 1rem;
+            }
+
+            .policy-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D" alt="BeastsNetwork Logo" class="nav-logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <a href="#get-started" class="cta-button">Get Started</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#get-started" class="cta-button">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Risk Disclosure</h1>
+                <p class="last-updated">Last Updated: June 27, 2026 | Effective Date: June 27, 2026</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Important Risk Warning</h4>
+                <p>Cryptocurrency trading involves substantial risk of loss and may not be suitable for all investors. The value of cryptocurrencies can be extremely volatile. You should carefully consider whether trading or holding cryptocurrencies is suitable for you in light of your financial condition and investment objectives. You could lose all or part of your investment. Past performance is not indicative of future results.</p>
+            </div>
+
+            <section class="policy-section">
+                <h2>1. General Risk Warning</h2>
+                <p>Trading cryptocurrencies carries a high level of risk and may not be suitable for all investors. Before deciding to trade cryptocurrencies, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you could sustain a loss of some or all of your initial investment.</p>
+                <p>You should be aware of all the risks associated with cryptocurrency trading and seek advice from an independent financial advisor if you have any doubts.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. Market Volatility Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
+                <p>Cryptocurrency markets are highly volatile. Prices can fluctuate dramatically within very short periods of time. This volatility can result in significant gains or losses.</p>
+                <p><strong>Factors contributing to volatility:</strong></p>
+                <ul>
+                    <li>Market sentiment and speculation</li>
+                    <li>Regulatory news and government actions</li>
+                    <li>Technological developments and security issues</li>
+                    <li>Macroeconomic factors</li>
+                    <li>Liquidity constraints</li>
+                    <li>Media coverage and social media trends</li>
+                </ul>
+                <p>You should be prepared to accept the risk of total loss of your investment.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Liquidity Risk <span class="risk-level risk-medium">MEDIUM RISK</span></h2>
+                <p>Some cryptocurrencies may have low liquidity, which means there may not be sufficient buyers or sellers at any given time to execute your trades at desired prices. Low liquidity can result in:</p>
+                <ul>
+                    <li>Difficulty in executing trades at desired prices</li>
+                    <li>Slippage (difference between expected price and execution price)</li>
+                    <li>Inability to exit positions quickly</li>
+                    <li>Wider bid-ask spreads</li>
+                </ul>
+                <p>Illiquid markets can amplify price movements and increase volatility.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. Technology and Security Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
+                <p>Cryptocurrency trading relies on technology, including blockchain networks, smart contracts, and our trading platform. This technology is subject to various risks:</p>
+                <ul>
+                    <li><strong>Blockchain Risks:</strong> Smart contract vulnerabilities, 51% attacks, consensus mechanism failures</li>
+                    <li><strong>Platform Risks:</strong> System failures, downtime, cyber attacks, DDoS attacks</li>
+                    <li><strong>Wallet Risks:</strong> Loss of private keys, wallet hacking, phishing attacks</li>
+                    <li><strong>Internet Risks:</strong> Connectivity issues, data transmission errors</li>
+                    <li><strong>Software Risks:</strong> Bugs, errors, or vulnerabilities in software</li>
+                </ul>
+                <p>While we implement industry-standard security measures, no system is 100% secure. You acknowledge and accept the risks associated with using technology-based trading systems.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Regulatory Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
+                <p>The regulatory environment for cryptocurrencies is still developing and varies significantly by jurisdiction. Regulatory changes or actions can have a significant impact on cryptocurrency prices and the ability to trade them.</p>
+                <p><strong>Regulatory risks include:</strong></p>
+                <ul>
+                    <li>Changes in laws or regulations that may adversely affect the use, transfer, or value of cryptocurrencies</li>
+                    <li>Regulatory bans or restrictions on cryptocurrency trading or ownership</li>
+                    <li>Taxation changes that may affect the profitability of cryptocurrency investments</li>
+                    <li>Licensing and compliance requirements that may affect our ability to provide Services</li>
+                    <li>Government seizures or confiscations of cryptocurrencies</li>
+                    <li>Restrictions on the ability to convert cryptocurrencies to fiat currencies</li>
+                </ul>
+                <p>We may be required to suspend or terminate Services in certain jurisdictions due to regulatory requirements.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. Counterparty Risk <span class="risk-level risk-medium">MEDIUM RISK</span></h2>
+                <p>When you trade on BeastsNetwork, you are trading with us as the counterparty, not with other users directly. This means you are exposed to our credit risk and ability to fulfill our obligations.</p>
+                <p><strong>Counterparty risks include:</strong></p>
+                <ul>
+                    <li>Our insolvency or financial difficulties</li>
+                    <li>Our failure to execute trades or process withdrawals</li>
+                    <li>Our inability to maintain adequate liquidity</li>
+                    <li>Operational failures on our part</li>
+                </ul>
+                <p>We maintain reserves and implement risk management procedures to mitigate these risks, but we cannot guarantee that we will always be able to fulfill our obligations.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. Leverage and Margin Trading Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
+                <p>If you engage in margin trading or use leverage, you are exposed to additional risks, including:</p>
+                <ul>
+                    <li><strong>Amplified Losses:</strong> Leverage can magnify both gains and losses. A small price movement against your position can result in significant losses.</li>
+                    <li><strong>Margin Calls:</strong> If the value of your collateral falls below required levels, we may liquidate your positions without notice.</li>
+                    <li><strong>Liquidation Risk:</strong> In volatile markets, your positions may be liquidated at prices worse than your liquidation price due to slippage.</li>
+                    <li><strong>Interest Charges:</strong> You may be charged interest on borrowed funds, which can increase your losses.</li>
+                    <li><strong>Forced Liquidations:</strong> We may liquidate your positions to meet margin requirements without prior notice.</li>
+                </ul>
+                <p>Margin trading is only suitable for experienced traders who understand the risks involved and can afford to lose their entire investment.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. Operational Risk <span class="risk-level risk-medium">MEDIUM RISK</span></h2>
+                <p>Our ability to provide Services may be affected by operational issues, including but not limited to:</p>
+                <ul>
+                    <li>System maintenance and upgrades</li>
+                    <li>Technical failures or errors</li>
+                    <li>Third-party service provider failures</li>
+                    <li>Banking and payment processor issues</li>
+                    <li>Telecommunications failures</li>
+                    <li>Power outages or natural disasters</li>
+                </ul>
+                <p>During periods of operational disruption, you may be unable to access your account, execute trades, or withdraw funds.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Irreversible Transactions Risk <span class="risk-level risk-high">HIGH RISK</span></h2>
+                <p>Cryptocurrency transactions are typically irreversible. Once a transaction is confirmed on the blockchain, it cannot be reversed. This means:</p>
+                <ul>
+                    <li>If you send cryptocurrencies to the wrong address, you may permanently lose those funds</li>
+                    <li>If you fall victim to a scam or fraud, you may not be able to recover your funds</li>
+                    <li>If you make a trading error, you may not be able to undo the trade</li>
+                    <li>There is no central authority that can reverse or refund transactions</li>
+                </ul>
+                <p>You are solely responsible for ensuring the accuracy of all transaction details, including wallet addresses.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. Custody Risk</h2>
+                <p>When you deposit cryptocurrencies with us, you are relying on us to safeguard those assets. While we implement industry-leading security measures, including cold storage and multi-signature wallets, custody of cryptocurrencies involves risks:</p>
+                <ul>
+                    <li><strong>Hot Wallet Risks:</strong> Cryptocurrencies stored in hot wallets (connected to the internet) are vulnerable to hacking and theft.</li>
+                    <li><strong>Cold Storage Risks:</strong> Even cold storage solutions can be compromised through physical access or social engineering.</li>
+                    <li><strong>Insurance Limitations:</strong> Our insurance may not cover all types of losses or all cryptocurrencies.</li>
+                    <li><strong>Key Management:</strong> Loss or compromise of private keys can result in permanent loss of funds.</li>
+                </ul>
+                <p>We maintain a significant portion of user funds in cold storage and implement strict security procedures, but we cannot guarantee absolute security.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. Fork and Protocol Risk</h2>
+                <p>Cryptocurrency networks may undergo changes, upgrades, or forks that can affect the value and functionality of cryptocurrencies:</p>
+                <ul>
+                    <li><strong>Hard Forks:</strong> A permanent divergence in the blockchain that can result in two separate networks and cryptocurrencies.</li>
+                    <li><strong>Soft Forks:</strong> Backward-compatible changes to the protocol that may affect functionality.</li>
+                    <li><strong>Protocol Changes:</strong> Updates to the underlying protocol that may affect the value or utility of a cryptocurrency.</li>
+                    <li><strong>Airdrops:</strong> Distribution of new tokens that may or may not have value.</li>
+                </ul>
+                <p>In the event of a fork, we will determine in our sole discretion which version of the blockchain to support. We are not obligated to support both versions or to credit your account with any new cryptocurrencies resulting from a fork.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>12. Tax Risk</h2>
+                <p>Cryptocurrency transactions may have tax implications that vary by jurisdiction. You are solely responsible for:</p>
+                <ul>
+                    <li>Understanding and complying with all applicable tax laws in your jurisdiction</li>
+                    <li>Reporting and paying any taxes owed on cryptocurrency transactions</li>
+                    <li>Keeping accurate records of all transactions for tax purposes</li>
+                    <li>Consulting with tax professionals regarding your specific situation</li>
+                </ul>
+                <p>Tax laws and regulations regarding cryptocurrencies are evolving and may change. We do not provide tax advice.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>13. No Guarantees</h2>
+                <p><strong>WE DO NOT GUARANTEE:</strong></p>
+                <ul>
+                    <li>That you will make any profits or that you will not incur losses from trading cryptocurrencies</li>
+                    <li>That the value of any cryptocurrency will increase or decrease</li>
+                    <li>That our Services will be available at all times or that they will be error-free</li>
+                    <li>That any information provided through our Services is accurate, complete, or up-to-date</li>
+                    <li>That any cryptocurrency will maintain its value or utility</li>
+                    <li>That you will be able to withdraw your funds at any time</li>
+                </ul>
+                <p>All trades and investments are made at your own risk.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>14. Risk Acknowledgment</h2>
+                <p>By using our Services, you acknowledge and accept that:</p>
+                <ol>
+                    <li>You understand all the risks described in this Risk Disclosure;</li>
+                    <li>You have sufficient knowledge and experience to evaluate the risks of cryptocurrency trading;</li>
+                    <li>You can afford to lose your entire investment and any additional losses;</li>
+                    <li>You will not hold BeastsNetwork liable for any losses, damages, or claims arising from or related to your use of our Services or cryptocurrency trading in general;</li>
+                    <li>You are solely responsible for your trading decisions and the consequences thereof.</li>
+                </ol>
+            </section>
+
+            <section class="policy-section">
+                <h2>15. Seek Independent Advice</h2>
+                <p>Before using our Services or engaging in cryptocurrency trading, you should:</p>
+                <ul>
+                    <li>Consult with independent financial, legal, and tax advisors</li>
+                    <li>Carefully consider your financial situation and investment objectives</li>
+                    <li>Understand the nature and extent of your exposure to risk</li>
+                    <li>Only invest funds that you can afford to lose</li>
+                    <li>Monitor your investments and positions regularly</li>
+                </ul>
+                <p>The information provided in this Risk Disclosure is not exhaustive, and you should conduct your own due diligence and research.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>16. Contact Us</h2>
+                <p>If you have any questions about this Risk Disclosure or the risks associated with cryptocurrency trading, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:risk@beastsnetwork.com">risk@beastsnetwork.com</a></li>
+                    <li><strong>Support:</strong> <a href="mailto:support@beastsnetwork.com">support@beastsnetwork.com</a></li>
+                </ul>
+            </section>
+
+            <p><em>This Risk Disclosure is effective as of the date stated at the top and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</em></p>
+
+            <a href="#" class="back-to-top">Back to Top</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
+                <p><a href="/">Back to Home</a> | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/risk-disclosure.html">Risk Disclosure</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function toggleMobileNav() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMobileNav);
+        mobileNavClose.addEventListener('click', toggleMobileNav);
+        mobileNavOverlay.addEventListener('click', toggleMobileNav);
+
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
