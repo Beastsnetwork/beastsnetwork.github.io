@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | BeastsNetwork</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-black: #0a0a0a;
+            --deep-black-light: #141414;
+            --gold-primary: #daa520;
+            --gold-secondary: #b8860b;
+            --gold-light: #ffd700;
+            --electric-blue: #00d4ff;
+            --glass-bg: rgba(10, 10, 10, 0.6);
+            --glass-border: rgba(218, 165, 32, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--deep-black);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: all 0.3s ease;
+        }
+
+        .main-content {
+            padding-top: 80px;
+        }
+
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .policy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .policy-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .policy-header .last-updated {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+
+        .policy-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--gold-primary);
+            border-bottom: 2px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--gold-secondary);
+        }
+
+        .policy-section h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-section ul li strong {
+            color: var(--text-primary);
+        }
+
+        .policy-section a {
+            color: var(--gold-primary);
+            text-decoration: none;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: rgba(218, 165, 32, 0.1);
+            border-color: var(--gold-primary);
+        }
+
+        .footer {
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(10, 10, 10, 0.5);
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100vh;
+            background: var(--deep-black-light);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--glass-border);
+            padding: 5rem 2rem 2rem;
+            transition: right 0.4s ease;
+            z-index: 2000;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: var(--gold-primary);
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .policy-container {
+                padding: 2rem 1rem;
+            }
+
+            .policy-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/86/72/fa/8672fa0f-5840-447f-977b-4c3fe06a62a3/0959022a-64fc-4891-bb94-9fedfb9c5bdd/bb9194a2-15e3-4e67-bf2b-28d8fe4e067d?sv=2025-01-05&spr=https&se=2026-06-27T07%3A05%3A05Z&skoid=c9baccad-3639-4379-a088-07b7e349293c&sktid=4fbc1168-2984-4d17-af19-ac5138c2378e&skt=2026-06-27T06%3A05%3A05Z&ske=2026-06-27T07%3A05%3A05Z&sks=b&skv=2025-01-05&sr=b&sp=r&sig=PQ46mfGxjOFXep2YZbO961%2BZUzyUxrkQFWR4uwzh280%3D" alt="BeastsNetwork Logo" class="nav-logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <a href="#get-started" class="cta-button">Get Started</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#get-started" class="cta-button">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: June 27, 2026 | Effective Date: June 27, 2026</p>
+            </div>
+
+            <section class="policy-section">
+                <h2>1. Introduction</h2>
+                <p>Welcome to BeastsNetwork ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at https://beastsnetwork.github.io (the "Site") and use our cryptocurrency trading services (the "Services").</p>
+                <p>By accessing or using our Site and Services, you agree to the terms of this Privacy Policy. If you do not agree with our policies and practices, please do not use our Site or Services.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. Information We Collect</h2>
+                <p>We collect personal information that you provide to us, information we collect automatically when you use our Services, and information from other sources.</p>
+                
+                <h3>2.1 Information You Provide Directly</h3>
+                <p><strong>Account Creation & Registration:</strong></p>
+                <ul>
+                    <li>Full legal name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Date of birth</li>
+                    <li>Government-issued identification (passport, driver's license, national ID)</li>
+                    <li>Proof of address (utility bill, bank statement)</li>
+                    <li>Profile picture or avatar</li>
+                    <li>Username and password</li>
+                </ul>
+                
+                <p><strong>Financial Information:</strong></p>
+                <ul>
+                    <li>Cryptocurrency wallet addresses</li>
+                    <li>Transaction history</li>
+                    <li>Payment method information (for fiat on-ramps)</li>
+                    <li>Bank account details (if applicable)</li>
+                </ul>
+                
+                <p><strong>Communication:</strong></p>
+                <ul>
+                    <li>Information you provide when contacting support</li>
+                    <li>Feedback and survey responses</li>
+                    <li>Social media communications</li>
+                </ul>
+                
+                <p><strong>KYC/AML Verification:</strong></p>
+                <ul>
+                    <li>Selfie verification photos</li>
+                    <li>Additional documentation as required by law</li>
+                    <li>Source of funds information (for large transactions)</li>
+                </ul>
+                
+                <h3>2.2 Information Collected Automatically</h3>
+                <p><strong>Usage Data:</strong></p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Device information (type, operating system, unique identifiers)</li>
+                    <li>Pages visited and time spent</li>
+                    <li>Referring page and exit pages</li>
+                    <li>Clickstream data</li>
+                </ul>
+                
+                <p><strong>Transaction Data:</strong></p>
+                <ul>
+                    <li>Trade history</li>
+                    <li>Order book interactions</li>
+                    <li>Wallet balances</li>
+                    <li>Deposit and withdrawal records</li>
+                    <li>API usage (for developers)</li>
+                </ul>
+                
+                <p><strong>Technical Data:</strong></p>
+                <ul>
+                    <li>Cookies and similar tracking technologies</li>
+                    <li>Session recordings (with consent)</li>
+                    <li>Geolocation data (approximate, based on IP)</li>
+                </ul>
+                
+                <h3>2.3 Information from Third Parties</h3>
+                <p>We may receive information about you from:</p>
+                <ul>
+                    <li>Identity verification service providers</li>
+                    <li>Blockchain analytics providers</li>
+                    <li>Payment processors</li>
+                    <li>Law enforcement and regulatory agencies (as required by law)</li>
+                    <li>Social media platforms (if you connect your account)</li>
+                    <li>Affiliate partners (if you were referred)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use your information for the following purposes:</p>
+                
+                <h3>3.1 Service Delivery</h3>
+                <ul>
+                    <li>To provide and maintain our Services</li>
+                    <li>To process your transactions and trades</li>
+                    <li>To verify your identity and prevent fraud</li>
+                    <li>To comply with legal and regulatory requirements</li>
+                    <li>To resolve disputes and provide customer support</li>
+                </ul>
+                
+                <h3>3.2 Security & Compliance</h3>
+                <ul>
+                    <li>To detect, prevent, and investigate fraud and security incidents</li>
+                    <li>To comply with Anti-Money Laundering (AML) and Know Your Customer (KYC) regulations</li>
+                    <li>To monitor for suspicious or illegal activity</li>
+                    <li>To enforce our Terms of Service</li>
+                    <li>To respond to law enforcement requests</li>
+                </ul>
+                
+                <h3>3.3 Communication</h3>
+                <ul>
+                    <li>To send you transaction confirmations</li>
+                    <li>To provide important security notifications</li>
+                    <li>To send service updates and announcements</li>
+                    <li>To respond to your inquiries and requests</li>
+                    <li>To send marketing communications (with your consent, where required)</li>
+                </ul>
+                
+                <h3>3.4 Improvement & Analytics</h3>
+                <ul>
+                    <li>To analyze usage patterns and improve our Services</li>
+                    <li>To develop new features and functionality</li>
+                    <li>To conduct research and analytics</li>
+                    <li>To personalize your experience</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. How We Share Your Information</h2>
+                <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
+                
+                <h3>4.1 With Your Consent</h3>
+                <ul>
+                    <li>When you explicitly authorize us to share your information</li>
+                    <li>When you connect to third-party services</li>
+                </ul>
+                
+                <h3>4.2 For Legal & Compliance Purposes</h3>
+                <ul>
+                    <li>To comply with applicable laws, regulations, or legal processes</li>
+                    <li>To respond to subpoenas, search warrants, or court orders</li>
+                    <li>To protect against fraud, abuse, or illegal activity</li>
+                    <li>To investigate violations of our Terms of Service</li>
+                    <li>To protect our rights, property, or safety, or that of others</li>
+                </ul>
+                
+                <h3>4.3 With Service Providers</h3>
+                <p>We share information with trusted third-party service providers who help us operate our Services:</p>
+                
+                <p><strong>Identity Verification:</strong> Jumio, Onfido, Sumsub (Purpose: KYC/AML compliance | Data: Personal information, government IDs, selfies)</p>
+                
+                <p><strong>Security & Fraud Prevention:</strong> Chainalysis, TRM Labs, Elliptic (Purpose: Detect and prevent fraudulent activity | Data: Transaction data, wallet addresses, IP information)</p>
+                
+                <p><strong>Infrastructure & Hosting:</strong> AWS, Google Cloud, Azure (Purpose: Host and maintain our Services | Data: Technical data, usage information)</p>
+                
+                <p><strong>Payment Processing:</strong> Payment processors, banks (Purpose: Facilitate fiat deposits/withdrawals | Data: Financial information, transaction details)</p>
+                
+                <p><strong>Analytics:</strong> Google Analytics, Mixpanel (Purpose: Understand usage patterns | Data: Anonymized usage data)</p>
+                
+                <h3>4.4 Business Transfers</h3>
+                <p>In connection with any merger, sale of company assets, or acquisition of all or a portion of our business by another company, we may transfer your information to the acquiring entity.</p>
+                
+                <h3>4.5 Aggregated & Anonymized Data</h3>
+                <p>We may share aggregated, de-identified information that cannot reasonably be used to identify you.</p>
+                
+                <h3>4.6 Blockchain Transparency</h3>
+                <p><strong>Important:</strong> Cryptocurrency transactions are recorded on public blockchains. When you use our Services to conduct transactions, certain information (such as transaction amounts, wallet addresses, and timestamps) is recorded on these public blockchains and may be visible to anyone with access to the blockchain. We have no control over and are not responsible for information made public through blockchain networks.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Your Rights & Choices</h2>
+                
+                <h3>5.1 Access & Correction</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access the personal information we hold about you</li>
+                    <li>Request correction of inaccurate or incomplete information</li>
+                    <li>Request deletion of your personal information (subject to legal retention requirements)</li>
+                    <li>Request restriction of processing</li>
+                    <li>Request data portability</li>
+                    <li>Object to processing</li>
+                </ul>
+                <p>To exercise these rights, please contact us at <a href="mailto:privacy@beastsnetwork.com">privacy@beastsnetwork.com</a>.</p>
+                
+                <h3>5.2 Marketing Communications</h3>
+                <p>You can opt out of receiving marketing communications from us by:</p>
+                <ul>
+                    <li>Clicking the "unsubscribe" link in our emails</li>
+                    <li>Contacting us at <a href="mailto:support@beastsnetwork.com">support@beastsnetwork.com</a></li>
+                    <li>Adjusting your notification preferences in your account settings</li>
+                </ul>
+                <p>Please note that even if you opt out of marketing communications, we may still send you transactional and security-related messages.</p>
+                
+                <h3>5.3 Cookies & Tracking</h3>
+                <p>Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. Data Retention</h2>
+                <p>We retain your personal information for as long as necessary to provide you with our Services, comply with our legal obligations, resolve disputes, and enforce our agreements:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> Retained for as long as your account is active, plus 5 years after account closure for compliance</li>
+                    <li><strong>Transaction Records:</strong> Retained for 7 years as required by financial regulations</li>
+                    <li><strong>KYC Documents:</strong> Retained for 5 years after account closure</li>
+                    <li><strong>Communication Records:</strong> Retained for 3 years</li>
+                    <li><strong>Marketing Data:</strong> Retained until you opt out</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. Security Measures</h2>
+                <p>We implement industry-standard security measures to protect your information, including:</p>
+                <ul>
+                    <li>Encryption of data in transit (TLS 1.3) and at rest (AES-256)</li>
+                    <li>Multi-factor authentication for account access</li>
+                    <li>Cold storage for the majority of cryptocurrency assets</li>
+                    <li>Regular security audits and penetration testing</li>
+                    <li>SOC 2 Type II certification</li>
+                    <li>Background checks for employees with data access</li>
+                    <li>Data minimization practices</li>
+                    <li>Secure deletion procedures</li>
+                </ul>
+                <p>However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee absolute security.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. International Data Transfers</h2>
+                <p>Your information may be transferred to, and maintained on, computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those in your jurisdiction.</p>
+                <p>Our primary data processing locations are in:</p>
+                <ul>
+                    <li>United States (AWS East)</li>
+                    <li>European Union (AWS Frankfurt)</li>
+                    <li>Singapore (AWS Singapore)</li>
+                </ul>
+                <p>If you are located in the European Economic Area (EEA), we comply with the GDPR requirements for international data transfers through Standard Contractual Clauses (SCCs), Binding Corporate Rules, and adequacy decisions where applicable.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Children's Privacy</h2>
+                <p>Our Services are not intended for use by children under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18 without parental consent, we will take steps to delete such information.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. Third-Party Links</h2>
+                <p>Our Site may contain links to third-party websites, services, or applications that are not operated by us. This Privacy Policy does not address, and we are not responsible for, the privacy practices of third parties. We encourage you to review the privacy policies of any third party before providing information to them.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. Jurisdiction-Specific Rights</h2>
+                
+                <h3>11.1 California Residents (CCPA)</h3>
+                <p>Under the California Consumer Privacy Act (CCPA), California residents have the right to:</p>
+                <ul>
+                    <li>Know what personal information is being collected</li>
+                    <li>Know whether personal information is sold or disclosed</li>
+                    <li>Access their personal information</li>
+                    <li>Request deletion of personal information</li>
+                    <li>Opt out of the sale of personal information</li>
+                </ul>
+                <p>We do not sell personal information as defined by the CCPA.</p>
+                
+                <h3>11.2 European Union Residents (GDPR)</h3>
+                <p>Under the General Data Protection Regulation (GDPR), EU residents have the rights outlined in Section 5.1. Our legal basis for processing includes:</p>
+                <ul>
+                    <li><strong>Contract Performance:</strong> To provide our Services</li>
+                    <li><strong>Legal Obligation:</strong> To comply with laws and regulations</li>
+                    <li><strong>Legitimate Interest:</strong> For security, fraud prevention, and service improvement</li>
+                    <li><strong>Consent:</strong> For marketing communications</li>
+                </ul>
+                
+                <h3>11.3 Other Jurisdictions</h3>
+                <p>We comply with all applicable local data protection laws in the jurisdictions where we operate.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>12. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top. For material changes, we may also provide notice through our Services or via email.</p>
+                <p>Your continued use of our Services after any changes constitutes your acceptance of the new Privacy Policy.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>13. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:privacy@beastsnetwork.com">privacy@beastsnetwork.com</a></li>
+                    <li><strong>Support:</strong> <a href="mailto:support@beastsnetwork.com">support@beastsnetwork.com</a></li>
+                </ul>
+                <p><strong>Mailing Address:</strong><br>
+                BeastsNetwork Legal Department<br>
+                [Your Registered Address]</p>
+                <p><strong>Data Protection Officer (DPO):</strong><br>
+                For GDPR-related inquiries, please contact our DPO at <a href="mailto:dpo@beastsnetwork.com">dpo@beastsnetwork.com</a></p>
+            </section>
+
+            <section class="policy-section">
+                <h2>14. Complaints</h2>
+                <p>If you are located in the EEA and believe we have infringed on your rights under GDPR, you have the right to lodge a complaint with a supervisory authority, in particular in the Member State of your habitual residence, place of work, or place of the alleged infringement.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>15. Definitions</h2>
+                <p><strong>Personal Information/Personal Data:</strong> Any information that identifies, relates to, describes, or can be associated with a particular individual.</p>
+                <p><strong>Processing:</strong> Any operation performed on personal data (collection, recording, organization, storage, adaptation, etc.).</p>
+                <p><strong>Controller:</strong> The entity that determines the purposes and means of processing personal data (BeastsNetwork).</p>
+                <p><strong>Processor:</strong> The entity that processes personal data on behalf of the Controller.</p>
+            </section>
+
+            <p><em>This Privacy Policy is effective as of the date stated at the top and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</em></p>
+
+            <a href="#" class="back-to-top">Back to Top</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
+                <p><a href="/">Back to Home</a> | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function toggleMobileNav() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMobileNav);
+        mobileNavClose.addEventListener('click', toggleMobileNav);
+        mobileNavOverlay.addEventListener('click', toggleMobileNav);
+
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
