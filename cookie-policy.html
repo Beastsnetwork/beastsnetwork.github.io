@@ -4,111 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Policy - BeastsNetwork</title>
+    <meta name="description" content="BeastsNetwork Cookie Policy - How we use cookies and similar technologies on our website.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beastsnetwork.win/cookie-policy.html">
+    <meta property="og:title" content="BeastsNetwork Cookie Policy">
+    <meta property="og:description" content="This policy explains how we use cookies and similar technologies on our website.">
+    <meta property="og:image" content="/beastsnetwork-logo.svg">
+    
     <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght=300;400;700;900&family=Merriweather:wght=300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary-teal: #008080; --primary-teal-light: #20B2AA; --primary-teal-dark: #004D4D; --text-dark: #2C3E50; --text-medium: #555555; --text-light: #888888; --background-white: #ffffff; --background-light: #f8f9fa; --border-light: #E0E0E0; }
-        [data-theme="dark"] { --primary-teal: #20B2AA; --primary-teal-light: #008080; --primary-teal-dark: #004D4D; --text-dark: #f0f0f0; --text-medium: #b0b0b0; --text-light: #808080; --background-white: #1a1a2e; --background-light: #16213e; --border-light: #2a2a4a; }
+        :root {
+            --primary: #008080;
+            --primary-light: #20B2AA;
+            --primary-dark: #004D4D;
+            --accent: #F39C12;
+            --accent-light: #F5B041;
+            --text: #2C3E50;
+            --text-light: #555555;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #E0E0E0;
+            --shadow: rgba(243, 156, 18, 0.15);
+        }
+
+        [data-theme="dark"] {
+            --primary: #20B2AA;
+            --primary-light: #008080;
+            --primary-dark: #004D4D;
+            --accent: #F39C12;
+            --accent-light: #F5B041;
+            --text: #f0f0f0;
+            --text-light: #b0b0b0;
+            --bg: #1a1a2e;
+            --bg-secondary: #16213e;
+            --border: #2a2a4a;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; background: var(--background-white); color: var(--text-dark); line-height: 1.8; transition: background-color 0.3s ease, color 0.3s ease; }
-        .header { background: var(--background-white); border-bottom: 2px solid var(--primary-teal); padding: 1rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-        [data-theme="dark"] .header { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-        .nav-logo { height: 50px; width: auto; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; transition: all 0.3s ease; }
+        
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; transition: all 0.3s ease; }
+        [data-theme="dark"] .header { background: rgba(26, 26, 46, 0.95); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo img { height: 45px; width: auto; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 1rem; font-weight: 400; transition: color 0.3s ease; position: relative; padding: 0.5rem 0; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-teal); transition: width 0.3s ease; }
-        .nav-links a:hover { color: var(--primary-teal); }
+        .nav-links a { color: var(--text); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.3s ease; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-links a:hover { color: var(--accent); }
         .nav-links a:hover::after { width: 100%; }
-        .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem; border-radius: 5px; transition: background-color 0.3s ease; }
-        .theme-toggle:hover { background: rgba(0, 128, 128, 0.1); }
-        .theme-icon { font-size: 1.2rem; transition: transform 0.3s ease; }
+        .nav-links a.active { color: var(--accent); }
+        .nav-links a.active::after { width: 100%; }
+        .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; background: transparent; border: 1px solid var(--border); }
+        .theme-toggle:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .theme-icon { font-size: 1.1rem; transition: transform 0.3s ease; }
         [data-theme="dark"] .theme-icon { transform: rotate(180deg); }
-        .theme-text { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
+        .theme-text { font-size: 0.85rem; font-weight: 500; }
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
-        .hamburger span { width: 25px; height: 2px; background: var(--primary-teal); transition: all 0.3s ease; }
+        .hamburger span { width: 25px; height: 2px; background: var(--accent); transition: all 0.3s ease; }
+        
         main { padding-top: 100px; min-height: 100vh; }
-        .page-header { padding: 3rem 2rem 2rem; text-align: center; background: var(--background-light); border-bottom: 1px solid var(--border-light); }
-        .page-header h1 { font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--primary-teal); }
+        .page-header { background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white; padding: 4rem 2rem; text-align: center; margin-bottom: 3rem; }
+        .page-header .doc-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        
         .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem; }
-        .policy-content { background: var(--background-white); border: 1px solid var(--border-light); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
-        [data-theme="dark"] .policy-content { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-        .policy-section { margin-bottom: 2rem; }
-        .policy-section h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary-teal); margin-bottom: 1rem; border-bottom: 2px solid var(--primary-teal); padding-bottom: 0.5rem; }
-        .policy-section p { color: var(--text-medium); margin-bottom: 1rem; }
-        .policy-section ul { margin-left: 2rem; margin-bottom: 1rem; color: var(--text-medium); }
-        .policy-section ul li { margin-bottom: 0.5rem; }
+        
+        .cookie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        
+        .cookie-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; }
+        .cookie-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px var(--shadow); border-color: var(--accent); }
+        .cookie-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; color: var(--accent); margin-bottom: 1rem; }
+        .cookie-card h3::before { content: '🍪'; margin-right: 0.5rem; }
+        .cookie-card p { color: var(--text-light); line-height: 1.7; }
+        
+        .cookie-intro { background: rgba(243, 156, 18, 0.1); border-left: 4px solid var(--accent); padding: 2rem; border-radius: 8px; margin-bottom: 2rem; }
+        .cookie-intro h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 600; color: var(--text); margin-bottom: 1rem; }
+        
+        .cookie-types { margin: 2rem 0; }
+        .cookie-type { margin-bottom: 2rem; }
+        .cookie-type h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--accent); margin-bottom: 1rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; }
+        .cookie-type p { color: var(--text-light); margin-bottom: 1rem; }
+        
+        .cookie-choices { background: var(--bg-secondary); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid var(--border); }
+        .cookie-choices h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--text); margin-bottom: 1rem; }
+        .cookie-choices p { color: var(--text-light); margin-bottom: 1.5rem; }
+        
         .last-updated { font-style: italic; color: var(--text-light); text-align: right; margin-top: 2rem; font-size: 0.9rem; }
-        .footer { background: var(--primary-teal); color: var(--background-white); padding: 3rem 2rem 2rem; text-align: center; }
+        
+        .footer { background: var(--primary); color: white; padding: 3rem 2rem 2rem; text-align: center; }
         .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
         .footer-links { display: flex; gap: 2rem; list-style: none; }
-        .footer-links a { color: var(--background-white); text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
-        .footer-links a:hover { color: var(--primary-teal-light); text-decoration: underline; }
+        .footer-links a { color: white; text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
+        .footer-links a:hover { color: var(--primary-light); text-decoration: underline; }
         .copyright { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
         .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
-        @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .page-header h1 { font-size: 2rem; } .footer-content { flex-direction: column; text-align: center; } .footer-links { flex-direction: column; gap: 1rem; } .nav-container { flex-wrap: wrap; gap: 1rem; } .policy-content { padding: 1.5rem; } }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .page-header h1 { font-size: 2.2rem; }
+            .cookie-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-direction: column; gap: 1rem; }
+            .nav-container { flex-wrap: wrap; gap: 1rem; }
+        }
     </style>
 </head>
 <body>
-    <header class="header"><div class="nav-container">
-        <a href="/"><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="nav-logo"></a>
-        <nav><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li></ul></nav>
-        <div class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span><span class="theme-text">Dark</span></div>
-        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-    </div></header>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo"><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo"><span class="logo-text">BeastsNetwork</span></a>
+            <nav><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Directory</a></li><li><a href="/blog.html">Blog</a></li></ul></nav>
+            <div class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span><span class="theme-text">Dark</span></div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
     <main>
-        <section class="page-header"><h1>Cookie Policy</h1><p>This policy explains how we use cookies and similar technologies on our website.</p></section>
+        <section class="page-header">
+            <div class="doc-icon">🍪</div>
+            <h1>Cookie Policy</h1>
+            <p>This policy explains how we use cookies and similar technologies on our website to enhance your experience.</p>
+        </section>
+
         <div class="container">
-            <div class="policy-content">
-                <div class="policy-section">
-                    <h2>1. What Are Cookies</h2>
-                    <p>Cookies are small text files that are stored on your device when you visit a website. They allow the website to recognize your device and remember information about your visit.</p>
-                </div>
-                <div class="policy-section">
-                    <h2>2. Types of Cookies We Use</h2>
-                    <p>We use the following types of cookies:</p>
-                    <ul>
-                        <li><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable basic functions like page navigation and access to secure areas.</li>
-                        <li><strong>Analytical/Performance Cookies:</strong> These cookies help us understand how you interact with our website by collecting and reporting information anonymously.</li>
-                        <li><strong>Functionality Cookies:</strong> These cookies allow the website to remember choices you make (such as your username, language, or region) and provide enhanced, more personal features.</li>
-                    </ul>
-                </div>
-                <div class="policy-section">
-                    <h2>3. How We Use Cookies</h2>
-                    <p>We use cookies to:</p>
-                    <ul>
-                        <li>Ensure our website functions properly</li>
-                        <li>Remember your preferences and settings</li>
-                        <li>Analyze website traffic and usage patterns</li>
-                        <li>Improve our website and services</li>
-                    </ul>
-                </div>
-                <div class="policy-section">
-                    <h2>4. Third-Party Cookies</h2>
-                    <p>We may also use third-party services that place cookies on your device. These third parties have their own privacy policies and may use their cookies for their own purposes.</p>
-                </div>
-                <div class="policy-section">
-                    <h2>5. Your Cookie Choices</h2>
-                    <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your device, and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit our site, and some services and functionalities may not work.</p>
-                </div>
-                <div class="policy-section">
-                    <h2>6. Changes to This Policy</h2>
-                    <p>We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page.</p>
-                </div>
-                <p class="last-updated">Last updated: June 28, 2026</p>
+            <div class="cookie-intro">
+                <h2>What Are Cookies?</h2>
+                <p>Cookies are small text files that are stored on your device when you visit a website. They allow the website to recognize your device and remember information about your visit, such as your preferences, login status, and browsing activities.</p>
             </div>
+
+            <div class="cookie-types">
+                <div class="cookie-type">
+                    <h3>Essential Cookies</h3>
+                    <p>These cookies are necessary for the website to function properly. They enable basic functions like page navigation, access to secure areas of the website, and form submissions. The website cannot function properly without these cookies.</p>
+                    <p><strong>Example:</strong> Authentication cookies, session cookies</p>
+                </div>
+
+                <div class="cookie-type">
+                    <h3>Analytical/Performance Cookies</h3>
+                    <p>These cookies help us understand how you interact with our website by collecting and reporting information anonymously. They allow us to analyze website traffic, identify popular pages, and understand how visitors navigate our site.</p>
+                    <p><strong>Example:</strong> Google Analytics cookies</p>
+                </div>
+
+                <div class="cookie-type">
+                    <h3>Functionality Cookies</h3>
+                    <p>These cookies allow the website to remember choices you make (such as your username, language, or region) and provide enhanced, more personal features. They may also be used to provide services you have requested, such as watching a video or commenting on a blog.</p>
+                    <p><strong>Example:</strong> Language preference cookies, font size preferences</p>
+                </div>
+
+                <div class="cookie-type">
+                    <h3>Targeting/Advertising Cookies</h3>
+                    <p>These cookies are used to deliver content and advertisements that are more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and to measure the effectiveness of advertising campaigns.</p>
+                    <p><strong>Note:</strong> BeastsNetwork does not currently use advertising cookies, but this policy covers potential future use.</p>
+                </div>
+            </div>
+
+            <div class="cookie-choices">
+                <h3>Your Cookie Choices</h3>
+                <p>You have several options regarding cookies on our website:</p>
+                <ul style="color: var(--text-light); margin-left: 2rem;">
+                    <li><strong>Accept All Cookies:</strong> By default, all cookies are enabled to provide you with the best experience on our website.</li>
+                    <li><strong>Reject Non-Essential Cookies:</strong> You can choose to disable non-essential cookies while still allowing essential cookies to function.</li>
+                    <li><strong>Manage Preferences:</strong> You can adjust your cookie preferences at any time through your browser settings or our cookie consent banner.</li>
+                    <li><strong>Delete Cookies:</strong> You can delete all cookies that are already on your device through your browser settings.</li>
+                </ul>
+                <p>Please note that if you disable or delete cookies, some features of our website may not function properly.</p>
+            </div>
+
+            <div class="cookie-type">
+                <h3>Third-Party Cookies</h3>
+                <p>We may also use third-party services that place cookies on your device. These third parties have their own privacy policies and may use their cookies for their own purposes. We do not control these third-party cookies.</p>
+                <p><strong>Example:</strong> Embedded content from YouTube, Vimeo, or social media platforms</p>
+            </div>
+
+            <div class="cookie-type">
+                <h3>Changes to This Policy</h3>
+                <p>We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. We encourage you to review this policy periodically for any changes.</p>
+            </div>
+
+            <p class="last-updated">Last updated: June 28, 2026</p>
         </div>
     </main>
-    <footer class="footer"><div class="footer-content">
-        <div><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
-        <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="/cookie-policy.html" class="active">Cookie Policy</a></li></ul>
-    </div></footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
+            <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Directory</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="/cookie-policy.html" class="active">Cookie Policy</a></li></ul>
+        </div>
+    </footer>
+
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; });
+        
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         function initializeTheme() { const savedTheme = localStorage.getItem('theme'); if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateToggleText(); } else { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; if (prefersDark) { html.setAttribute('data-theme', 'dark'); updateToggleText(); } } }
