@@ -3,96 +3,1091 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Directory - BeastsNetwork</title>
+    <title>Blog Directory - BeastsNetwork | Cybersecurity Resources</title>
+    <meta name="description" content="Comprehensive directory of 50+ cybersecurity and privacy blogs, news sources, and RSS feeds. Discover trusted resources for staying informed.">
+    <meta name="keywords" content="cybersecurity directory, privacy blogs, security news, RSS feeds, BeastsNetwork">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beastsnetwork.win/blog-directory.html">
+    <meta property="og:title" content="BeastsNetwork Blog Directory - Cybersecurity Resources">
+    <meta property="og:description" content="Comprehensive directory of cybersecurity and privacy resources.">
+    <meta property="og:image" content="/beastsnetwork-logo.svg">
+    
     <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary-teal: #008080; --primary-teal-light: #20B2AA; --primary-teal-dark: #004D4D; --text-dark: #2C3E50; --text-medium: #555555; --background-white: #ffffff; --background-light: #f8f9fa; --border-light: #E0E0E0; }
-        [data-theme="dark"] { --primary-teal: #20B2AA; --primary-teal-light: #008080; --primary-teal-dark: #004D4D; --text-dark: #f0f0f0; --text-medium: #b0b0b0; --background-white: #1a1a2e; --background-light: #16213e; --border-light: #2a2a4a; }
+        :root {
+            --primary: #008080;
+            --primary-light: #20B2AA;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #2C3E50;
+            --text-light: #555555;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 128, 128, 0.15);
+        }
+
+        [data-theme="dark"] {
+            --primary: #20B2AA;
+            --primary-light: #008080;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #f0f0f0;
+            --text-light: #b0b0b0;
+            --bg: #1a1a2e;
+            --bg-secondary: #16213e;
+            --border: #2a2a4a;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; background: var(--background-white); color: var(--text-dark); line-height: 1.6; transition: background-color 0.3s ease, color 0.3s ease; }
-        .header { background: var(--background-white); border-bottom: 2px solid var(--primary-teal); padding: 1rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-        [data-theme="dark"] .header { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-        .nav-logo { height: 50px; width: auto; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 1rem; font-weight: 400; transition: color 0.3s ease; position: relative; padding: 0.5rem 0; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-teal); transition: width 0.3s ease; }
-        .nav-links a:hover { color: var(--primary-teal); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--primary-teal); font-weight: 700; }
-        .nav-links a.active::after { width: 100%; }
-        .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem; border-radius: 5px; transition: background-color 0.3s ease; }
-        .theme-toggle:hover { background: rgba(0, 128, 128, 0.1); }
-        .theme-icon { font-size: 1.2rem; transition: transform 0.3s ease; }
-        [data-theme="dark"] .theme-icon { transform: rotate(180deg); }
-        .theme-text { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
-        .hamburger span { width: 25px; height: 2px; background: var(--primary-teal); transition: all 0.3s ease; }
-        main { padding-top: 100px; min-height: 100vh; }
-        .page-header { padding: 3rem 2rem 2rem; text-align: center; background: var(--background-light); border-bottom: 1px solid var(--border-light); }
-        .page-header h1 { font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--primary-teal); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
-        .directory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .directory-card { background: var(--background-white); border: 1px solid var(--border-light); border-radius: 8px; padding: 1.5rem; transition: all 0.3s ease; position: relative; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
-        [data-theme="dark"] .directory-card { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-        .directory-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary-teal), var(--primary-teal-light)); transform: scaleX(0); transition: transform 0.3s ease; }
-        .directory-card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); border-color: var(--primary-teal-light); }
-        [data-theme="dark"] .directory-card:hover { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
-        .directory-card:hover::before { transform: scaleX(1); }
-        .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        .card-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-teal), var(--primary-teal-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--background-white); flex-shrink: 0; }
-        .card-title { font-family: 'Merriweather', serif; font-size: 1.3rem; font-weight: 700; color: var(--primary-teal); line-height: 1.3; }
-        .card-title a { color: var(--primary-teal); text-decoration: none; transition: color 0.3s ease; }
-        .card-title a:hover { color: var(--primary-teal-light); }
-        .card-description { color: var(--text-medium); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
-        .card-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-        .card-link { color: var(--primary-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; transition: all 0.3s ease; font-size: 0.85rem; padding: 0.3rem 0.6rem; border-radius: 4px; }
-        .card-link:hover { color: var(--primary-teal-dark); background: rgba(0, 128, 128, 0.1); gap: 0.5rem; }
-        .footer { background: var(--primary-teal); color: var(--background-white); padding: 3rem 2rem 2rem; text-align: center; }
-        .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
-        .footer-links { display: flex; gap: 2rem; list-style: none; }
-        .footer-links a { color: var(--background-white); text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
-        .footer-links a:hover { color: var(--primary-teal-light); text-decoration: underline; }
-        .copyright { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
-        .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
-        @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .page-header h1 { font-size: 2rem; } .directory-grid { grid-template-columns: 1fr; } .footer-content { flex-direction: column; text-align: center; } .footer-links { flex-direction: column; gap: 1rem; } .nav-container { flex-wrap: wrap; gap: 1rem; } }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .header {
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .theme-icon {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-icon {
+            transform: rotate(180deg);
+        }
+
+        .theme-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            padding-top: 100px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== SEARCH BAR ===== */
+        .search-section {
+            margin-bottom: 3rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.25rem 1.5rem 1.25rem 3rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--bg);
+            color: var(--text);
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        /* ===== FILTERS ===== */
+        .filters-section {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== DIRECTORY GRID ===== */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .directory-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .directory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .directory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .directory-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card-title a:hover {
+            color: var(--primary);
+        }
+
+        .card-url {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            word-break: break-all;
+        }
+
+        .card-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-tag {
+            background: rgba(0, 128, 128, 0.15);
+            color: var(--primary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        .card-link:hover {
+            background: rgba(0, 128, 128, 0.1);
+            gap: 0.5rem;
+        }
+
+        /* ===== CATEGORIES SECTION ===== */
+        .categories-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .categories-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .categories-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .categories-count {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-title a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .category-title a:hover {
+            color: var(--primary);
+        }
+
+        .category-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .directory-grid {
+                grid-template-columns: 1fr;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-section {
+                text-align: center;
+            }
+            .filters-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <header class="header"><div class="nav-container">
-        <a href="/"><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="nav-logo"></a>
-        <nav><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html" class="active">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li></ul></nav>
-        <div class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span><span class="theme-text">Dark</span></div>
-        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-    </div></header>
-    <main><section class="page-header"><h1>📚 Blog Directory</h1><p class="subtitle">Comprehensive Privacy & Cybersecurity Resources</p><p>Explore our curated directory of privacy and cybersecurity blogs.</p></section>
-        <div class="container"><div class="directory-grid">
-            <div class="directory-card"><div class="card-header"><div class="card-icon">📰</div><h3 class="card-title"><a href="https://news.ycombinator.com/" target="_blank">Hacker News</a></h3></div><p class="card-description">Premier social news platform for technology communities.</p><div class="card-links"><a href="https://news.ycombinator.com/" class="card-link">Visit &rarr;</a></div></div>
-            <div class="directory-card"><div class="card-header"><div class="card-icon">🌐</div><h3 class="card-title"><a href="https://lobste.rs/" target="_blank">Lobsters</a></h3></div><p class="card-description">Technology-focused link aggregation community.</p><div class="card-links"><a href="https://lobste.rs/" class="card-link">Visit &rarr;</a></div></div>
-            <div class="directory-card"><div class="card-header"><div class="card-icon">🛡️</div><h3 class="card-title"><a href="https://www.bleepingcomputer.com/" target="_blank">BleepingComputer</a></h3></div><p class="card-description">Trusted cybersecurity news site.</p><div class="card-links"><a href="https://www.bleepingcomputer.com/" class="card-link">Visit &rarr;</a><a href="/category-bleepingcomputer.html" class="card-link">Our Articles &rarr;</a></div></div>
-            <div class="directory-card"><div class="card-header"><div class="card-icon">🛡️</div><h3 class="card-title"><a href="https://www.cisa.gov/" target="_blank">CISA</a></h3></div><p class="card-description">Cybersecurity and Infrastructure Security Agency.</p><div class="card-links"><a href="https://www.cisa.gov/" class="card-link">Visit &rarr;</a><a href="/category-cisa.html" class="card-link">Our Articles &rarr;</a></div></div>
-            <div class="directory-card"><div class="card-header"><div class="card-icon">🛡️</div><h3 class="card-title"><a href="https://isc.sans.edu/" target="_blank">SANS ISC</a></h3></div><p class="card-description">SANS Internet Storm Center.</p><div class="card-links"><a href="https://isc.sans.edu/" class="card-link">Visit &rarr;</a><a href="/category-sans-isc.html" class="card-link">Our Articles &rarr;</a></div></div>
-            <div class="directory-card"><div class="card-header"><div class="card-icon">🛡️</div><h3 class="card-title"><a href="https://thehackernews.com/" target="_blank">The Hacker News</a></h3></div><p class="card-description">Leading cybersecurity news platform.</p><div class="card-links"><a href="https://thehackernews.com/" class="card-link">Visit &rarr;</a><a href="/category-thehackernews.html" class="card-link">Our Articles &rarr;</a></div></div>
-        </div></div>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo">
+                <span class="logo-text">BeastsNetwork</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog-directory.html" class="active">Directory</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+                <span class="theme-text">Dark</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>📚 Blog Directory</h1>
+            <p>Comprehensive collection of cybersecurity and privacy resources from trusted sources worldwide</p>
+        </section>
+
+        <div class="container">
+            <section class="search-section">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search blogs, categories, or keywords..." id="searchInput" oninput="filterDirectory()">
+                </div>
+            </section>
+
+            <section class="filters-section">
+                <button class="filter-btn active" onclick="filterByType('all')">All</button>
+                <button class="filter-btn" onclick="filterByType('aggregator')">Aggregators</button>
+                <button class="filter-btn" onclick="filterByType('blog')">Blogs</button>
+                <button class="filter-btn" onclick="filterByType('community')">Communities</button>
+                <button class="filter-btn" onclick="filterByType('nonprofit')">Non-Profits</button>
+            </section>
+
+            <section class="directory-section">
+                <div class="directory-grid" id="directoryGrid">
+                    <div class="directory-card" data-type="aggregator">
+                        <div class="card-header">
+                            <div class="card-icon">📰</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://news.ycombinator.com/" target="_blank">Hacker News</a></h3>
+                                <p class="card-url">news.ycombinator.com</p>
+                            </div>
+                        </div>
+                        <p class="card-description">The premier social news platform for technology and startup communities with user-submitted stories and discussions.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Aggregator</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://news.ycombinator.com/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://news.ycombinator.com/rss" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="aggregator">
+                        <div class="card-header">
+                            <div class="card-icon">🌐</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://lobste.rs/" target="_blank">Lobsters</a></h3>
+                                <p class="card-url">lobste.rs</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Technology-focused link aggregation and discussion community with a more technical audience than Hacker News.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Aggregator</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://lobste.rs/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://lobste.rs/rss" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="community">
+                        <div class="card-header">
+                            <div class="card-icon">🔗</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://old.reddit.com/r/netsec/" target="_blank">r/netsec</a></h3>
+                                <p class="card-url">reddit.com/r/netsec</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Reddit's largest community for computer and network security professionals featuring news, discussions, and technical advice.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Community</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://old.reddit.com/r/netsec/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://www.reddit.com/r/netsec/.rss" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="community">
+                        <div class="card-header">
+                            <div class="card-icon">🔗</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://old.reddit.com/r/privacy/" target="_blank">r/privacy</a></h3>
+                                <p class="card-url">reddit.com/r/privacy</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Reddit community focused on privacy, encryption, and digital rights discussing tools, techniques, and news.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Community</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://old.reddit.com/r/privacy/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://www.reddit.com/r/privacy/.rss" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🛡️</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://www.bleepingcomputer.com/" target="_blank">BleepingComputer</a></h3>
+                                <p class="card-url">bleepingcomputer.com</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Trusted cybersecurity news site covering malware, breaches, vulnerabilities, and IT security topics with in-depth analysis.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://www.bleepingcomputer.com/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://www.bleepingcomputer.com/feed/" class="card-link" target="_blank">RSS &rarr;</a>
+                            <a href="/category-bleepingcomputer.html" class="card-link">Our Articles &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🛡️</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://www.cisa.gov/" target="_blank">CISA</a></h3>
+                                <p class="card-url">cisa.gov</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Cybersecurity and Infrastructure Security Agency - official US government source for cybersecurity alerts, advisories, and best practices.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Government</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://www.cisa.gov/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://www.cisa.gov/news-events/alerts" class="card-link" target="_blank">Alerts &rarr;</a>
+                            <a href="/category-cisa.html" class="card-link">Our Articles &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🛡️</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://isc.sans.edu/" target="_blank">SANS ISC</a></h3>
+                                <p class="card-url">isc.sans.edu</p>
+                            </div>
+                        </div>
+                        <p class="card-description">SANS Internet Storm Center provides free analysis and warning of internet security threats with community-driven threat intelligence.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://isc.sans.edu/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://isc.sans.edu/rssfeed.xml" class="card-link" target="_blank">RSS &rarr;</a>
+                            <a href="/category-sans-isc.html" class="card-link">Our Articles &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🛡️</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://thehackernews.com/" target="_blank">The Hacker News</a></h3>
+                                <p class="card-url">thehackernews.com</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Leading cybersecurity news platform delivering the latest hacking news, cyber attacks, and vulnerabilities with technical insights.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://thehackernews.com/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://feeds.feedburner.com/TheHackersNews" class="card-link" target="_blank">RSS &rarr;</a>
+                            <a href="/category-thehackernews.html" class="card-link">Our Articles &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🔒</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://krebsonsecurity.com/" target="_blank">Krebs on Security</a></h3>
+                                <p class="card-url">krebsonsecurity.com</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Investigative journalism by Brian Krebs covering cybercrime, data breaches, and the underground economy.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://krebsonsecurity.com/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://krebsonsecurity.com/feed/" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🔒</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://www.darkreading.com/" target="_blank">Dark Reading</a></h3>
+                                <p class="card-url">darkreading.com</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Comprehensive coverage of cybersecurity news, analysis, and best practices for security professionals.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://www.darkreading.com/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://www.darkreading.com/rss.xml" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="nonprofit">
+                        <div class="card-header">
+                            <div class="card-icon">🔐</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://www.eff.org/" target="_blank">Electronic Frontier Foundation</a></h3>
+                                <p class="card-url">eff.org</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Leading non-profit defending digital privacy, free speech, and innovation through impact litigation and technology development.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Non-Profit</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://www.eff.org/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://www.eff.org/rss/updates.xml" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="nonprofit">
+                        <div class="card-header">
+                            <div class="card-icon">🔐</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://www.privacyinternational.org/" target="_blank">Privacy International</a></h3>
+                                <p class="card-url">privacyinternational.org</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Global charity that challenges governments and corporations who abuse technology to infringe on privacy and digital rights.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Non-Profit</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://www.privacyinternational.org/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://privacyinternational.org/feed" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🔐</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://restoreprivacy.com/" target="_blank">Restore Privacy</a></h3>
+                                <p class="card-url">restoreprivacy.com</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Comprehensive guides and reviews for privacy-focused tools, VPNs, encrypted email, and secure alternatives.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://restoreprivacy.com/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://restoreprivacy.com/feed/" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="directory-card" data-type="blog">
+                        <div class="card-header">
+                            <div class="card-icon">🔐</div>
+                            <div>
+                                <h3 class="card-title"><a href="https://privacyguides.net/" target="_blank">Privacy Guides</a></h3>
+                                <p class="card-url">privacyguides.net</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Community-driven project providing knowledge and tools to protect your privacy against global mass surveillance.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Blog</span>
+                            <span class="card-tag">RSS</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://privacyguides.net/" class="card-link" target="_blank">Visit &rarr;</a>
+                            <a href="https://privacyguides.net/feed.xml" class="card-link" target="_blank">RSS &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="categories-section">
+                <div class="categories-header">
+                    <h2 class="categories-title">📋 Our Categories</h2>
+                    <span class="categories-count">4</span>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🛡️</div>
+                        <h3 class="category-title"><a href="/category-bleepingcomputer.html">BleepingComputer</a></h3>
+                        <p class="category-description">Trusted cybersecurity news</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛡️</div>
+                        <h3 class="category-title"><a href="/category-cisa.html">CISA</a></h3>
+                        <p class="category-description">Official government alerts</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛡️</div>
+                        <h3 class="category-title"><a href="/category-sans-isc.html">SANS ISC</a></h3>
+                        <p class="category-description">Community threat intelligence</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛡️</div>
+                        <h3 class="category-title"><a href="/category-thehackernews.html">The Hacker News</a></h3>
+                        <p class="category-description">Latest security news</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
-    <footer class="footer"><div class="footer-content">
-        <div><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
-        <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li></ul>
-    </div></footer>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo">
+                <p>Your trusted source for cybersecurity intelligence and privacy protection.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 BeastsNetwork. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
+        // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; });
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
-        function initializeTheme() { const savedTheme = localStorage.getItem('theme'); if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateToggleText(); } else { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; if (prefersDark) { html.setAttribute('data-theme', 'dark'); updateToggleText(); } } }
-        themeToggle.addEventListener('click', () => { const currentTheme = html.getAttribute('data-theme'); const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', newTheme); localStorage.setItem('theme', newTheme); updateToggleText(); });
-        function updateToggleText() { const currentTheme = html.getAttribute('data-theme'); const icon = themeToggle.querySelector('.theme-icon'); const text = themeToggle.querySelector('.theme-text'); if (currentTheme === 'dark') { icon.textContent = '☀️'; text.textContent = 'Light'; } else { icon.textContent = '🌙'; text.textContent = 'Dark'; } }
+        
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                html.setAttribute('data-theme', savedTheme);
+                updateToggleText();
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    html.setAttribute('data-theme', 'dark');
+                    updateToggleText();
+                }
+            }
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleText();
+        });
+        
+        function updateToggleText() {
+            const currentTheme = html.getAttribute('data-theme');
+            const icon = themeToggle.querySelector('.theme-icon');
+            const text = themeToggle.querySelector('.theme-text');
+            if (currentTheme === 'dark') {
+                icon.textContent = '☀️';
+                text.textContent = 'Light';
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark';
+            }
+        }
+        
         initializeTheme();
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!localStorage.getItem('theme')) { html.setAttribute('data-theme', e.matches ? 'dark' : 'light'); updateToggleText(); } });
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                updateToggleText();
+            }
+        });
+
+        // Filter functionality
+        let currentFilter = 'all';
+
+        function filterByType(type) {
+            currentFilter = type;
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filter cards
+            const cards = document.querySelectorAll('.directory-card');
+            cards.forEach(card => {
+                if (type === 'all' || card.dataset.type === type) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterDirectory() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.directory-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const matchesSearch = text.includes(searchTerm);
+                const matchesFilter = currentFilter === 'all' || card.dataset.type === currentFilter;
+                
+                if (matchesSearch && matchesFilter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
