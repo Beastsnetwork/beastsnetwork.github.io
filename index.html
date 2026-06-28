@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeastsNetwork | Privacy & Cybersecurity Blog Hub</title>
-    <meta name="description" content="BeastsNetwork - Your central hub for verified privacy and cybersecurity news. Explore our blog directory, latest articles, and curated RSS feeds.">
-    <meta name="keywords" content="BeastsNetwork, privacy, cybersecurity, data protection, encryption, security news, digital rights, blog directory, RSS feeds">
+    <title>BeastsNetwork | Cybersecurity Intelligence Hub</title>
+    <meta name="description" content="BeastsNetwork - Your central hub for verified privacy and cybersecurity intelligence. Real-time threat analysis, expert insights, and curated security resources.">
+    <meta name="keywords" content="cybersecurity, privacy, threat intelligence, security news, data protection, encryption, BeastsNetwork">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beastsnetwork.win/">
-    <meta property="og:title" content="BeastsNetwork | Privacy & Cybersecurity Blog Hub">
-    <meta property="og:description" content="Verified privacy and cybersecurity news, blog directory, and curated RSS feeds.">
+    <meta property="og:title" content="BeastsNetwork | Cybersecurity Intelligence Hub">
+    <meta property="og:description" content="Verified cybersecurity news, threat intelligence, and privacy resources.">
     <meta property="og:image" content="/beastsnetwork-logo.svg">
     
     <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
@@ -18,62 +18,64 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-teal: #008080;
-            --primary-teal-light: #20B2AA;
-            --primary-teal-dark: #004D4D;
-            --primary-teal-accent: #80C0C0;
-            --text-dark: #2C3E50;
-            --text-medium: #555555;
-            --text-light: #888888;
-            --background-white: #ffffff;
-            --background-light: #f8f9fa;
-            --border-light: #E0E0E0;
+            --primary: #008080;
+            --primary-light: #20B2AA;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #2C3E50;
+            --text-light: #555555;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 128, 128, 0.15);
         }
 
         [data-theme="dark"] {
-            --primary-teal: #20B2AA;
-            --primary-teal-light: #008080;
-            --primary-teal-dark: #004D4D;
-            --primary-teal-accent: #80C0C0;
-            --text-dark: #f0f0f0;
-            --text-medium: #b0b0b0;
-            --text-light: #808080;
-            --background-white: #1a1a2e;
-            --background-light: #16213e;
-            --border-light: #2a2a4a;
+            --primary: #20B2AA;
+            --primary-light: #008080;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #f0f0f0;
+            --text-light: #b0b0b0;
+            --bg: #1a1a2e;
+            --bg-secondary: #16213e;
+            --border: #2a2a4a;
+            --shadow: rgba(0, 0, 0, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        
         html { scroll-behavior: smooth; }
-
+        
         body {
-            font-family: 'Lato', sans-serif;
-            background: var(--background-white);
-            color: var(--text-dark);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
         }
 
+        /* ===== HEADER ===== */
         .header {
-            background: var(--background-white);
-            border-bottom: 2px solid var(--primary-teal);
-            padding: 1rem 2rem;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
         }
 
         [data-theme="dark"] .header {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background: rgba(26, 26, 46, 0.95);
         }
 
         .nav-container {
@@ -82,23 +84,41 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
         }
 
-        .nav-logo { height: 50px; width: auto; }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--text);
             text-decoration: none;
-            font-size: 1rem;
-            font-weight: 400;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
         }
@@ -110,35 +130,22 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-teal);
+            background: var(--primary);
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover { color: var(--primary-teal); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--primary-teal); font-weight: 700; }
-        .nav-links a.active::after { width: 100%; }
-
-        .cta-button {
-            background: var(--primary-teal);
-            color: var(--background-white);
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
-        .cta-button:hover {
-            background: var(--primary-teal-dark);
-            transform: translateY(-1px);
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .theme-toggle {
@@ -146,17 +153,21 @@
             align-items: center;
             gap: 0.5rem;
             cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid var(--border);
         }
 
         .theme-toggle:hover {
-            background: rgba(0, 128, 128, 0.1);
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .theme-icon {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: transform 0.3s ease;
         }
 
@@ -165,29 +176,8 @@
         }
 
         .theme-text {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary-teal);
-            color: var(--primary-teal);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-teal);
-            color: var(--background-white);
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         .hamburger {
@@ -201,16 +191,16 @@
         .hamburger span {
             width: 25px;
             height: 2px;
-            background: var(--primary-teal);
+            background: var(--primary);
             transition: all 0.3s ease;
         }
 
-        main { padding-top: 80px; }
-
+        /* ===== HERO SECTION ===== */
         .hero {
-            padding: 4rem 2rem 6rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(0, 128, 128, 0.05), rgba(32, 178, 170, 0.03));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -222,206 +212,335 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(32, 178, 170, 0.05) 0%, transparent 70%);
+            background: radial-gradient(ellipse at 20% 50%, rgba(0, 128, 128, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 50%, rgba(32, 178, 170, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
-        .hero h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--primary);
             margin-bottom: 1.5rem;
-            color: var(--primary-teal);
+            letter-spacing: -1px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            max-width: 700px;
-            margin: 0 auto 2rem;
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
         }
 
-        .hero-actions {
+        .hero-cta {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section { padding: 4rem 0; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-teal);
-        }
-        .section-header p { color: var(--text-medium); max-width: 600px; margin: 0 auto; }
-        .section-divider { height: 1px; background: var(--border-light); margin: 3rem 0; }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .featured-card {
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
             border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .floating-card {
+            background: var(--bg-secondary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-1 {
+            top: 0;
+            left: 0;
+            width: 200px;
+        }
+
+        .card-2 {
+            top: 50px;
+            right: 0;
+            width: 180px;
+        }
+
+        .card-3 {
+            bottom: 0;
+            left: 50px;
+            width: 160px;
+        }
+
+        .card-4 {
+            bottom: 80px;
+            right: 50px;
+            width: 140px;
+        }
+
+        .floating-card h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .tag {
+            display: inline-block;
+            background: rgba(0, 128, 128, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
-        [data-theme="dark"] .featured-card {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .featured-card::before {
+        .feature-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
 
-        .featured-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-teal-light);
+            box-shadow: 0 15px 40px var(--shadow);
+            border-color: var(--primary);
         }
-        [data-theme="dark"] .featured-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .featured-card:hover::before { transform: scaleX(1); }
 
-        .card-icon {
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--primary-teal), var(--primary-teal-light));
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
-            color: var(--background-white);
+            color: white;
         }
 
-        .featured-card h3 {
-            font-family: 'Merriweather', serif;
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             font-weight: 600;
+            color: var(--text);
             margin-bottom: 1rem;
-            color: var(--primary-teal);
         }
 
-        .featured-card p {
-            color: var(--text-medium);
+        .feature-card p {
+            color: var(--text-light);
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
         }
 
-        .featured-card a {
-            color: var(--primary-teal);
+        .feature-link {
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        .featured-card a:hover {
-            color: var(--primary-teal-dark);
+
+        .feature-link:hover {
             gap: 0.75rem;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(0, 128, 128, 0.05), rgba(32, 178, 170, 0.03));
+            padding: 5rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* ===== BLOG SECTION ===== */
+        .blog-section {
+            padding: 5rem 2rem;
         }
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
         .blog-card {
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        [data-theme="dark"] .blog-card {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .blog-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-teal-light);
-        }
-        [data-theme="dark"] .blog-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .blog-card:hover::before { transform: scaleX(1); }
-
-        .featured-post {
-            grid-column: span 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            border: 2px solid var(--primary-teal);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow);
         }
 
-        .featured-post::before { display: none; }
-
-        .featured-content { padding: 0; }
-        .featured-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, var(--primary-teal-dark), var(--primary-teal));
-            border-radius: 6px;
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--background-white);
-            font-family: 'Merriweather', serif;
+            color: white;
             font-size: 2.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
         }
 
         .blog-meta {
@@ -429,442 +548,403 @@
             gap: 1rem;
             margin-bottom: 1rem;
             font-size: 0.85rem;
-            color: var(--text-medium);
-            align-items: center;
-            flex-wrap: wrap;
+            color: var(--text-light);
         }
 
         .blog-tag {
-            background: var(--primary-teal);
-            color: var(--background-white);
+            background: var(--primary);
+            color: white;
             padding: 0.25rem 0.75rem;
             border-radius: 15px;
             font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
-        .new-badge {
-            background: var(--primary-teal-light);
-            color: var(--background-white);
-            padding: 0.2rem 0.5rem;
-            border-radius: 10px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .blog-date { color: var(--text-light); font-style: italic; }
-
-        .blog-card h2 {
-            font-family: 'Merriweather', serif;
+        .blog-card h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
-            font-weight: 700;
+            font-weight: 600;
+            color: var(--text);
             margin-bottom: 1rem;
             line-height: 1.4;
-            color: var(--primary-teal);
         }
 
-        .blog-card h2 a {
-            color: var(--primary-teal);
+        .blog-card h3 a {
+            color: var(--text);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .blog-card h2 a:hover { 
-            color: var(--primary-teal-light); 
-            text-decoration: underline;
+
+        .blog-card h3 a:hover {
+            color: var(--primary);
         }
 
         .blog-card p {
-            color: var(--text-medium);
+            color: var(--text-light);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
 
-        .read-more {
-            color: var(--primary-teal);
+        .blog-read-more {
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        .read-more:hover {
-            color: var(--primary-teal-dark);
+
+        .blog-read-more:hover {
             gap: 0.75rem;
-            text-decoration: underline;
         }
 
-        .source-link {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-medium);
-            word-break: break-all;
-        }
-        .source-link a {
-            color: var(--primary-teal);
-            text-decoration: none;
-        }
-        .source-link a:hover { 
-            color: var(--primary-teal-dark);
-            text-decoration: underline; 
-        }
-
-        .view-all { text-align: center; margin: 3rem 0; }
-        .view-all a {
-            display: inline-block;
-            background: transparent;
-            border: 2px solid var(--primary-teal);
-            color: var(--primary-teal);
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .view-all a:hover {
-            background: var(--primary-teal);
-            color: var(--background-white);
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .page-num {
-            padding: 0.75rem 1rem;
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            min-width: 40px;
-            text-align: center;
-        }
-        .page-num:hover {
-            background: var(--primary-teal-light);
-            color: var(--background-white);
-            border-color: var(--primary-teal-light);
-        }
-        .page-num.active {
-            background: var(--primary-teal);
-            color: var(--background-white);
-            border-color: var(--primary-teal);
-        }
-        .page-num:not(.active):not(:hover) {
-            color: var(--text-medium);
-        }
-
-        .rss-box {
-            background: linear-gradient(135deg, rgba(0, 128, 128, 0.1), rgba(32, 178, 170, 0.05));
-            border: 1px solid rgba(0, 128, 128, 0.3);
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        .rss-box h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-teal);
-        }
-        .rss-box p {
-            color: var(--text-medium);
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .rss-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .rss-link {
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .rss-link:hover {
-            background: var(--primary-teal-light);
-            color: var(--background-white);
-            border-color: var(--primary-teal-light);
-        }
-
+        /* ===== FOOTER ===== */
         .footer {
-            background: var(--primary-teal);
-            border-top: 1px solid var(--primary-teal-dark);
-            padding: 3rem 2rem;
-            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
         }
+
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
         }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
         .footer-links {
-            display: flex;
-            gap: 2rem;
             list-style: none;
         }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
         .footer-links a {
-            color: var(--background-white);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: 400;
         }
-        .footer-links a:hover { color: var(--primary-teal-light); }
-        .copyright { 
-            color: rgba(255, 255, 255, 0.7); 
-            font-size: 0.9rem; 
+
+        .footer-links a:hover {
+            color: var(--primary-light);
         }
+
         .footer-logo {
             height: 40px;
             width: auto;
             filter: brightness(0) invert(1);
         }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            .featured-post { grid-column: span 1; grid-template-columns: 1fr; }
-            .featured-image { height: 200px; }
-            .hero h1 { font-size: 2.5rem; }
-            .blog-grid { grid-template-columns: 1fr; }
-            .footer-content { flex-direction: column; text-align: center; }
-            .hero-actions { flex-direction: column; align-items: center; }
-            .rss-links { flex-direction: column; align-items: center; }
-            .rss-link { width: 100%; justify-content: center; }
-            .nav-container {
-                flex-wrap: wrap;
-                gap: 1rem;
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
             }
         }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text {
+                order: 2;
+            }
+            .hero-visual {
+                order: 1;
+                height: 300px;
+                margin-bottom: 2rem;
+            }
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            .floating-card {
+                display: none;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="nav-container">
             <a href="/" class="logo">
-                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="nav-logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo">
+                <span class="logo-text">BeastsNetwork</span>
             </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/" class="active">Home</a></li>
-                    <li><a href="/blog-directory.html">Blog Directory</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                 </ul>
             </nav>
-            <div class="theme-toggle" id="themeToggle">
-                <span class="theme-icon">🌙</span>
-                <span class="theme-text">Dark</span>
-            </div>
-            <a href="#subscribe" class="cta-button">Subscribe</a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <div class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-text">Dark</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>BeastsNetwork Blog Hub</h1>
-            <p>Your Premier Source for Verified Privacy & Cybersecurity News. Explore curated content, discover new blogs, and stay ahead of digital threats.</p>
-            <div class="hero-actions">
-                <a href="/blog-directory.html" class="cta-button">Browse Blog Directory</a>
-                <a href="/blog.html" class="btn-secondary">View Latest Articles</a>
+            <div class="hero-content">
+                <div class="hero-text animate-fade-in-up">
+                    <h1>Cybersecurity Intelligence<br>for the Modern Age</h1>
+                    <p>Real-time threat analysis, verified news, and expert insights to keep you ahead of digital threats.</p>
+                    <div class="hero-cta">
+                        <a href="/blog.html" class="btn btn-primary">Latest Articles &rarr;</a>
+                        <a href="/blog-directory.html" class="btn btn-secondary">Browse Directory</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1 delay-1 animate-fade-in-up">
+                        <h4>Threat Intel</h4>
+                        <p>Real-time security alerts</p>
+                    </div>
+                    <div class="floating-card card-2 delay-2 animate-fade-in-up">
+                        <h4>Privacy</h4>
+                        <p>Data protection guides</p>
+                    </div>
+                    <div class="floating-card card-3 delay-3 animate-fade-in-up">
+                        <h4>Analysis</h4>
+                        <p>Expert security insights</p>
+                    </div>
+                    <div class="floating-card card-4 delay-4 animate-fade-in-up">
+                        <h4>Tools</h4>
+                        <p>Security resources</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <div class="container">
-            <section class="section">
+        <section class="section features-section">
+            <div class="container">
                 <div class="section-header">
-                    <h2>📚 Explore Our Resources</h2>
-                    <p>Discover the best in privacy and cybersecurity content</p>
+                    <span class="tag">What We Offer</span>
+                    <h2>Comprehensive Cybersecurity Resources</h2>
+                    <p>Everything you need to stay informed and protected in the digital world</p>
                 </div>
-                <div class="featured-grid">
-                    <div class="featured-card">
-                        <div class="card-icon">📖</div>
-                        <h3>Blog Directory</h3>
-                        <p>Comprehensive list of 50+ blog aggregators, directories, and RSS feeds for staying updated on cybersecurity and privacy topics.</p>
-                        <a href="/blog-directory.html">Explore Directory &rarr;</a>
+                <div class="features-grid">
+                    <div class="feature-card animate-fade-in-up delay-1">
+                        <div class="feature-icon">📊</div>
+                        <h3>Threat Intelligence</h3>
+                        <p>Real-time monitoring and analysis of emerging cyber threats, vulnerabilities, and attack patterns.</p>
+                        <a href="/blog.html" class="feature-link">Explore &rarr;</a>
                     </div>
-                    <div class="featured-card">
-                        <div class="card-icon">🔒</div>
-                        <h3>Latest Articles</h3>
-                        <p>Verified cybersecurity news with accurate dates and real sources. Updated daily with the most important stories.</p>
-                        <a href="/blog.html">Read Articles &rarr;</a>
+                    <div class="feature-card animate-fade-in-up delay-2">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Privacy Protection</h3>
+                        <p>Expert guides and tools to help you maintain digital privacy and secure your personal data.</p>
+                        <a href="/blog-directory.html" class="feature-link">Discover &rarr;</a>
                     </div>
-                    <div class="featured-card">
-                        <div class="card-icon">📡</div>
-                        <h3>RSS Feeds</h3>
-                        <p>Subscribe to our curated RSS feeds for real-time updates on privacy, security breaches, and threat intelligence.</p>
-                        <a href="#rss">Get Feeds &rarr;</a>
+                    <div class="feature-card animate-fade-in-up delay-3">
+                        <div class="feature-icon">📰</div>
+                        <h3>Verified News</h3>
+                        <p>Accurate, sourced cybersecurity news with technical analysis and expert commentary.</p>
+                        <a href="/blog.html" class="feature-link">Read Now &rarr;</a>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <div class="section-divider"></div>
+        <section class="section stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card animate-fade-in-up delay-1">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Trusted Sources</div>
+                    </div>
+                    <div class="stat-card animate-fade-in-up delay-2">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Verified Articles</div>
+                    </div>
+                    <div class="stat-card animate-fade-in-up delay-3">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Threat Monitoring</div>
+                    </div>
+                    <div class="stat-card animate-fade-in-up delay-4">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Monthly Readers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section class="section" id="latest">
+        <section class="section blog-section">
+            <div class="container">
                 <div class="section-header">
-                    <h2>🔥 Latest Articles</h2>
-                    <p>Verified news with accurate dates and real sources</p>
+                    <span class="tag">Latest Insights</span>
+                    <h2>Recent Articles</h2>
+                    <p>Stay updated with our latest cybersecurity analysis and news</p>
                 </div>
-
                 <div class="blog-grid">
-                    <article class="blog-card featured-post">
-                        <div class="featured-content">
+                    <article class="blog-card animate-fade-in-up delay-1">
+                        <div class="blog-image">AI</div>
+                        <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-tag">Featured</span>
-                                <span class="new-badge">NEW</span>
-                                <span class="blog-date">June 24, 2026</span>
+                                <span>June 24, 2026</span>
                             </div>
-                            <h2><a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" target="_blank" rel="noopener">AI-Powered Phishing Attacks Surge 1,380% as Criminal Platforms Render MFA Obsolete</a></h2>
-                            <p>New research from Huntress reveals a massive 1,380% increase in device code phishing attacks in early 2026. Attackers exploit legitimate OAuth flows to bypass MFA, tricking users into authenticating on genuine Microsoft pages while attackers capture access tokens.</p>
-                            <a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                            <span class="source-link">Source: <a href="https://www.itsecurityguru.org" target="_blank">IT Security Guru</a></span>
+                            <h3><a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" target="_blank">AI-Powered Phishing Attacks Surge 1,380%</a></h3>
+                            <p>New research reveals massive increase in device code phishing attacks bypassing MFA protections.</p>
+                            <a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" class="blog-read-more" target="_blank">Read More &rarr;</a>
                         </div>
-                        <div class="featured-image">AI</div>
                     </article>
-
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Breach</span>
-                            <span class="new-badge">NEW</span>
-                            <span class="blog-date">June 23, 2026</span>
+                    <article class="blog-card animate-fade-in-up delay-2">
+                        <div class="blog-image">🔒</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Breach</span>
+                                <span>June 23, 2026</span>
+                            </div>
+                            <h3><a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" target="_blank">24 Billion Records Exposed in Data Leak</a></h3>
+                            <p>Hackers claim to be selling 340 million OnlyFans user records from internal databases.</p>
+                            <a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" class="blog-read-more" target="_blank">Read More &rarr;</a>
                         </div>
-                        <h2><a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" target="_blank" rel="noopener">24 Billion Records Exposed in Colossal Data Leak</a></h2>
-                        <p>Hackers claim to be selling 340 million OnlyFans user records, compiled from internal databases and previous breaches. The massive dataset includes emails, usernames, and account activity metrics.</p>
-                        <a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                        <span class="source-link">Source: <a href="https://cybernews.com" target="_blank">Cybernews</a></span>
                     </article>
-
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Threats</span>
-                            <span class="new-badge">NEW</span>
-                            <span class="blog-date">June 22, 2026</span>
+                    <article class="blog-card animate-fade-in-up delay-3">
+                        <div class="blog-image">🛡️</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Alert</span>
+                                <span>June 22, 2026</span>
+                            </div>
+                            <h3><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" target="_blank">CISA Urges Hardening of Fortinet Devices</a></h3>
+                            <p>Global credential exposure affects 74,000 Fortinet firewalls and VPN gateways.</p>
+                            <a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" class="blog-read-more" target="_blank">Read More &rarr;</a>
                         </div>
-                        <h2><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" target="_blank" rel="noopener">CISA Urges Hardening of Fortinet Devices After Global Credential Exposure</a></h2>
-                        <p>CISA warns that malicious actors have targeted internet-accessible Fortinet devices across government and private sector organizations. The FortiBleed campaign involves exposure of credentials from approximately 74,000 Fortinet firewalls and VPN gateways.</p>
-                        <a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                        <span class="source-link">Source: <a href="https://www.cisa.gov" target="_blank">CISA</a></span>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Breach</span>
-                            <span class="new-badge">NEW</span>
-                            <span class="blog-date">June 13, 2026</span>
-                        </div>
-                        <h2><a href="https://www.hipaajournal.com/one-medical-data-breach/" target="_blank" rel="noopener">One Medical Healthcare Breach: 8.8 TB of Patient Data at Risk</a></h2>
-                        <p>ShinyHunters data extortion group claims to have stolen 8.8 TB of data from One Medical. Unauthorized access was identified on June 13, with access occurring between June 8-11.</p>
-                        <a href="https://www.hipaajournal.com/one-medical-data-breach/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                        <span class="source-link">Source: <a href="https://www.hipaajournal.com" target="_blank">HIPAA Journal</a></span>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Breach</span>
-                            <span class="new-badge">NEW</span>
-                            <span class="blog-date">June 13, 2026</span>
-                        </div>
-                        <h2><a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" target="_blank" rel="noopener">FortiBleed: 86,644 Fortinet Firewalls Compromised Globally</a></h2>
-                        <p>A Russian-speaking cybercriminal syndicate harvested verified administrator and VPN credentials from 86,644 Fortinet FortiGate firewalls across 194 countries.</p>
-                        <a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                        <span class="source-link">Source: <a href="https://shattered.io" target="_blank">Shattered.io</a></span>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Regulation</span>
-                            <span class="new-badge">NEW</span>
-                            <span class="blog-date">June 15, 2026</span>
-                        </div>
-                        <h2><a href="https://www.govtrack.us/congress/bills/119/s4211" target="_blank" rel="noopener">Consumer Data Privacy and Security Act of 2026</a></h2>
-                        <p>Senator Moran introduced S. 4211, the Consumer Data Privacy and Security Act of 2026. The bill aims to protect consumer privacy at the federal level.</p>
-                        <a href="https://www.govtrack.us/congress/bills/119/s4211" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                        <span class="source-link">Source: <a href="https://www.govtrack.us" target="_blank">GovTrack.us</a></span>
                     </article>
                 </div>
-
-                <div class="view-all">
-                    <a href="/blog.html">View All Articles &rarr;</a>
-                </div>
-
-                <div class="pagination">
-                    <a href="#" class="page-num active">1</a>
-                    <a href="/blog-page2.html" class="page-num">2</a>
-                    <a href="/blog-page3.html" class="page-num">3</a>
-                    <span class="page-num">...</span>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <section class="section" id="rss">
-                <div class="section-header">
-                    <h2>📡 RSS Feeds & Subscriptions</h2>
-                    <p>Stay updated with our curated feeds and newsletter</p>
-                </div>
-                
-                <div class="rss-box">
-                    <h3>Subscribe to Our Feeds</h3>
-                    <p>Get the latest privacy and cybersecurity news delivered directly to your RSS reader or inbox.</p>
-                    <div class="rss-links">
-                        <a href="/feed.xml" class="rss-link">📡 Main RSS Feed</a>
-                        <a href="/blog-directory.html" class="rss-link">📖 Blog Directory</a>
-                        <a href="#subscribe" class="rss-link">📧 Email Newsletter</a>
-                    </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <div>
+            <div class="footer-brand">
                 <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo">
-                <p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p>
+                <p>Your trusted source for cybersecurity intelligence and privacy protection.</p>
             </div>
-            <ul class="footer-links">
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                <li><a href="/cookie-policy.html">Cookie Policy</a></li>
-                <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
-                <li><a href="/blog-directory.html">Blog Directory</a></li>
-            </ul>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="/feed.xml">RSS Feed</a></li>
+                    <li><a href="mailto:contact@beastsnetwork.win">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 BeastsNetwork. All rights reserved.</p>
         </div>
     </footer>
 
@@ -872,7 +952,6 @@
         // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
         hamburger.addEventListener('click', () => {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
@@ -881,14 +960,12 @@
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         
-        // Check for saved theme preference or use system preference
         function initializeTheme() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 html.setAttribute('data-theme', savedTheme);
                 updateToggleText();
             } else {
-                // Check system preference
                 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 if (prefersDark) {
                     html.setAttribute('data-theme', 'dark');
@@ -897,22 +974,18 @@
             }
         }
         
-        // Toggle between light and dark themes
         themeToggle.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateToggleText();
         });
         
-        // Update toggle button text based on current theme
         function updateToggleText() {
             const currentTheme = html.getAttribute('data-theme');
             const icon = themeToggle.querySelector('.theme-icon');
             const text = themeToggle.querySelector('.theme-text');
-            
             if (currentTheme === 'dark') {
                 icon.textContent = '☀️';
                 text.textContent = 'Light';
@@ -922,25 +995,30 @@
             }
         }
         
-        // Initialize theme on page load
         initializeTheme();
-        
-        // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             if (!localStorage.getItem('theme')) {
                 html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
                 updateToggleText();
             }
         });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Animate on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
                 }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .stat-card, .blog-card').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
