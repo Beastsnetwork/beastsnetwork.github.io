@@ -1,1 +1,121 @@
-successfully downloaded text file (SHA: e6b8e7228880c8f4b7f223153ccae135b66fd6e9)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Disclosure - BeastsNetwork</title>
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght=300;400;700;900&family=Merriweather:wght=300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-teal: #008080; --primary-teal-light: #20B2AA; --primary-teal-dark: #004D4D; --text-dark: #2C3E50; --text-medium: #555555; --text-light: #888888; --background-white: #ffffff; --background-light: #f8f9fa; --border-light: #E0E0E0; }
+        [data-theme="dark"] { --primary-teal: #20B2AA; --primary-teal-light: #008080; --primary-teal-dark: #004D4D; --text-dark: #f0f0f0; --text-medium: #b0b0b0; --text-light: #808080; --background-white: #1a1a2e; --background-light: #16213e; --border-light: #2a2a4a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background: var(--background-white); color: var(--text-dark); line-height: 1.8; transition: background-color 0.3s ease, color 0.3s ease; }
+        .header { background: var(--background-white); border-bottom: 2px solid var(--primary-teal); padding: 1rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        [data-theme="dark"] .header { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        .nav-logo { height: 50px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 1rem; font-weight: 400; transition: color 0.3s ease; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-teal); transition: width 0.3s ease; }
+        .nav-links a:hover { color: var(--primary-teal); }
+        .nav-links a:hover::after { width: 100%; }
+        .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem; border-radius: 5px; transition: background-color 0.3s ease; }
+        .theme-toggle:hover { background: rgba(0, 128, 128, 0.1); }
+        .theme-icon { font-size: 1.2rem; transition: transform 0.3s ease; }
+        [data-theme="dark"] .theme-icon { transform: rotate(180deg); }
+        .theme-text { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .hamburger span { width: 25px; height: 2px; background: var(--primary-teal); transition: all 0.3s ease; }
+        main { padding-top: 100px; min-height: 100vh; }
+        .page-header { padding: 3rem 2rem 2rem; text-align: center; background: var(--background-light); border-bottom: 1px solid var(--border-light); }
+        .page-header h1 { font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--primary-teal); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem; }
+        .policy-content { background: var(--background-white); border: 1px solid var(--border-light); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+        [data-theme="dark"] .policy-content { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+        .policy-section { margin-bottom: 2rem; }
+        .policy-section h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary-teal); margin-bottom: 1rem; border-bottom: 2px solid var(--primary-teal); padding-bottom: 0.5rem; }
+        .policy-section p { color: var(--text-medium); margin-bottom: 1rem; }
+        .policy-section ul { margin-left: 2rem; margin-bottom: 1rem; color: var(--text-medium); }
+        .policy-section ul li { margin-bottom: 0.5rem; }
+        .warning-box { background: rgba(255, 0, 0, 0.1); border-left: 4px solid #ff0000; padding: 1rem; margin: 1rem 0; color: var(--text-dark); }
+        [data-theme="dark"] .warning-box { background: rgba(255, 0, 0, 0.2); color: var(--text-dark); }
+        .last-updated { font-style: italic; color: var(--text-light); text-align: right; margin-top: 2rem; font-size: 0.9rem; }
+        .footer { background: var(--primary-teal); color: var(--background-white); padding: 3rem 2rem 2rem; text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: var(--background-white); text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
+        .footer-links a:hover { color: var(--primary-teal-light); text-decoration: underline; }
+        .copyright { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
+        .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .page-header h1 { font-size: 2rem; } .footer-content { flex-direction: column; text-align: center; } .footer-links { flex-direction: column; gap: 1rem; } .nav-container { flex-wrap: wrap; gap: 1rem; } .policy-content { padding: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="nav-container">
+        <a href="/"><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="nav-logo"></a>
+        <nav><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li></ul></nav>
+        <div class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span><span class="theme-text">Dark</span></div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div></header>
+    <main>
+        <section class="page-header"><h1>Risk Disclosure</h1><p>Important information about risks associated with cybersecurity and privacy practices</p></section>
+        <div class="container">
+            <div class="policy-content">
+                <div class="warning-box">
+                    <p><strong>IMPORTANT:</strong> The information provided on BeastsNetwork is for educational and informational purposes only. Cybersecurity is a rapidly evolving field, and information that is accurate today may become outdated quickly.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>1. General Risk Disclosure</h2>
+                    <p>BeastsNetwork provides news, analysis, and resources related to cybersecurity and privacy. While we strive to provide accurate and up-to-date information, we cannot guarantee the completeness, accuracy, or reliability of any information provided on our website.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>2. Implementation Risks</h2>
+                    <p>Any security measures, tools, or practices mentioned on our website should be thoroughly tested in your specific environment before deployment. What works in one situation may not work in another, and improper implementation can lead to:</p>
+                    <ul>
+                        <li>Security vulnerabilities</li>
+                        <li>System instability or crashes</li>
+                        <li>Data loss or corruption</li>
+                        <li>Legal or compliance violations</li>
+                    </ul>
+                </div>
+                <div class="policy-section">
+                    <h2>3. Third-Party Risks</h2>
+                    <p>Our website may contain links to third-party websites, tools, or services. We do not control and are not responsible for the content, privacy practices, or security of these third-party sites. You access and use them at your own risk.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>4. No Professional Advice</h2>
+                    <p>The information on BeastsNetwork does not constitute professional advice. For specific cybersecurity concerns, you should consult with a qualified security professional or legal advisor.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>5. No Warranty</h2>
+                    <p>BeastsNetwork disclaims all warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. We shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use our website or services.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>6. Limitation of Liability</h2>
+                    <p>In no event shall BeastsNetwork, its directors, employees, or agents be liable for any damages, losses, or injuries arising out of or in connection with the use of our website or the information contained therein.</p>
+                </div>
+                <p class="last-updated">Last updated: June 28, 2026</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"><div class="footer-content">
+        <div><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
+        <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="/risk-disclosure.html" class="active">Risk Disclosure</a></li></ul>
+    </div></footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; });
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        function initializeTheme() { const savedTheme = localStorage.getItem('theme'); if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateToggleText(); } else { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; if (prefersDark) { html.setAttribute('data-theme', 'dark'); updateToggleText(); } } }
+        themeToggle.addEventListener('click', () => { const currentTheme = html.getAttribute('data-theme'); const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', newTheme); localStorage.setItem('theme', newTheme); updateToggleText(); });
+        function updateToggleText() { const currentTheme = html.getAttribute('data-theme'); const icon = themeToggle.querySelector('.theme-icon'); const text = themeToggle.querySelector('.theme-text'); if (currentTheme === 'dark') { icon.textContent = '☀️'; text.textContent = 'Light'; } else { icon.textContent = '🌙'; text.textContent = 'Dark'; } }
+        initializeTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!localStorage.getItem('theme')) { html.setAttribute('data-theme', e.matches ? 'dark' : 'light'); updateToggleText(); } });
+    </script>
+</body>
+</html>
