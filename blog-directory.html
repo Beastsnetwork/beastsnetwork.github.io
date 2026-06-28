@@ -33,658 +33,255 @@
             --border-light: #e9ecef;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        [data-theme="dark"] {
+            --eff-blue-dark: #6699cc;
+            --eff-blue-medium: #0099ff;
+            --eff-blue-light: #0066cc;
+            --eff-blue-accent: #003366;
+            --text-dark: #f0f0f0;
+            --text-medium: #b0b0b0;
+            --text-light: #808080;
+            --background-white: #1a1a2e;
+            --background-light: #16213e;
+            --border-light: #2a2a4a;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Lato', sans-serif;
             background: var(--background-white);
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-
         .header {
             background: var(--background-white);
             border-bottom: 2px solid var(--eff-blue-medium);
             padding: 1rem 2rem;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+        [data-theme="dark"] .header { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 1rem;
         }
-
-        .nav-logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
+        .nav-logo { height: 50px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 400;
-            transition: color 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
+            color: var(--text-dark); text-decoration: none; font-size: 1rem;
+            font-weight: 400; transition: color 0.3s ease;
+            position: relative; padding: 0.5rem 0;
         }
-
         .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--eff-blue-medium);
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--eff-blue-medium);
             transition: width 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--eff-blue-medium);
+        .nav-links a:hover { color: var(--eff-blue-medium); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--eff-blue-medium); font-weight: 700; }
+        .nav-links a.active::after { width: 100%; }
+        .theme-toggle {
+            display: flex; align-items: center; gap: 0.5rem;
+            cursor: pointer; padding: 0.5rem; border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a.active {
-            color: var(--eff-blue-medium);
-            font-weight: 700;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--eff-blue-medium);
-            transition: all 0.3s ease;
-        }
-
-        main {
-            padding-top: 100px;
-            min-height: 100vh;
-        }
-
+        .theme-toggle:hover { background: rgba(0, 102, 204, 0.1); }
+        .theme-icon { font-size: 1.2rem; transition: transform 0.3s ease; }
+        [data-theme="dark"] .theme-icon { transform: rotate(180deg); }
+        .theme-text { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .hamburger span { width: 25px; height: 2px; background: var(--eff-blue-medium); transition: all 0.3s ease; }
+        main { padding-top: 100px; min-height: 100vh; }
         .page-header {
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-            background: var(--background-light);
-            border-bottom: 1px solid var(--border-light);
+            padding: 3rem 2rem 2rem; text-align: center;
+            background: var(--background-light); border-bottom: 1px solid var(--border-light);
         }
-
         .page-header h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--eff-blue-dark);
+            font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 700;
+            margin-bottom: 1rem; color: var(--eff-blue-dark);
         }
-
         .page-header p {
-            color: var(--text-medium);
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            color: var(--text-medium); max-width: 800px; margin: 0 auto;
+            font-size: 1.1rem; line-height: 1.8;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
-
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
         .search-section {
-            background: var(--background-light);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-light);
+            background: var(--background-light); padding: 2rem; border-radius: 8px;
+            margin-bottom: 2rem; border: 1px solid var(--border-light);
         }
-
         .search-section h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            color: var(--eff-blue-dark);
+            font-family: 'Merriweather', serif; font-size: 1.5rem; color: var(--eff-blue-dark);
             margin-bottom: 1rem;
         }
-
-        .search-box {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
+        .search-box { display: flex; gap: 1rem; margin-top: 1rem; }
         .search-input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: 'Lato', sans-serif;
+            flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border-light);
+            border-radius: 4px; font-size: 1rem; font-family: 'Lato', sans-serif;
+            background: var(--background-white); color: var(--text-dark);
         }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--eff-blue-medium);
-            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
-        }
-
+        [data-theme="dark"] .search-input { background: var(--background-light); color: var(--text-dark); }
+        .search-input:focus { outline: none; border-color: var(--eff-blue-medium); box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2); }
         .search-button {
-            background: var(--eff-blue-medium);
-            color: var(--background-white);
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
+            background: var(--eff-blue-medium); color: var(--background-white);
+            padding: 0.75rem 1.5rem; border: none; border-radius: 4px;
+            font-family: 'Lato', sans-serif; font-weight: 700; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;
         }
-
-        .search-button:hover {
-            background: var(--eff-blue-dark);
-        }
-
-        .directory-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
+        .search-button:hover { background: var(--eff-blue-dark); }
+        .directory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .category-section {
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            background: var(--background-white); border: 1px solid var(--border-light);
+            border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-
-        .category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .category-header h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.2rem;
-            color: var(--eff-blue-dark);
-            font-weight: 700;
-        }
-
+        [data-theme="dark"] .category-section { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+        .category-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-light); }
+        .category-header h3 { font-family: 'Merriweather', serif; font-size: 1.2rem; color: var(--eff-blue-dark); font-weight: 700; }
         .category-count {
-            background: var(--eff-blue-light);
-            color: var(--background-white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            background: var(--eff-blue-light); color: var(--background-white);
+            padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 700;
         }
-
-        .category-description {
-            color: var(--text-medium);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .article-list {
-            list-style: none;
-        }
-
-        .article-item {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .article-item:last-child {
-            border-bottom: none;
-        }
-
-        .article-title {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            line-height: 1.4;
-        }
-
-        .article-title a {
-            color: var(--eff-blue-dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .article-title a:hover {
-            color: var(--eff-blue-medium);
-            text-decoration: underline;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            flex-wrap: wrap;
-        }
-
+        .category-description { color: var(--text-medium); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.5; }
+        .article-list { list-style: none; }
+        .article-item { padding: 0.75rem 0; border-bottom: 1px solid var(--border-light); }
+        .article-item:last-child { border-bottom: none; }
+        .article-title { font-weight: 600; margin-bottom: 0.25rem; line-height: 1.4; }
+        .article-title a { color: var(--eff-blue-dark); text-decoration: none; transition: color 0.3s ease; }
+        .article-title a:hover { color: var(--eff-blue-medium); text-decoration: underline; }
+        .article-meta { display: flex; gap: 1rem; font-size: 0.8rem; color: var(--text-light); flex-wrap: wrap; }
         .article-tag {
-            background: var(--eff-blue-light);
-            color: var(--background-white);
-            padding: 0.15rem 0.5rem;
-            border-radius: 10px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            font-weight: 700;
+            background: var(--eff-blue-light); color: var(--background-white);
+            padding: 0.15rem 0.5rem; border-radius: 10px; font-size: 0.7rem;
+            text-transform: uppercase; font-weight: 700;
         }
-
-        .article-date {
-            color: var(--text-medium);
-            font-style: italic;
-        }
-
-        .view-all {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
+        .article-date { color: var(--text-medium); font-style: italic; }
+        .view-all { text-align: center; margin-top: 2rem; }
         .view-all a {
-            background: var(--eff-blue-medium);
-            color: var(--background-white);
-            padding: 0.75rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            background: var(--eff-blue-medium); color: var(--background-white);
+            padding: 0.75rem 2rem; text-decoration: none; border-radius: 4px;
+            font-weight: 700; transition: all 0.3s ease;
+            text-transform: uppercase; letter-spacing: 0.5px;
         }
-
-        .view-all a:hover {
-            background: var(--eff-blue-dark);
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
+        .view-all a:hover { background: var(--eff-blue-dark); }
+        .pagination { display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem; flex-wrap: wrap; }
         .page-num {
-            padding: 0.75rem 1rem;
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            min-width: 40px;
-            text-align: center;
+            padding: 0.75rem 1rem; background: var(--background-white);
+            border: 1px solid var(--border-light); border-radius: 4px;
+            color: var(--text-dark); text-decoration: none; transition: all 0.3s ease;
+            min-width: 40px; text-align: center;
         }
-
-        .page-num:hover {
-            background: var(--eff-blue-light);
-            color: var(--background-white);
-            border-color: var(--eff-blue-light);
-        }
-
-        .page-num.active {
-            background: var(--eff-blue-medium);
-            color: var(--background-white);
-            border-color: var(--eff-blue-medium);
-        }
-
-        .page-num:not(.active):not(:hover) {
-            color: var(--text-medium);
-        }
-
+        .page-num:hover { background: var(--eff-blue-light); color: var(--background-white); border-color: var(--eff-blue-light); }
+        .page-num.active { background: var(--eff-blue-medium); color: var(--background-white); border-color: var(--eff-blue-medium); }
+        .page-num:not(.active):not(:hover) { color: var(--text-medium); }
         .footer {
-            background: var(--eff-blue-dark);
-            color: var(--background-white);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
+            background: var(--eff-blue-dark); color: var(--background-white);
+            padding: 3rem 2rem 2rem; text-align: center;
         }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: var(--background-white);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 400;
-        }
-
-        .footer-links a:hover {
-            color: var(--eff-blue-light);
-            text-decoration: underline;
-        }
-
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .footer-logo {
-            height: 40px;
-            width: auto;
-            filter: brightness(0) invert(1);
-        }
-
+        .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: var(--background-white); text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
+        .footer-links a:hover { color: var(--eff-blue-light); text-decoration: underline; }
+        .copyright { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
+        .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .directory-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .search-box {
-                flex-direction: column;
-            }
-            
-            .search-button {
-                width: 100%;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-container {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .directory-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 2rem; }
+            .search-box { flex-direction: column; }
+            .search-button { width: 100%; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-direction: column; gap: 1rem; }
+            .nav-container { flex-wrap: wrap; gap: 1rem; }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="nav-logo">
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/#features">Features</a></li>
-                    <li><a href="/#community">Community</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="/" class="logo"><img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="nav-logo"></a>
+            <nav><ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#community">Community</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul></nav>
+            <div class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span><span class="theme-text">Dark</span></div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         </div>
     </header>
-
     <main>
-        <section class="page-header">
-            <h1>Blog Directory</h1>
-            <p>Complete directory of all our privacy and cybersecurity articles. Browse by category, date, or source to find the information you need.</p>
-        </section>
-
+        <section class="page-header"><h1>Blog Directory</h1><p>Complete directory of all our privacy and cybersecurity articles. Browse by category, date, or source to find the information you need.</p></section>
         <div class="container">
-            <div class="search-section">
-                <h2>Search Articles</h2>
-                <div class="search-box">
-                    <input type="text" class="search-input" placeholder="Search by title, category, or date...">
-                    <button class="search-button">Search</button>
-                </div>
-            </div>
-
+            <div class="search-section"><h2>Search Articles</h2><div class="search-box"><input type="text" class="search-input" placeholder="Search by title, category, or date..."><button class="search-button">Search</button></div></div>
             <div class="directory-grid">
-                <!-- Category: Breaches -->
                 <section class="category-section">
-                    <div class="category-header">
-                        <h3>Data Breaches</h3>
-                        <span class="category-count">42 Articles</span>
-                    </div>
+                    <div class="category-header"><h3>Data Breaches</h3><span class="category-count">42 Articles</span></div>
                     <p class="category-description">Latest information on major data breaches, their impact, and lessons learned for better security practices.</p>
                     <ul class="article-list">
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/">AI-Powered Phishing Attacks Surge 1,380%</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Breach</span>
-                                <span class="article-date">June 24, 2026</span>
-                            </div>
-                        </li>
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/">24 Billion Records Exposed in Colossal Data Leak</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Breach</span>
-                                <span class="article-date">June 23, 2026</span>
-                            </div>
-                        </li>
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://www.hipaajournal.com/one-medical-data-breach/">One Medical Healthcare Breach: 8.8 TB of Patient Data</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Breach</span>
-                                <span class="article-date">June 13, 2026</span>
-                            </div>
-                        </li>
+                        <li class="article-item"><div class="article-title"><a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/">AI-Powered Phishing Attacks Surge 1,380%</a></div><div class="article-meta"><span class="article-tag">Breach</span><span class="article-date">June 24, 2026</span></div></li>
+                        <li class="article-item"><div class="article-title"><a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/">24 Billion Records Exposed in Colossal Data Leak</a></div><div class="article-meta"><span class="article-tag">Breach</span><span class="article-date">June 23, 2026</span></div></li>
+                        <li class="article-item"><div class="article-title"><a href="https://www.hipaajournal.com/one-medical-data-breach/">One Medical Healthcare Breach: 8.8 TB of Patient Data</a></div><div class="article-meta"><span class="article-tag">Breach</span><span class="article-date">June 13, 2026</span></div></li>
                     </ul>
-                    <div class="view-all">
-                        <a href="category-bleepingcomputer.html">View All Breach Articles &rarr;</a>
-                    </div>
+                    <div class="view-all"><a href="category-bleepingcomputer.html">View All Breach Articles &rarr;</a></div>
                 </section>
-
-                <!-- Category: Encryption -->
                 <section class="category-section">
-                    <div class="category-header">
-                        <h3>Encryption & Privacy Tech</h3>
-                        <span class="category-count">28 Articles</span>
-                    </div>
+                    <div class="category-header"><h3>Encryption & Privacy Tech</h3><span class="category-count">28 Articles</span></div>
                     <p class="category-description">Advances in encryption technologies, privacy-enhancing tools, and cryptographic research for secure communications.</p>
                     <ul class="article-list">
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://www.schneier.com/blog/archives/2026/06/new-attack-on-aes.html">New Theoretical Attack on AES-256</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Encryption</span>
-                                <span class="article-date">June 20, 2026</span>
-                            </div>
-                        </li>
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://freedom.press/digisec/blog/signal-usernames-are-here/">Signal Usernames Roll Out: Phone Number Privacy</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Encryption</span>
-                                <span class="article-date">May 19, 2026</span>
-                            </div>
-                        </li>
+                        <li class="article-item"><div class="article-title"><a href="https://www.schneier.com/blog/archives/2026/06/new-attack-on-aes.html">New Theoretical Attack on AES-256</a></div><div class="article-meta"><span class="article-tag">Encryption</span><span class="article-date">June 20, 2026</span></div></li>
+                        <li class="article-item"><div class="article-title"><a href="https://freedom.press/digisec/blog/signal-usernames-are-here/">Signal Usernames Roll Out: Phone Number Privacy</a></div><div class="article-meta"><span class="article-tag">Encryption</span><span class="article-date">May 19, 2026</span></div></li>
                     </ul>
-                    <div class="view-all">
-                        <a href="#">View All Encryption Articles &rarr;</a>
-                    </div>
+                    <div class="view-all"><a href="#">View All Encryption Articles &rarr;</a></div>
                 </section>
-
-                <!-- Category: Regulation -->
                 <section class="category-section">
-                    <div class="category-header">
-                        <h3>Regulation & Compliance</h3>
-                        <span class="category-count">35 Articles</span>
-                    </div>
+                    <div class="category-header"><h3>Regulation & Compliance</h3><span class="category-count">35 Articles</span></div>
                     <p class="category-description">Updates on privacy laws, regulations, compliance requirements, and their impact on businesses and individuals.</p>
                     <ul class="article-list">
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://www.govtrack.us/congress/bills/119/s4211">Consumer Data Privacy and Security Act of 2026</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Regulation</span>
-                                <span class="article-date">June 15, 2026</span>
-                            </div>
-                        </li>
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://ico.org.uk/media-action-weve-taken/enforcement-notices/">UK ICO Fines Tech Giant £50M for GDPR Violations</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Regulation</span>
-                                <span class="article-date">June 19, 2026</span>
-                            </div>
-                        </li>
+                        <li class="article-item"><div class="article-title"><a href="https://www.govtrack.us/congress/bills/119/s4211">Consumer Data Privacy and Security Act of 2026</a></div><div class="article-meta"><span class="article-tag">Regulation</span><span class="article-date">June 15, 2026</span></div></li>
+                        <li class="article-item"><div class="article-title"><a href="https://ico.org.uk/media-action-weve-taken/enforcement-notices/">UK ICO Fines Tech Giant £50M for GDPR Violations</a></div><div class="article-meta"><span class="article-tag">Regulation</span><span class="article-date">June 19, 2026</span></div></li>
                     </ul>
-                    <div class="view-all">
-                        <a href="#">View All Regulation Articles &rarr;</a>
-                    </div>
+                    <div class="view-all"><a href="#">View All Regulation Articles &rarr;</a></div>
                 </section>
-
-                <!-- Category: Threats -->
                 <section class="category-section">
-                    <div class="category-header">
-                        <h3>Security Threats</h3>
-                        <span class="category-count">31 Articles</span>
-                    </div>
+                    <div class="category-header"><h3>Security Threats</h3><span class="category-count">31 Articles</span></div>
                     <p class="category-description">Analysis of emerging cybersecurity threats, attack vectors, and defensive strategies to protect against them.</p>
                     <ul class="article-list">
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure">CISA Urges Hardening of Fortinet Devices</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Threats</span>
-                                <span class="article-date">June 18, 2026</span>
-                            </div>
-                        </li>
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/">FortiBleed: 86,644 Fortinet Firewalls Compromised</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">Threats</span>
-                                <span class="article-date">June 13, 2026</span>
-                            </div>
-                        </li>
+                        <li class="article-item"><div class="article-title"><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure">CISA Urges Hardening of Fortinet Devices</a></div><div class="article-meta"><span class="article-tag">Threats</span><span class="article-date">June 18, 2026</span></div></li>
+                        <li class="article-item"><div class="article-title"><a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/">FortiBleed: 86,644 Fortinet Firewalls Compromised</a></div><div class="article-meta"><span class="article-tag">Threats</span><span class="article-date">June 13, 2026</span></div></li>
                     </ul>
-                    <div class="view-all">
-                        <a href="#">View All Threat Articles &rarr;</a>
-                    </div>
+                    <div class="view-all"><a href="#">View All Threat Articles &rarr;</a></div>
                 </section>
-
-                <!-- Category: CISA -->
                 <section class="category-section">
-                    <div class="category-header">
-                        <h3>CISA Alerts</h3>
-                        <span class="category-count">12 Articles</span>
-                    </div>
+                    <div class="category-header"><h3>CISA Alerts</h3><span class="category-count">12 Articles</span></div>
                     <p class="category-description">Official alerts and warnings from CISA (Cybersecurity and Infrastructure Security Agency) about critical vulnerabilities and threats.</p>
                     <ul class="article-list">
-                        <li class="article-item">
-                            <div class="article-title"><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure">CISA Urges Hardening of Fortinet Devices After Global Credential Exposure</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">CISA</span>
-                                <span class="article-date">June 18, 2026</span>
-                            </div>
-                        </li>
+                        <li class="article-item"><div class="article-title"><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure">CISA Urges Hardening of Fortinet Devices After Global Credential Exposure</a></div><div class="article-meta"><span class="article-tag">CISA</span><span class="article-date">June 18, 2026</span></div></li>
                     </ul>
-                    <div class="view-all">
-                        <a href="category-cisa.html">View All CISA Articles &rarr;</a>
-                    </div>
+                    <div class="view-all"><a href="category-cisa.html">View All CISA Articles &rarr;</a></div>
                 </section>
-
-                <!-- Category: SANS ISC -->
                 <section class="category-section">
-                    <div class="category-header">
-                        <h3>SANS ISC</h3>
-                        <span class="category-count">8 Articles</span>
-                    </div>
+                    <div class="category-header"><h3>SANS ISC</h3><span class="category-count">8 Articles</span></div>
                     <p class="category-description">Expert analysis and threat intelligence from the SANS Internet Storm Center.</p>
                     <ul class="article-list">
-                        <li class="article-item">
-                            <div class="article-title"><a href="#">New Phishing Campaign Targeting Financial Sector</a></div>
-                            <div class="article-meta">
-                                <span class="article-tag">SANS ISC</span>
-                                <span class="article-date">June 25, 2026</span>
-                            </div>
-                        </li>
+                        <li class="article-item"><div class="article-title"><a href="#">New Phishing Campaign Targeting Financial Sector</a></div><div class="article-meta"><span class="article-tag">SANS ISC</span><span class="article-date">June 25, 2026</span></div></li>
                     </ul>
-                    <div class="view-all">
-                        <a href="category-sans-isc.html">View All SANS ISC Articles &rarr;</a>
-                    </div>
+                    <div class="view-all"><a href="category-sans-isc.html">View All SANS ISC Articles &rarr;</a></div>
                 </section>
             </div>
-
-            <div class="pagination">
-                <a href="#" class="page-num active">1</a>
-                <a href="#" class="page-num">2</a>
-                <a href="#" class="page-num">3</a>
-                <span class="page-num">...</span>
-                <a href="#" class="page-num">&rarr;</a>
-            </div>
+            <div class="pagination"><a href="#" class="page-num active">1</a><a href="#" class="page-num">2</a><a href="#" class="page-num">3</a><span class="page-num">...</span><a href="#" class="page-num">&rarr;</a></div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="footer-content">
-            <div>
-                <img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="footer-logo">
-                <p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p>
-            </div>
+            <div><img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
             <ul class="footer-links">
                 <li><a href="/privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="/terms-of-service.html">Terms of Service</a></li>
@@ -694,39 +291,43 @@
             </ul>
         </div>
     </footer>
-
     <script>
-        // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
         hamburger.addEventListener('click', () => {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
-
-        // Search functionality (basic)
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateToggleText(); }
+            else { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; if (prefersDark) { html.setAttribute('data-theme', 'dark'); updateToggleText(); } }
+        }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme); localStorage.setItem('theme', newTheme); updateToggleText();
+        });
+        function updateToggleText() {
+            const currentTheme = html.getAttribute('data-theme');
+            const icon = themeToggle.querySelector('.theme-icon');
+            const text = themeToggle.querySelector('.theme-text');
+            if (currentTheme === 'dark') { icon.textContent = '☀️'; text.textContent = 'Light'; } else { icon.textContent = '🌙'; text.textContent = 'Dark'; }
+        }
+        initializeTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) { html.setAttribute('data-theme', e.matches ? 'dark' : 'light'); updateToggleText(); }
+        });
         const searchInput = document.querySelector('.search-input');
         const articleItems = document.querySelectorAll('.article-item');
-
         searchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-            
             articleItems.forEach(item => {
                 const title = item.querySelector('.article-title a').textContent.toLowerCase();
-                const tags = item.querySelectorAll('.article-tag');
-                let tagMatch = false;
-                
-                tags.forEach(tag => {
-                    if (tag.textContent.toLowerCase().includes(searchTerm)) {
-                        tagMatch = true;
-                    }
-                });
-                
-                if (title.includes(searchTerm) || tagMatch) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+                const tags = item.querySelectorAll('.article-tag'); let tagMatch = false;
+                tags.forEach(tag => { if (tag.textContent.toLowerCase().includes(searchTerm)) tagMatch = true; });
+                if (title.includes(searchTerm) || tagMatch) item.style.display = 'block'; else item.style.display = 'none';
             });
         });
     </script>
