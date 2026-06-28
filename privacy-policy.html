@@ -1,1 +1,134 @@
-successfully downloaded text file (SHA: 0888ce2a0ff0155f9ef269c7d1b0cecae9d8e0d4)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - BeastsNetwork</title>
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght=300;400;700;900&family=Merriweather:wght=300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-teal: #008080; --primary-teal-light: #20B2AA; --primary-teal-dark: #004D4D; --text-dark: #2C3E50; --text-medium: #555555; --text-light: #888888; --background-white: #ffffff; --background-light: #f8f9fa; --border-light: #E0E0E0; }
+        [data-theme="dark"] { --primary-teal: #20B2AA; --primary-teal-light: #008080; --primary-teal-dark: #004D4D; --text-dark: #f0f0f0; --text-medium: #b0b0b0; --text-light: #808080; --background-white: #1a1a2e; --background-light: #16213e; --border-light: #2a2a4a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background: var(--background-white); color: var(--text-dark); line-height: 1.8; transition: background-color 0.3s ease, color 0.3s ease; }
+        .header { background: var(--background-white); border-bottom: 2px solid var(--primary-teal); padding: 1rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        [data-theme="dark"] .header { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        .nav-logo { height: 50px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 1rem; font-weight: 400; transition: color 0.3s ease; position: relative; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary-teal); transition: width 0.3s ease; }
+        .nav-links a:hover { color: var(--primary-teal); }
+        .nav-links a:hover::after { width: 100%; }
+        .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem; border-radius: 5px; transition: background-color 0.3s ease; }
+        .theme-toggle:hover { background: rgba(0, 128, 128, 0.1); }
+        .theme-icon { font-size: 1.2rem; transition: transform 0.3s ease; }
+        [data-theme="dark"] .theme-icon { transform: rotate(180deg); }
+        .theme-text { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .hamburger span { width: 25px; height: 2px; background: var(--primary-teal); transition: all 0.3s ease; }
+        main { padding-top: 100px; min-height: 100vh; }
+        .page-header { padding: 3rem 2rem 2rem; text-align: center; background: var(--background-light); border-bottom: 1px solid var(--border-light); }
+        .page-header h1 { font-family: 'Merriweather', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--primary-teal); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem; }
+        .policy-content { background: var(--background-white); border: 1px solid var(--border-light); border-radius: 8px; padding: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+        [data-theme="dark"] .policy-content { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+        .policy-section { margin-bottom: 2rem; }
+        .policy-section h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary-teal); margin-bottom: 1rem; border-bottom: 2px solid var(--primary-teal); padding-bottom: 0.5rem; }
+        .policy-section p { color: var(--text-medium); margin-bottom: 1rem; }
+        .policy-section ul { margin-left: 2rem; margin-bottom: 1rem; color: var(--text-medium); }
+        .policy-section ul li { margin-bottom: 0.5rem; }
+        .last-updated { font-style: italic; color: var(--text-light); text-align: right; margin-top: 2rem; font-size: 0.9rem; }
+        .footer { background: var(--primary-teal); color: var(--background-white); padding: 3rem 2rem 2rem; text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: var(--background-white); text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
+        .footer-links a:hover { color: var(--primary-teal-light); text-decoration: underline; }
+        .copyright { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
+        .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .page-header h1 { font-size: 2rem; } .footer-content { flex-direction: column; text-align: center; } .footer-links { flex-direction: column; gap: 1rem; } .nav-container { flex-wrap: wrap; gap: 1rem; } .policy-content { padding: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="nav-container">
+        <a href="/"><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="nav-logo"></a>
+        <nav><ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li></ul></nav>
+        <div class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span><span class="theme-text">Dark</span></div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div></header>
+    <main>
+        <section class="page-header"><h1>Privacy Policy</h1><p>Your privacy is important to us. This policy explains how we collect, use, and protect your information.</p></section>
+        <div class="container">
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h2>1. Information We Collect</h2>
+                    <p>We collect information you provide directly to us, such as when you subscribe to our newsletter, contact us, or use our services.</p>
+                    <p>We may also collect certain information automatically when you visit our website, including:</p>
+                    <ul>
+                        <li>IP address and device information</li>
+                        <li>Browser type and operating system</li>
+                        <li>Pages visited and time spent on our site</li>
+                        <li>Referring website information</li>
+                    </ul>
+                </div>
+                <div class="policy-section">
+                    <h2>2. How We Use Your Information</h2>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our services</li>
+                        <li>Respond to your comments, questions, and requests</li>
+                        <li>Send you technical notices, updates, and support messages</li>
+                        <li>Monitor and analyze trends, usage, and activities</li>
+                        <li>Detect, investigate, and prevent security incidents</li>
+                    </ul>
+                </div>
+                <div class="policy-section">
+                    <h2>3. Information Sharing and Disclosure</h2>
+                    <p>We do not sell or rent your personal information to third parties. We may share your information:</p>
+                    <ul>
+                        <li>With your consent</li>
+                        <li>To comply with legal obligations</li>
+                        <li>To protect the rights and safety of BeastsNetwork and others</li>
+                        <li>With service providers who need access to perform services on our behalf</li>
+                    </ul>
+                </div>
+                <div class="policy-section">
+                    <h2>4. Data Security</h2>
+                    <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or method of electronic storage is 100% secure.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>5. Your Choices</h2>
+                    <p>You may access, update, or delete your personal information by contacting us. You may also opt-out of receiving promotional communications from us.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>6. Children's Privacy</h2>
+                    <p>Our services are not directed to individuals under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>7. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. If we make any material changes, we will notify you by email or by posting a notice on our website prior to the change becoming effective.</p>
+                </div>
+                <p class="last-updated">Last updated: June 28, 2026</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"><div class="footer-content">
+        <div><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
+        <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/privacy-policy.html" class="active">Privacy Policy</a></li><li><a href="/terms-of-service.html">Terms</a></li></ul>
+    </div></footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; });
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        function initializeTheme() { const savedTheme = localStorage.getItem('theme'); if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateToggleText(); } else { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; if (prefersDark) { html.setAttribute('data-theme', 'dark'); updateToggleText(); } } }
+        themeToggle.addEventListener('click', () => { const currentTheme = html.getAttribute('data-theme'); const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', newTheme); localStorage.setItem('theme', newTheme); updateToggleText(); });
+        function updateToggleText() { const currentTheme = html.getAttribute('data-theme'); const icon = themeToggle.querySelector('.theme-icon'); const text = themeToggle.querySelector('.theme-text'); if (currentTheme === 'dark') { icon.textContent = '☀️'; text.textContent = 'Light'; } else { icon.textContent = '🌙'; text.textContent = 'Dark'; } }
+        initializeTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!localStorage.getItem('theme')) { html.setAttribute('data-theme', e.matches ? 'dark' : 'light'); updateToggleText(); } });
+    </script>
+</body>
+</html>
