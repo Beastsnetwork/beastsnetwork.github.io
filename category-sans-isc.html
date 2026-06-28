@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANS ISC - BeastsNetwork | Cybersecurity News & Analysis</title>
+    <meta name="description" content="Latest cybersecurity news and analysis from SANS Internet Storm Center aggregated by BeastsNetwork.">
+    <link rel="icon" type="image/x-icon" href="/beastsnetwork-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {--deep-black: #0a0a0a;--gold-primary: #daa520;--glass-bg: rgba(10, 10, 10, 0.6);--glass-border: rgba(218, 165, 32, 0.2);--text-primary: #ffffff;--text-secondary: #a0a0a0;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Inter',sans-serif;background:var(--deep-black);color:var(--text-primary);line-height:1.6;}
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;background:rgba(10,10,10,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--glass-border);}
+        .nav-container{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+        .nav-logo{height:40px;width:auto;}
+        .nav-links{display:flex;gap:2rem;list-style:none;}
+        .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.95rem;font-weight:500;position:relative;}
+        .nav-links a:hover{color:var(--text-primary);}
+        .nav-links a.active{color:var(--gold-primary);}
+        .cta-button{background:linear-gradient(135deg,var(--gold-primary),#ffd700);color:#000;padding:0.75rem 1.5rem;border:none;border-radius:50px;font-family:'Space Grotesk',sans-serif;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+        .hamburger span{width:25px;height:2px;background:var(--gold-primary);transition:all 0.3s ease;}
+        main{padding-top:80px;min-height:100vh;}
+        .page-header{padding:4rem 2rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(218,165,32,0.1),transparent 70%);}
+        .page-header h1{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;margin-bottom:1rem;background:linear-gradient(135deg,#ffd700,var(--gold-primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .page-header p{color:var(--text-secondary);max-width:700px;margin:0 auto;font-size:1.1rem;}
+        .container{max-width:1200px;margin:0 auto;padding:0 2rem 4rem;}
+        .category-info{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;margin-bottom:2rem;backdrop-filter:blur(20px);}
+        .category-info h2{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;margin-bottom:1rem;color:var(--gold-primary);}
+        .category-info p{color:var(--text-secondary);margin-bottom:1rem;}
+        .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem;margin-top:2rem;}
+        .blog-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;transition:all 0.4s ease;position:relative;overflow:hidden;}
+        .blog-card:hover{transform:translateY(-5px);border-color:rgba(218,165,32,0.4);}
+        .blog-meta{display:flex;gap:1rem;margin-bottom:1rem;font-size:0.85rem;color:var(--text-secondary);align-items:center;flex-wrap:wrap;}
+        .blog-tag{background:rgba(218,165,32,0.2);color:#ffd700;padding:0.25rem 0.75rem;border-radius:20px;font-size:0.75rem;text-transform:uppercase;font-weight:500;}
+        .blog-date{color:var(--text-secondary);}
+        .blog-card h2{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:600;margin-bottom:1rem;line-height:1.3;}
+        .blog-card h2 a{color:var(--text-primary);text-decoration:none;transition:color 0.3s ease;}
+        .blog-card h2 a:hover{color:var(--gold-primary);}
+        .blog-card p{color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95rem;}
+        .read-more{color:var(--gold-primary);text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:0.5rem;transition:gap 0.3s ease;font-size:0.9rem;}
+        .read-more:hover{gap:0.75rem;}
+        .footer{background:rgba(10,10,10,0.8);border-top:1px solid var(--glass-border);padding:3rem 2rem;text-align:center;}
+        .footer-content{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;}
+        .footer-links{display:flex;gap:2rem;list-style:none;}
+        .footer-links a{color:var(--text-secondary);text-decoration:none;transition:color 0.3s ease;}
+        .footer-links a:hover{color:var(--gold-primary);}
+        .copyright{color:var(--text-secondary);font-size:0.9rem;}
+        @media (max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.page-header h1{font-size:2rem;}.blog-grid{grid-template-columns:1fr;}.footer-content{flex-direction:column;text-align:center;}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/"><img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="nav-logo"></a>
+            <nav><ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#community">Community</a></li>
+                <li><a href="/#how-to-buy">How to Buy</a></li>
+                <li><a href="/blog.html" class="active">Blog</a></li>
+            </ul></nav>
+            <a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+    <main>
+        <section class="page-header">
+            <h1>SANS Internet Storm Center</h1>
+            <p>Cooperative cyber threat intelligence and analysis from SANS ISC.</p>
+        </section>
+        <div class="container">
+            <div class="category-info">
+                <h2>About SANS ISC</h2>
+                <p>The SANS Internet Storm Center (ISC) is a global cooperative cyber threat intelligence service that monitors, analyzes, and reports on cyber threats. It provides early warning of emerging threats and enables organizations to better protect their systems.</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-meta"><span class="blog-tag">Analysis</span><span class="blog-date">June 24, 2026</span></div>
+                    <h2><a href="#">What do Ports Hear When Nobody's Listening? An Assessment of Automated Cybercrime</a></h2>
+                    <p>Guest diary by Nicole Phillips discussing automated cybercrime, botnets, and the layers of orchestration in the automated shadow economy.</p>
+                    <a href="#" class="read-more">Read more &rarr;</a>
+                </article>
+            </div>
+            <div style="margin-top:2rem;"><a href="/blog.html" class="read-more">← Back to All Articles</a></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div><img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" style="height:40px;width:auto;"><p class="copyright" style="margin-top:1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
+            <ul class="footer-links">
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>document.getElementById('hamburger').addEventListener('click',()=>{document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex';});</script>
+</body>
+</html>
