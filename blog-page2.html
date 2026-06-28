@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Page 2 | BeastsNetwork | Privacy & Cybersecurity News</title>
+    <meta name="description" content="Archive of privacy and cybersecurity news. Page 2 of BeastsNetwork's blog covering previous weeks' insights.">
+    <meta name="keywords" content="privacy, cybersecurity, data protection, encryption, security news, digital rights, BeastsNetwork, archive">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beastsnetwork.win/blog-page2.html">
+    <meta property="og:title" content="BeastsNetwork Blog - Page 2">
+    <meta property="og:description" content="Archive of privacy and cybersecurity articles from BeastsNetwork.">
+    <meta property="og:image" content="/beastsnetwork-logo.png">
+    
+    <link rel="icon" type="image/x-icon" href="/beastsnetwork-logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-black: #0a0a0a;
+            --deep-black-light: #141414;
+            --gold-primary: #daa520;
+            --gold-secondary: #b8860b;
+            --gold-light: #ffd700;
+            --electric-blue: #00d4ff;
+            --glass-bg: rgba(10, 10, 10, 0.6);
+            --glass-border: rgba(218, 165, 32, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold-primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--deep-black);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: all 0.3s ease;
+        }
+
+        main {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+        }
+
+        .page-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(218, 165, 32, 0.4);
+        }
+
+        .blog-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            align-items: center;
+        }
+
+        .blog-tag {
+            background: rgba(218, 165, 32, 0.2);
+            color: var(--gold-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+        }
+
+        .blog-card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card h2 a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card h2 a:hover {
+            color: var(--gold-primary);
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover {
+            gap: 0.75rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .page-num {
+            padding: 0.5rem 1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .page-num:hover {
+            background: rgba(218, 165, 32, 0.2);
+            border-color: var(--gold-primary);
+        }
+
+        .page-num.active {
+            background: var(--gold-primary);
+            color: var(--deep-black);
+            border-color: var(--gold-primary);
+        }
+
+        .footer {
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="nav-logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#community">Community</a></li>
+                    <li><a href="/#how-to-buy">How to Buy</a></li>
+                    <li><a href="/blog.html" class="active">Blog</a></li>
+                </ul>
+            </nav>
+            <a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Privacy & Cybersecurity Blog</h1>
+            <p>Page 2 - Previous Weeks' Articles</p>
+        </section>
+
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Older articles -->
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Breach</span>
+                        <span class="blog-date">June 21, 2026</span>
+                    </div>
+                    <h2><a href="https://www.bleepingcomputer.com/news/security/major-social-media-platform-hacked-50m-users-affected/" target="_blank" rel="noopener">Social Media Mega-Breach: 50M Users Compromised</a></h2>
+                    <p>A major social media platform suffered a data breach exposing email addresses, phone numbers, and profile data of 50 million users. The attack exploited a zero-day vulnerability in their API. Security experts warn this data could be used for targeted phishing campaigns.</p>
+                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Encryption</span>
+                        <span class="blog-date">June 20, 2026</span>
+                    </div>
+                    <h2><a href="https://www.schneier.com/blog/archives/2026/06/new-attack-on-aes.html" target="_blank" rel="noopener">New Theoretical Attack on AES-256 Reduces Security Margin</a></h2>
+                    <p>Cryptographers have published a paper describing a new attack on AES-256 that, while not practical against current implementations, reduces the theoretical security margin. The attack requires 2^120 operations, still far beyond current computational capabilities, but highlights the need for post-quantum migration planning.</p>
+                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Regulation</span>
+                        <span class="blog-date">June 19, 2026</span>
+                    </div>
+                    <h2><a href="https://ico.org.uk/media-action-weve-taken/enforcement-notices/" target="_blank" rel="noopener">UK ICO Fines Tech Giant £50M for GDPR Violations</a></h2>
+                    <p>The UK Information Commissioner's Office has fined a major technology company £50 million for unlawfully processing children's data without proper consent. This is the largest GDPR fine issued in the UK to date and signals increased enforcement against Big Tech.</p>
+                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Privacy</span>
+                        <span class="blog-date">June 18, 2026</span>
+                    </div>
+                    <h2><a href="https://www.eff.org/deeplinks/2026/06/new-bill-would-ban-facial-recognition-nationwide" target="_blank" rel="noopener">Bipartisan Bill Seeks Nationwide Facial Recognition Ban</a></h2>
+                    <p>A new bipartisan bill in the US Senate would ban the use of facial recognition technology by federal agencies and law enforcement. The bill cites concerns about accuracy, bias, and the chilling effect on free speech. Privacy advocates are calling this a major step forward for civil liberties.</p>
+                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Innovation</span>
+                        <span class="blog-date">June 17, 2026</span>
+                    </div>
+                    <h2><a href="https://techcrunch.com/2026/06/17/new-startup-offers-fully-homomorphic-encryption-as-a-service/" target="_blank" rel="noopener">Startup Launches First Commercial Fully Homomorphic Encryption Service</a></h2>
+                    <p>A Silicon Valley startup has launched the first commercial service offering fully homomorphic encryption (FHE) as a cloud service. This allows companies to perform computations on encrypted data without ever decrypting it, opening up new possibilities for secure data analysis in regulated industries.</p>
+                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Threats</span>
+                        <span class="blog-date">June 16, 2026</span>
+                    </div>
+                    <h2><a href="https://therecord.media/supply-chain-attack-compromises-popular-npm-package/" target="_blank" rel="noopener">Supply Chain Attack Hits Popular NPM Package</a></h2>
+                    <p>A malicious version of a popular NPM package was published to the registry, containing code that exfiltrated sensitive data from thousands of applications. The attack went undetected for 3 days before being discovered. Developers are urged to verify package integrity and use signed packages.</p>
+                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <a href="/blog.html" class="page-num">&larr;</a>
+                <a href="/blog.html" class="page-num">1</a>
+                <a href="/blog-page2.html" class="page-num active">2</a>
+                <a href="/blog-page3.html" class="page-num">3</a>
+                <span class="page-num">...</span>
+                <a href="/blog-page3.html" class="page-num">&rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" style="height: 40px; width: auto;">
+                <p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
