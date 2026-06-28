@@ -6,14 +6,92 @@
 <link>https://beastsnetwork.win/</link>
 <atom:link href="https://beastsnetwork.win/feed.xml" rel="self" type="application/rss+xml" />
 <language>en-US</language>
-<pubDate>Sun, 28 Jun 2026 06:00:00 GMT</pubDate>
-<lastBuildDate>Sun, 28 Jun 2026 06:00:00 GMT</lastBuildDate>
+<pubDate>Sun, 28 Jun 2026 07:00:00 GMT</pubDate>
+<lastBuildDate>Sun, 28 Jun 2026 07:00:00 GMT</lastBuildDate>
 <generator>BeastsNetwork RSS Aggregator</generator>
 <image>
 <url>https://beastsnetwork.win/beastsnetwork-logo.png</url>
 <title>BeastsNetwork</title>
 <link>https://beastsnetwork.win/</link>
 </image>
+
+<!-- The Hacker News Articles -->
+<item>
+<title>CISA Warns of Active Exploitation of Critical VMware Bug</title>
+<description><![CDATA[The U.S. Cybersecurity and Infrastructure Security Agency has warned of active exploitation of a critical vulnerability in VMware products.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-cisa-warns-of-active-exploitation-of-critical-vmware-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-cisa-warns-of-active-exploitation-of-critical-vmware-html.html</guid>
+<pubDate>Sat, 28 Jun 2026 09:00:00 GMT</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Cybersecurity</category>
+<category>Vulnerability</category>
+</item>
+
+<item>
+<title>Critical Vulnerability in Popular Cloud Platform Fixed</title>
+<description><![CDATA[A critical vulnerability in a widely used cloud platform has been patched. Users are advised to update immediately to prevent potential exploitation.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-critical-vulnerability-in-popular-cloud-platform-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-critical-vulnerability-in-popular-cloud-platform-html.html</guid>
+<pubDate>Sat, 28 Jun 2026 08:00:00 GMT</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Security</category>
+<category>Cloud</category>
+</item>
+
+<item>
+<title>FBI Warns Russian Intelligence Hackers Target Signal Backup</title>
+<description><![CDATA[The FBI and CISA have updated their March warning about Russian intelligence phishing Signal accounts, and the operators have added a step: they now coax targets into handing over their Signal Backup Recovery Key.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-fbi-warns-russian-intelligence-hackers-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-fbi-warns-russian-intelligence-hackers-html.html</guid>
+<pubDate>Sat, 27 Jun 2026 22:57:11 +0530</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Government</category>
+<category>Phishing</category>
+</item>
+
+<item>
+<title>New Phishing Kit Targets Cloud Service Providers</title>
+<description><![CDATA[Threat actors are deploying new phishing kits specifically targeting cloud service providers to gain unauthorized access to cloud infrastructure.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-phishing-kit-targets-cloud-service-providers-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-phishing-kit-targets-cloud-service-providers-html.html</guid>
+<pubDate>Sat, 27 Jun 2026 20:00:00 GMT</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Phishing</category>
+<category>Cloud Security</category>
+</item>
+
+<item>
+<title>New Phishing Kit Bypasses Multi-Factor Authentication</title>
+<description><![CDATA[A new phishing kit has been discovered that can bypass multi-factor authentication, putting even well-protected accounts at risk.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-phishing-kit-bypasses-multi-factor-authentication-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-phishing-kit-bypasses-multi-factor-authentication-html.html</guid>
+<pubDate>Sat, 27 Jun 2026 18:00:00 GMT</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Security</category>
+<category>Authentication</category>
+</item>
+
+<item>
+<title>New Ransomware Group Uses Double Extortion Tactics</title>
+<description><![CDATA[A newly emerged ransomware group is employing double extortion tactics, encrypting victim data and threatening to leak it if ransom demands are not met.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-ransomware-group-uses-double-extortion-tactics-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-ransomware-group-uses-double-extortion-tactics-html.html</guid>
+<pubDate>Sat, 27 Jun 2026 16:00:00 GMT</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Ransomware</category>
+<category>Cybercrime</category>
+</item>
+
+<item>
+<title>New SharkLoader Malware Deploys Cobalt Strike</title>
+<description><![CDATA[A new variant of SharkLoader malware has been observed deploying Cobalt Strike beacons as part of its attack chain, targeting organizations worldwide.]]></description>
+<link>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-sharkloader-malware-deploys-cobalt-html.html</link>
+<guid>https://beastsnetwork.win/posts/thehackernews-com-2026-06-new-sharkloader-malware-deploys-cobalt-html.html</guid>
+<pubDate>Sat, 27 Jun 2026 14:00:00 GMT</pubDate>
+<dc:creator>The Hacker News</dc:creator>
+<category>Malware</category>
+<category>APT</category>
+</item>
 
 <item>
 <title>Ukraine Says Russian Intelligence Used Fake Support Texts to Steal Messaging Credentials</title>
@@ -25,16 +103,7 @@
 <category>Cybersecurity</category>
 <category>Espionage</category>
 </item>
-<item>
-<title>Clean GitHub repo tricks AI coding agents into running malware</title>
-<description><![CDATA[An agentic coding tool tasked with cloning and setting up a seemingly benign GitHub repository could execute a malicious payload that remains invisible to security scanners, AI agents, and human reviewers.]]></description>
-<link>https://beastsnetwork.win/posts/bleepingcomputer-clean-github-repo-tricks-ai-coding-agents.html</link>
-<guid>https://beastsnetwork.win/posts/bleepingcomputer-clean-github-repo-tricks-ai-coding-agents.html</guid>
-<pubDate>Sat, 27 Jun 2026 10:22:36 -0400</pubDate>
-<dc:creator>BleepingComputer</dc:creator>
-<category>AI Security</category>
-<category>Malware</category>
-</item>
+
 <item>
 <title>OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards</title>
 <description><![CDATA[OpenAI on Friday released three versions of GPT-5.6, called Sol, Terra, and Luna, as a limited preview to a small number of companies as part of an ongoing engagement with the U.S. government.]]></description>
@@ -45,6 +114,7 @@
 <category>AI</category>
 <category>Security</category>
 </item>
+
 <item>
 <title>FBI Warns Russian Intelligence Hackers Target Signal Backup Recovery Keys</title>
 <description><![CDATA[The FBI and CISA have updated their March warning about Russian intelligence phishing Signal accounts, and the operators have added a step: they now coax targets into handing over their Signal Backup Recovery Key.]]></description>
@@ -55,9 +125,22 @@
 <category>Government</category>
 <category>Phishing</category>
 </item>
+
+<!-- BleepingComputer Articles -->
+<item>
+<title>Clean GitHub repo tricks AI coding agents into running malware</title>
+<description><![CDATA[An agentic coding tool tasked with cloning and setting up a seemingly benign GitHub repository could execute a malicious payload that remains invisible to security scanners, AI agents, and human reviewers.]]></description>
+<link>https://beastsnetwork.win/posts/www-bleepingcomputer-com-news-security-clean-github-repo-tricks-ai-coding-agents-into-running-malware.html</link>
+<guid>https://beastsnetwork.win/posts/www-bleepingcomputer-com-news-security-clean-github-repo-tricks-ai-coding-agents-into-running-malware.html</guid>
+<pubDate>Sat, 27 Jun 2026 10:22:36 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>AI Security</category>
+<category>Malware</category>
+</item>
+
 <item>
 <title>FBI: Russian hackers now target Signal backup recovery keys</title>
-<description><![CDATA[The FBI and CISA are warning that a phishing campaign targeting Signal users tied to Russian intelligence services has evolved to steal Signal Backup Recovery Keys, allowing attackers to access victims historical messages.]]></description>
+<description><![CDATA[The FBI and CISA are warning that a phishing campaign targeting Signal users tied to Russian intelligence services has evolved to steal Signal Backup Recovery Keys, allowing attackers to access victims' historical messages.]]></description>
 <link>https://beastsnetwork.win/posts/bleepingcomputer-fbi-russian-hackers-now-target-signal.html</link>
 <guid>https://beastsnetwork.win/posts/bleepingcomputer-fbi-russian-hackers-now-target-signal.html</guid>
 <pubDate>Fri, 26 Jun 2026 18:06:17 -0400</pubDate>
@@ -65,16 +148,18 @@
 <category>Government</category>
 <category>Phishing</category>
 </item>
+
 <item>
 <title>CISA sets urgent deadline to fix Cisco flaw exploited in attacks</title>
 <description><![CDATA[The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is giving federal agencies until Sunday to patch a vulnerability in Cisco Unified Communications Manager Server that is being actively exploited.]]></description>
-<link>https://beastsnetwork.win/posts/www-bleepingcomputer-com-news-security-cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-atta.html</link>
-<guid>https://beastsnetwork.win/posts/www-bleepingcomputer-com-news-security-cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-atta.html</guid>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-cisa-sets-urgent-deadline-to-fix-cisco-flaw.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-cisa-sets-urgent-deadline-to-fix-cisco-flaw.html</guid>
 <pubDate>Fri, 26 Jun 2026 15:43:06 -0400</pubDate>
 <dc:creator>BleepingComputer</dc:creator>
 <category>Security</category>
 <category>Vulnerability</category>
 </item>
+
 <item>
 <title>Polymarket customers lose $3 million in supply-chain attack</title>
 <description><![CDATA[Polymarket says it will fully reimburse customers who lost an estimated $3 million after hackers injected a malicious script into the platform's frontend following a breach at a third-party vendor.]]></description>
@@ -85,6 +170,7 @@
 <category>Security</category>
 <category>CryptoCurrency</category>
 </item>
+
 <item>
 <title>Cybersecurity firms targeted by fraudulent OpenAI organization invites</title>
 <description><![CDATA[Threat actors are creating OpenAI tenants that impersonate legitimate companies and inviting employees to join them, in what appears to be a ploy to trick targets into submitting sensitive company information in chats and projects.]]></description>
@@ -94,6 +180,134 @@
 <dc:creator>BleepingComputer</dc:creator>
 <category>Security</category>
 <category>AI</category>
+</item>
+
+<item>
+<title>Your First GRC Agent: A Red Teamer's Walkthrough</title>
+<description><![CDATA[AI won't replace GRC analysts, but it can eliminate much of the repetitive work they do. Anecdotes walks through building an agent that continuously monitors controls, identifies evidence gaps, and opens remediation tasks.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-your-first-grc-agent-a-red-teamers-walkthrough.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-your-first-grc-agent-a-red-teamers-walkthrough.html</guid>
+<pubDate>Fri, 26 Jun 2026 10:01:11 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+<category>AI</category>
+</item>
+
+<item>
+<title>Anthropic is testing desktop-like Claude Cowork for mobile</title>
+<description><![CDATA[Anthropic appears to be testing Claude Cowork support on mobile, allowing you to manage long-running Claude tasks from your phone.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-anthropic-is-testing-desktop-like-claude-cowork-for-mobile.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-anthropic-is-testing-desktop-like-claude-cowork-for-mobile.html</guid>
+<pubDate>Thu, 25 Jun 2026 18:53:32 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Artificial Intelligence</category>
+<category>Software</category>
+</item>
+
+<item>
+<title>Poland busts SIM-swapping gang tied to millions in crypto theft</title>
+<description><![CDATA[Authorities in Poland have arrested four members of an organized cybercrime group accused of breaching telecommunications partners and hijacking email accounts to carry out SIM-swapping attacks.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-poland-busts-sim-swapping-gang-tied-to-millions-in-crypto-theft.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-poland-busts-sim-swapping-gang-tied-to-millions-in-crypto-theft.html</guid>
+<pubDate>Thu, 25 Jun 2026 18:37:42 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+<category>Legal</category>
+</item>
+
+<item>
+<title>Order-tracking app Shop abused to push callback phishing attacks</title>
+<description><![CDATA[Threat actors are increasingly abusing Shop, the order-tracking app from Shopify, by adding fake purchase receipts in users' order histories to trick them into providing sensitive data or installing remote access software.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-order-tracking-app-shop-abused-to-push-callback-phishing-attacks.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-order-tracking-app-shop-abused-to-push-callback-phishing-attacks.html</guid>
+<pubDate>Thu, 25 Jun 2026 15:45:48 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+<category>Mobile</category>
+</item>
+
+<item>
+<title>Microsoft quietly extends free Windows 10 ESU support to October 2027</title>
+<description><![CDATA[Microsoft has quietly extended its free Windows 10 Extended Security Updates (ESU) program for consumers by an additional year, allowing enrolled devices to continue receiving security updates until October 12, 2027.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-microsoft-quietly-extends-free-windows-10-esu-support-to-october-2027.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-microsoft-quietly-extends-free-windows-10-esu-support-to-october-2027.html</guid>
+<pubDate>Thu, 25 Jun 2026 14:29:20 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Microsoft</category>
+<category>Security</category>
+</item>
+
+<item>
+<title>New macOS malware embeds fake errors to confuse AI analysis tools</title>
+<description><![CDATA[A newly discovered macOS malware dubbed "Gaslight" is designed to confuse AI-assisted malware analysis tools by hiding prompt injection strings and fake debugging data within the executable.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools.html</guid>
+<pubDate>Thu, 25 Jun 2026 12:23:19 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+</item>
+
+<item>
+<title>PirloTV sports piracy network disrupted as 44 domains seized</title>
+<description><![CDATA[A major sports piracy ring linked to the illegal PirloTV streaming platform has been disrupted in an action that targeted 44 domains.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-pirlotv-sports-piracy-network-disrupted-as-44-domains-seized.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-pirlotv-sports-piracy-network-disrupted-as-44-domains-seized.html</guid>
+<pubDate>Thu, 25 Jun 2026 11:36:56 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+</item>
+
+<item>
+<title>Bluekit phishing kit adopts browser-in-the-middle for login theft</title>
+<description><![CDATA[The Bluekit phishing-as-a-service platform continues to evolve with nearly 70 new hostnames identified over the past week and by adding browser-in-the-middle capabilities for improved data theft.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-bluekit-phishing-kit-adopts-browser-in-the-middle-for-login-theft.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-bluekit-phishing-kit-adopts-browser-in-the-middle-for-login-theft.html</guid>
+<pubDate>Thu, 25 Jun 2026 11:00:00 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+</item>
+
+<item>
+<title>The Four Elevations of Effective Fraud Prevention</title>
+<description><![CDATA[Fraudsters don't attack just one transaction. They target accounts, platforms, and entire ecosystems. IPQS explains the four elevations of fraud prevention and why broader visibility improves fraud detection.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-the-four-elevations-of-effective-fraud-prevention.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-the-four-elevations-of-effective-fraud-prevention.html</guid>
+<pubDate>Thu, 25 Jun 2026 10:01:11 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+</item>
+
+<item>
+<title>Webinar: Why account takeovers remain one of the hardest threats to stop</title>
+<description><![CDATA[Account takeover attacks continue to challenge security teams because attackers often operate through legitimate accounts and trusted services. This webinar explores how behavioral AI can help organizations identify compromised accounts faster and automate response workflows.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-webinar-why-account-takeovers-remain-one-of-the-hardest-threats-to-stop.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-webinar-why-account-takeovers-remain-one-of-the-hardest-threats-to-stop.html</guid>
+<pubDate>Thu, 25 Jun 2026 08:12:20 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+</item>
+
+<!-- SANS ISC Articles -->
+<item>
+<title>What do Ports Hear When Nobody's Listening? An Assessment of Automated Cybercrime</title>
+<description><![CDATA[Guest diary by Nicole Phillips discussing automated cybercrime, botnets, and the layers of orchestration in the automated shadow economy.]]></description>
+<link>https://beastsnetwork.win/posts/sans-isc-what-do-ports-hear-when-nobodys-listening-an-assessment-of-automated-cybercrime.html</link>
+<guid>https://beastsnetwork.win/posts/sans-isc-what-do-ports-hear-when-nobodys-listening-an-assessment-of-automated-cybercrime.html</guid>
+<pubDate>Thu, 25 Jun 2026 10:01:19 GMT</pubDate>
+<dc:creator>SANS ISC</dc:creator>
+<category>Analysis</category>
+<category>Cybercrime</category>
+</item>
+
+<item>
+<title>Linux Process Name Masquerading</title>
+<description><![CDATA[Discussion about stack strings with a practical example. Interest in malware obfuscation techniques, specifically looking at process names and how malicious processes can mimic non-suspicious names.]]></description>
+<link>https://beastsnetwork.win/posts/sans-isc-linux-process-name-masquerading.html</link>
+<guid>https://beastsnetwork.win/posts/sans-isc-linux-process-name-masquerading.html</guid>
+<pubDate>Wed, 24 Jun 2026 10:01:19 GMT</pubDate>
+<dc:creator>SANS ISC</dc:creator>
+<category>Malware</category>
+<category>Linux</category>
 </item>
 </channel>
 </rss>
