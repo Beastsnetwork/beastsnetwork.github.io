@@ -65,5 +65,35 @@
 <category>Government</category>
 <category>Phishing</category>
 </item>
+<item>
+<title>CISA sets urgent deadline to fix Cisco flaw exploited in attacks</title>
+<description><![CDATA[The U.S. Cybersecurity and Infrastructure Security Agency (CISA) is giving federal agencies until Sunday to patch a vulnerability in Cisco Unified Communications Manager Server that is being actively exploited.]]></description>
+<link>https://beastsnetwork.win/posts/www-bleepingcomputer-com-news-security-cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-atta.html</link>
+<guid>https://beastsnetwork.win/posts/www-bleepingcomputer-com-news-security-cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-atta.html</guid>
+<pubDate>Fri, 26 Jun 2026 15:43:06 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+<category>Vulnerability</category>
+</item>
+<item>
+<title>Polymarket customers lose $3 million in supply-chain attack</title>
+<description><![CDATA[Polymarket says it will fully reimburse customers who lost an estimated $3 million after hackers injected a malicious script into the platform's frontend following a breach at a third-party vendor.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-polymarket-customers-lose-3-million.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-polymarket-customers-lose-3-million.html</guid>
+<pubDate>Fri, 26 Jun 2026 14:04:12 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+<category>CryptoCurrency</category>
+</item>
+<item>
+<title>Cybersecurity firms targeted by fraudulent OpenAI organization invites</title>
+<description><![CDATA[Threat actors are creating OpenAI tenants that impersonate legitimate companies and inviting employees to join them, in what appears to be a ploy to trick targets into submitting sensitive company information in chats and projects.]]></description>
+<link>https://beastsnetwork.win/posts/bleepingcomputer-cybersecurity-firms-targeted-by-fraudulent-openai.html</link>
+<guid>https://beastsnetwork.win/posts/bleepingcomputer-cybersecurity-firms-targeted-by-fraudulent-openai.html</guid>
+<pubDate>Fri, 26 Jun 2026 13:49:07 -0400</pubDate>
+<dc:creator>BleepingComputer</dc:creator>
+<category>Security</category>
+<category>AI</category>
+</item>
 </channel>
 </rss>
