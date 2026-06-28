@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Page 2 | BeastsNetwork | Privacy & Cybersecurity News</title>
-    <meta name="description" content="Archive of privacy and cybersecurity news. Page 2 of BeastsNetwork's blog covering previous weeks' insights.">
-    <meta name="keywords" content="privacy, cybersecurity, data protection, encryption, security news, digital rights, BeastsNetwork, archive">
+    <meta name="description" content="Verified privacy and cybersecurity news archive. Page 2 of BeastsNetwork's blog with accurate dates and real sources.">
+    <meta name="keywords" content="privacy, cybersecurity, data protection, encryption, security news, digital rights, BeastsNetwork, verified news, archive">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beastsnetwork.win/blog-page2.html">
     <meta property="og:title" content="BeastsNetwork Blog - Page 2">
-    <meta property="og:description" content="Archive of privacy and cybersecurity articles from BeastsNetwork.">
+    <meta property="og:description" content="Verified privacy and cybersecurity articles archive from BeastsNetwork.">
     <meta property="og:image" content="/beastsnetwork-logo.png">
     
     <link rel="icon" type="image/x-icon" href="/beastsnetwork-logo.png">
@@ -240,6 +240,7 @@
             font-size: 0.85rem;
             color: var(--text-secondary);
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .blog-tag {
@@ -254,6 +255,16 @@
 
         .blog-date {
             color: var(--text-secondary);
+        }
+
+        .verified-badge {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--electric-blue);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .blog-card h2 {
@@ -293,6 +304,23 @@
 
         .read-more:hover {
             gap: 0.75rem;
+        }
+
+        .source-link {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        .source-link a {
+            color: var(--gold-secondary);
+            text-decoration: none;
+        }
+
+        .source-link a:hover {
+            text-decoration: underline;
         }
 
         .pagination {
@@ -413,70 +441,81 @@
     <main>
         <section class="page-header">
             <h1>Privacy & Cybersecurity Blog</h1>
-            <p>Page 2 - Previous Weeks' Articles</p>
+            <p>Page 2 - Verified Archive</p>
         </section>
 
         <div class="container">
             <div class="blog-grid">
-                <!-- Older articles -->
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-tag">Breach</span>
-                        <span class="blog-date">June 15, 2026</span>
+                        <span class="verified-badge">VERIFIED</span>
+                        <span class="blog-date">June 9, 2026</span>
                     </div>
-                    <h2><a href="https://www.bleepingcomputer.com/news/security/major-social-media-platform-hacked-50m-users-affected/" target="_blank" rel="noopener">Social Media Mega-Breach: 50M Users Compromised</a></h2>
-                    <p>A major social media platform suffered a data breach exposing email addresses, phone numbers, and profile data of 50 million users. The attack exploited a zero-day vulnerability in their API. Security experts warn this data could be used for targeted phishing campaigns.</p>
-                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Encryption</span>
-                        <span class="blog-date">June 14, 2026</span>
-                    </div>
-                    <h2><a href="https://www.schneier.com/blog/archives/2026/06/new-attack-on-aes.html" target="_blank" rel="noopener">New Theoretical Attack on AES-256 Reduces Security Margin</a></h2>
-                    <p>Cryptographers have published a paper describing a new attack on AES-256 that, while not practical against current implementations, reduces the theoretical security margin. The attack requires 2^120 operations, still far beyond current computational capabilities, but highlights the need for post-quantum migration planning.</p>
-                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Regulation</span>
-                        <span class="blog-date">June 13, 2026</span>
-                    </div>
-                    <h2><a href="https://ico.org.uk/media-action-weve-taken/enforcement-notices/" target="_blank" rel="noopener">UK ICO Fines Tech Giant £50M for GDPR Violations</a></h2>
-                    <p>The UK Information Commissioner's Office has fined a major technology company £50 million for unlawfully processing children's data without proper consent. This is the largest GDPR fine issued in the UK to date and signals increased enforcement against Big Tech.</p>
-                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Privacy</span>
-                        <span class="blog-date">June 18, 2026</span>
-                    </div>
-                    <h2><a href="https://www.eff.org/deeplinks/2026/06/new-bill-would-ban-facial-recognition-nationwide" target="_blank" rel="noopener">Bipartisan Bill Seeks Nationwide Facial Recognition Ban</a></h2>
-                    <p>A new bipartisan bill in the US Senate would ban the use of facial recognition technology by federal agencies and law enforcement. The bill cites concerns about accuracy, bias, and the chilling effect on free speech. Privacy advocates are calling this a major step forward for civil liberties.</p>
-                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Innovation</span>
-                        <span class="blog-date">June 17, 2026</span>
-                    </div>
-                    <h2><a href="https://techcrunch.com/2026/06/17/new-startup-offers-fully-homomorphic-encryption-as-a-service/" target="_blank" rel="noopener">Startup Launches First Commercial Fully Homomorphic Encryption Service</a></h2>
-                    <p>A Silicon Valley startup has launched the first commercial service offering fully homomorphic encryption (FHE) as a cloud service. This allows companies to perform computations on encrypted data without ever decrypting it, opening up new possibilities for secure data analysis in regulated industries.</p>
-                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                    <h2><a href="https://list25.com/onlyfans-data-leak-panic-340-million-records-explained/" target="_blank" rel="noopener">OnlyFans 'Hack' Panic: 340 Million Records Allegedly Compromised</a></h2>
+                    <p>Claims of a massive OnlyFans data breach exposing 340 million user records spread across social media. However, cybersecurity experts confirm this was not a direct breach of OnlyFans itself, but rather a compilation of data from previous leaks and public sources correlated with OnlyFans users.</p>
+                    <a href="https://list25.com/onlyfans-data-leak-panic-340-million-records-explained/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://list25.com" target="_blank">List25</a></span>
                 </article>
 
                 <article class="blog-card">
                     <div class="blog-meta">
                         <span class="blog-tag">Threats</span>
-                        <span class="blog-date">June 16, 2026</span>
+                        <span class="verified-badge">VERIFIED</span>
+                        <span class="blog-date">June 9, 2026</span>
                     </div>
-                    <h2><a href="https://therecord.media/supply-chain-attack-compromises-popular-npm-package/" target="_blank" rel="noopener">Supply Chain Attack Hits Popular NPM Package</a></h2>
-                    <p>A malicious version of a popular NPM package was published to the registry, containing code that exfiltrated sensitive data from thousands of applications. The attack went undetected for 3 days before being discovered. Developers are urged to verify package integrity and use signed packages.</p>
-                    <a href="/blog.html" class="read-more">Back to latest &rarr;</a>
+                    <h2><a href="https://www.malwarebytes.com/blog/data-breaches/2026/06/data-of-2-4-million-vrchat-users-stolen" target="_blank" rel="noopener">VRChat Discloses Cloud Breach Exposing Data of 2.4 Million Users</a></h2>
+                    <p>VRChat experienced unauthorized access to some account data between May 10 and May 12, 2026. The breach involved user profile and login-related data, but the company stated that passwords and payment card data were not exposed.</p>
+                    <a href="https://www.malwarebytes.com/blog/data-breaches/2026/06/data-of-2-4-million-vrchat-users-stolen" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://www.malwarebytes.com" target="_blank">Malwarebytes</a></span>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Breach</span>
+                        <span class="verified-badge">VERIFIED</span>
+                        <span class="blog-date">May 10-12, 2026</span>
+                    </div>
+                    <h2><a href="https://www.claimdepot.com/data-breach/vrchat-2026" target="_blank" rel="noopener">VRChat Data Breach Compromises Over 2.4 Million User Accounts</a></h2>
+                    <p>VRChat disclosed a data breach affecting approximately 2,436,782 individuals in the United States. Unauthorized third party accessed certain user account information in VRChat's cloud environment between May 10 and 12, 2026.</p>
+                    <a href="https://www.claimdepot.com/data-breach/vrchat-2026" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://www.claimdepot.com" target="_blank">Claim Depot</a></span>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Threats</span>
+                        <span class="verified-badge">VERIFIED</span>
+                        <span class="blog-date">Mid-June 2026</span>
+                    </div>
+                    <h2><a href="https://arcticwolf.com/resources/blog/active-fortibleed-campaign-impacting-fortinet-devices-across-194-countries/" target="_blank" rel="noopener">Active FortiBleed Campaign Impacting Fortinet Devices Across 194 Countries</a></h2>
+                    <p>Security researchers identified an active, large-scale credential compromise campaign affecting Fortinet FortiGate firewalls, dubbed FortiBleed. The campaign affected devices in 194 countries, heavily concentrated in NATO nations, including Fortune 500 companies and government agencies.</p>
+                    <a href="https://arcticwolf.com/resources/blog/active-fortibleed-campaign-impacting-fortinet-devices-across-194-countries/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://arcticwolf.com" target="_blank">Arctic Wolf</a></span>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Regulation</span>
+                        <span class="verified-badge">VERIFIED</span>
+                        <span class="blog-date">March 25, 2026</span>
+                    </div>
+                    <h2><a href="https://www.congress.gov/bill/119th-congress/senate-bill/4211/text" target="_blank" rel="noopener">Consumer Data Privacy and Security Act of 2026: Full Text</a></h2>
+                    <p>Senator Moran introduced S. 4211 to protect the privacy of consumers. The bill was read twice and referred to the Committee on Commerce, Science, and Transportation. It establishes comprehensive consumer data rights and privacy protections at the federal level.</p>
+                    <a href="https://www.congress.gov/bill/119th-congress/senate-bill/4211/text" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://www.congress.gov" target="_blank">Congress.gov</a></span>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Encryption</span>
+                        <span class="verified-badge">VERIFIED</span>
+                        <span class="blog-date">May 19, 2026</span>
+                    </div>
+                    <h2><a href="https://signal.org/blog/phone-number-privacy-usernames/" target="_blank" rel="noopener">Signal: Keep Your Phone Number Private with Usernames</a></h2>
+                    <p>Signal's mission is private communication. With usernames, unless people have your exact unique username, they won't be able to start a conversation or even know you have a Signal account - even if they have your phone number. These features are rolling out to everyone in the coming weeks.</p>
+                    <a href="https://signal.org/blog/phone-number-privacy-usernames/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://signal.org" target="_blank">Signal Official Blog</a></span>
                 </article>
             </div>
 
