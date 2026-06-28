@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <defs>
+      <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#004D4D"/>
+        <stop offset="100%" style="stop-color:#008080"/>
+      </linearGradient>
+    </defs>
+    
+    <!-- Shield shape -->
+    <path d="M250 50 L400 150 L400 350 Q400 400 350 400 L250 450 Q200 450 150 400 L100 400 L100 150 Z" fill="url(#tealGradient)" stroke="#004D4D" stroke-width="3"/>
+    
+    <!-- Network lines in shield -->
+    <path d="M200 200 L300 200 L300 300 L200 300 Z" fill="none" stroke="white" stroke-width="4" opacity="0.8"/>
+    <path d="M220 220 L280 220 L280 280 L220 280 Z" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+    <circle cx="250" cy="250" r="15" fill="white" opacity="0.9"/>
+    
+    <!-- Lock icon in center -->
+    <path d="M240 240 L260 240 L260 260 L240 260 Z" fill="white"/>
+    <rect x="247" y="230" width="6" height="10" fill="white"/>
+    
+    <!-- BeastsNetwork text below shield -->
+    <text x="250" y="420" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#008080" text-anchor="middle">BeastsNetwork</text>
+  </svg>
