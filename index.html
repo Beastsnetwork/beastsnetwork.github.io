@@ -8,7 +8,7 @@
     <meta name="keywords" content="BeastsNetwork, privacy, cybersecurity, data protection, encryption, security news, digital rights, blog directory, RSS feeds">
     
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://beastsnetwork.github.io/">
+    <meta property="og:url" content="https://beastsnetwork.win/">
     <meta property="og:title" content="BeastsNetwork | Privacy & Cybersecurity Blog Hub">
     <meta property="og:description" content="Verified privacy and cybersecurity news, blog directory, and curated RSS feeds.">
     <meta property="og:image" content="/beastsnetwork-logo.png">
@@ -18,23 +18,20 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --deep-black: #0a0a0a;
-            --deep-black-light: #141414;
-            --gold-primary: #daa520;
-            --gold-secondary: #b8860b;
-            --gold-light: #ffd700;
-            --electric-blue: #00d4ff;
-            --glass-bg: rgba(10, 10, 10, 0.6);
-            --glass-border: rgba(218, 165, 32, 0.2);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
+            --eff-blue-dark: #003366;
+            --eff-blue-medium: #0066cc;
+            --eff-blue-light: #6699cc;
+            --eff-blue-accent: #0099ff;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --background-white: #ffffff;
+            --background-light: #f8f9fa;
+            --border-light: #e9ecef;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,30 +39,23 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--deep-black);
-            color: var(--text-primary);
+            font-family: 'Lato', sans-serif;
+            background: var(--background-white);
+            color: var(--text-dark);
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-        }
-
         .header {
+            background: var(--background-white);
+            border-bottom: 2px solid var(--eff-blue-medium);
+            padding: 1rem 2rem;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
@@ -76,7 +66,7 @@
             align-items: center;
         }
 
-        .nav-logo { height: 40px; width: auto; }
+        .nav-logo { height: 50px; width: auto; }
 
         .nav-links {
             display: flex;
@@ -85,10 +75,10 @@
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 400;
             transition: color 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
@@ -101,50 +91,55 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold-primary);
+            background: var(--eff-blue-medium);
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover { color: var(--eff-blue-medium); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--gold-primary); }
+        .nav-links a.active { color: var(--eff-blue-medium); font-weight: 700; }
         .nav-links a.active::after { width: 100%; }
 
         .cta-button {
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
-            color: var(--deep-black);
+            background: var(--eff-blue-medium);
+            color: var(--background-white);
             padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 50px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(218, 165, 32, 0.6);
+            background: var(--eff-blue-dark);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
             background: transparent;
-            border: 1px solid var(--gold-primary);
-            color: var(--gold-primary);
+            border: 2px solid var(--eff-blue-medium);
+            color: var(--eff-blue-medium);
             padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            border-radius: 5px;
             text-decoration: none;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
 
         .btn-secondary:hover {
-            background: var(--gold-primary);
-            color: var(--deep-black);
+            background: var(--eff-blue-medium);
+            color: var(--background-white);
         }
 
         .hamburger {
@@ -158,7 +153,7 @@
         .hamburger span {
             width: 25px;
             height: 2px;
-            background: var(--gold-primary);
+            background: var(--eff-blue-medium);
             transition: all 0.3s ease;
         }
 
@@ -167,7 +162,7 @@
         .hero {
             padding: 4rem 2rem 6rem;
             text-align: center;
-            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.05), rgba(0, 102, 204, 0.03));
             position: relative;
             overflow: hidden;
         }
@@ -179,24 +174,21 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(218, 165, 32, 0.05) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(0, 102, 204, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--eff-blue-dark);
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             max-width: 700px;
             margin: 0 auto 2rem;
         }
@@ -217,13 +209,14 @@
         .section { padding: 4rem 0; }
         .section-header { text-align: center; margin-bottom: 3rem; }
         .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--eff-blue-dark);
         }
-        .section-header p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
-        .section-divider { height: 1px; background: var(--glass-border); margin: 3rem 0; }
+        .section-header p { color: var(--text-medium); max-width: 600px; margin: 0 auto; }
+        .section-divider { height: 1px; background: var(--border-light); margin: 3rem 0; }
 
         .featured-grid {
             display: grid;
@@ -233,13 +226,14 @@
         }
 
         .featured-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
             padding: 2rem;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .featured-card::before {
@@ -248,54 +242,62 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--eff-blue-medium), transparent);
             transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
         }
 
         .featured-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(218, 165, 32, 0.4);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: var(--eff-blue-light);
         }
         .featured-card:hover::before { transform: scaleX(1); }
 
         .card-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            background: linear-gradient(135deg, var(--eff-blue-medium), var(--eff-blue-light));
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
+            color: var(--background-white);
         }
 
         .featured-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            color: var(--eff-blue-dark);
         }
 
         .featured-card p {
-            color: var(--text-secondary);
+            color: var(--text-medium);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
 
         .featured-card a {
-            color: var(--gold-primary);
+            color: var(--eff-blue-medium);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: gap 0.3s ease;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .featured-card a:hover { gap: 0.75rem; }
+        .featured-card a:hover {
+            color: var(--eff-blue-dark);
+            gap: 0.75rem;
+        }
 
         .blog-grid {
             display: grid;
@@ -304,13 +306,14 @@
         }
 
         .blog-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s ease;
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .blog-card::before {
@@ -319,15 +322,16 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--eff-blue-medium), transparent);
             transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
         }
 
         .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(218, 165, 32, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: var(--eff-blue-light);
         }
         .blog-card:hover::before { transform: scaleX(1); }
 
@@ -337,21 +341,25 @@
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
             align-items: center;
+            border: 2px solid var(--eff-blue-medium);
         }
+
+        .featured-post::before { display: none; }
 
         .featured-content { padding: 0; }
         .featured-image {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
-            border-radius: 15px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--eff-blue-dark), var(--eff-blue-medium));
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--deep-black);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
+            color: var(--background-white);
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .blog-meta {
@@ -359,24 +367,25 @@
             gap: 1rem;
             margin-bottom: 1rem;
             font-size: 0.85rem;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             align-items: center;
             flex-wrap: wrap;
         }
 
         .blog-tag {
-            background: rgba(218, 165, 32, 0.2);
-            color: var(--gold-light);
+            background: var(--eff-blue-light);
+            color: var(--background-white);
             padding: 0.25rem 0.75rem;
-            border-radius: 20px;
+            border-radius: 15px;
             font-size: 0.75rem;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .new-badge {
-            background: var(--gold-primary);
-            color: var(--deep-black);
+            background: var(--eff-blue-medium);
+            color: var(--background-white);
             padding: 0.2rem 0.5rem;
             border-radius: 10px;
             font-size: 0.7rem;
@@ -384,113 +393,136 @@
             text-transform: uppercase;
         }
 
-        .blog-date { color: var(--text-secondary); }
+        .blog-date { color: var(--text-light); font-style: italic; }
 
         .blog-card h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 600;
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            line-height: 1.3;
+            line-height: 1.4;
+            color: var(--eff-blue-dark);
         }
 
         .blog-card h2 a {
-            color: var(--text-primary);
+            color: var(--eff-blue-dark);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .blog-card h2 a:hover { color: var(--gold-primary); }
+        .blog-card h2 a:hover { 
+            color: var(--eff-blue-medium); 
+            text-decoration: underline;
+        }
 
         .blog-card p {
-            color: var(--text-secondary);
+            color: var(--text-medium);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
 
         .read-more {
-            color: var(--gold-primary);
+            color: var(--eff-blue-medium);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: gap 0.3s ease;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .read-more:hover { gap: 0.75rem; }
+        .read-more:hover {
+            color: var(--eff-blue-dark);
+            gap: 0.75rem;
+            text-decoration: underline;
+        }
 
         .source-link {
             display: block;
             margin-top: 1rem;
             font-size: 0.8rem;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             word-break: break-all;
         }
         .source-link a {
-            color: var(--gold-secondary);
+            color: var(--eff-blue-medium);
             text-decoration: none;
         }
-        .source-link a:hover { text-decoration: underline; }
+        .source-link a:hover { 
+            color: var(--eff-blue-dark);
+            text-decoration: underline; 
+        }
 
         .view-all { text-align: center; margin: 3rem 0; }
         .view-all a {
             display: inline-block;
             background: transparent;
-            border: 1px solid var(--gold-primary);
-            color: var(--gold-primary);
+            border: 2px solid var(--eff-blue-medium);
+            color: var(--eff-blue-medium);
             padding: 1rem 2rem;
-            border-radius: 50px;
+            border-radius: 5px;
             text-decoration: none;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .view-all a:hover {
-            background: var(--gold-primary);
-            color: var(--deep-black);
+            background: var(--eff-blue-medium);
+            color: var(--background-white);
         }
 
         .pagination {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.5rem;
             margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
         .page-num {
-            padding: 0.5rem 1rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            color: var(--text-primary);
+            padding: 0.75rem 1rem;
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            color: var(--text-dark);
             text-decoration: none;
             transition: all 0.3s ease;
+            min-width: 40px;
+            text-align: center;
         }
         .page-num:hover {
-            background: rgba(218, 165, 32, 0.2);
-            border-color: var(--gold-primary);
+            background: var(--eff-blue-light);
+            color: var(--background-white);
+            border-color: var(--eff-blue-light);
         }
         .page-num.active {
-            background: var(--gold-primary);
-            color: var(--deep-black);
-            border-color: var(--gold-primary);
+            background: var(--eff-blue-medium);
+            color: var(--background-white);
+            border-color: var(--eff-blue-medium);
+        }
+        .page-num:not(.active):not(:hover) {
+            color: var(--text-medium);
         }
 
         .rss-box {
-            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(218, 165, 32, 0.05));
-            border: 1px solid rgba(218, 165, 32, 0.3);
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(0, 102, 204, 0.05));
+            border: 1px solid rgba(0, 102, 204, 0.3);
+            border-radius: 8px;
             padding: 2rem;
             margin: 3rem 0;
             text-align: center;
         }
         .rss-box h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Merriweather', serif;
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--eff-blue-dark);
         }
         .rss-box p {
-            color: var(--text-secondary);
+            color: var(--text-medium);
             margin-bottom: 1.5rem;
             max-width: 500px;
             margin-left: auto;
@@ -503,11 +535,11 @@
             flex-wrap: wrap;
         }
         .rss-link {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
             padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            color: var(--text-primary);
+            border-radius: 5px;
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 0.9rem;
             transition: all 0.3s ease;
@@ -516,13 +548,14 @@
             gap: 0.5rem;
         }
         .rss-link:hover {
-            background: rgba(218, 165, 32, 0.2);
-            border-color: var(--gold-primary);
+            background: var(--eff-blue-light);
+            color: var(--background-white);
+            border-color: var(--eff-blue-light);
         }
 
         .footer {
-            background: rgba(10, 10, 10, 0.8);
-            border-top: 1px solid var(--glass-border);
+            background: var(--eff-blue-dark);
+            border-top: 1px solid var(--eff-blue-medium);
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -541,12 +574,21 @@
             list-style: none;
         }
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--background-white);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 400;
         }
-        .footer-links a:hover { color: var(--gold-primary); }
-        .copyright { color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--eff-blue-light); }
+        .copyright { 
+            color: rgba(255, 255, 255, 0.7); 
+            font-size: 0.9rem; 
+        }
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -557,6 +599,8 @@
             .blog-grid { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; text-align: center; }
             .hero-actions { flex-direction: column; align-items: center; }
+            .rss-links { flex-direction: column; align-items: center; }
+            .rss-link { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -570,8 +614,7 @@
                 <ul class="nav-links">
                     <li><a href="/" class="active">Home</a></li>
                     <li><a href="/blog-directory.html">Blog Directory</a></li>
-                    <li><a href="/blog-page2.html">Page 2</a></li>
-                    <li><a href="/blog-page3.html">Page 3</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
                 </ul>
             </nav>
             <a href="#subscribe" class="cta-button">Subscribe</a>
@@ -589,7 +632,7 @@
             <p>Your Premier Source for Verified Privacy & Cybersecurity News. Explore curated content, discover new blogs, and stay ahead of digital threats.</p>
             <div class="hero-actions">
                 <a href="/blog-directory.html" class="cta-button">Browse Blog Directory</a>
-                <a href="#latest" class="btn-secondary">View Latest Articles</a>
+                <a href="/blog.html" class="btn-secondary">View Latest Articles</a>
             </div>
         </section>
 
@@ -610,7 +653,7 @@
                         <div class="card-icon">🔒</div>
                         <h3>Latest Articles</h3>
                         <p>Verified cybersecurity news with accurate dates and real sources. Updated daily with the most important stories.</p>
-                        <a href="#latest">Read Articles &rarr;</a>
+                        <a href="/blog.html">Read Articles &rarr;</a>
                     </div>
                     <div class="featured-card">
                         <div class="card-icon">📡</div>
@@ -707,7 +750,7 @@
                 </div>
 
                 <div class="view-all">
-                    <a href="/blog-page2.html">View All Articles &rarr;</a>
+                    <a href="/blog.html">View All Articles &rarr;</a>
                 </div>
 
                 <div class="pagination">
@@ -742,7 +785,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div>
-                <img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" style="height: 40px; width: auto;">
+                <img src="/beastsnetwork-logo.png" alt="BeastsNetwork Logo" class="footer-logo">
                 <p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p>
             </div>
             <ul class="footer-links">
