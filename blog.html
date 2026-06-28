@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - BeastsNetwork | Privacy & Cybersecurity News</title>
-    <meta name="description" content="Verified privacy and cybersecurity news. Stay updated with accurate, sourced information on data protection, encryption, and digital security from BeastsNetwork.">
-    <meta name="keywords" content="privacy, cybersecurity, data protection, encryption, security news, digital rights, BeastsNetwork, verified news">
+    <title>Blog - BeastsNetwork | Verified Cybersecurity News</title>
+    <meta name="description" content="Verified cybersecurity news and analysis. Stay updated with accurate, sourced information on data protection, encryption, and digital security.">
+    <meta name="keywords" content="cybersecurity, privacy, security news, data breaches, encryption, BeastsNetwork">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beastsnetwork.win/blog.html">
-    <meta property="og:title" content="BeastsNetwork Blog - Verified Privacy & Cybersecurity News">
+    <meta property="og:title" content="BeastsNetwork Blog - Verified Cybersecurity News">
     <meta property="og:description" content="Accurate, sourced privacy and cybersecurity updates from BeastsNetwork.">
     <meta property="og:image" content="/beastsnetwork-logo.svg">
     
@@ -17,68 +17,62 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-teal: #008080;
-            --primary-teal-light: #20B2AA;
-            --primary-teal-dark: #004D4D;
-            --primary-teal-accent: #80C0C0;
-            --text-dark: #2C3E50;
-            --text-medium: #555555;
-            --text-light: #888888;
-            --background-white: #ffffff;
-            --background-light: #f8f9fa;
-            --border-light: #E0E0E0;
+            --primary: #008080;
+            --primary-light: #20B2AA;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #2C3E50;
+            --text-light: #555555;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 128, 128, 0.15);
         }
 
         [data-theme="dark"] {
-            --primary-teal: #20B2AA;
-            --primary-teal-light: #008080;
-            --primary-teal-dark: #004D4D;
-            --primary-teal-accent: #80C0C0;
-            --text-dark: #f0f0f0;
-            --text-medium: #b0b0b0;
-            --text-light: #808080;
-            --background-white: #1a1a2e;
-            --background-light: #16213e;
-            --border-light: #2a2a4a;
+            --primary: #20B2AA;
+            --primary-light: #008080;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #f0f0f0;
+            --text-light: #b0b0b0;
+            --bg: #1a1a2e;
+            --bg-secondary: #16213e;
+            --border: #2a2a4a;
+            --shadow: rgba(0, 0, 0, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Lato', sans-serif;
-            background: var(--background-white);
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
             overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
+        /* ===== HEADER ===== */
         .header {
-            background: var(--background-white);
-            border-bottom: 2px solid var(--primary-teal);
-            padding: 1rem 2rem;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
         }
 
         [data-theme="dark"] .header {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background: rgba(26, 26, 46, 0.95);
         }
 
         .nav-container {
@@ -87,12 +81,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
         }
 
-        .nav-logo {
-            height: 50px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 45px;
             width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -102,11 +111,11 @@
         }
 
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--text);
             text-decoration: none;
-            font-size: 1rem;
-            font-weight: 400;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
         }
@@ -118,12 +127,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-teal);
+            background: var(--primary);
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary-teal);
+            color: var(--primary);
         }
 
         .nav-links a:hover::after {
@@ -131,8 +140,7 @@
         }
 
         .nav-links a.active {
-            color: var(--primary-teal);
-            font-weight: 700;
+            color: var(--primary);
         }
 
         .nav-links a.active::after {
@@ -144,17 +152,21 @@
             align-items: center;
             gap: 0.5rem;
             cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid var(--border);
         }
 
         .theme-toggle:hover {
-            background: rgba(0, 128, 128, 0.1);
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .theme-icon {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: transform 0.3s ease;
         }
 
@@ -163,9 +175,8 @@
         }
 
         .theme-text {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         .hamburger {
@@ -179,126 +190,110 @@
         .hamburger span {
             width: 25px;
             height: 2px;
-            background: var(--primary-teal);
+            background: var(--primary);
             transition: all 0.3s ease;
         }
 
+        /* ===== MAIN CONTENT ===== */
         main {
             padding-top: 100px;
-            min-height: 100vh;
         }
 
         .page-header {
-            padding: 3rem 2rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 4rem 2rem;
             text-align: center;
-            background: var(--background-light);
-            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 3rem;
         }
 
         .page-header h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--primary-teal);
-        }
-
-        .page-header .subtitle {
-            color: var(--primary-teal);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
+            letter-spacing: -0.5px;
         }
 
         .page-header p {
-            color: var(--text-medium);
+            font-size: 1.2rem;
+            opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
-            font-size: 1.1rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem 4rem;
+            padding: 0 2rem;
         }
 
-        .blog-grid {
+        /* ===== BLOG LAYOUT ===== */
+        .blog-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .articles-main {
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            margin-top: 2rem;
         }
 
-        .blog-card {
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 1.5rem;
+        .article-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
             transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
-        [data-theme="dark"] .blog-card {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-teal), var(--primary-teal-light));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .blog-card:hover {
+        .article-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-teal-light);
+            box-shadow: 0 10px 30px var(--shadow);
+            border-color: var(--primary);
         }
 
-        [data-theme="dark"] .blog-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        .article-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
         }
 
-        .blog-card:hover::before {
-            transform: scaleX(1);
+        .article-content {
+            padding: 2rem;
         }
 
-        .blog-meta {
+        .article-meta {
             display: flex;
             gap: 1rem;
             margin-bottom: 1rem;
             font-size: 0.85rem;
             color: var(--text-light);
-            align-items: center;
-            flex-wrap: wrap;
         }
 
-        .blog-tag {
-            background: var(--primary-teal-light);
-            color: var(--background-white);
+        .article-tag {
+            background: var(--primary);
+            color: white;
             padding: 0.25rem 0.75rem;
             border-radius: 15px;
             font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
-        .blog-date {
-            color: var(--text-medium);
+        .article-date {
             font-style: italic;
         }
 
-        .verified-badge {
+        .article-badge {
             background: rgba(0, 128, 128, 0.2);
-            color: var(--primary-teal);
+            color: var(--primary);
             padding: 0.2rem 0.5rem;
             border-radius: 10px;
             font-size: 0.7rem;
@@ -306,117 +301,191 @@
             text-transform: uppercase;
         }
 
-        .blog-card h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
+        .article-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text);
             margin-bottom: 1rem;
             line-height: 1.4;
-            color: var(--primary-teal);
         }
 
-        .blog-card h2 a {
-            color: var(--primary-teal);
+        .article-card h2 a {
+            color: var(--text);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        .blog-card h2 a:hover {
-            color: var(--primary-teal-light);
-            text-decoration: underline;
+        .article-card h2 a:hover {
+            color: var(--primary);
         }
 
-        .blog-card p {
-            color: var(--text-medium);
+        .article-card p {
+            color: var(--text-light);
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
         }
 
         .read-more {
-            color: var(--primary-teal);
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .read-more:hover {
-            color: var(--primary-teal-dark);
             gap: 0.75rem;
-            text-decoration: underline;
-        }
-
-        .featured-post {
-            grid-column: span 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            border: 2px solid var(--primary-teal);
-            padding: 2rem;
-        }
-
-        .featured-post::before {
-            display: none;
-        }
-
-        .featured-content {
-            padding: 0;
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, var(--primary-teal-dark), var(--primary-teal));
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--background-white);
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .source-link {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-medium);
-            word-break: break-all;
+            font-size: 0.85rem;
+            color: var(--text-light);
         }
 
         .source-link a {
-            color: var(--primary-teal);
+            color: var(--primary);
             text-decoration: none;
         }
 
         .source-link a:hover {
-            color: var(--primary-teal-dark);
             text-decoration: underline;
         }
 
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: sticky;
+            top: 150px;
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-list a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary);
+        }
+
+        .sidebar-list .active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .search-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+        }
+
+        .featured-post {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-post .article-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .featured-post h2 {
+            color: white;
+        }
+
+        .featured-post h2 a {
+            color: white;
+        }
+
+        .featured-post p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .featured-post .read-more {
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+        }
+
+        .featured-post .read-more:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== PAGINATION ===== */
         .pagination {
             display: flex;
             justify-content: center;
             gap: 0.5rem;
             margin-top: 3rem;
-            flex-wrap: wrap;
+            padding-bottom: 2rem;
         }
 
         .page-num {
             padding: 0.75rem 1rem;
-            background: var(--background-white);
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            color: var(--text-dark);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
             text-decoration: none;
             transition: all 0.3s ease;
             min-width: 40px;
@@ -424,59 +493,62 @@
         }
 
         .page-num:hover {
-            background: var(--primary-teal-light);
-            color: var(--background-white);
-            border-color: var(--primary-teal-light);
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .page-num.active {
-            background: var(--primary-teal);
-            color: var(--background-white);
-            border-color: var(--primary-teal);
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
-        .page-num:not(.active):not(:hover) {
-            color: var(--text-medium);
-        }
-
+        /* ===== FOOTER ===== */
         .footer {
-            background: var(--primary-teal);
-            color: var(--background-white);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
         }
 
         .footer-links {
-            display: flex;
-            gap: 2rem;
             list-style: none;
         }
 
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
         .footer-links a {
-            color: var(--background-white);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: 400;
         }
 
         .footer-links a:hover {
-            color: var(--primary-teal-light);
-            text-decoration: underline;
-        }
-
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            color: var(--primary-light);
         }
 
         .footer-logo {
@@ -485,46 +557,50 @@
             filter: brightness(0) invert(1);
         }
 
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
             .hamburger {
                 display: flex;
             }
-            
-            .featured-post {
-                grid-column: span 1;
-                grid-template-columns: 1fr;
-                border: 1px solid var(--border-light);
+            .page-header h1 {
+                font-size: 2.2rem;
             }
-            
-            .featured-image {
+            .page-header p {
+                font-size: 1rem;
+            }
+            .article-image {
                 height: 200px;
             }
-            
-            .page-header h1 {
-                font-size: 2rem;
+            .article-card h2 {
+                font-size: 1.4rem;
             }
-            
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .footer-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 text-align: center;
             }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-container {
-                flex-wrap: wrap;
-                gap: 1rem;
+            .footer-section {
+                text-align: center;
             }
         }
     </style>
@@ -533,14 +609,13 @@
     <header class="header">
         <div class="nav-container">
             <a href="/" class="logo">
-                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="nav-logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo">
+                <span class="logo-text">BeastsNetwork</span>
             </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/#features">Features</a></li>
-                    <li><a href="/#community">Community</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
                     <li><a href="/blog.html" class="active">Blog</a></li>
                 </ul>
             </nav>
@@ -558,126 +633,175 @@
 
     <main>
         <section class="page-header">
-            <h1>Privacy & Cybersecurity Blog</h1>
-            <p class="subtitle">✅ Verified News & Accurate Dates</p>
-            <p>Stay ahead with real, sourced privacy and cybersecurity news. All articles verified from trusted sources with accurate publication dates.</p>
+            <h1>Cybersecurity Blog</h1>
+            <p>Verified news, expert analysis, and actionable insights on privacy and digital security</p>
         </section>
 
         <div class="container">
-            <div class="blog-grid">
-                <!-- Featured Post - Most Recent -->
-                <article class="blog-card featured-post">
-                    <div class="featured-content">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Breach</span>
-                            <span class="verified-badge">VERIFIED</span>
-                            <span class="blog-date">June 24, 2026</span>
+            <div class="blog-container">
+                <div class="articles-main">
+                    <article class="article-card featured-post">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">Featured</span>
+                                <span class="article-badge">VERIFIED</span>
+                                <span class="article-date">June 24, 2026</span>
+                            </div>
+                            <h2><a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" target="_blank" rel="noopener">AI-Powered Phishing Attacks Surge 1,380% as Criminal Platforms Render MFA Obsolete</a></h2>
+                            <p>New research from Huntress reveals a massive 1,380% increase in device code phishing attacks in early 2026. Attackers exploit legitimate OAuth flows to bypass MFA, tricking users into authenticating on genuine Microsoft pages while attackers capture access tokens.</p>
+                            <div class="article-actions">
+                                <a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" class="read-more" target="_blank" rel="noopener">Read Article &rarr;</a>
+                                <span class="source-link">Source: <a href="https://www.itsecurityguru.org" target="_blank">IT Security Guru</a></span>
+                            </div>
                         </div>
-                        <h2><a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" target="_blank" rel="noopener">AI-Powered Phishing Attacks Surge 1,380% as Criminal Platforms Render MFA Obsolete</a></h2>
-                        <p>New research from Huntress reveals a massive 1,380% increase in device code phishing attacks in early 2026. Attackers exploit legitimate OAuth flows to bypass MFA, tricking users into authenticating on genuine Microsoft pages while attackers capture access tokens.</p>
-                        <a href="https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                        <span class="source-link">Source: <a href="https://www.itsecurityguru.org" target="_blank">IT Security Guru</a></span>
-                    </div>
-                    <div class="featured-image">AI</div>
-                </article>
+                    </article>
 
-                <!-- Regular Posts -->
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Regulation</span>
-                        <span class="verified-badge">VERIFIED</span>
-                        <span class="blog-date">June 23, 2026</span>
-                    </div>
-                    <h2><a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" target="_blank" rel="noopener">24 Billion Records Exposed in Colossal Data Leak</a></h2>
-                    <p>Hackers claim to be selling 340 million OnlyFans user records, compiled from internal databases and previous breaches. The massive dataset includes emails, usernames, and account activity metrics, potentially exposing real identities of creators and subscribers.</p>
-                    <a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                    <span class="source-link">Source: <a href="https://cybernews.com" target="_blank">Cybernews</a></span>
-                </article>
+                    <article class="article-card">
+                        <div class="article-image">🔒</div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">Breach</span>
+                                <span class="article-badge">VERIFIED</span>
+                                <span class="article-date">June 23, 2026</span>
+                            </div>
+                            <h2><a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" target="_blank" rel="noopener">24 Billion Records Exposed in Colossal Data Leak</a></h2>
+                            <p>Hackers claim to be selling 340 million OnlyFans user records, compiled from internal databases and previous breaches. The massive dataset includes emails, usernames, and account activity metrics.</p>
+                            <div class="article-actions">
+                                <a href="https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/" class="read-more" target="_blank" rel="noopener">Read Article &rarr;</a>
+                                <span class="source-link">Source: <a href="https://cybernews.com" target="_blank">Cybernews</a></span>
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Threats</span>
-                        <span class="verified-badge">VERIFIED</span>
-                        <span class="blog-date">June 22, 2026</span>
-                    </div>
-                    <h2><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" target="_blank" rel="noopener">CISA Urges Hardening of Fortinet Devices After Global Credential Exposure</a></h2>
-                    <p>CISA warns that malicious actors have targeted internet-accessible Fortinet devices across government and private sector organizations. The FortiBleed campaign involves exposure of credentials from approximately 74,000 Fortinet firewalls and VPN gateways.</p>
-                    <a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                    <span class="source-link">Source: <a href="https://www.cisa.gov" target="_blank">CISA</a></span>
-                </article>
+                    <article class="article-card">
+                        <div class="article-image">🛡️</div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">Threats</span>
+                                <span class="article-badge">VERIFIED</span>
+                                <span class="article-date">June 22, 2026</span>
+                            </div>
+                            <h2><a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" target="_blank" rel="noopener">CISA Urges Hardening of Fortinet Devices After Global Credential Exposure</a></h2>
+                            <p>CISA warns that malicious actors have targeted internet-accessible Fortinet devices across government and private sector organizations. The FortiBleed campaign involves exposure of credentials from approximately 74,000 Fortinet firewalls and VPN gateways.</p>
+                            <div class="article-actions">
+                                <a href="https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure" class="read-more" target="_blank" rel="noopener">Read Article &rarr;</a>
+                                <span class="source-link">Source: <a href="https://www.cisa.gov" target="_blank">CISA</a></span>
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Breach</span>
-                        <span class="verified-badge">VERIFIED</span>
-                        <span class="blog-date">June 13, 2026</span>
-                    </div>
-                    <h2><a href="https://www.hipaajournal.com/one-medical-data-breach/" target="_blank" rel="noopener">One Medical Healthcare Breach: 8.8 TB of Patient Data at Risk</a></h2>
-                    <p>ShinyHunters data extortion group claims to have stolen 8.8 TB of data from One Medical. Unauthorized access was identified on June 13, with access occurring between June 8-11. The group threatens to leak the data unless ransom demands are met by June 22.</p>
-                    <a href="https://www.hipaajournal.com/one-medical-data-breach/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                    <span class="source-link">Source: <a href="https://www.hipaajournal.com" target="_blank">HIPAA Journal</a></span>
-                </article>
+                    <article class="article-card">
+                        <div class="article-image">🏥</div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">Breach</span>
+                                <span class="article-badge">VERIFIED</span>
+                                <span class="article-date">June 13, 2026</span>
+                            </div>
+                            <h2><a href="https://www.hipaajournal.com/one-medical-data-breach/" target="_blank" rel="noopener">One Medical Healthcare Breach: 8.8 TB of Patient Data at Risk</a></h2>
+                            <p>ShinyHunters data extortion group claims to have stolen 8.8 TB of data from One Medical. Unauthorized access was identified on June 13, with access occurring between June 8-11.</p>
+                            <div class="article-actions">
+                                <a href="https://www.hipaajournal.com/one-medical-data-breach/" class="read-more" target="_blank" rel="noopener">Read Article &rarr;</a>
+                                <span class="source-link">Source: <a href="https://www.hipaajournal.com" target="_blank">HIPAA Journal</a></span>
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Breach</span>
-                        <span class="verified-badge">VERIFIED</span>
-                        <span class="blog-date">June 13, 2026</span>
-                    </div>
-                    <h2><a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" target="_blank" rel="noopener">FortiBleed: 86,644 Fortinet Firewalls Compromised Globally</a></h2>
-                    <p>A Russian-speaking cybercriminal syndicate harvested verified administrator and VPN credentials from 86,644 Fortinet FortiGate firewalls across 194 countries. The incident surfaced publicly on June 13 when a security researcher discovered an exposed threat actor server.</p>
-                    <a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                    <span class="source-link">Source: <a href="https://shattered.io" target="_blank">Shattered.io</a></span>
-                </article>
+                    <article class="article-card">
+                        <div class="article-image">🛡️</div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">Breach</span>
+                                <span class="article-badge">VERIFIED</span>
+                                <span class="article-date">June 13, 2026</span>
+                            </div>
+                            <h2><a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" target="_blank" rel="noopener">FortiBleed: 86,644 Fortinet Firewalls Compromised Globally</a></h2>
+                            <p>A Russian-speaking cybercriminal syndicate harvested verified administrator and VPN credentials from 86,644 Fortinet FortiGate firewalls across 194 countries.</p>
+                            <div class="article-actions">
+                                <a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" class="read-more" target="_blank" rel="noopener">Read Article &rarr;</a>
+                                <span class="source-link">Source: <a href="https://shattered.io" target="_blank">Shattered.io</a></span>
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Regulation</span>
-                        <span class="verified-badge">VERIFIED</span>
-                        <span class="blog-date">June 15, 2026</span>
+                    <div class="pagination">
+                        <a href="#" class="page-num active">1</a>
+                        <a href="/blog-page2.html" class="page-num">2</a>
+                        <a href="/blog-page3.html" class="page-num">3</a>
+                        <span class="page-num">...</span>
+                        <a href="/blog-page2.html" class="page-num">&rarr;</a>
                     </div>
-                    <h2><a href="https://www.govtrack.us/congress/bills/119/s4211" target="_blank" rel="noopener">Consumer Data Privacy and Security Act of 2026 Introduced in Senate</a></h2>
-                    <p>Senator Moran introduced S. 4211, the Consumer Data Privacy and Security Act of 2026. The bill aims to protect consumer privacy at the federal level. It was introduced on March 25 and last updated on June 15, 2026.</p>
-                    <a href="https://www.govtrack.us/congress/bills/119/s4211" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                    <span class="source-link">Source: <a href="https://www.govtrack.us" target="_blank">GovTrack.us</a></span>
-                </article>
+                </div>
 
-                <article class="blog-card">
-                    <div class="blog-meta">
-                        <span class="blog-tag">Encryption</span>
-                        <span class="verified-badge">VERIFIED</span>
-                        <span class="blog-date">May 19, 2026</span>
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <div class="search-box">
+                            <input type="text" class="search-input" placeholder="🔍 Search articles...">
+                        </div>
                     </div>
-                    <h2><a href="https://freedom.press/digisec/blog/signal-usernames-are-here/" target="_blank" rel="noopener">Signal Usernames Roll Out: Phone Number Privacy Enhancements</a></h2>
-                    <p>Signal has begun rolling out usernames, allowing users to create unique handles for connections without sharing phone numbers. By default, phone numbers are now hidden from new contacts. These features are currently in public beta and rolling out to all users in coming weeks.</p>
-                    <a href="https://freedom.press/digisec/blog/signal-usernames-are-here/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
-                    <span class="source-link">Source: <a href="https://freedom.press" target="_blank">Freedom of the Press Foundation</a></span>
-                </article>
-            </div>
 
-            <div class="pagination">
-                <a href="#" class="page-num active">1</a>
-                <a href="/blog-page2.html" class="page-num">2</a>
-                <a href="/blog-page3.html" class="page-num">3</a>
-                <span class="page-num">...</span>
-                <a href="/blog-page2.html" class="page-num">&rarr;</a>
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="/category-bleepingcomputer.html">BleepingComputer</a></li>
+                            <li><a href="/category-cisa.html">CISA Alerts</a></li>
+                            <li><a href="/category-sans-isc.html">SANS ISC</a></li>
+                            <li><a href="/category-thehackernews.html">The Hacker News</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Recent Articles</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="#">AI-Powered Phishing Surge</a></li>
+                            <li><a href="#">OnlyFans Data Leak</a></li>
+                            <li><a href="#">CISA Fortinet Warning</a></li>
+                            <li><a href="#">One Medical Breach</a></li>
+                            <li><a href="#">FortiBleed Campaign</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Tags</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--primary); color: white; padding: 0.35rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500;">Breach</span>
+                            <span style="background: var(--primary); color: white; padding: 0.35rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500;">Threats</span>
+                            <span style="background: var(--primary); color: white; padding: 0.35rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500;">Encryption</span>
+                            <span style="background: var(--primary); color: white; padding: 0.35rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500;">Regulation</span>
+                            <span style="background: var(--primary); color: white; padding: 0.35rem 0.75rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500;">Privacy</span>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <div>
+            <div class="footer-brand">
                 <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo">
-                <p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p>
+                <p>Your trusted source for cybersecurity intelligence and privacy protection.</p>
             </div>
-            <ul class="footer-links">
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                <li><a href="/cookie-policy.html">Cookie Policy</a></li>
-                <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-            </ul>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 BeastsNetwork. All rights reserved.</p>
         </div>
     </footer>
 
@@ -685,7 +809,6 @@
         // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
         hamburger.addEventListener('click', () => {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
@@ -694,14 +817,12 @@
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         
-        // Check for saved theme preference or use system preference
         function initializeTheme() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 html.setAttribute('data-theme', savedTheme);
                 updateToggleText();
             } else {
-                // Check system preference
                 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 if (prefersDark) {
                     html.setAttribute('data-theme', 'dark');
@@ -710,22 +831,18 @@
             }
         }
         
-        // Toggle between light and dark themes
         themeToggle.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateToggleText();
         });
         
-        // Update toggle button text based on current theme
         function updateToggleText() {
             const currentTheme = html.getAttribute('data-theme');
             const icon = themeToggle.querySelector('.theme-icon');
             const text = themeToggle.querySelector('.theme-text');
-            
             if (currentTheme === 'dark') {
                 icon.textContent = '☀️';
                 text.textContent = 'Light';
@@ -735,10 +852,7 @@
             }
         }
         
-        // Initialize theme on page load
         initializeTheme();
-        
-        // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             if (!localStorage.getItem('theme')) {
                 html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
