@@ -186,14 +186,6 @@
             color: var(--gold-secondary);
         }
 
-        .policy-section h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.75rem;
-            color: var(--text-primary);
-        }
-
         .policy-section p {
             color: var(--text-secondary);
             margin-bottom: 1rem;
@@ -210,21 +202,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .policy-section ul li strong {
-            color: var(--text-primary);
-        }
-
-        .policy-section ol {
-            list-style: decimal;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .policy-section ol li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
         .policy-section a {
             color: var(--gold-primary);
             text-decoration: none;
@@ -234,39 +211,20 @@
             text-decoration: underline;
         }
 
-        .notice-box {
-            background: rgba(218, 165, 32, 0.1);
-            border-left: 4px solid var(--gold-primary);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 2rem 0;
         }
 
-        .notice-box p {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .notice-box strong {
-            color: var(--gold-light);
-        }
-
-        .back-to-top {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            color: var(--text-primary);
+        .back-link a {
+            color: var(--gold-primary);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
         }
 
-        .back-to-top:hover {
-            background: rgba(218, 165, 32, 0.1);
-            border-color: var(--gold-primary);
+        .back-link a:hover {
+            text-decoration: underline;
         }
 
         .footer {
@@ -286,79 +244,6 @@
             color: var(--text-secondary);
         }
 
-        .footer-content p {
-            margin-bottom: 1rem;
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 350px;
-            height: 100vh;
-            background: var(--deep-black-light);
-            backdrop-filter: blur(20px);
-            border-left: 1px solid var(--glass-border);
-            padding: 5rem 2rem 2rem;
-            transition: right 0.4s ease;
-            z-index: 2000;
-        }
-
-        .mobile-nav.active {
-            right: 0;
-        }
-
-        .mobile-nav-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            color: var(--gold-primary);
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        .mobile-nav ul {
-            list-style: none;
-        }
-
-        .mobile-nav ul li {
-            margin-bottom: 1.5rem;
-        }
-
-        .mobile-nav ul li a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-nav ul li a:hover {
-            color: var(--gold-primary);
-        }
-
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .mobile-nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -366,18 +251,6 @@
 
             .hamburger {
                 display: flex;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
             }
 
             .policy-container {
@@ -403,224 +276,127 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Community</a></li>
+                    <li><a href="/blog-page2.html">Page 2</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                    <li><a href="cookie-policy.html">Cookies</a></li>
                 </ul>
             </nav>
-            <a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="/" class="cta-button">Back to Blog</a>
         </div>
     </header>
-
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <nav class="mobile-nav" id="mobileNav">
-        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="/#how-to-buy" class="cta-button">Get BeastsNetwork</a></li>
-        </ul>
-    </nav>
 
     <main class="main-content">
         <div class="policy-container">
             <div class="policy-header">
                 <h1>Terms of Service</h1>
-                <p class="last-updated">Last Updated: June 27, 2026 | Effective Date: June 27, 2026</p>
+                <p class="last-updated">Last Updated: June 28, 2026 | Effective Date: June 28, 2026</p>
             </div>
 
             <section class="policy-section">
                 <h2>1. Acceptance of Terms</h2>
-                <p>Welcome to BeastsNetwork ("BeastsNetwork," "we," "our," or "us"). By accessing or using our website at https://beastsnetwork.win (the "Site") or interacting with the BeastsNetwork cryptocurrency token ("BeastsNetwork Token" or "Token"), you agree to be bound by these Terms of Service ("Terms"), our <a href="privacy-policy.html">Privacy Policy</a>, and our <a href="risk-disclosure.html">Risk Disclosure</a>.</p>
-                <p><strong>IF YOU DO NOT AGREE TO THESE TERMS, PLEASE DO NOT ACCESS OR USE OUR SITE OR ENGAGE WITH THE BEASTSNETWORK TOKEN.</strong></p>
+                <p>Welcome to BeastsNetwork ("we," "our," or "us"). By accessing or using our website at https://beastsnetwork.win (the "Site"), you agree to be bound by these Terms of Service ("Terms"), our Privacy Policy, and any additional terms and conditions that may apply to specific sections of our Site or to products and services available through the Site.</p>
+                <p>By accessing or using our Site, you represent and warrant that you are at least 13 years of age and agree to comply with all applicable laws and regulations. If you do not agree with these Terms, please do not access or use our Site.</p>
             </section>
 
             <section class="policy-section">
-                <h2>2. Description of Service</h2>
-                <p>BeastsNetwork provides information and resources about the BeastsNetwork Token, a cryptocurrency token. Our Site serves as an informational portal where users can learn about the Token, its features, and how to acquire it.</p>
-                <p><strong>BeastsNetwork does not:</strong></p>
+                <h2>2. Changes to Terms</h2>
+                <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                <p>By continuing to access or use our Site after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Site.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. User Responsibilities</h2>
+                <p>By using our Site, you agree to:</p>
                 <ul>
-                    <li>Operate as a cryptocurrency exchange</li>
-                    <li>Hold or manage user funds or tokens</li>
-                    <li>Provide financial advice or recommendations</li>
-                    <li>Guarantee investment returns or profits</li>
+                    <li>Comply with all applicable laws and regulations</li>
+                    <li>Not to use our Site for any illegal or unauthorized purpose</li>
+                    <li>Not to interfere with or disrupt the security of our Site or servers</li>
+                    <li>Not to attempt to gain unauthorized access to any portion of our Site</li>
+                    <li>Not to engage in any activity that may damage, disable, overburden, or impair our Site</li>
+                    <li>Not to use our Site to transmit any viruses, worms, defects, Trojan horses, or other harmful code</li>
+                    <li>Not to use our Site to transmit any spam, chain letters, or other unsolicited communications</li>
                 </ul>
             </section>
 
             <section class="policy-section">
-                <h2>3. Eligibility</h2>
-                <p>To access or use our Site, you must:</p>
-                <ol>
-                    <li>Be at least 18 years of age (or the age of majority in your jurisdiction);</li>
-                    <li>Have the legal capacity to enter into these Terms;</li>
-                    <li>Not be prohibited from accessing or using the Site under applicable law;</li>
-                    <li>Not be a resident of, or located in, a jurisdiction where the use of cryptocurrencies or access to our Site is prohibited.</li>
-                </ol>
-                <p>By using our Site, you represent and warrant that you meet all eligibility requirements.</p>
+                <h2>4. Intellectual Property</h2>
+                <p>The Site and its original content, features, and functionality are owned by BeastsNetwork and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+                <p>You may not reproduce, distribute, modify, transmit, reuse, repost, publish, display, or sell any content from our Site without our prior written consent, except as permitted by these Terms or applicable law.</p>
+                <p>All trademarks, service marks, and logos used on our Site are the trademarks, service marks, or registered trademarks of their respective owners. The use of any trademark, service mark, or logo on our Site does not constitute an endorsement by the trademark owner.</p>
             </section>
 
             <section class="policy-section">
-                <h2>4. User Responsibilities</h2>
-                <p>As a user of our Site, you agree to:</p>
-                <ul>
-                    <li>Comply with all applicable laws and regulations in your jurisdiction;</li>
-                    <li>Provide accurate and complete information when required;</li>
-                    <li>Use the Site only for lawful purposes;</li>
-                    <li>Not engage in any activity that could harm, disable, or overburden our Site;</li>
-                    <li>Not attempt to gain unauthorized access to any part of our Site;</li>
-                    <li>Not use the Site to transmit any harmful, fraudulent, or illegal content;</li>
-                    <li>Be solely responsible for the security of your wallet and private keys;</li>
-                    <li>Understand and accept the risks associated with cryptocurrencies (see our <a href="risk-disclosure.html">Risk Disclosure</a>).</li>
-                </ul>
-            </section>
-
-            <section class="policy-section">
-                <h2>5. BeastsNetwork Token</h2>
-                <p>The BeastsNetwork Token is a cryptocurrency token that operates on a blockchain network. The Token is designed to be used within the BeastsNetwork ecosystem.</p>
-                
-                <h3>5.1 Token Characteristics</h3>
-                <p><strong>Decentralized:</strong> The Token operates on a decentralized blockchain network.</p>
-                <p><strong>Limited Supply:</strong> The Token has a fixed maximum supply as defined in its smart contract.</p>
-                <p><strong>No Guarantees:</strong> BeastsNetwork does not guarantee the value, liquidity, or utility of the Token.</p>
-                
-                <h3>5.2 Token Acquisition</h3>
-                <p>The BeastsNetwork Token may be acquired through various methods, including but not limited to:</p>
-                <ul>
-                    <li>Purchasing on decentralized exchanges (DEXs)</li>
-                    <li>Participating in liquidity pools</li>
-                    <li>Receiving as payment for goods or services</li>
-                    <li>Earning through staking or other reward mechanisms</li>
-                </ul>
-                <p><strong>BeastsNetwork does not operate any exchange or trading platform.</strong></p>
-                
-                <h3>5.3 Token Use</h3>
-                <p>You are solely responsible for managing your BeastsNetwork Tokens, including:</p>
-                <ul>
-                    <li>Securing your wallet and private keys;</li>
-                    <li>Ensuring the accuracy of wallet addresses when sending or receiving Tokens;</li>
-                    <li>Complying with all applicable tax obligations related to Token transactions;</li>
-                    <li>Understanding the irreversible nature of blockchain transactions.</li>
-                </ul>
+                <h2>5. Content Accuracy Disclaimer</h2>
+                <p><strong>Our Site provides news, information, and commentary on privacy and cybersecurity topics for educational and informational purposes only.</strong></p>
+                <p>While we strive to provide accurate and up-to-date information, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the Site or the information, products, services, or related graphics contained on the Site for any purpose.</p>
+                <p><strong>Any reliance you place on such information is therefore strictly at your own risk.</strong></p>
+                <p>In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this Site.</p>
             </section>
 
             <section class="policy-section">
                 <h2>6. Prohibited Activities</h2>
-                <p>You agree not to engage in any of the following prohibited activities:</p>
+                <p>You may not access or use the Site for any purpose other than that for which the Site is made available to you. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.</p>
+                <p>As a user of the Site, you agree not to:</p>
                 <ul>
-                    <li>Violating any applicable laws or regulations;</li>
-                    <li>Engaging in fraudulent, deceptive, or misleading activities;</li>
-                    <li>Attempting to hack, disrupt, or interfere with our Site or the blockchain network;</li>
-                    <li>Using the Site for money laundering or other illegal financial activities;</li>
-                    <li>Impersonating any person or entity;</li>
-                    <li>Transmitting any viruses, malware, or harmful code;</li>
-                    <li>Harvesting or scraping content from our Site without permission;</li>
-                    <li>Engaging in any activity that could harm the reputation of BeastsNetwork.</li>
+                    <li>Systematically retrieve data or other content from the Site to create or compile, directly or indirectly, a collection, compilation, database, or directory without our prior written consent</li>
+                    <li>Trick, defraud, or mislead us or other users, especially in any attempt to learn sensitive account information such as user passwords</li>
+                    <li>Circumvent, disable, or otherwise interfere with security-related features of the Site, including features that prevent or restrict use or copying of any content or enforce limitations on use of the Site or the content</li>
+                    <li>Disparage, tarnish, or otherwise harm us and/or the Site</li>
+                    <li>Use any information obtained from the Site in order to harass, abuse, or harm another person</li>
+                    <li>Make improper use of our support services or submit false reports of abuse or misconduct</li>
+                    <li>Use the Site in a manner inconsistent with any applicable laws or regulations</li>
                 </ul>
             </section>
 
             <section class="policy-section">
-                <h2>7. Intellectual Property</h2>
-                <p>All content and materials on our Site, including but not limited to text, graphics, logos, images, and software, are the property of BeastsNetwork or its licensors and are protected by intellectual property laws.</p>
-                <p>You may not reproduce, distribute, modify, create derivative works from, display, or perform any of our content without our prior written consent.</p>
-                <p>The BeastsNetwork name, logo, and related marks are trademarks of BeastsNetwork. You may not use these marks without our prior written permission.</p>
+                <h2>7. User-Generated Content</h2>
+                <p>Our Site may allow you to post, link, store, share, and otherwise make available certain information, text, graphics, videos, or other material ("User Content"). You are responsible for the User Content that you post to the Site, including its legality, reliability, and appropriateness.</p>
+                <p>By posting User Content to the Site, you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such User Content on and through the Site. You retain any and all of your rights to any User Content you submit, and you are responsible for protecting those rights.</p>
             </section>
 
             <section class="policy-section">
-                <h2>8. Disclaimers</h2>
-                <p><strong>THE SITE AND ALL CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
-                
-                <h3>8.1 No Financial Advice</h3>
-                <div class="notice-box">
-                    <p><strong>IMPORTANT:</strong> BeastsNetwork does not provide financial, investment, legal, or tax advice. The information on our Site is for general informational purposes only and is not intended as, and should not be construed as, financial advice.</p>
-                    <p>You should consult with your own financial, legal, and tax advisors before making any decisions related to the BeastsNetwork Token or cryptocurrencies in general.</p>
-                </div>
-                
-                <h3>8.2 No Guarantees</h3>
-                <p>BeastsNetwork does not guarantee:</p>
-                <ul>
-                    <li>The accuracy, completeness, or usefulness of any information on our Site;</li>
-                    <li>That our Site will be available, accessible, or error-free;</li>
-                    <li>The value, liquidity, or utility of the BeastsNetwork Token;</li>
-                    <li>That the BeastsNetwork Token will be listed on any exchange;</li>
-                    <li>Any specific results from using our Site or holding the Token.</li>
-                </ul>
-                
-                <h3>8.3 Investment Risks</h3>
-                <p>Cryptocurrencies, including the BeastsNetwork Token, are highly volatile and speculative. The value of the Token may go to zero. You may lose your entire investment.</p>
-                <p>Please review our <a href="risk-disclosure.html">Risk Disclosure</a> for a more detailed explanation of the risks associated with cryptocurrencies.</p>
+                <h2>8. Accounts</h2>
+                <p>When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Site.</p>
+                <p>You are responsible for safeguarding the password that you use to access the Site and for any activities or actions under your password, whether your password is with our Site or a third-party service.</p>
+                <p>We reserve the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion.</p>
             </section>
 
             <section class="policy-section">
-                <h2>9. Limitation of Liability</h2>
-                <p><strong>IN NO EVENT SHALL BEASTSNETWORK, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH YOUR ACCESS OR USE OF OUR SITE OR THE BEASTSNETWORK TOKEN.</strong></p>
-                <p>Our total liability to you for any claims arising out of or relating to these Terms or your use of our Site shall not exceed the greater of one hundred United States dollars ($100.00) or the amounts you have paid to us in the twelve (12) months preceding the event giving rise to the claim.</p>
+                <h2>9. Termination</h2>
+                <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms.</p>
+                <p>Upon termination, your right to use the Site will immediately cease. If you wish to terminate your account, you may simply discontinue using the Site.</p>
             </section>
 
             <section class="policy-section">
-                <h2>10. Indemnification</h2>
-                <p>You agree to defend, indemnify, and hold harmless BeastsNetwork and its affiliates, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, debts, and expenses (including but not limited to attorney's fees) arising from:</p>
-                <ul>
-                    <li>Your use of our Site;</li>
-                    <li>Your interaction with the BeastsNetwork Token;</li>
-                    <li>Your violation of these Terms;</li>
-                    <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right;</li>
-                    <li>Any claim that your use of our Site caused damage to a third party.</li>
-                </ul>
+                <h2>10. Limitation of Liability</h2>
+                <p>In no event will BeastsNetwork, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Site; (ii) any conduct or content of any third party on the Site; (iii) any content obtained from the Site; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.</p>
             </section>
 
             <section class="policy-section">
-                <h2>11. Termination</h2>
-                <p>We may terminate or suspend your access to our Site, in whole or in part, at any time and for any reason, with or without notice. We may also terminate or suspend the Site itself at any time.</p>
-                <p>Upon termination, your right to use our Site will immediately cease. However, the provisions of these Terms that by their nature should survive termination shall remain in effect, including without limitation, the disclaimers, limitation of liability, and indemnification provisions.</p>
+                <h2>11. Indemnification</h2>
+                <p>You agree to defend, indemnify and hold harmless BeastsNetwork and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of the Site, by you or any person using your account; b) any violation of these Terms; or c) your User Content.</p>
             </section>
 
             <section class="policy-section">
-                <h2>12. Governing Law and Dispute Resolution</h2>
-                <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction where BeastsNetwork is established, without regard to its conflict of law provisions.</p>
-                <p>Any legal action of whatever nature shall be brought in the courts of that jurisdiction.</p>
-                <p><strong>THE UNITED NATIONS CONVENTION ON CONTRACTS FOR THE INTERNATIONAL SALE OF GOODS SHALL NOT APPLY TO THESE TERMS.</strong></p>
+                <h2>12. Governing Law</h2>
+                <p>These Terms shall be governed and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions.</p>
+                <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Site, and supersede and replace any prior agreements we might have between us regarding the Site.</p>
             </section>
 
             <section class="policy-section">
-                <h2>13. Changes to These Terms</h2>
-                <p>We reserve the right to modify or replace these Terms at any time. We will provide notice of any material changes by posting the new Terms on our Site and updating the "Last Updated" date at the top.</p>
-                <p>Your continued use of our Site after any changes to these Terms constitutes your acceptance of the new Terms.</p>
+                <h2>13. Changes to This Site</h2>
+                <p>We reserve the right to modify or terminate the Site or your access to the Site for any reason, without notice, at any time, and without liability to you.</p>
+                <p>Upon such termination, we will make reasonable efforts to provide you with notice in advance and an opportunity to export your data from the Site, except in cases where the Site is to be discontinued entirely.</p>
             </section>
 
             <section class="policy-section">
-                <h2>14. Severability</h2>
-                <p>If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent permissible, and the other provisions of these Terms shall remain in full force and effect.</p>
+                <h2>14. Contact Us</h2>
+                <p>If you have any questions about these Terms, please contact us at: <a href="mailto:contact@beastsnetwork.win">contact@beastsnetwork.win</a></p>
             </section>
 
-            <section class="policy-section">
-                <h2>15. Waiver</h2>
-                <p>Our failure to enforce any right or provision of these Terms shall not operate as a waiver of such right or provision. Any waiver of any provision of these Terms shall be effective only if in writing and signed by an authorized representative of BeastsNetwork.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>16. Assignment</h2>
-                <p>We may assign or transfer these Terms, in whole or in part, without restriction. You may not assign or transfer these Terms or any rights under these Terms without our prior written consent.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>17. Entire Agreement</h2>
-                <p>These Terms, together with our <a href="privacy-policy.html">Privacy Policy</a> and <a href="risk-disclosure.html">Risk Disclosure</a>, constitute the entire agreement between you and BeastsNetwork regarding your use of our Site and the BeastsNetwork Token, and supersede all prior and contemporaneous agreements, representations, and understandings.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>18. Contact Us</h2>
-                <p>If you have any questions about these Terms, please contact us at:</p>
-                <p><strong>Email:</strong> legal@beastsnetwork.win</p>
-            </section>
-
-            <a href="#" class="back-to-top">Back to Top</a>
+            <div class="back-link">
+                <a href="/">&larr; Back to Blog</a>
+            </div>
         </div>
     </main>
 
@@ -628,43 +404,8 @@
         <div class="footer-container">
             <div class="footer-content">
                 <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
-                <p style="margin-top: 1rem;">
-                    <a href="/">Home</a> | 
-                    <a href="privacy-policy.html">Privacy Policy</a> | 
-                    <a href="cookie-policy.html">Cookie Policy</a> | 
-                    <a href="terms-of-service.html">Terms of Service</a> | 
-                    <a href="risk-disclosure.html">Risk Disclosure</a>
-                </p>
             </div>
         </div>
     </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileNavClose = document.getElementById('mobileNavClose');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            mobileNavOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        });
-
-        mobileNavClose.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileNav.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        mobileNavOverlay.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileNav.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    </script>
 </body>
 </html>
