@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:media="http://search.yahoo.com/mrss/">
+
+    <channel>
+        <title>BeastsNetwork | Privacy & Cybersecurity Blog</title>
+        <description>Verified privacy and cybersecurity news from BeastsNetwork. Stay updated with accurate, sourced information on data protection, encryption, and digital security.</description>
+        <link>https://beastsnetwork.win/</link>
+        <atom:link href="https://beastsnetwork.win/feed.xml" rel="self" type="application/rss+xml" />
+        <language>en-US</language>
+        <pubDate>Sun, 28 Jun 2026 05:00:00 GMT</pubDate>
+        <lastBuildDate>Sun, 28 Jun 2026 05:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>BeastsNetwork RSS Generator</generator>
+        <managingEditor>contact@beastsnetwork.win</managingEditor>
+        <webMaster>contact@beastsnetwork.win</webMaster>
+        <ttl>1800</ttl>
+        <image>
+            <url>https://beastsnetwork.win/beastsnetwork-logo.png</url>
+            <title>BeastsNetwork</title>
+            <link>https://beastsnetwork.win/</link>
+            <width>200</width>
+            <height>200</height>
+        </image>
+        
+        <item>
+            <title>AI-Powered Phishing Attacks Surge 1,380% as Criminal Platforms Render MFA Obsolete</title>
+            <description>New research from Huntress reveals a massive 1,380% increase in device code phishing attacks in early 2026. Attackers exploit legitimate OAuth flows to bypass MFA, tricking users into authenticating on genuine Microsoft pages while attackers capture access tokens.</description>
+            <link>https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/</link>
+            <guid isPermaLink="true">https://www.itsecurityguru.org/2026/06/24/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/</guid>
+            <pubDate>Wed, 24 Jun 2026 09:00:00 GMT</pubDate>
+            <dc:creator>IT Security Guru</dc:creator>
+            <category>Phishing</category>
+            <category>AI</category>
+            <category>MFA</category>
+            <source url="https://www.itsecurityguru.org">IT Security Guru</source>
+        </item>
+        
+        <item>
+            <title>24 Billion Records Exposed in Colossal Data Leak</title>
+            <description>Hackers claim to be selling 340 million OnlyFans user records, compiled from internal databases and previous breaches. The massive dataset includes emails, usernames, and account activity metrics, potentially exposing real identities of creators and subscribers.</description>
+            <link>https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/</link>
+            <guid isPermaLink="true">https://cybernews.com/security/onlyfans-mega-data-leak-hackers-claim/</guid>
+            <pubDate>Tue, 23 Jun 2026 14:30:00 GMT</pubDate>
+            <dc:creator>Cybernews</dc:creator>
+            <category>Data Breach</category>
+            <category>Privacy</category>
+            <source url="https://cybernews.com">Cybernews</source>
+        </item>
+        
+        <item>
+            <title>CISA Urges Hardening of Fortinet Devices After Global Credential Exposure</title>
+            <description>CISA warns that malicious actors have targeted internet-accessible Fortinet devices across government and private sector organizations. The FortiBleed campaign involves exposure of credentials from approximately 74,000 Fortinet firewalls and VPN gateways.</description>
+            <link>https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure</link>
+            <guid isPermaLink="true">https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure</guid>
+            <pubDate>Mon, 22 Jun 2026 10:00:00 GMT</pubDate>
+            <dc:creator>CISA</dc:creator>
+            <category>Government</category>
+            <category>Threat Intelligence</category>
+            <category>Fortinet</category>
+            <source url="https://www.cisa.gov">CISA</source>
+        </item>
+        
+        <item>
+            <title>One Medical Healthcare Breach: 8.8 TB of Patient Data at Risk</title>
+            <description>ShinyHunters data extortion group claims to have stolen 8.8 TB of data from One Medical. Unauthorized access was identified on June 13, with access occurring between June 8-11. The group threatens to leak the data unless ransom demands are met by June 22.</description>
+            <link>https://www.hipaajournal.com/one-medical-data-breach/</link>
+            <guid isPermaLink="true">https://www.hipaajournal.com/one-medical-data-breach/</guid>
+            <pubDate>Fri, 13 Jun 2026 16:45:00 GMT</pubDate>
+            <dc:creator>HIPAA Journal</dc:creator>
+            <category>Healthcare</category>
+            <category>Data Breach</category>
+            <category>HIPAA</category>
+            <source url="https://www.hipaajournal.com">HIPAA Journal</source>
+        </item>
+        
+        <item>
+            <title>FortiBleed: 86,644 Fortinet Firewalls Compromised Globally</title>
+            <description>A Russian-speaking cybercriminal syndicate harvested verified administrator and VPN credentials from 86,644 Fortinet FortiGate firewalls across 194 countries. The incident surfaced publicly on June 13 when a security researcher discovered an exposed threat actor server.</description>
+            <link>https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/</link>
+            <guid isPermaLink="true">https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/</guid>
+            <pubDate>Fri, 13 Jun 2026 12:00:00 GMT</pubDate>
+            <dc:creator>Shattered.io</dc:creator>
+            <category>Vulnerabilities</category>
+            <category>Fortinet</category>
+            <category>Enterprise Security</category>
+            <source url="https://shattered.io">Shattered.io</source>
+        </item>
+        
+        <item>
+            <title>Consumer Data Privacy and Security Act of 2026</title>
+            <description>Senator Moran introduced S. 4211, the Consumer Data Privacy and Security Act of 2026. The bill aims to protect consumer privacy at the federal level. It was introduced on March 25 and last updated on June 15, 2026.</description>
+            <link>https://www.govtrack.us/congress/bills/119/s4211</link>
+            <guid isPermaLink="true">https://www.govtrack.us/congress/bills/119/s4211</guid>
+            <pubDate>Sun, 15 Jun 2026 08:00:00 GMT</pubDate>
+            <dc:creator>GovTrack.us</dc:creator>
+            <category>Regulation</category>
+            <category>Privacy Law</category>
+            <category>Legislation</category>
+            <source url="https://www.govtrack.us">GovTrack.us</source>
+        </item>
+        
+        <item>
+            <title>Signal Usernames Roll Out: Phone Number Privacy</title>
+            <description>Signal has begun rolling out usernames, allowing users to create unique handles for connections without sharing phone numbers. By default, phone numbers are now hidden from new contacts. These features are currently in public beta and rolling out to all users in coming weeks.</description>
+            <link>https://freedom.press/digisec/blog/signal-usernames-are-here/</link>
+            <guid isPermaLink="true">https://freedom.press/digisec/blog/signal-usernames-are-here/</guid>
+            <pubDate>Mon, 19 May 2026 11:30:00 GMT</pubDate>
+            <dc:creator>Freedom of the Press Foundation</dc:creator>
+            <category>Encryption</category>
+            <category>Privacy</category>
+            <category>Messaging</category>
+            <source url="https://freedom.press">Freedom of the Press Foundation</source>
+        </item>
+    </channel>
+</rss>
