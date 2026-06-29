@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BleepingComputer - BeastsNetwork Category</title>
+    <meta name="description" content="Trusted cybersecurity news covering malware, breaches, vulnerabilities, and IT security with in-depth analysis">
+    <meta property="og:title" content="BeastsNetwork - BleepingComputer Category">
+    <meta property="og:description" content="Trusted cybersecurity news covering malware, breaches, vulnerabilities, and IT security with in-depth analysis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/beastsnetwork-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #2C3E50;
+            --text-secondary: #555555;
+            --text-muted: #718096;
+            --neon-blue: #00d4ff;
+            --neon-blue-dark: #0099cc;
+            --neon-blue-light: #66e5ff;
+            --neon-glow: rgba(0, 212, 255, 0.3);
+            --accent-purple: #8b5cf6;
+            --gradient-neon: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #66e5ff 100%);
+            --border-color: #E0E0E0;
+            --shadow: rgba(0, 0, 0, 0.15);
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --border-color: rgba(0, 212, 255, 0.1);
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; font-size: 16px; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background var(--transition-normal), color var(--transition-normal);
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.2; }
+        h1 { font-size: 2.5rem; }
+        
+        a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        a:hover { color: var(--neon-blue-light); }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+        
+        .ai-portal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-secondary); display: flex; align-items: center; justify-content: center;
+            z-index: 1000; transition: opacity var(--transition-slow), visibility var(--transition-slow);
+        }
+        .ai-portal.hidden { opacity: 0; visibility: hidden; }
+
+        .portal-ring {
+            position: absolute; border: 2px solid var(--neon-blue); border-radius: 50%;
+            opacity: 0.5; animation: pulse 3s ease-in-out infinite;
+        }
+        .portal-ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+        .portal-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 0.5s; }
+        .portal-ring:nth-child(3) { width: 500px; height: 500px; animation-delay: 1s; }
+
+        .portal-core {
+            width: 200px; height: 200px; background: var(--gradient-neon); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 60px var(--neon-blue), 0 0 100px var(--neon-blue), inset 0 0 30px var(--neon-glow);
+            animation: rotate 10s linear infinite; position: relative; z-index: 10;
+        }
+        .portal-core::before {
+            content: ''; position: absolute; width: 150px; height: 150px;
+            background: var(--bg-secondary); border-radius: 50%;
+            animation: rotate 5s linear infinite reverse;
+        }
+        .portal-core .ai-icon { color: var(--bg-secondary); font-size: 2.5rem; z-index: 11; }
+
+        .portal-loading {
+            position: absolute; bottom: var(--space-xl); color: var(--text-secondary); font-size: 1.2rem;
+        }
+        .portal-loading span { animation: blink 1s ease-in-out infinite; }
+        .portal-loading span:nth-child(2) { animation-delay: 0.2s; }
+        .portal-loading span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.05); opacity: 0.8; } }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: var(--space-sm) 0; 
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px); 
+            border-bottom: 1px solid var(--border-color);
+            transition: background var(--transition-normal), border-color var(--transition-normal);
+        }
+        .header-container {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md);
+        }
+        .logo { display: flex; align-items: center; gap: var(--space-sm); font-size: 1.5rem; font-weight: 700; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gradient-neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-primary); font-weight: bold; }
+        .logo-text { background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        .nav { display: flex; align-items: center; gap: var(--space-lg); }
+        .nav-links { display: flex; gap: var(--space-md); list-style: none; }
+        .nav-link { position: relative; padding: var(--space-xs) 0; font-weight: 500; color: var(--text-primary); }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-blue); transition: width var(--transition-fast); }
+        .nav-link:hover::after { width: 100%; }
+
+        .theme-toggle {
+            display: flex; align-items: center; gap: 0.5rem; 
+            cursor: pointer; padding: 0.5rem 1rem; 
+            border-radius: 8px; 
+            transition: all var(--transition-fast); 
+            background: transparent; 
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .theme-toggle:hover { 
+            background: var(--neon-blue); 
+            color: var(--bg-primary); 
+            border-color: var(--neon-blue); 
+        }
+
+        .category-hero {
+            padding: var(--space-2xl) 0 var(--space-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-primary);
+            transition: background var(--transition-normal);
+        }
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, var(--neon-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .category-icon {
+            font-size: 4rem; 
+            margin-bottom: var(--space-md);
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .category-title { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            margin-bottom: var(--space-md); 
+            background: var(--gradient-neon); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        .category-description { 
+            font-size: 1.25rem; 
+            color: var(--text-secondary); 
+            max-width: 700px; 
+            margin: 0 auto var(--space-xl);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            padding: var(--space-xl) 0;
+        }
+
+        .news-card { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            padding: var(--space-md); 
+            transition: all var(--transition-normal); 
+            position: relative; 
+            overflow: hidden;
+        }
+        .news-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            height: 3px; 
+            background: var(--gradient-neon); 
+            transform: scaleX(0); 
+            transition: transform var(--transition-normal); 
+        }
+        .news-card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--neon-blue); 
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+        .news-card:hover::before { transform: scaleX(1); }
+        
+        .news-category { 
+            display: inline-block; 
+            padding: var(--space-xs) var(--space-sm); 
+            background: rgba(0, 212, 255, 0.1); 
+            border: 1px solid var(--neon-blue); 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            color: var(--neon-blue); 
+            margin-bottom: var(--space-sm); 
+        }
+        .news-title { 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            margin-bottom: var(--space-xs); 
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+        .news-excerpt { 
+            color: var(--text-secondary); 
+            font-size: 0.95rem; 
+            margin-bottom: var(--space-sm); 
+            line-height: 1.5; 
+        }
+        .news-meta { 
+            display: flex; 
+            align-items: center; 
+            gap: var(--space-sm); 
+            font-size: 0.85rem; 
+            color: var(--text-muted); 
+        }
+        .news-date { color: var(--neon-blue); }
+
+        .footer { 
+            background: var(--bg-secondary); 
+            border-top: 1px solid var(--border-color); 
+            padding: var(--space-xl) 0 var(--space-md); 
+            margin-top: var(--space-xl);
+            transition: background var(--transition-normal), border-color var(--transition-normal);
+        }
+        .footer-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: var(--space-xl); 
+        }
+        .footer-brand { grid-column: span 2; }
+        .footer-title { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin-bottom: var(--space-sm); 
+            background: var(--gradient-neon); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        .footer-description { color: var(--text-secondary); margin-bottom: var(--space-md); }
+        .footer-links h4 { color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: var(--space-xs); }
+        .footer-links a { color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--neon-blue); }
+        .footer-bottom { 
+            text-align: center; 
+            padding-top: var(--space-lg); 
+            margin-top: var(--space-lg); 
+            border-top: 1px solid var(--border-color); 
+            color: var(--text-muted); 
+            font-size: 0.85rem; 
+        }
+        .social-links { display: flex; gap: var(--space-sm); justify-content: center; margin-top: var(--space-sm); }
+        .social-links a { font-size: 1.2rem; color: var(--text-primary); }
+        .social-links a:hover { color: var(--neon-blue); }
+
+        @media (max-width: 1024px) {
+            .category-title { font-size: 2.5rem; }
+            .footer-brand { grid-column: span 1; }
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-wrap: wrap; gap: var(--space-sm); }
+            .nav { order: 3; width: 100%; justify-content: center; }
+            .nav-links { gap: var(--space-sm); }
+            .category-title { font-size: 2rem; }
+            .category-description { font-size: 1rem; }
+            .news-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .logo-text { display: none; }
+            .category-icon { font-size: 3rem; }
+            .category-title { font-size: 1.75rem; }
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.5s ease forwards; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-blue-light); }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="ai-portal" id="aiPortal">
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-core">
+            <i class="fas fa-robot ai-icon"></i>
+        </div>
+        <div class="portal-loading">
+            <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
+                <span class="logo-text">BeastsNetwork</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="blog-directory.html" class="nav-link">Directory</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon theme-icon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
+            <h1 class="category-title">BleepingComputer</h1>
+            <p class="category-description">Trusted cybersecurity news covering malware, breaches, vulnerabilities, and IT security with in-depth analysis</p>
+        </section>
+
+        <div class="container">
+            <div class="news-grid">
+                <article class="news-card fade-in delay-1">
+          <div class="news-category">Breach</div>
+          <h3 class="news-title"><a href="https://www.bleepingcomputer.com/news/security/ai-powered-phishing-attacks-surge-1380-as-criminal-platforms-render-mfa-obsolete/" target="_blank" rel="noopener">AI-Powered Phishing Attacks Surge 1,380% as Criminal Platforms Render MFA Obsolete</a></h3>
+          <p class="news-excerpt">New research from Huntress reveals a massive 1,380% increase in device code phishing attacks in early 2026.</p>
+          <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 24, 2026</span>
+              <span><i class="fas fa-newspaper"></i> BleepingComputer</span>
+          </div>
+      </article>
+<article class="news-card fade-in delay-2">
+          <div class="news-category">Breach</div>
+          <h3 class="news-title"><a href="https://www.bleepingcomputer.com/news/security/onlyfans-mega-data-leak-hackers-claim-to-sell-340m-user-records/" target="_blank" rel="noopener">24 Billion Records Exposed in Colossal Data Leak</a></h3>
+          <p class="news-excerpt">Hackers claim to be selling 340 million OnlyFans user records, compiled from internal databases and previous breaches.</p>
+          <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 23, 2026</span>
+              <span><i class="fas fa-newspaper"></i> BleepingComputer</span>
+          </div>
+      </article>
+<article class="news-card fade-in delay-3">
+          <div class="news-category">Malware</div>
+          <h3 class="news-title"><a href="https://www.bleepingcomputer.com/news/security/new-ransomware-gang-claims-attack-on-major-healthcare-provider/" target="_blank" rel="noopener">New Ransomware Gang Targets Healthcare Sector</a></h3>
+          <p class="news-excerpt">A newly emerged ransomware group has claimed responsibility for attacks on three major healthcare providers.</p>
+          <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 20, 2026</span>
+              <span><i class="fas fa-newspaper"></i> BleepingComputer</span>
+          </div>
+      </article>
+<article class="news-card fade-in delay-4">
+          <div class="news-category">Vulnerability</div>
+          <h3 class="news-title"><a href="https://www.bleepingcomputer.com/news/security/critical-zero-day-in-popular-vpn-software-under-active-exploitation/" target="_blank" rel="noopener">Critical Zero-Day in Popular VPN Software</a></h3>
+          <p class="news-excerpt">Security researchers have discovered a critical zero-day vulnerability in widely used VPN software that allows remote code execution.</p>
+          <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 18, 2026</span>
+              <span><i class="fas fa-newspaper"></i> BleepingComputer</span>
+          </div>
+      </article>
+<article class="news-card fade-in delay-5">
+          <div class="news-category">Breach</div>
+          <h3 class="news-title"><a href="https://www.bleepingcomputer.com/news/security/major-social-media-platform-suffers-data-breach-affecting-millions/" target="_blank" rel="noopener">Major Social Media Platform Data Breach</a></h3>
+          <p class="news-excerpt">A popular social media platform has disclosed a data breach affecting millions of users.</p>
+          <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 15, 2026</span>
+              <span><i class="fas fa-newspaper"></i> BleepingComputer</span>
+          </div>
+      </article>
+<article class="news-card fade-in delay-1">
+          <div class="news-category">Threats</div>
+          <h3 class="news-title"><a href="https://www.bleepingcomputer.com/news/security/new-phishing-campaign-targets-cryptocurrency-users/" target="_blank" rel="noopener">New Phishing Campaign Targets Cryptocurrency Users</a></h3>
+          <p class="news-excerpt">Cybercriminals are using sophisticated phishing emails to target cryptocurrency wallet users.</p>
+          <div class="news-meta">
+              <span class="news-date"><i class="fas fa-calendar-alt"></i> June 10, 2026</span>
+              <span><i class="fas fa-newspaper"></i> BleepingComputer</span>
+          </div>
+      </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork" style="width: 60px; height: 60px; margin-bottom: 1rem;">
+                    <h3 class="footer-title">BeastsNetwork</h3>
+                    <p class="footer-description">AI-Powered News Intelligence. Stay ahead with real-time, verified news curated by artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="blog-directory.html">Directory</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BeastsNetwork. All rights reserved. Powered by Artificial Intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const portal = document.getElementById('aiPortal');
+                portal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 3000);
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Set default theme to dark
+        html.setAttribute('data-theme', 'dark');
+        
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            const icon = this.querySelector('.theme-icon');
+            const text = this.querySelector('.theme-text');
+            if (newTheme === 'dark') {
+                icon.className = 'fas fa-moon theme-icon';
+                text.textContent = 'Dark';
+            } else {
+                icon.className = 'fas fa-sun theme-icon';
+                text.textContent = 'Light';
+            }
+        });
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        document.querySelectorAll('.news-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
