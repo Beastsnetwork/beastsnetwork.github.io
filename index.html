@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeastsNetwork | Cybersecurity Intelligence Hub</title>
+    <meta name="description" content="BeastsNetwork - Your central hub for verified privacy and cybersecurity intelligence. Real-time threat analysis, expert insights, and curated security resources.">
+    <meta name="keywords" content="cybersecurity, privacy, threat intelligence, security news, data protection, encryption, BeastsNetwork">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://beastsnetwork.win/">
+    <meta property="og:title" content="BeastsNetwork | Cybersecurity Intelligence Hub">
+    <meta property="og:description" content="Verified cybersecurity news, threat intelligence, and privacy resources.">
+    <meta property="og:image" content="/beastsnetwork-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #008080;
+            --primary-light: #20B2AA;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #2C3E50;
+            --text-light: #555555;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #E0E0E0;
+            --shadow: rgba(0, 128, 128, 0.15);
+        }
+        [data-theme="dark"] {
+            --primary: #20B2AA;
+            --primary-light: #008080;
+            --primary-dark: #004D4D;
+            --accent: #80C0C0;
+            --text: #f0f0f0;
+            --text-light: #b0b0b0;
+            --bg: #1a1a2e;
+            --bg-secondary: #16213e;
+            --border: #2a2a4a;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+        [data-theme="dark"] .header {
+            background: rgba(26, 26, 46, 0.95);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .logo img { height: 45px; width: auto; }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .theme-icon { font-size: 1.1rem; transition: transform 0.3s ease; }
+        [data-theme="dark"] .theme-icon { transform: rotate(180deg); }
+        .theme-text { font-size: 0.85rem; font-weight: 500; }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+        main { padding-top: 100px; }
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .hero-cta a {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.85rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .hero-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-brand p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--primary-light); }
+        .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-section { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo">
+                <span class="logo-text">BeastsNetwork</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+                <span class="theme-text">Dark</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <h1>Cybersecurity Intelligence Hub</h1>
+                <p>Real-time threat analysis, verified news, and expert insights to keep you ahead of digital threats.</p>
+                <div class="hero-cta">
+                    <a href="/blog.html">Latest Articles &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo">
+                <p>Your trusted source for cybersecurity intelligence and privacy protection.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog-directory.html">Directory</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="/risk-disclosure.html">Risk Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 BeastsNetwork. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                html.setAttribute('data-theme', savedTheme);
+                updateToggleText();
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    html.setAttribute('data-theme', 'dark');
+                    updateToggleText();
+                }
+            }
+        }
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleText();
+        });
+        function updateToggleText() {
+            const currentTheme = html.getAttribute('data-theme');
+            const icon = themeToggle.querySelector('.theme-icon');
+            const text = themeToggle.querySelector('.theme-text');
+            if (currentTheme === 'dark') {
+                icon.textContent = '☀️';
+                text.textContent = 'Light';
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark';
+            }
+        }
+        initializeTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                updateToggleText();
+            }
+        });
+    </script>
+</body>
+</html>
