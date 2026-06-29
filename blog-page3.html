@@ -1,0 +1,62 @@
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div></header>
+    <main>
+        <section class="page-header"><h1>Privacy & Cybersecurity Blog - Page 3</h1><p class="subtitle">✅ Verified News & Accurate Dates</p><p>Stay ahead with real, sourced privacy and cybersecurity news.</p></section>
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-meta"><span class="blog-tag">Breach</span><span class="verified-badge">VERIFIED</span><span class="blog-date">June 13, 2026</span></div>
+                    <h2><a href="https://www.hipaajournal.com/one-medical-data-breach/" target="_blank" rel="noopener">One Medical Healthcare Breach: 8.8 TB of Patient Data at Risk</a></h2>
+                    <p>ShinyHunters data extortion group claims to have stolen 8.8 TB of data from One Medical. Unauthorized access was identified on June 13, with access occurring between June 8-11.</p>
+                    <a href="https://www.hipaajournal.com/one-medical-data-breach/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://www.hipaajournal.com" target="_blank">HIPAA Journal</a></span>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta"><span class="blog-tag">Breach</span><span class="verified-badge">VERIFIED</span><span class="blog-date">June 13, 2026</span></div>
+                    <h2><a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" target="_blank" rel="noopener">FortiBleed: 86,644 Fortinet Firewalls Compromised Globally</a></h2>
+                    <p>A Russian-speaking cybercriminal syndicate harvested verified administrator and VPN credentials from 86,644 Fortinet FortiGate firewalls across 194 countries.</p>
+                    <a href="https://shattered.io/fortibleed-fortinet-86644-firewalls-2026/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://shattered.io" target="_blank">Shattered.io</a></span>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta"><span class="blog-tag">Regulation</span><span class="verified-badge">VERIFIED</span><span class="blog-date">June 15, 2026</span></div>
+                    <h2><a href="https://www.govtrack.us/congress/bills/119/s4211" target="_blank" rel="noopener">Consumer Data Privacy and Security Act of 2026</a></h2>
+                    <p>Senator Moran introduced S. 4211, the Consumer Data Privacy and Security Act of 2026. The bill aims to protect consumer privacy at the federal level.</p>
+                    <a href="https://www.govtrack.us/congress/bills/119/s4211" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://www.govtrack.us" target="_blank">GovTrack.us</a></span>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-meta"><span class="blog-tag">Encryption</span><span class="verified-badge">VERIFIED</span><span class="blog-date">May 19, 2026</span></div>
+                    <h2><a href="https://freedom.press/digisec/blog/signal-usernames-are-here/" target="_blank" rel="noopener">Signal Usernames Roll Out: Phone Number Privacy Enhancements</a></h2>
+                    <p>Signal has begun rolling out usernames, allowing users to create unique handles for connections without sharing phone numbers. By default, phone numbers are now hidden from new contacts.</p>
+                    <a href="https://freedom.press/digisec/blog/signal-usernames-are-here/" class="read-more" target="_blank" rel="noopener">Read full article &rarr;</a>
+                    <span class="source-link">Source: <a href="https://freedom.press" target="_blank">Freedom of the Press Foundation</a></span>
+                </article>
+            </div>
+            <div class="pagination">
+                <a href="/blog.html" class="page-num">1</a>
+                <a href="/blog-page2.html" class="page-num">2</a>
+                <a href="#" class="page-num active">3</a>
+                <span class="page-num">...</span>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"><div class="footer-content">
+        <div><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork Logo" class="footer-logo"><p class="copyright" style="margin-top: 1rem;">© 2026 BeastsNetwork. All rights reserved.</p></div>
+        <ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/blog-directory.html">Blog Directory</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/privacy-policy.html">Privacy Policy</a></li><li><a href="/terms-of-service.html">Terms</a></li></ul>
+    </div></footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => { navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; });
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        function initializeTheme() { const savedTheme = localStorage.getItem('theme'); if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateToggleText(); } else { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; if (prefersDark) { html.setAttribute('data-theme', 'dark'); updateToggleText(); } } }
+        themeToggle.addEventListener('click', () => { const currentTheme = html.getAttribute('data-theme'); const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', newTheme); localStorage.setItem('theme', newTheme); updateToggleText(); });
+        function updateToggleText() { const currentTheme = html.getAttribute('data-theme'); const icon = themeToggle.querySelector('.theme-icon'); const text = themeToggle.querySelector('.theme-text'); if (currentTheme === 'dark') { icon.textContent = '☀️'; text.textContent = 'Light'; } else { icon.textContent = '🌙'; text.textContent = 'Dark'; } }
+        initializeTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!localStorage.getItem('theme')) { html.setAttribute('data-theme', e.matches ? 'dark' : 'light'); updateToggleText(); } });
+    </script>
+</body>
+</html>
