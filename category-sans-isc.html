@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,19 +40,7 @@
             --space-xl: 3rem;
             --space-2xl: 4rem;
         }
-        [data-theme="dark"] {
-            --bg-dark: #0a0a1a;
-            --bg-darker: #050510;
-            --bg-card: rgba(15, 15, 35, 0.8);
-            --bg-card-hover: rgba(25, 25, 50, 0.9);
-            --text-primary: #ffffff;
-            --text-secondary: #a0aec0;
-            --text-muted: #718096;
-            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
-            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
-            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
-            --neon-glow: rgba(0, 212, 255, 0.3);
-        }
+        
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--gradient-dark); color: var(--text-primary); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
@@ -144,7 +132,7 @@
         <div class="header-container">
             <a href="/" class="logo"><img src="/beastsnetwork-logo.svg" alt="BeastsNetwork" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;"><span class="logo-text">BeastsNetwork</span></a>
             <nav class="nav"><ul class="nav-links"><li><a href="/" class="nav-link">Home</a></li><li><a href="blog-directory.html" class="nav-link">Directory</a></li><li><a href="blog.html" class="nav-link">Blog</a></li></ul></nav>
-            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon theme-icon"></i><span class="theme-text">Dark</span></button>
+            
         </div>
     </header>
     <main>
