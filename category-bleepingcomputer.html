@@ -12,24 +12,24 @@
     <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
     <style>
         :root {
-            --bg-dark: #0a0a1a;
-            --bg-darker: #050510;
-            --bg-card: rgba(15, 15, 35, 0.8);
-            --bg-card-hover: rgba(25, 25, 50, 0.9);
+            --bg-dark: #ffffff;
+            --bg-darker: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f0f0;
             --neon-blue: #00d4ff;
             --neon-blue-dark: #0099cc;
             --neon-blue-light: #66e5ff;
-            --neon-glow: rgba(0, 212, 255, 0.3);
+            --neon-glow: rgba(0, 212, 255, 0.15);
             --accent-purple: #8b5cf6;
             --accent-pink: #ec4899;
             --accent-green: #10b981;
-            --text-primary: #ffffff;
-            --text-secondary: #a0aec0;
+            --text-primary: #2C3E50;
+            --text-secondary: #555555;
             --text-muted: #718096;
             --gradient-neon: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #66e5ff 100%);
-            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
-            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
-            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
             --transition-fast: 0.2s ease;
             --transition-normal: 0.3s ease;
             --transition-slow: 0.5s ease;
@@ -40,20 +40,19 @@
             --space-xl: 3rem;
             --space-2xl: 4rem;
         }
-        [data-theme="light"] {
-            --bg-dark: #ffffff;
-            --bg-darker: #f8f9fa;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f0f0f0;
-            --text-primary: #2C3E50;
-            --text-secondary: #555555;
+        [data-theme="dark"] {
+            --bg-dark: #0a0a1a;
+            --bg-darker: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --bg-card-hover: rgba(25, 25, 50, 0.9);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
             --text-muted: #718096;
-            --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
-            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
-            --bg-darker: #f0f0f0;
+            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --neon-glow: rgba(0, 212, 255, 0.3);
         }
-        
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--gradient-dark); color: var(--text-primary); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
