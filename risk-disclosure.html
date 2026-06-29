@@ -3,444 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Disclosure | BeastsNetwork Cybersecurity News</title>
-    <meta name="description" content="Risk Disclosure for BeastsNetwork Cybersecurity News. Understand the risks and limitations of our cybersecurity information.">
-    <meta name="keywords" content="risk disclosure, BeastsNetwork, cybersecurity news, disclaimer, limitations">
-    <meta property="og:title" content="Risk Disclosure | BeastsNetwork Cybersecurity News">
-    <meta property="og:description" content="Risk Disclosure for BeastsNetwork Cybersecurity News. Understand the risks and limitations.">
-    <meta property="og:url" content="https://beastsnetwork.win/risk-disclosure.html">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/x-icon" href="/beastsnetwork-logo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Risk Disclosure | BeastsNetwork AI News</title>
+    <meta name="description" content="Risk Disclosure for BeastsNetwork AI-Powered News Intelligence">
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
     <style>
         :root {
-            --deep-black: #0a0a0a;
-            --deep-black-light: #141414;
-            --gold-primary: #daa520;
-            --gold-secondary: #b8860b;
-            --gold-light: #ffd700;
-            --red-alert: #ff3333;
-            --glass-bg: rgba(10, 10, 10, 0.6);
-            --glass-border: rgba(218, 165, 32, 0.2);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --text-muted: #666666;
+            --bg-dark: #0a0a1a; --bg-darker: #050510; --bg-card: rgba(15, 15, 35, 0.8);
+            --neon-blue: #00d4ff; --neon-glow: rgba(0, 212, 255, 0.3);
+            --text-primary: #ffffff; --text-secondary: #a0aec0; --text-muted: #718096;
+            --gradient-neon: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            --transition-fast: 0.2s ease; --space-sm: 1rem; --space-md: 1.5rem; --space-lg: 2rem; --space-xl: 3rem;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--deep-black);
-            color: var(--text-primary);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { height: 45px; }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover { color: var(--gold-primary); }
-
-        .subscribe-btn {
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
-            color: var(--deep-black);
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 25px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .subscribe-btn:hover { box-shadow: 0 0 20px rgba(218, 165, 32, 0.5); }
-
-        .main-content { padding-top: 100px; }
-
-        .policy-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .disclaimer-box {
-            background: rgba(218, 165, 32, 0.05);
-            border: 2px solid var(--gold-primary);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .disclaimer-box h3 {
-            color: var(--gold-light);
-            margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .disclaimer-box p {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .policy-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .policy-header h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .policy-header .last-updated {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .policy-section {
-            margin-bottom: 3rem;
-        }
-
-        .policy-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            color: var(--gold-primary);
-            border-bottom: 2px solid var(--glass-border);
-            padding-bottom: 0.5rem;
-        }
-
-        .policy-section h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 2rem 0 1rem;
-            color: var(--gold-secondary);
-        }
-
-        .policy-section p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .policy-section ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .policy-section ul li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .policy-section a {
-            color: var(--gold-primary);
-            text-decoration: none;
-        }
-
-        .policy-section a:hover { text-decoration: underline; }
-
-        .back-to-top {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .back-to-top:hover {
-            background: rgba(218, 165, 32, 0.1);
-            border-color: var(--gold-primary);
-        }
-
-        .footer {
-            padding: 4rem 2rem 2rem;
-            border-top: 1px solid var(--glass-border);
-            background: rgba(10, 10, 10, 0.5);
-            margin-top: 4rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-content {
-            text-align: center;
-            color: var(--text-secondary);
-        }
-
-        .footer-content p { margin-bottom: 1rem; }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--gold-primary);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 350px;
-            height: 100vh;
-            background: var(--deep-black-light);
-            backdrop-filter: blur(20px);
-            border-left: 1px solid var(--glass-border);
-            padding: 5rem 2rem 2rem;
-            transition: right 0.4s ease;
-            z-index: 2000;
-        }
-
-        .mobile-nav.active { right: 0; }
-
-        .mobile-nav-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            color: var(--gold-primary);
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        .mobile-nav ul { list-style: none; }
-        .mobile-nav ul li { margin-bottom: 1.5rem; }
-        .mobile-nav ul li a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .mobile-nav ul li a:hover { color: var(--gold-primary); }
-
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .mobile-nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            .policy-container { padding: 2rem 1rem; }
-            .policy-header h1 { font-size: 2rem; }
-            .policy-section h2 { font-size: 1.4rem; }
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(180deg, #0a0a1a 0%, #050510 100%); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .header { position: sticky; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-sm) 0; background: rgba(10, 10, 26, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 212, 255, 0.1); }
+        .header-container { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+        .logo { display: flex; align-items: center; gap: var(--space-sm); font-size: 1.5rem; font-weight: 700; }
+        .logo img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-text { background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: flex; gap: var(--space-md); list-style: none; }
+        .nav-link { color: var(--text-secondary); padding: var(--space-sm) 0; transition: color var(--transition-fast); }
+        .nav-link:hover { color: var(--neon-blue); }
+        main { padding-top: 80px; }
+        .policy-container { max-width: 900px; margin: 0 auto; padding: var(--space-xl) var(--space-md); }
+        .policy-header { text-align: center; margin-bottom: var(--space-lg); }
+        .policy-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-sm); background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .policy-header .last-updated { color: var(--text-secondary); font-size: 1rem; }
+        .policy-section { margin-bottom: var(--space-lg); }
+        .policy-section h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--neon-blue); border-bottom: 2px solid rgba(0, 212, 255, 0.2); padding-bottom: var(--space-sm); }
+        .policy-section p { color: var(--text-secondary); margin-bottom: var(--space-sm); }
+        .policy-section ul { list-style: disc; padding-left: var(--space-lg); margin-bottom: var(--space-md); }
+        .policy-section li { color: var(--text-secondary); margin-bottom: var(--space-xs); }
+        .back-to-top { display: inline-block; margin-top: var(--space-lg); padding: var(--space-sm) var(--space-md); background: var(--bg-card); border: 1px solid var(--neon-blue); border-radius: 50px; color: var(--neon-blue); text-decoration: none; font-weight: 500; transition: all var(--transition-fast); }
+        .back-to-top:hover { background: var(--neon-blue); color: var(--bg-darker); }
+        .footer { background: var(--bg-darker); border-top: 1px solid rgba(0, 212, 255, 0.1); padding: var(--space-xl) 0 var(--space-md); margin-top: var(--space-xl); }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap; margin-bottom: var(--space-md); }
+        .footer-links a { color: var(--text-secondary); }
+        .footer-links a:hover { color: var(--neon-blue); }
+        .footer-bottom { color: var(--text-muted); font-size: 0.85rem; padding-top: var(--space-lg); border-top: 1px solid rgba(0, 212, 255, 0.1); }
+        @media (max-width: 768px) { .header-container { flex-wrap: wrap; gap: var(--space-sm); } .nav-links { gap: var(--space-sm); } .policy-container { padding: var(--space-md); } .policy-header h1 { font-size: 2rem; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-darker); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-container">
-            <a href="/">
-                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork" class="logo">
+            <a href="/" class="logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork">
+                <span class="logo-text">BeastsNetwork</span>
             </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">Threat Intelligence</a></li>
-                    <li><a href="#">Vulnerabilities</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="subscribe-btn">Subscribe</a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <nav><ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="privacy-policy.html" class="nav-link">Privacy Policy</a></li>
+                <li><a href="cookie-policy.html" class="nav-link">Cookie Policy</a></li>
+                <li><a href="terms-of-service.html" class="nav-link">Terms</a></li>
+            </ul></nav>
         </div>
     </header>
-
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <nav class="mobile-nav" id="mobileNav">
-        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Threat Intelligence</a></li>
-            <li><a href="#">Vulnerabilities</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#" class="subscribe-btn">Subscribe</a></li>
-        </ul>
-    </nav>
-
-    <main class="main-content">
+    <main>
         <div class="policy-container">
-            <div class="disclaimer-box">
-                <h3>IMPORTANT DISCLAIMER</h3>
-                <p><strong>BEASTSNETWORK PROVIDES INFORMATION FOR EDUCATIONAL PURPOSES ONLY.</strong></p>
-                <p>Our content is not professional advice. Always consult with qualified security professionals.</p>
-            </div>
-
             <div class="policy-header">
                 <h1>Risk Disclosure</h1>
                 <p class="last-updated">Last Updated: June 29, 2026 | Effective Date: June 29, 2026</p>
             </div>
-
             <section class="policy-section">
                 <h2>1. Educational Information Only</h2>
-                <p>BeastsNetwork provides cybersecurity news and information for educational and informational purposes only. Our content should not be considered as professional security advice, recommendations, or endorsements.</p>
+                <p>BeastsNetwork provides AI-powered news and information for educational and informational purposes only. Our content should not be considered as professional advice, recommendations, or endorsements.</p>
             </section>
-
             <section class="policy-section">
-                <h2>2. No Guarantees</h2>
-                <p>While we strive to provide accurate and up-to-date information, we cannot guarantee:</p>
-                <ul>
-                    <li>The accuracy, completeness, or timeliness of any information</li>
-                    <li>That following our advice will prevent security incidents</li>
-                    <li>That our Site will be available, accessible, or error-free at all times</li>
-                </ul>
+                <h2>2. AI-Generated Content</h2>
+                <p>Some content on our platform may be generated or curated by artificial intelligence. While we strive for accuracy, AI-generated content may contain errors or inaccuracies.</p>
             </section>
-
             <section class="policy-section">
-                <h2>3. Self-Responsibility</h2>
-                <p>You are solely responsible for:</p>
-                <ul>
-                    <li>Verifying information before acting on it</li>
-                    <li>Consulting with qualified security professionals for your specific needs</li>
-                    <li>Implementing appropriate security measures for your systems</li>
-                    <li>Complying with all applicable laws and regulations</li>
-                </ul>
+                <h2>3. No Guarantees</h2>
+                <p>We cannot guarantee the accuracy, completeness, or timeliness of any information. AI systems may produce incorrect or misleading information.</p>
             </section>
-
             <section class="policy-section">
-                <h2>4. Third-Party Content</h2>
-                <p>Our Site may contain links to third-party websites or reference third-party content. We do not control, endorse, or guarantee the accuracy of third-party content. You access third-party sites at your own risk.</p>
+                <h2>4. Self-Responsibility</h2>
+                <p>You are solely responsible for verifying information before acting on it. Always consult with qualified professionals for your specific needs.</p>
             </section>
-
             <section class="policy-section">
                 <h2>5. Limitation of Liability</h2>
                 <p><strong>IN NO EVENT SHALL BEASTSNETWORK BE LIABLE FOR ANY DAMAGES ARISING FROM YOUR USE OF OUR SITE OR RELIANCE ON OUR CONTENT.</strong></p>
                 <p>This includes, but is not limited to, direct, indirect, incidental, special, or consequential damages.</p>
             </section>
-
             <section class="policy-section">
-                <h2>6. Changes to This Disclosure</h2>
-                <p>We may update this Risk Disclosure from time to time. We will notify you of any changes by posting the new Risk Disclosure on this page.</p>
-            </section>
-
-            <section class="policy-section">
-                <h2>7. Contact Us</h2>
+                <h2>6. Contact Us</h2>
                 <p>If you have any questions about this Risk Disclosure, please contact us at:</p>
                 <p><strong>Email:</strong> support@beastsnetwork.win</p>
             </section>
-
-            <div class="disclaimer-box">
-                <h3>REMEMBER</h3>
-                <p><strong>Cybersecurity is a complex and rapidly evolving field.</strong></p>
-                <p>Always verify information and consult with professionals before making security decisions.</p>
-            </div>
-
             <a href="#" class="back-to-top">Back to Top</a>
         </div>
     </main>
-
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-content">
-                <p>&copy; 2026 BeastsNetwork. All rights reserved.</p>
-                <p style="margin-top: 1rem;">
-                    <a href="/">Home</a> | 
-                    <a href="privacy-policy.html">Privacy Policy</a> | 
-                    <a href="cookie-policy.html">Cookie Policy</a> | 
-                    <a href="terms-of-service.html">Terms of Service</a> | 
-                    <a href="risk-disclosure.html">Risk Disclosure</a>
-                </p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="risk-disclosure.html">Risk Disclosure</a>
             </div>
+            <div class="footer-bottom"><p>&copy; 2026 BeastsNetwork. All rights reserved.</p></div>
         </div>
     </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileNavClose = document.getElementById('mobileNavClose');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-
-        function toggleMobileNav() {
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            mobileNavOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-
-        hamburger.addEventListener('click', toggleMobileNav);
-        mobileNavClose.addEventListener('click', toggleMobileNav);
-        mobileNavOverlay.addEventListener('click', toggleMobileNav);
-    </script>
 </body>
 </html>
