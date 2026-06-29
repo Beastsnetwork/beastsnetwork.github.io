@@ -26,6 +26,20 @@
             --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
             --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
+        [data-theme="dark"] {
+            --bg-dark: #0a0a1a;
+            --bg-darker: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --bg-card-hover: rgba(25, 25, 50, 0.9);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        html { background: var(--bg-dark); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
+    
         html { background: var(--bg-dark); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(180deg, #0a0a1a 0%, #050510 100%); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
