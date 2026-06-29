@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +40,19 @@
             --space-xl: 3rem;
             --space-2xl: 4rem;
         }
+        [data-theme="light"] {
+            --bg-dark: #ffffff;
+            --bg-darker: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f0f0;
+            --text-primary: #2C3E50;
+            --text-secondary: #555555;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--gradient-dark); color: var(--text-primary); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
@@ -48,7 +61,7 @@
         a { color: var(--neon-blue); text-decoration: none; transition: color var(--transition-fast); }
         a:hover { color: var(--neon-blue-light); text-shadow: 0 0 10px var(--neon-glow); }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
-        .ai-portal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-darker); display: flex; align-items: center; justify-content: center; z-index: 1000; transition: opacity var(--transition-slow), visibility var(--transition-slow); }
+        .ai-portal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-dark); display: flex; align-items: center; justify-content: center; z-index: 1000; transition: opacity var(--transition-slow), visibility var(--transition-slow); }
         .ai-portal.hidden { opacity: 0; visibility: hidden; }
         .portal-ring { position: absolute; border: 2px solid var(--neon-blue); border-radius: 50%; opacity: 0.5; animation: pulse 3s ease-in-out infinite; }
         .portal-ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
