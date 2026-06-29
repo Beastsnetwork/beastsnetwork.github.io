@@ -14,6 +14,19 @@
             --gradient-neon: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
             --transition-fast: 0.2s ease; --space-sm: 1rem; --space-md: 1.5rem; --space-lg: 2rem; --space-xl: 3rem;
         }
+        [data-theme="light"] {
+            --bg-dark: #ffffff;
+            --bg-darker: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f0f0;
+            --text-primary: #2C3E50;
+            --text-secondary: #555555;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        html { background: var(--bg-dark); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(180deg, #0a0a1a 0%, #050510 100%); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
         .header { position: sticky; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-sm) 0; background: rgba(10, 10, 26, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 212, 255, 0.1); }
@@ -49,6 +62,17 @@
     </style>
 </head>
 <body>
+    <div class="ai-portal" id="aiPortal">
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-core">
+            <i class="fas fa-robot ai-icon"></i>
+        </div>
+        <div class="portal-loading">
+            <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+        </div>
+    </div>
     <header class="header">
         <div class="header-container">
             <a href="/" class="logo">
@@ -62,7 +86,12 @@
                 <li><a href="terms-of-service.html" class="nav-link">Terms</a></li>
             </ul></nav>
         </div>
-    </header>
+    
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon theme-icon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+        </header>
     <main>
         <div class="policy-container">
             <div class="policy-header">
@@ -110,5 +139,20 @@
             <div class="footer-bottom"><p>&copy; 2026 BeastsNetwork. All rights reserved.</p></div>
         </div>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        html.setAttribute('data-theme', 'dark');
+        themeToggle?.addEventListener('click', function() {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            const icon = this.querySelector('.theme-icon');
+            const text = this.querySelector('.theme-text');
+            icon.className = newTheme === 'dark' ? 'fas fa-moon theme-icon' : 'fas fa-sun theme-icon';
+            text.textContent = newTheme === 'dark' ? 'Dark' : 'Light';
+        });
+    </script>
 </body>
 </html>
