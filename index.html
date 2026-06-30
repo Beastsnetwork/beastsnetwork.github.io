@@ -276,7 +276,7 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body style="overflow: auto;">
     <div class="ai-portal" id="aiPortal">
         <div class="portal-ring"></div>
         <div class="portal-ring"></div>
@@ -567,7 +567,7 @@
                 const portal = document.getElementById('aiPortal');
                 portal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
-            }, 3000);
+            }, 100);
         });
 
         
