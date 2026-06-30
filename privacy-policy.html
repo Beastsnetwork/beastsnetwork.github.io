@@ -151,6 +151,12 @@
             </nav>
         </div>
     
+            
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                <span class="lang-text">EN</span>
+                <i class="fas fa-globe lang-icon"></i>
+            </button>
+        
             <button class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon theme-icon"></i>
                 <span class="theme-text">Dark</span>
@@ -236,6 +242,26 @@
         </div>
     </footer>
 <script>
+        
+        const langToggle = document.getElementById('langToggle');
+        const html = document.documentElement;
+        const currentLang = localStorage.getItem('lang') || 'en';
+        html.setAttribute('lang', currentLang);
+        updateLangButton(currentLang);
+        
+        langToggle?.addEventListener('click', function() {
+            const currentLang = html.getAttribute('lang');
+            const newLang = currentLang === 'en' ? 'kr' : 'en';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('lang', newLang);
+            updateLangButton(newLang);
+        });
+        
+        function updateLangButton(lang) {
+            const text = langToggle?.querySelector('.lang-text');
+            if (text) text.textContent = lang === 'en' ? 'EN' : 'KR';
+        }
+    
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         html.setAttribute('data-theme', 'dark');
