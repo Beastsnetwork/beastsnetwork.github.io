@@ -192,6 +192,26 @@
     </footer>
     <script>
         window.addEventListener('load', function() { setTimeout(function() { const portal = document.getElementById('aiPortal'); portal.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 3000); });
+        
+        const langToggle = document.getElementById('langToggle');
+        const html = document.documentElement;
+        const currentLang = localStorage.getItem('lang') || 'en';
+        html.setAttribute('lang', currentLang);
+        updateLangButton(currentLang);
+        
+        langToggle?.addEventListener('click', function() {
+            const currentLang = html.getAttribute('lang');
+            const newLang = currentLang === 'en' ? 'kr' : 'en';
+            html.setAttribute('lang', newLang);
+            localStorage.setItem('lang', newLang);
+            updateLangButton(newLang);
+        });
+        
+        function updateLangButton(lang) {
+            const text = langToggle?.querySelector('.lang-text');
+            if (text) text.textContent = lang === 'en' ? 'EN' : 'KR';
+        }
+    
         const themeToggle = document.getElementById('themeToggle'); const html = document.documentElement; themeToggle.addEventListener('click', function() { const currentTheme = html.getAttribute('data-theme'); const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', newTheme); const icon = this.querySelector('.theme-icon'); const text = this.querySelector('.theme-text'); if (newTheme === 'dark') { icon.className = 'fas fa-moon theme-icon'; text.textContent = 'Dark'; } else { icon.className = 'fas fa-sun theme-icon'; text.textContent = 'Light'; } });
         const observer = new IntersectionObserver(function(entries) { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('fade-in'); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.news-card').forEach(card => { observer.observe(card); });
