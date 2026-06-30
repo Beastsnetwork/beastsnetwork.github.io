@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeastsNetwork - AI-Powered News Intelligence</title>
-    <meta name="description" content="Modern AI-powered news website with futuristic dark theme and neon blue highlights - Stay ahead with real-time, verified news">
-    <meta property="og:title" content="BeastsNetwork - AI-Powered News Intelligence">
-    <meta property="og:description" content="Stay ahead with real-time, verified news curated by artificial intelligence">
+    <title data-i18n="meta.title">BeastsNetwork - AI-Powered News Intelligence</title>
+    <meta name="description" content="Modern AI-powered news website with futuristic dark theme and neon blue highlights - Stay ahead with real-time, verified news" data-i18n="meta.description">
+    <meta property="og:title" content="BeastsNetwork - AI-Powered News Intelligence" data-i18n="meta.og.title">
+    <meta property="og:description" content="Stay ahead with real-time, verified news curated by artificial intelligence" data-i18n="meta.og.description">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/beastsnetwork-logo.svg">
     <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
@@ -155,6 +155,11 @@
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-blue); transition: width var(--transition-fast); }
         .nav-link:hover::after { width: 100%; }
 
+        .lang-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: all var(--transition-fast); background: transparent; border: 1px solid rgba(0, 212, 255, 0.2); color: var(--text-primary); }
+        .lang-toggle:hover { background: var(--neon-blue); color: var(--bg-darker); border-color: var(--neon-blue); }
+        .lang-text { font-weight: 600; font-size: 0.9rem; }
+        .lang-icon { font-size: 1rem; }
+
         .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: all var(--transition-fast); background: transparent; border: 1px solid rgba(0, 212, 255, 0.2); color: var(--text-primary); }
         .theme-toggle:hover { background: var(--neon-blue); color: var(--bg-darker); border-color: var(--neon-blue); }
 
@@ -297,11 +302,11 @@
             </a>
             <nav class="nav">
                 <ul class="nav-links">
-                    <li><a href="#" class="nav-link">Home</a></li>
-                    <li><a href="#trending" class="nav-link">Trending</a></li>
-                    <li><a href="#feed" class="nav-link">News Feed</a></li>
-                    <li><a href="#categories" class="nav-link">Categories</a></li>
-                    <li><a href="blog-directory.html" class="nav-link">Blog</a></li>
+                    <li><a href="/" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#trending" class="nav-link" data-i18n="nav.trending">Trending</a></li>
+                    <li><a href="#feed" class="nav-link" data-i18n="nav.newsFeed">News Feed</a></li>
+                    <li><a href="#categories" class="nav-link" data-i18n="nav.categories">Categories</a></li>
+                    <li><a href="blog-directory.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
                 </ul>
             </nav>
             
@@ -312,7 +317,7 @@
         
             <button class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon theme-icon"></i>
-                <span class="theme-text">Dark</span>
+                <span class="theme-text" data-i18n="theme.dark">Dark</span>
             </button>
         </div>
     </header>
@@ -320,192 +325,192 @@
     <main>
         <section class="hero fade-in">
             <div class="container">
-                <h1 class="hero-title">AI-Powered News Intelligence</h1>
-                <p class="hero-subtitle">Stay ahead with real-time, verified news curated by artificial intelligence. Discover trending stories, deep insights, and personalized feeds.</p>
+                <h1 class="hero-title" data-i18n="hero.title">AI-Powered News Intelligence</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Stay ahead with real-time, verified news curated by artificial intelligence. Discover trending stories, deep insights, and personalized feeds.</p>
                 <div class="search-container fade-in delay-1">
                     <div class="search-wrapper">
                         <i class="fas fa-search search-icon"></i>
-                        <input type="text" class="search-input" placeholder="Search AI-powered news..." id="searchInput">
+                        <input type="text" class="search-input" placeholder="Search AI-powered news..." id="searchInput" data-i18n="search.placeholder">
                         <button class="search-btn" id="searchBtn">
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
                 <div class="trending-tags fade-in delay-2">
-                    <span class="tag">#AI</span>
-                    <span class="tag">#Technology</span>
-                    <span class="tag">#Science</span>
-                    <span class="tag">#Business</span>
-                    <span class="tag">#Cybersecurity</span>
-                    <span class="tag">#Health</span>
+                    <span class="tag" data-i18n="tag.ai">Artificial Intelligence</span>
+                    <span class="tag" data-i18n="tag.ml">Machine Learning</span>
+                    <span class="tag" data-i18n="tag.robotics">Robotics</span>
+                    <span class="tag" data-i18n="tag.nlp">Natural Language Processing</span>
+                    <span class="tag" data-i18n="tag.cv">Computer Vision</span>
+                    <span class="tag" data-i18n="tag.neural">Neural Networks</span>
+                    <span class="tag" data-i18n="tag.ethics">AI Ethics</span>
+                    <span class="tag" data-i18n="tag.future">Future Tech</span>
+                    <span class="tag" data-i18n="tag.automation">Automation</span>
+                    <span class="tag" data-i18n="tag.data">Data Science</span>
                 </div>
             </div>
         </section>
 
-        <section class="trending-section fade-in delay-3" id="trending">
+        <section class="trending-section" id="trending">
             <div class="container">
-                <h2 class="section-title">
-                    <i class="fas fa-fire"></i>
-                    Trending Now
-                </h2>
+                <h2 class="section-title" data-i18n="section.trending">Trending News</h2>
                 <div class="trending-grid">
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="AI Breakthrough" class="news-card-image">
-                        <div class="news-category">Technology <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">Major AI Breakthrough: New Model Achieves Human-Level Reasoning</a></h3>
-                        <p class="news-excerpt">Researchers announce a new AI model that can reason through complex problems with human-like logic and accuracy...</p>
+                    <article class="news-card fade-in delay-1">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="AI Robot" class="news-card-image">
+                        <div class="news-category" data-i18n="category.technology">Technology <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#" data-i18n="news.breakthrough">Breakthrough in Neural Network Architecture Doubles Efficiency</a></h3>
+                        <p class="news-excerpt">Researchers develop new neural network design that requires 50% less computational power while maintaining accuracy...</p>
                         <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 2 hours ago</span>
-                            <span><i class="fas fa-eye"></i> 12.5K views</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 3 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 5.8K <span data-i18n="meta.views">views</span></span>
                         </div>
                     </article>
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Cybersecurity" class="news-card-image">
-                        <div class="news-category">Security <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">AI-Driven Cybersecurity Platform Detects Zero-Day Exploits</a></h3>
-                        <p class="news-excerpt">New AI system can identify and block zero-day vulnerabilities before they're exploited by attackers...</p>
+                    <article class="news-card fade-in delay-2">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop" alt="AI Ethics" class="news-card-image">
+                        <div class="news-category" data-i18n="category.ethics">Ethics <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#" data-i18n="news.leaders">Global Leaders Call for AI Ethics Framework</a></h3>
+                        <p class="news-excerpt">UN summit produces landmark agreement on AI development guidelines and ethical boundaries...</p>
                         <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 5 hours ago</span>
-                            <span><i class="fas fa-eye"></i> 8.2K views</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 8 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 15.3K <span data-i18n="meta.views">views</span></span>
                         </div>
                     </article>
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop" alt="Healthcare AI" class="news-card-image">
-                        <div class="news-category">Healthcare <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">AI Revolutionizes Medical Diagnostics with 99% Accuracy</a></h3>
-                        <p class="news-excerpt">Hospitals worldwide adopting AI diagnostic tools that outperform human doctors in accuracy...</p>
+                    <article class="news-card fade-in delay-3">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="AI in Education" class="news-card-image">
+                        <div class="news-category" data-i18n="category.education">Education <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#" data-i18n="news.tutors">AI Tutors Outperform Human Teachers in Personalized Learning</a></h3>
+                        <p class="news-excerpt">Study shows AI-powered tutoring systems achieve 40% better outcomes in personalized education...</p>
                         <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 1 day ago</span>
-                            <span><i class="fas fa-eye"></i> 24.1K views</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 12 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 9.7K <span data-i18n="meta.views">views</span></span>
+                        </div>
+                    </article>
+                    <article class="news-card fade-in delay-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" alt="AI Art" class="news-card-image">
+                        <div class="news-category" data-i18n="category.creative">Creative <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#" data-i18n="news.art">AI-Generated Art Wins Major International Award</a></h3>
+                        <p class="news-excerpt">AI-created artwork takes first place at prestigious art competition, sparking debate about creativity...</p>
+                        <div class="news-meta">
+                            <span class="news-date"><i class="fas fa-clock"></i> 1 <span data-i18n="meta.days">day ago</span></span>
+                            <span><i class="fas fa-eye"></i> 18.4K <span data-i18n="meta.views">views</span></span>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="categories-nav fade-in delay-4" id="categories">
+        <section class="categories-nav" id="categories">
             <div class="container">
                 <div class="categories-container">
                     <div class="category-item">
-                        <a href="#" class="category-main">
-                            <i class="fas fa-microchip"></i> Technology
-                        </a>
+                        <div class="category-main" data-i18n="category.technology">
+                            <i class="fas fa-microchip"></i>
+                            <span>Technology</span>
+                        </div>
                         <div class="category-sub">
-                            <a href="#">Artificial Intelligence</a>
-                            <a href="#">Machine Learning</a>
-                            <a href="#">Robotics</a>
-                            <a href="#">Quantum Computing</a>
+                            <a href="category-bleepingcomputer.html" data-i18n="category.technology">Technology</a>
+                            <a href="#" data-i18n="category.business">Business</a>
+                            <a href="#" data-i18n="category.science">Science</a>
                         </div>
                     </div>
                     <div class="category-item">
-                        <a href="#" class="category-main">
-                            <i class="fas fa-newspaper"></i> News
-                        </a>
+                        <div class="category-main" data-i18n="category.business">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Business</span>
+                        </div>
                         <div class="category-sub">
-                            <a href="#">Breaking News</a>
-                            <a href="#">World News</a>
-                            <a href="#">Business</a>
-                            <a href="#">Politics</a>
+                            <a href="#" data-i18n="category.business">Business</a>
+                            <a href="#" data-i18n="category.health">Health</a>
+                            <a href="#" data-i18n="category.ethics">Ethics</a>
                         </div>
                     </div>
                     <div class="category-item">
-                        <a href="#" class="category-main">
-                            <i class="fas fa-flask"></i> Science
-                        </a>
+                        <div class="category-main" data-i18n="category.ethics">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Ethics</span>
+                        </div>
                         <div class="category-sub">
-                            <a href="#">Space</a>
-                            <a href="#">Medicine</a>
-                            <a href="#">Physics</a>
-                            <a href="#">Biology</a>
+                            <a href="#" data-i18n="category.ethics">Ethics</a>
+                            <a href="#" data-i18n="category.creative">Creative</a>
+                            <a href="#" data-i18n="category.education">Education</a>
                         </div>
                     </div>
                     <div class="category-item">
-                        <a href="#" class="category-main">
-                            <i class="fas fa-heartbeat"></i> Health
-                        </a>
-                        <div class="category-sub">
-                            <a href="#">Wellness</a>
-                            <a href="#">Fitness</a>
-                            <a href="#">Mental Health</a>
-                            <a href="#">Nutrition</a>
+                        <div class="category-main" data-i18n="category.creative">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Creative</span>
                         </div>
-                    </div>
-                    <div class="category-item">
-                        <a href="#" class="category-main">
-                            <i class="fas fa-chart-line"></i> Business
-                        </a>
                         <div class="category-sub">
-                            <a href="#">Startups</a>
-                            <a href="#">Finance</a>
-                            <a href="#">Markets</a>
-                            <a href="#">Investing</a>
+                            <a href="#" data-i18n="category.creative">Creative</a>
+                            <a href="#" data-i18n="category.education">Education</a>
+                            <a href="#" data-i18n="category.technology">Technology</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="news-feed fade-in delay-5" id="feed">
+        <section class="news-feed" id="feed">
             <div class="container">
                 <div class="feed-header">
-                    <h2 class="feed-title">AI News Feed</h2>
+                    <h2 class="feed-title" data-i18n="section.feed">News Feed</h2>
                     <div class="feed-controls">
-                        <button class="feed-btn active" data-filter="all">All</button>
-                        <button class="feed-btn" data-filter="latest">Latest</button>
-                        <button class="feed-btn" data-filter="popular">Popular</button>
-                        <button class="feed-btn" data-filter="ai">AI Only</button>
+                        <button class="feed-btn active" data-filter="all" data-i18n="feed.all">All</button>
+                        <button class="feed-btn" data-filter="ai" data-i18n="feed.ai">AI News</button>
+                        <button class="feed-btn" data-filter="tech" data-i18n="feed.tech">Technology</button>
+                        <button class="feed-btn" data-filter="business" data-i18n="feed.business">Business</button>
                     </div>
                 </div>
                 <div class="feed-grid" id="feedGrid">
-                    <article class="news-card featured-card">
-                        <img src="https://images.unsplash.com/photo-1677442137369-385e40ca7436?w=600&h=300&fit=crop" alt="Featured AI" class="featured-image">
-                        <div class="featured-category">Featured <span class="ai-badge">AI</span></div>
-                        <h3 class="featured-title"><a href="#">The Future of AI: How Artificial Intelligence Will Transform Every Industry by 2030</a></h3>
-                        <p class="featured-excerpt">Comprehensive analysis of AI's impact across healthcare, finance, transportation, and entertainment sectors. Expert predictions and actionable insights for businesses and individuals...</p>
+                    <article class="featured-card news-card fade-in">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop" alt="AI Breakthrough" class="featured-image">
+                        <div class="featured-category" data-i18n="category.technology">Technology</div>
+                        <h3 class="featured-title" data-i18n="news.breakthrough">Breakthrough in Neural Network Architecture Doubles Efficiency</h3>
+                        <p class="featured-excerpt">Researchers at MIT have developed a revolutionary neural network architecture that reduces computational requirements by 50% while maintaining 99% accuracy. This breakthrough could democratize AI access for smaller organizations and developing countries.</p>
                         <div class="featured-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> June 29, 2026</span>
-                            <span><i class="fas fa-eye"></i> 45.2K views</span>
-                            <span><i class="fas fa-heart"></i> 2.3K likes</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 2 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 25.4K <span data-i18n="meta.views">views</span></span>
+                            <span><i class="fas fa-user"></i> <span data-i18n="meta.by">by</span> Sarah Chen</span>
                         </div>
                     </article>
-                    <article class="news-card">
+                    <article class="news-card fade-in delay-1">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop" alt="Neural Networks" class="news-card-image">
-                        <div class="news-category">Technology <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">Breakthrough in Neural Network Architecture Doubles Efficiency</a></h3>
-                        <p class="news-excerpt">Researchers develop new neural network design that requires 50% less computational power while maintaining accuracy...</p>
+                        <div class="news-category" data-i18n="category.technology">Technology <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#">Advanced Neural Networks Transform AI Capabilities</a></h3>
+                        <p class="news-excerpt">New architectures enable more efficient training and inference, opening doors to previously impossible applications...</p>
                         <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 3 hours ago</span>
-                            <span><i class="fas fa-eye"></i> 5.8K views</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 5 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 8.2K <span data-i18n="meta.views">views</span></span>
                         </div>
                     </article>
-                    <article class="news-card">
+                    <article class="news-card fade-in delay-2">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=250&fit=crop" alt="AI in Healthcare" class="news-card-image">
+                        <div class="news-category" data-i18n="category.health">Health <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#">AI Diagnostics Achieve 95% Accuracy in Early Disease Detection</a></h3>
+                        <p class="news-excerpt">Machine learning models trained on diverse datasets can now detect diseases earlier than traditional methods...</p>
+                        <div class="news-meta">
+                            <span class="news-date"><i class="fas fa-clock"></i> 10 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 12.7K <span data-i18n="meta.views">views</span></span>
+                        </div>
+                    </article>
+                    <article class="news-card fade-in delay-3">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="AI Ethics" class="news-card-image">
-                        <div class="news-category">Ethics <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">Global Leaders Call for AI Ethics Framework</a></h3>
-                        <p class="news-excerpt">UN summit produces landmark agreement on AI development guidelines and ethical boundaries...</p>
+                        <div class="news-category" data-i18n="category.ethics">Ethics <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#">Global Framework for Responsible AI Development Established</a></h3>
+                        <p class="news-excerpt">International coalition agrees on principles for ethical AI development, including transparency and accountability...</p>
                         <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 8 hours ago</span>
-                            <span><i class="fas fa-eye"></i> 15.3K views</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 15 <span data-i18n="meta.hours">hours ago</span></span>
+                            <span><i class="fas fa-eye"></i> 18.9K <span data-i18n="meta.views">views</span></span>
                         </div>
                     </article>
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=250&fit=crop" alt="AI in Education" class="news-card-image">
-                        <div class="news-category">Education <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">AI Tutors Outperform Human Teachers in Personalized Learning</a></h3>
-                        <p class="news-excerpt">Study shows AI-powered tutoring systems achieve 40% better outcomes in personalized education...</p>
-                        <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 12 hours ago</span>
-                            <span><i class="fas fa-eye"></i> 9.7K views</span>
-                        </div>
-                    </article>
-                    <article class="news-card">
+                    <article class="news-card fade-in delay-4">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" alt="AI Art" class="news-card-image">
-                        <div class="news-category">Creative <span class="ai-badge">AI</span></div>
-                        <h3 class="news-title"><a href="#">AI-Generated Art Wins Major International Award</a></h3>
-                        <p class="news-excerpt">AI-created artwork takes first place at prestigious art competition, sparking debate about creativity...</p>
+                        <div class="news-category" data-i18n="category.creative">Creative <span class="ai-badge" data-i18n="ai.badge">AI</span></div>
+                        <h3 class="news-title"><a href="#">AI Art Revolution: How Machine Learning is Changing Creativity</a></h3>
+                        <p class="news-excerpt">From painting to music composition, AI is transforming the creative landscape and challenging our understanding of art...</p>
                         <div class="news-meta">
-                            <span class="news-date"><i class="fas fa-clock"></i> 1 day ago</span>
-                            <span><i class="fas fa-eye"></i> 18.4K views</span>
+                            <span class="news-date"><i class="fas fa-clock"></i> 1 <span data-i18n="meta.days">day ago</span></span>
+                            <span><i class="fas fa-eye"></i> 22.1K <span data-i18n="meta.views">views</span></span>
                         </div>
                     </article>
                 </div>
@@ -526,8 +531,8 @@
             <div class="footer-container">
                 <div class="footer-brand">
                     <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork" style="width: 60px; height: 60px; margin-bottom: 1rem;">
-                    <h3 class="footer-title">BeastsNetwork</h3>
-                    <p class="footer-description">AI-Powered News Intelligence. Stay ahead with real-time, verified news curated by artificial intelligence.</p>
+                    <h3 class="footer-title" data-i18n="footer.brand">BeastsNetwork</h3>
+                    <p class="footer-description" data-i18n="footer.description">AI-Powered News Intelligence. Stay ahead with real-time, verified news curated by artificial intelligence.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -536,7 +541,7 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Navigation</h4>
+                    <h4 data-i18n="footer.navigation">Navigation</h4>
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="#trending">Trending</a></li>
@@ -546,22 +551,206 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
+                    <h4 data-i18n="footer.legal">Legal</h4>
                     <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+                        <li><a href="privacy-policy.html" data-i18n="legal.privacy">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html" data-i18n="legal.cookies">Cookie Policy</a></li>
+                        <li><a href="terms-of-service.html" data-i18n="legal.terms">Terms of Service</a></li>
+                        <li><a href="risk-disclosure.html" data-i18n="legal.risk">Risk Disclosure</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 BeastsNetwork. All rights reserved. Powered by Artificial Intelligence.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 BeastsNetwork. All rights reserved. Powered by Artificial Intelligence.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Translation Dictionary
+        const translations = {
+            en: {
+                'meta.title': 'BeastsNetwork - AI-Powered News Intelligence',
+                'meta.description': 'Modern AI-powered news website with futuristic dark theme and neon blue highlights - Stay ahead with real-time, verified news',
+                'meta.og.title': 'BeastsNetwork - AI-Powered News Intelligence',
+                'meta.og.description': 'Stay ahead with real-time, verified news curated by artificial intelligence',
+                'nav.home': 'Home',
+                'nav.trending': 'Trending',
+                'nav.newsFeed': 'News Feed',
+                'nav.categories': 'Categories',
+                'nav.blog': 'Blog',
+                'hero.title': 'AI-Powered News Intelligence',
+                'hero.subtitle': 'Stay ahead with real-time, verified news curated by artificial intelligence. Discover trending stories, deep insights, and personalized feeds.',
+                'search.placeholder': 'Search AI-powered news...',
+                'tag.ai': 'Artificial Intelligence',
+                'tag.ml': 'Machine Learning',
+                'tag.robotics': 'Robotics',
+                'tag.nlp': 'Natural Language Processing',
+                'tag.cv': 'Computer Vision',
+                'tag.neural': 'Neural Networks',
+                'tag.ethics': 'AI Ethics',
+                'tag.future': 'Future Tech',
+                'tag.automation': 'Automation',
+                'tag.data': 'Data Science',
+                'section.trending': 'Trending News',
+                'section.feed': 'News Feed',
+                'section.categories': 'Categories',
+                'feed.all': 'All',
+                'feed.ai': 'AI News',
+                'feed.tech': 'Technology',
+                'feed.business': 'Business',
+                'category.technology': 'Technology',
+                'category.business': 'Business',
+                'category.science': 'Science',
+                'category.health': 'Health',
+                'category.ethics': 'Ethics',
+                'category.creative': 'Creative',
+                'category.education': 'Education',
+                'ai.badge': 'AI',
+                'meta.hours': 'hours ago',
+                'meta.minutes': 'minutes ago',
+                'meta.days': 'days ago',
+                'meta.views': 'views',
+                'meta.by': 'by',
+                'footer.brand': 'BeastsNetwork',
+                'footer.description': 'AI-Powered News Intelligence. Stay ahead with real-time, verified news curated by artificial intelligence.',
+                'footer.navigation': 'Navigation',
+                'footer.legal': 'Legal',
+                'footer.copyright': '© 2026 BeastsNetwork. All rights reserved. Powered by Artificial Intelligence.',
+                'news.breakthrough': 'Breakthrough in Neural Network Architecture Doubles Efficiency',
+                'news.leaders': 'Global Leaders Call for AI Ethics Framework',
+                'news.tutors': 'AI Tutors Outperform Human Teachers in Personalized Learning',
+                'news.art': 'AI-Generated Art Wins Major International Award',
+                'legal.privacy': 'Privacy Policy',
+                'legal.cookies': 'Cookie Policy',
+                'legal.terms': 'Terms of Service',
+                'legal.risk': 'Risk Disclosure',
+                'theme.dark': 'Dark',
+                'theme.light': 'Light'
+            },
+            kr: {
+                'meta.title': '비스트네트워크 - AI 기반 뉴스 인텔리전스',
+                'meta.description': '미래지향적인 다크 테마와 네온 블루 하이라이트가 있는 최신 AI 기반 뉴스 웹사이트 - 실시간 검증된 뉴스로 앞서 나가세요',
+                'meta.og.title': '비스트네트워크 - AI 기반 뉴스 인텔리전스',
+                'meta.og.description': '인공지능이 큐레이션한 실시간 검증된 뉴스로 앞서 나가세요',
+                'nav.home': '홈',
+                'nav.trending': '인기 뉴스',
+                'nav.newsFeed': '뉴스 피드',
+                'nav.categories': '카테고리',
+                'nav.blog': '블로그',
+                'hero.title': 'AI 기반 뉴스 인텔리전스',
+                'hero.subtitle': '실시간 검증된 뉴스로 앞서 나가세요. 인공지능이 큐레이션한 deepest insights와 개인화된 피드를 발견하세요.',
+                'search.placeholder': 'AI 기반 뉴스 검색...',
+                'tag.ai': '인공지능',
+                'tag.ml': '머신러닝',
+                'tag.robotics': '로봇공학',
+                'tag.nlp': '자연어 처리',
+                'tag.cv': '컴퓨터 비전',
+                'tag.neural': '신경망',
+                'tag.ethics': 'AI 윤리',
+                'tag.future': '미래 기술',
+                'tag.automation': '자동화',
+                'tag.data': '데이터 과학',
+                'section.trending': '인기 뉴스',
+                'section.feed': '뉴스 피드',
+                'section.categories': '카테고리',
+                'feed.all': '전체',
+                'feed.ai': 'AI 뉴스',
+                'feed.tech': '기술',
+                'feed.business': '비즈니스',
+                'category.technology': '기술',
+                'category.business': '비즈니스',
+                'category.science': '과학',
+                'category.health': '건강',
+                'category.ethics': '윤리',
+                'category.creative': '크리에이티브',
+                'category.education': '교육',
+                'ai.badge': 'AI',
+                'meta.hours': '시간 전',
+                'meta.minutes': '분 전',
+                'meta.days': '일 전',
+                'meta.views': '조회수',
+                'meta.by': '작성자',
+                'footer.brand': '비스트네트워크',
+                'footer.description': 'AI 기반 뉴스 인텔리전스. 실시간 검증된 뉴스로 앞서 나가세요. 인공지능이 큐레이션한 deepest insights.',
+                'footer.navigation': '네비게이션',
+                'footer.legal': '법적 정보',
+                'footer.copyright': '© 2026 비스트네트워크. 모든 권리 보유. 인공지능으로 구동됩니다.',
+                'news.breakthrough': '신경망 아키텍처 혁신으로 효율성 2배 증가',
+                'news.leaders': '전 세계 리더들, AI 윤리 프레임워크 요구',
+                'news.tutors': 'AI 튜터, 개인화 학습에서 인간 교사보다 우수',
+                'news.art': 'AI 생성 예술, 주요 국제 수상에서 1위 차지',
+                'legal.privacy': '개인정보 보호정책',
+                'legal.cookies': '쿠키 정책',
+                'legal.terms': '이용 약관',
+                'legal.risk': '위험 고지',
+                'theme.dark': '다크',
+                'theme.light': '라이트'
+            }
+        };
+
+        // Translation Function
+        function translate() {
+            const lang = document.documentElement.getAttribute('lang') || 'en';
+            const translation = translations[lang] || translations.en;
+            
+            // Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translation[key]) {
+                    if (element.tagName === 'INPUT' && element.getAttribute('type') === 'text') {
+                        element.setAttribute('placeholder', translation[key]);
+                    } else if (element.tagName === 'TITLE') {
+                        document.title = translation[key];
+                    } else if (element.tagName === 'META') {
+                        const name = element.getAttribute('name') || element.getAttribute('property');
+                        if (name && name.includes('description')) {
+                            element.setAttribute('content', translation[key]);
+                        } else if (name && name.includes('title')) {
+                            element.setAttribute('content', translation[key]);
+                        }
+                    } else {
+                        element.textContent = translation[key];
+                    }
+                }
+            });
+        }
+
+        // Enhanced Language Toggle
+        function initLanguageToggle() {
+            const langToggle = document.getElementById('langToggle');
+            const html = document.documentElement;
+            
+            if (!langToggle) return;
+            
+            // Load saved language or default to English
+            const savedLang = localStorage.getItem('lang') || 'en';
+            html.setAttribute('lang', savedLang);
+            
+            // Update button text
+            function updateLangButton(lang) {
+                const text = langToggle.querySelector('.lang-text');
+                if (text) {
+                    text.textContent = lang === 'en' ? 'EN' : 'KR';
+                }
+            }
+            
+            // Initialize
+            updateLangButton(savedLang);
+            translate();
+            
+            // Add click handler
+            langToggle.addEventListener('click', function() {
+                const currentLang = html.getAttribute('lang');
+                const newLang = currentLang === 'en' ? 'kr' : 'en';
+                html.setAttribute('lang', newLang);
+                localStorage.setItem('lang', newLang);
+                updateLangButton(newLang);
+                translate();
+            });
+        }
+
+        // Initialize on page load
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const portal = document.getElementById('aiPortal');
@@ -570,100 +759,84 @@
             }, 3000);
         });
 
-        
-        const langToggle = document.getElementById('langToggle');
-        const html = document.documentElement;
-        const currentLang = localStorage.getItem('lang') || 'en';
-        html.setAttribute('lang', currentLang);
-        updateLangButton(currentLang);
-        
-        langToggle?.addEventListener('click', function() {
-            const currentLang = html.getAttribute('lang');
-            const newLang = currentLang === 'en' ? 'kr' : 'en';
-            html.setAttribute('lang', newLang);
-            localStorage.setItem('lang', newLang);
-            updateLangButton(newLang);
-        });
-        
-        function updateLangButton(lang) {
-            const text = langToggle?.querySelector('.lang-text');
-            if (text) text.textContent = lang === 'en' ? 'EN' : 'KR';
-        }
-    
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            const icon = this.querySelector('.theme-icon');
-            const text = this.querySelector('.theme-text');
-            if (newTheme === 'dark') {
-                icon.className = 'fas fa-moon theme-icon';
-                text.textContent = 'Dark';
-            } else {
-                icon.className = 'fas fa-sun theme-icon';
-                text.textContent = 'Light';
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            initLanguageToggle();
+            
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', newTheme);
+                const icon = this.querySelector('.theme-icon');
+                const text = this.querySelector('.theme-text');
+                if (newTheme === 'dark') {
+                    icon.className = 'fas fa-moon theme-icon';
+                    text.textContent = translations[document.documentElement.getAttribute('lang') || 'en']['theme.dark'];
+                } else {
+                    icon.className = 'fas fa-sun theme-icon';
+                    text.textContent = translations[document.documentElement.getAttribute('lang') || 'en']['theme.light'];
+                }
+            });
 
-        const searchBtn = document.getElementById('searchBtn');
-        const searchInput = document.getElementById('searchInput');
-        searchBtn.addEventListener('click', function() {
-            const query = searchInput.value.trim();
-            if (query) {
-                alert('Searching AI News for: ' + query);
-            }
-        });
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') searchBtn.click();
-        });
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('searchInput');
+            searchBtn.addEventListener('click', function() {
+                const query = searchInput.value.trim();
+                if (query) {
+                    alert('Searching AI News for: ' + query);
+                }
+            });
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') searchBtn.click();
+            });
 
-        const feedBtns = document.querySelectorAll('.feed-btn');
-        const feedCards = document.querySelectorAll('#feedGrid .news-card');
-        feedBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                feedBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.getAttribute('data-filter');
-                feedCards.forEach(card => {
-                    if (filter === 'all') {
-                        card.style.display = 'block';
-                    } else if (filter === 'ai' && !card.querySelector('.ai-badge')) {
-                        card.style.display = 'none';
-                    } else {
-                        card.style.display = 'block';
+            const feedBtns = document.querySelectorAll('.feed-btn');
+            const feedCards = document.querySelectorAll('#feedGrid .news-card');
+            feedBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    feedBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    feedCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else if (filter === 'ai' && !card.querySelector('.ai-badge')) {
+                            card.style.display = 'none';
+                        } else {
+                            card.style.display = 'block';
+                        }
+                    });
+                });
+            });
+
+            const categoryItems = document.querySelectorAll('.category-item');
+            categoryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() { this.style.zIndex = '100'; });
+                item.addEventListener('mouseleave', function() { this.style.zIndex = 'auto'; });
+            });
+
+            const pageBtns = document.querySelectorAll('.page-btn');
+            pageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (!this.classList.contains('active') && !this.querySelector('i')) {
+                        pageBtns.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
                     }
                 });
             });
-        });
 
-        const categoryItems = document.querySelectorAll('.category-item');
-        categoryItems.forEach(item => {
-            item.addEventListener('mouseenter', function() { this.style.zIndex = '100'; });
-            item.addEventListener('mouseleave', function() { this.style.zIndex = 'auto'; });
-        });
-
-        const pageBtns = document.querySelectorAll('.page-btn');
-        pageBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (!this.classList.contains('active') && !this.querySelector('i')) {
-                    pageBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                }
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            document.querySelectorAll('.news-card, .featured-card').forEach(card => {
+                observer.observe(card);
             });
-        });
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        
-        document.querySelectorAll('.news-card, .featured-card').forEach(card => {
-            observer.observe(card);
         });
     </script>
 </body>
