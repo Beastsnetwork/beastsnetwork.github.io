@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Sources | BeastsNetwork AI News</title>
+    <meta name="description" content="Comprehensive collection of cybersecurity news and research RSS feeds">
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <style>
+        :root {
+            --bg-dark: #0a0a1a;
+            --bg-darker: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --neon-blue: #00d4ff;
+            --neon-blue-dark: #0099cc;
+            --neon-glow: rgba(0, 212, 255, 0.3);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --gradient-neon: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #66e5ff 100%);
+            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --transition-fast: 0.2s ease;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+        }
+        [data-theme="dark"] {
+            --bg-dark: #0a0a1a;
+            --bg-darker: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --bg-card-hover: rgba(25, 25, 50, 0.9);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="light"] {
+            --bg-dark: #ffffff;
+            --bg-darker: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f0f0;
+            --text-primary: #2C3E50;
+            --text-secondary: #555555;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        html { background: var(--bg-dark); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--gradient-dark); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        a { color: var(--neon-blue); text-decoration: none; transition: color var(--transition-fast); }
+        a:hover { color: var(--neon-blue-light); text-shadow: 0 0 10px var(--neon-glow); }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: var(--space-sm) 0; background: var(--bg-darker); border-bottom: 1px solid rgba(0, 212, 255, 0.1); }
+        .header-container { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+        .logo { display: flex; align-items: center; gap: var(--space-sm); font-size: 1.5rem; font-weight: 700; }
+        .logo img { width: 40px; height: 40px; object-fit: contain; }
+        .nav-links { display: flex; gap: var(--space-md); list-style: none; }
+        .nav-link { color: var(--text-secondary); padding: var(--space-sm) 0; transition: color var(--transition-fast); }
+        .nav-link:hover { color: var(--neon-blue); }
+        main { padding-top: 120px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+        .page-header { text-align: center; padding: var(--space-xl) 0 var(--space-lg); }
+        .page-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-sm); background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { color: var(--text-secondary); font-size: 1.1rem; }
+        .feeds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-lg); }
+        .feed-category { background: var(--bg-card); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 12px; padding: var(--space-md); margin-bottom: var(--space-md); }
+        .category-title { display: flex; align-items: center; gap: var(--space-sm); font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-md); background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .feed-item { display: flex; align-items: flex-start; gap: var(--space-sm); padding: var(--space-sm) 0; border-bottom: 1px solid rgba(0, 212, 255, 0.05); }
+        .feed-item:last-child { border-bottom: none; }
+        .feed-icon { width: 24px; height: 24px; background: var(--neon-blue); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .feed-icon i { color: var(--bg-darker); font-size: 0.9rem; }
+        .feed-info { flex: 1; }
+        .feed-name { font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; }
+        .feed-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.25rem; }
+        .feed-url { color: var(--neon-blue); font-size: 0.85rem; word-break: break-all; }
+        .footer { background: var(--bg-darker); border-top: 1px solid rgba(0, 212, 255, 0.1); padding: var(--space-xl) 0 var(--space-md); margin-top: var(--space-xl); }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap; margin-bottom: var(--space-md); }
+        .footer-links a { color: var(--text-secondary); }
+        .footer-links a:hover { color: var(--neon-blue); }
+        .footer-bottom { color: var(--text-muted); font-size: 0.85rem; padding-top: var(--space-lg); border-top: 1px solid rgba(0, 212, 255, 0.1); }
+        @media (max-width: 768px) { .header-container { flex-wrap: wrap; gap: var(--space-sm); } .nav-links { gap: var(--space-sm); } .feeds-grid { grid-template-columns: 1fr; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-darker); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="ai-portal" id="aiPortal">
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-core"><i class="fas fa-robot ai-icon"></i></div>
+        <div class="portal-loading"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</></div>
+    </div>
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/beastsnetwork-logo.svg" alt="BeastsNetwork">
+            </a>
+            <nav><ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Feeds</a></li>
+                <li><a href="blog-directory.html" class="nav-link">Blog</a></li>
+            </ul></nav>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon theme-icon"></i>
+            <span class="theme-text">Dark</span>
+        </button>
+    </header>
+    <main>
+        <div class="page-header">
+            <h1>📡 News Sources</h1>
+            <p>Comprehensive collection of cybersecurity RSS feeds powering BeastsNetwork</p>
+        </div>
+        <div class="container">
+            <div class="feeds-grid">
+                <!-- General Security News -->
+                <div class="feed-category">
+                    <div class="category-title"><i class="fas fa-newspaper"></i> General Security News</div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">The Hacker News</div><div class="feed-desc">Internationally recognized leading source for security experts and hackers</div><div class="feed-url">https://feeds.feedburner.com/TheHackersNews?format=xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">BleepingComputer</div><div class="feed-desc">Detailed coverage of tech support scams, malware, and data breaches</div><div class="feed-url">https://www.bleepingcomputer.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Dark Reading</div><div class="feed-desc">Comprehensive news for security professionals on threats and defense technologies</div><div class="feed-url">https://www.darkreading.com/rss.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">SecurityWeek</div><div class="feed-desc">Global IT security news, cybercrime, and enterprise threat analysis</div><div class="feed-url">https://www.securityweek.com/feed</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Threatpost</div><div class="feed-desc">Independent news on IT and business security</div><div class="feed-url">https://threatpost.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Krebs on Security</div><div class="feed-desc">In-depth investigative journalism on cybercrime by Brian Krebs</div><div class="feed-url">https://krebsonsecurity.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Help Net Security</div><div class="feed-desc">Daily information security news with a focus on enterprise security</div><div class="feed-url">https://www.helpnetsecurity.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">The CyberWire</div><div class="feed-desc">Daily cybersecurity news summaries and podcasts</div><div class="feed-url">https://thecyberwire.com/news/rss.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Infosecurity Magazine</div><div class="feed-desc">Global news on information security</div><div class="feed-url">https://www.infosecurity-magazine.com/rss/news/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">SC Media</div><div class="feed-desc">News and analysis for cybersecurity professionals</div><div class="feed-url">https://www.scmagazine.com/feed</div></div></div>
+                </div>
+                
+                <!-- Vendor Research & Technical Blogs -->
+                <div class="feed-category">
+                    <div class="category-title"><i class="fas fa-shield-alt"></i> Vendor Research & Technical Blogs</div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Securelist (Kaspersky)</div><div class="feed-desc">Detailed malware analysis and threat intelligence</div><div class="feed-url">https://securelist.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">WeLiveSecurity (ESET)</div><div class="feed-desc">Security news, tutorials, and threat reports</div><div class="feed-url">https://feeds.feedburner.com/eset/blog</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Naked Security (Sophos)</div><div class="feed-desc">Accessible security news and advice</div><div class="feed-url">https://nakedsecurity.sophos.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Malwarebytes Labs</div><div class="feed-desc">Research on malware, scams, and vulnerabilities</div><div class="feed-url">https://blog.malwarebytes.com/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Google Online Security Blog</div><div class="feed-desc">Insights from Google's security teams</div><div class="feed-url">https://feeds.feedburner.com/GoogleOnlineSecurityBlog</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Microsoft MSRC</div><div class="feed-desc">Official security updates and bulletins</div><div class="feed-url">https://msrc.microsoft.com/blog/feed</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Trend Micro Simply Security</div><div class="feed-desc">News on cloud security and threats</div><div class="feed-url">https://feeds.trendmicro.com/TrendMicroSimplySecurity</div></div></div>
+                </div>
+                
+                <!-- Privacy, Policy & Civil Liberties -->
+                <div class="feed-category">
+                    <div class="category-title"><i class="fas fa-lock"></i> Privacy, Policy & Civil Liberties</div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">EFF</div><div class="feed-desc">Leading organization defending civil liberties in the digital world</div><div class="feed-url">https://www.eff.org/rss/updates.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Schneier on Security</div><div class="feed-desc">Commentary on security, privacy, and cryptography by Bruce Schneier</div><div class="feed-url">https://www.schneier.com/feed/atom/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Have I Been Pwned</div><div class="feed-desc">Data breach notifications and security analysis</div><div class="feed-url">https://www.troyhunt.com/rss/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Privacy International</div><div class="feed-desc">News on global privacy issues and surveillance</div><div class="feed-url">https://privacyinternational.org/feed</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Big Brother Watch</div><div class="feed-desc">Campaign group focusing on privacy and civil liberties</div><div class="feed-url">https://bigbrotherwatch.org.uk/feed/</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">GDPR Ombudsman</div><div class="feed-desc">Updates on GDPR cases and privacy regulations</div><div class="feed-url">https://edpb.europa.eu/edpb/rss_en.xml</div></div></div>
+                </div>
+                
+                <!-- Official Advisories & Vulnerabilities -->
+                <div class="feed-category">
+                    <div class="category-title"><i class="fas fa-exclamation-triangle"></i> Official Advisories & Vulnerabilities</div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">NVD</div><div class="feed-desc">Official US government repository of CVEs</div><div class="feed-url">https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">CISA Cybersecurity Advisories</div><div class="feed-desc">US Cybersecurity & Infrastructure Security Agency alerts</div><div class="feed-url">https://www.cisa.gov/news-events/cybersecurity-advisories.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">CERT-Bund</div><div class="feed-desc">Bulletins on security gaps and vulnerabilities</div><div class="feed-url">https://www.bsi.bund.de/SiteGlobals/Functions/RSSFeed/RSSNewsfeed/RSSNewsfeed_WID.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">NCSC (UK)</div><div class="feed-desc">Guidance and news from the UK National Cyber Security Centre</div><div class="feed-url">https://www.ncsc.gov.uk/api/1/services/v1/news-rss-feed.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-rss"></i></div><div class="feed-info"><div class="feed-name">Exploit-DB</div><div class="feed-desc">Latest verified exploits and shellcode</div><div class="feed-url">https://www.exploit-db.com/rss.xml</div></div></div>
+                </div>
+                
+                <!-- Podcasts & Multimedia -->
+                <div class="feed-category">
+                    <div class="category-title"><i class="fas fa-headphones"></i> Podcasts & Multimedia</div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-podcast"></i></div><div class="feed-info"><div class="feed-name">Darknet Diaries</div><div class="feed-desc">True stories from the dark side of the internet</div><div class="feed-url">https://feeds.megaphone.fm/darknetdiaries</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-podcast"></i></div><div class="feed-info"><div class="feed-name">Security Now</div><div class="feed-desc">Weekly podcast on security news and concepts</div><div class="feed-url">https://feeds.twit.tv/sn.xml</div></div></div>
+                    <div class="feed-item"><div class="feed-icon"><i class="fas fa-podcast"></i></div><div class="feed-info"><div class="feed-name">Risky Business</div><div class="feed-desc">Weekly news and in-depth interviews</div><div class="feed-url">https://feeds.feedburner.com/RiskyBusinessNet</div></div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="feeds.html">News Sources</a>
+                <a href="blog-directory.html">Blog Directory</a>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 BeastsNetwork. All rights reserved. Powered by Artificial Intelligence.</p></div>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        html.setAttribute('data-theme', 'dark');
+        themeToggle?.addEventListener('click', function() {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            const icon = this.querySelector('.theme-icon');
+            const text = this.querySelector('.theme-text');
+            icon.className = newTheme === 'dark' ? 'fas fa-moon theme-icon' : 'fas fa-sun theme-icon';
+            text.textContent = newTheme === 'dark' ? 'Dark' : 'Light';
+        });
+        
+        // Hide AI portal after loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const portal = document.getElementById('aiPortal');
+                if (portal) {
+                    portal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
