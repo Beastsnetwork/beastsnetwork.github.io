@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+<title>Cybersecurity News & Research Feeds</title>
+<dateCreated>2026-07-01T00:00:00Z</dateCreated>
+<ownerName>Linage Beast</ownerName>
+</head>
+<body>
+
+<!-- 📰 General Security News -->
+<outline title="📰 General Security News" text="General Security News">
+<outline type="rss" text="The Hacker News" title="The Hacker News: Internationally recognized leading source for security experts and hackers" xmlUrl="https://feeds.feedburner.com/TheHackersNews?format=xml"/>
+<outline type="rss" text="BleepingComputer" title="BleepingComputer: Detailed coverage of tech support scams, malware, and data breaches" xmlUrl="https://www.bleepingcomputer.com/feed/"/>
+<outline type="rss" text="Dark Reading" title="Dark Reading: Comprehensive news for security professionals on threats and defense technologies" xmlUrl="https://www.darkreading.com/rss.xml"/>
+<outline type="rss" text="SecurityWeek" title="SecurityWeek: Global IT security news, cybercrime, and enterprise threat analysis" xmlUrl="https://www.securityweek.com/feed"/>
+<outline type="rss" text="Threatpost" title="Threatpost: Independent news on IT and business security" xmlUrl="https://threatpost.com/feed/"/>
+<outline type="rss" text="Krebs on Security" title="Krebs on Security: In-depth investigative journalism on cybercrime by Brian Krebs" xmlUrl="https://krebsonsecurity.com/feed/"/>
+<outline type="rss" text="Help Net Security" title="Help Net Security: Daily information security news with a focus on enterprise security" xmlUrl="https://www.helpnetsecurity.com/feed/"/>
+<outline type="rss" text="The CyberWire" title="The CyberWire: Daily cybersecurity news summaries and podcasts" xmlUrl="https://thecyberwire.com/news/rss.xml"/>
+<outline type="rss" text="Infosecurity Magazine" title="Infosecurity Magazine: Global news on information security" xmlUrl="https://www.infosecurity-magazine.com/rss/news/"/>
+<outline type="rss" text="SC Media" title="SC Media: News and analysis for cybersecurity professionals" xmlUrl="https://www.scmagazine.com/feed"/>
+</outline>
+
+<!-- 🛡️ Vendor Research & Technical Blogs -->
+<outline title="🛡️ Vendor Research & Technical Blogs" text="Vendor Research & Technical Blogs">
+<outline type="rss" text="Securelist (Kaspersky)" title="Securelist (Kaspersky): Detailed malware analysis and threat intelligence" xmlUrl="https://securelist.com/feed/"/>
+<outline type="rss" text="WeLiveSecurity (ESET)" title="WeLiveSecurity (ESET): Security news, tutorials, and threat reports" xmlUrl="https://feeds.feedburner.com/eset/blog"/>
+<outline type="rss" text="Naked Security (Sophos)" title="Naked Security (Sophos): Accessible security news and advice" xmlUrl="https://nakedsecurity.sophos.com/feed/"/>
+<outline type="rss" text="Malwarebytes Labs" title="Malwarebytes Labs: Research on malware, scams, and vulnerabilities" xmlUrl="https://blog.malwarebytes.com/feed/"/>
+<outline type="rss" text="Google Online Security Blog" title="Google Online Security Blog: Insights from Google's security teams" xmlUrl="https://feeds.feedburner.com/GoogleOnlineSecurityBlog"/>
+<outline type="rss" text="Microsoft Security Response Center (MSRC)" title="Microsoft Security Response Center (MSRC): Official security updates and bulletins" xmlUrl="https://msrc.microsoft.com/blog/feed"/>
+<outline type="rss" text="Trend Micro Simply Security" title="Trend Micro Simply Security: News on cloud security and threats" xmlUrl="https://feeds.trendmicro.com/TrendMicroSimplySecurity"/>
+</outline>
+
+<!-- 🔒 Privacy, Policy & Civil Liberties -->
+<outline title="🔒 Privacy, Policy & Civil Liberties" text="Privacy, Policy & Civil Liberties">
+<outline type="rss" text="EFF" title="EFF (Electronic Frontier Foundation): Leading organization defending civil liberties in the digital world" xmlUrl="https://www.eff.org/rss/updates.xml"/>
+<outline type="rss" text="Schneier on Security" title="Schneier on Security: Commentary on security, privacy, and cryptography by Bruce Schneier" xmlUrl="https://www.schneier.com/feed/atom/"/>
+<outline type="rss" text="Have I Been Pwned" title="Have I Been Pwned (Troy Hunt): Data breach notifications and security analysis" xmlUrl="https://www.troyhunt.com/rss/"/>
+<outline type="rss" text="Privacy International" title="Privacy International: News on global privacy issues and surveillance" xmlUrl="https://privacyinternational.org/feed"/>
+<outline type="rss" text="Big Brother Watch" title="Big Brother Watch: Campaign group focusing on privacy and civil liberties (UK-focused but global relevance)" xmlUrl="https://bigbrotherwatch.org.uk/feed/"/>
+<outline type="rss" text="GDPR Ombudsman" title="GDPR Ombudsman: Updates on GDPR cases and privacy regulations" xmlUrl="https://edpb.europa.eu/edpb/rss_en.xml"/>
+</outline>
+
+<!-- 🚨 Official Advisories & Vulnerabilities -->
+<outline title="🚨 Official Advisories & Vulnerabilities" text="Official Advisories & Vulnerabilities">
+<outline type="rss" text="NVD" title="NVD (National Vulnerability Database): Official US government repository of CVEs" xmlUrl="https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml"/>
+<outline type="rss" text="CISA Cybersecurity Advisories" title="CISA Cybersecurity Advisories: US Cybersecurity & Infrastructure Security Agency alerts" xmlUrl="https://www.cisa.gov/news-events/cybersecurity-advisories.xml"/>
+<outline type="rss" text="CERT-Bund" title="CERT-Bund (Germany): Bulletins on security gaps and vulnerabilities" xmlUrl="https://www.bsi.bund.de/SiteGlobals/Functions/RSSFeed/RSSNewsfeed/RSSNewsfeed_WID.xml"/>
+<outline type="rss" text="NCSC (UK)" title="NCSC (UK): Guidance and news from the UK National Cyber Security Centre" xmlUrl="https://www.ncsc.gov.uk/api/1/services/v1/news-rss-feed.xml"/>
+<outline type="rss" text="Exploit-DB" title="Exploit-DB: Latest verified exploits and shellcode" xmlUrl="https://www.exploit-db.com/rss.xml"/>
+</outline>
+
+<!-- 🎧 Podcasts & Multimedia -->
+<outline title="🎧 Podcasts & Multimedia" text="Podcasts & Multimedia">
+<outline type="rss" text="Darknet Diaries" title="Darknet Diaries: True stories from the dark side of the internet" xmlUrl="https://feeds.megaphone.fm/darknetdiaries"/>
+<outline type="rss" text="Security Now" title="Security Now: Weekly podcast on security news and concepts" xmlUrl="https://feeds.twit.tv/sn.xml"/>
+<outline type="rss" text="Risky Business" title="Risky Business: Weekly news and in-depth interviews" xmlUrl="https://feeds.feedburner.com/RiskyBusinessNet"/>
+</outline>
+
+</body>
+</opml>
