@@ -6,6 +6,7 @@
     <title>Risk Disclosure | BeastsNetwork AI News</title>
     <meta name="description" content="Risk Disclosure for BeastsNetwork AI-Powered News Intelligence">
     <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-dark: #0a0a1a; --bg-darker: #050510; --bg-card: rgba(15, 15, 35, 0.8);
@@ -73,7 +74,9 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-darker); }
         ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
-    </style>
+    .social-links { display: flex; gap: var(--space-sm); justify-content: center; margin-top: var(--space-sm); }
+        .social-links a { font-size: 1.2rem; }
+        </style>
 </head>
 <body>
     <div class="ai-portal" id="aiPortal">
@@ -156,7 +159,12 @@
                 <a href="terms-of-service.html">Terms of Service</a>
                 <a href="risk-disclosure.html">Risk Disclosure</a>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 BeastsNetwork. All rights reserved.</p></div>
+            <div class="social-links">
+                        <a href="https://github.com/Beastsnetwork" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://mastodon.social/@Beastsnetwork" target="_blank" rel="noopener noreferrer"><i class="fab fa-mastodon"></i></a>
+                        <a href="https://bsky.app/profile/beastsnetwork.win" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#00d4ff"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.65-2.11-4.96-4.65-4.96z"/></svg></a>
+                    </div>
+            <div class="footer-bottom"><p><a rel="me" href="https://mastodon.social/@beastsnetwork">Mastodon</a></p><p>&copy; 2026 BeastsNetwork. All rights reserved.</p></div>
         </div>
     </footer>
 
