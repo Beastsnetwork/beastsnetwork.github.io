@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources & Attribution | BeastsNetwork AI News</title>
+    <meta name="description" content="Data sources, APIs, and attribution for BeastsNetwork AI-Powered News Intelligence">
+    <link rel="icon" type="image/svg+xml" href="/beastsnetwork-logo.svg">
+    <style>
+        :root {
+            --bg-dark: #0a0a1a;
+            --bg-darker: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --bg-card-hover: rgba(25, 25, 50, 0.9);
+            --neon-blue: #00d4ff;
+            --neon-blue-dark: #0099cc;
+            --neon-blue-light: #66e5ff;
+            --neon-glow: rgba(0, 212, 255, 0.3);
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --gradient-neon: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #66e5ff 100%);
+            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+        }
+        [data-theme="dark"] {
+            --bg-dark: #0a0a1a;
+            --bg-darker: #050510;
+            --bg-card: rgba(15, 15, 35, 0.8);
+            --bg-card-hover: rgba(25, 25, 50, 0.9);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="light"] {
+            --bg-dark: #ffffff;
+            --bg-darker: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f0f0;
+            --text-primary: #2C3E50;
+            --text-secondary: #555555;
+            --text-muted: #718096;
+            --gradient-dark: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.15);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        html { background: var(--bg-dark); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--gradient-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        a:hover { color: var(--neon-blue-light); text-shadow: 0 0 10px var(--neon-glow); }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+        .text-center { text-align: center; }
+
+        .ai-portal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-dark); display: flex; align-items: center; justify-content: center;
+            z-index: 1000; transition: opacity var(--transition-slow), visibility var(--transition-slow);
+        }
+        .ai-portal.hidden { opacity: 0; visibility: hidden; }
+        .portal-ring {
+            position: absolute; border: 2px solid var(--neon-blue); border-radius: 50%;
+            opacity: 0.5; animation: pulse 3s ease-in-out infinite;
+        }
+        .portal-ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+        .portal-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 0.5s; }
+        .portal-ring:nth-child(3) { width: 500px; height: 500px; animation-delay: 1s; }
+        .portal-core {
+            width: 200px; height: 200px; background: var(--gradient-neon); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 60px var(--neon-blue), 0 0 100px var(--neon-blue), inset 0 0 30px var(--neon-glow);
+            animation: rotate 10s linear infinite; position: relative; z-index: 10;
+        }
+        .portal-core::before {
+            content: ''; position: absolute; width: 150px; height: 150px;
+            background: var(--bg-darker); border-radius: 50%;
+            animation: rotate 5s linear infinite reverse;
+        }
+        .portal-core .ai-icon { color: var(--bg-darker); font-size: 2.5rem; z-index: 11; text-shadow: 0 0 20px var(--neon-blue); }
+        .portal-loading {
+            position: absolute; bottom: var(--space-xl); color: var(--text-secondary); font-size: 1.2rem;
+        }
+        .portal-loading span { animation: blink 1s ease-in-out infinite; }
+        .portal-loading span:nth-child(2) { animation-delay: 0.2s; }
+        .portal-loading span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.05); opacity: 0.8; } }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: var(--space-sm) 0; background: var(--bg-darker);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        .header-container {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md);
+        }
+        .logo { display: flex; align-items: center; gap: var(--space-sm); font-size: 1.5rem; font-weight: 700; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gradient-neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-darker); font-weight: bold; }
+        .logo-text { background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav { display: flex; align-items: center; gap: var(--space-lg); }
+        .nav-links { display: flex; gap: var(--space-md); list-style: none; }
+        .nav-link { position: relative; padding: var(--space-xs) 0; font-weight: 500; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-blue); transition: width var(--transition-fast); }
+        .nav-link:hover::after { width: 100%; }
+        .theme-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; transition: all var(--transition-fast); background: transparent; border: 1px solid rgba(0, 212, 255, 0.2); color: var(--text-primary); }
+        .theme-toggle:hover { background: var(--neon-blue); color: var(--bg-darker); border-color: var(--neon-blue); }
+
+        main { padding-top: 120px; }
+        .page-header { text-align: center; padding: var(--space-xl) 0 var(--space-lg); }
+        .page-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-sm); background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { color: var(--text-secondary); font-size: 1.1rem; }
+
+        .sources-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+        
+        .sources-section { margin-bottom: var(--space-xl); }
+        .sources-section h2 {
+            font-size: 1.75rem; font-weight: 600; margin-bottom: var(--space-md);
+            color: var(--neon-blue); border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+            padding-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);
+        }
+        .sources-section h2 i { color: var(--neon-blue); }
+
+        .sources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-lg); }
+        
+        .source-card {
+            background: var(--bg-card); border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 12px; padding: var(--space-md); transition: all var(--transition-normal);
+            position: relative; overflow: hidden;
+        }
+        .source-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-neon); transform: scaleX(0); transition: transform var(--transition-normal);
+        }
+        .source-card:hover { transform: translateY(-5px); border-color: var(--neon-blue); box-shadow: var(--shadow-card), var(--shadow-glow); }
+        .source-card:hover::before { transform: scaleX(1); }
+        
+        .source-header { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+        .source-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+        .source-icon.github { background: rgba(0, 212, 255, 0.1); color: var(--neon-blue); }
+        .source-icon.rss { background: rgba(255, 165, 0, 0.1); color: #ffa500; }
+        .source-icon.api { background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); }
+        .source-icon.font { background: rgba(0, 212, 255, 0.1); color: var(--neon-blue); }
+        .source-icon.hosting { background: rgba(0, 212, 255, 0.1); color: var(--neon-blue); }
+        
+        .source-title { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); }
+        .source-description { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--space-sm); line-height: 1.6; }
+        .source-details { font-size: 0.85rem; color: var(--text-muted); }
+        .source-details a { color: var(--neon-blue); font-weight: 500; }
+        
+        .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(0, 212, 255, 0.1); border: 1px solid var(--neon-blue); border-radius: 20px; font-size: 0.75rem; color: var(--neon-blue); margin-right: 0.5rem; margin-bottom: 0.5rem; }
+
+        .footer { background: var(--bg-darker); border-top: 1px solid rgba(0, 212, 255, 0.1); padding: var(--space-xl) 0 var(--space-md); margin-top: var(--space-xl); }
+        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-xl); }
+        .footer-brand { grid-column: span 2; }
+        .footer-title { font-size: 1.5rem; font-weight: 700; margin-bottom: var(--space-sm); background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .footer-description { color: var(--text-secondary); margin-bottom: var(--space-md); }
+        .footer-links h4 { color: var(--text-primary); margin-bottom: var(--space-sm); font-size: 1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: var(--space-xs); }
+        .footer-links a { color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--neon-blue); }
+        .footer-bottom { text-align: center; padding-top: var(--space-lg); margin-top: var(--space-lg); border-top: 1px solid rgba(0, 212, 255, 0.1); color: var(--text-muted); font-size: 0.85rem; }
+        .social-links { display: flex; gap: var(--space-sm); justify-content: center; margin-top: var(--space-sm); }
+        .social-links a { font-size: 1.2rem; }
+
+        @media (max-width: 1024px) { .footer-brand { grid-column: span 1; } }
+        @media (max-width: 768px) {
+            .header-container { flex-wrap: wrap; gap: var(--space-sm); }
+            .nav { order: 3; width: 100%; justify-content: center; }
+            .nav-links { gap: var(--space-sm); }
+            .sources-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) { .logo-text { display: none; } }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-darker); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="ai-portal" id="aiPortal">
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-ring"></div>
+        <div class="portal-core">
+            <i class="fas fa-robot ai-icon"></i>
+        </div>
+        <div class="portal-loading">
+            <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+        </div>
+    </div>
+    
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">BN</span>
+                <span class="logo-text">BeastsNetwork</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="feeds.html" class="nav-link">News Sources</a></li>
+                    <li><a href="sources.html" class="nav-link">Attribution</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon theme-icon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>🔍 Sources & Attribution</h1>
+            <p>Technologies, APIs, and data sources powering BeastsNetwork AI News</p>
+        </div>
+        
+        <div class="sources-container">
+            <section class="sources-section">
+                <h2><i class="fas fa-newspaper"></i> News Data Sources</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">We aggregate and curate news from the following trusted cybersecurity sources:</p>
+                <div class="sources-grid">
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon rss"><i class="fas fa-rss"></i></div>
+                            <h3 class="source-title">BleepingComputer</h3>
+                        </div>
+                        <p class="source-description">Trusted cybersecurity news covering malware, breaches, vulnerabilities, and IT security with in-depth analysis</p>
+                        <div class="source-details">
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Breaches</span>
+                            <span class="tag">Malware</span>
+                            <br><br>
+                            <a href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon rss"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="source-title">CISA</h3>
+                        </div>
+                        <p class="source-description">Cybersecurity & Infrastructure Security Agency - US government alerts, advisories, and threat intelligence</p>
+                        <div class="source-details">
+                            <span class="tag">Government</span>
+                            <span class="tag">Advisories</span>
+                            <span class="tag">Threat Intel</span>
+                            <br><br>
+                            <a href="https://www.cisa.gov/" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon rss"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="source-title">SANS ISC</h3>
+                        </div>
+                        <p class="source-description">SANS Internet Storm Center - Global threat intelligence and early warning system</p>
+                        <div class="source-details">
+                            <span class="tag">Threat Intel</span>
+                            <span class="tag">Incident Response</span>
+                            <span class="tag">Analysis</span>
+                            <br><br>
+                            <a href="https://isc.sans.edu/" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon rss"><i class="fas fa-newspaper"></i></div>
+                            <h3 class="source-title">The Hacker News</h3>
+                        </div>
+                        <p class="source-description">Internationally recognized source for security experts and hackers</p>
+                        <div class="source-details">
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Hacking</span>
+                            <span class="tag">Tech News</span>
+                            <br><br>
+                            <a href="https://thehackernews.com/" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sources-section">
+                <h2><i class="fas fa-cogs"></i> Technical Infrastructure</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">The technologies and services that power our website:</p>
+                <div class="sources-grid">
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon hosting"><i class="fab fa-github"></i></div>
+                            <h3 class="source-title">GitHub Pages</h3>
+                        </div>
+                        <p class="source-description">Static website hosting provided by GitHub. Fast, reliable, and free for open-source projects.</p>
+                        <div class="source-details">
+                            <span class="tag">Hosting</span>
+                            <span class="tag">CDN</span>
+                            <span class="tag">Static Sites</span>
+                            <br><br>
+                            <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Learn More <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon font"><i class="fas fa-font"></i></div>
+                            <h3 class="source-title">Font Awesome</h3>
+                        </div>
+                        <p class="source-description">Icon library and toolkit used for all icons throughout the website.</p>
+                        <div class="source-details">
+                            <span class="tag">Icons</span>
+                            <span class="tag">CDN</span>
+                            <span class="tag">Open Source</span>
+                            <br><br>
+                            <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon api"><i class="fas fa-code"></i></div>
+                            <h3 class="source-title">RSS/Atom Feeds</h3>
+                        </div>
+                        <p class="source-description">We consume standard RSS and Atom feeds from our news sources to aggregate content.</p>
+                        <div class="source-details">
+                            <span class="tag">Data Format</span>
+                            <span class="tag">Web Standard</span>
+                            <span class="tag">XML</span>
+                            <br><br>
+                            <a href="feeds.html">View Our Feeds List <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sources-section">
+                <h2><i class="fas fa-robot"></i> AI & Automation</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">Artificial intelligence and automation tools used in our workflow:</p>
+                <div class="sources-grid">
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon api"><i class="fas fa-brain"></i></div>
+                            <h3 class="source-title">AI-Powered Curation</h3>
+                        </div>
+                        <p class="source-description">Artificial intelligence assists in filtering, categorizing, and prioritizing news content.</p>
+                        <div class="source-details">
+                            <span class="tag">AI</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Content Curation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon api"><i class="fas fa-filter"></i></div>
+                            <h3 class="source-title">Content Filtering</h3>
+                        </div>
+                        <p class="source-description">Automated systems help identify and filter relevant cybersecurity content.</p>
+                        <div class="source-details">
+                            <span class="tag">AI</span>
+                            <span class="tag">Filtering</span>
+                            <span class="tag">Relevance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon api"><i class="fas fa-clock"></i></div>
+                            <h3 class="source-title">Real-Time Updates</h3>
+                        </div>
+                        <p class="source-description">Our systems monitor sources continuously to bring you the latest news as it happens.</p>
+                        <div class="source-details">
+                            <span class="tag">Real-Time</span>
+                            <span class="tag">Monitoring</span>
+                            <span class="tag">24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sources-section">
+                <h2><i class="fas fa-heart"></i> Open Source & Attribution</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">We stand on the shoulders of giants. Special thanks to:</p>
+                <div class="sources-grid">
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon github"><i class="fab fa-github"></i></div>
+                            <h3 class="source-title">Open Source Community</h3>
+                        </div>
+                        <p class="source-description">The global open source community that builds and maintains the tools we use.</p>
+                        <div class="source-details">
+                            <span class="tag">Community</span>
+                            <span class="tag">Collaboration</span>
+                            <span class="tag">Innovation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon api"><i class="fas fa-globe"></i></div>
+                            <h3 class="source-title">Web Standards</h3>
+                        </div>
+                        <p class="source-description">HTML, CSS, JavaScript, and web standards that make modern websites possible.</p>
+                        <div class="source-details">
+                            <span class="tag">W3C</span>
+                            <span class="tag">WHATWG</span>
+                            <span class="tag">ECMAScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="source-card">
+                        <div class="source-header">
+                            <div class="source-icon api"><i class="fas fa-users"></i></div>
+                            <h3 class="source-title">Our Users</h3>
+                        </div>
+                        <p class="source-description">Thank you for using BeastsNetwork. Your trust and feedback help us improve.</p>
+                        <div class="source-details">
+                            <span class="tag">Community</span>
+                            <span class="tag">Feedback</span>
+                            <span class="tag">Support</span>
+                            <br><br>
+                            <a href="https://signal.me/#eu/Yw233q_1V_jna14mgnh-A5q_XQqkiXYH22XjF3_ZRrMnEIe02F1JU51Bmx2MexOB" target="_blank" rel="noopener noreferrer">Contact Us <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <span class="logo-icon" style="width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 1rem; display: inline-flex;">BN</span>
+                    <h3 class="footer-title">BeastsNetwork</h3>
+                    <p class="footer-description">AI-Powered News Intelligence. Stay ahead with real-time, verified news curated by artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Beastsnetwork" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://mastodon.social/@Beastsnetwork" target="_blank" rel="noopener noreferrer"><i class="fab fa-mastodon"></i></a>
+                        <a href="https://bsky.app/profile/beastsnetwork.win" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#00d4ff"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.65-2.11-4.96-4.65-4.96z"/></svg></a>
+                        <a href="https://signal.me/#eu/Yw233q_1V_jna14mgnh-A5q_XQqkiXYH22XjF3_ZRrMnEIe02F1JU51Bmx2MexOB" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#00d4ff"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><a rel="me" href="https://mastodon.social/@beastsnetwork">Mastodon</a></p>
+                <p>&copy; 2026 BeastsNetwork. All rights reserved. Powered by Artificial Intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const portal = document.getElementById('aiPortal');
+                if (portal) {
+                    portal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            }, 3000);
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        html.setAttribute('data-theme', 'dark');
+        themeToggle?.addEventListener('click', function() {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            const icon = this.querySelector('.theme-icon');
+            const text = this.querySelector('.theme-text');
+            icon.className = newTheme === 'dark' ? 'fas fa-moon theme-icon' : 'fas fa-sun theme-icon';
+            text.textContent = newTheme === 'dark' ? 'Dark' : 'Light';
+        });
+    </script>
+</body>
+</html>
