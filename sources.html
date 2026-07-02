@@ -26,9 +26,10 @@
             --gradient-dark: linear-gradient(180deg, #0a0a1a 0%, #050510 100%);
             --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
             --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
-            --transition-fast: 0.2s ease;
-            --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
+            --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
@@ -94,7 +95,7 @@
         .portal-ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
         .portal-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 0.5s; }
         .portal-ring:nth-child(3) { width: 500px; height: 500px; animation-delay: 1s; }
-        .portal-core {
+        .portal-core { transform: translateZ(0);
             width: 200px; height: 200px; background: var(--gradient-neon); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 60px var(--neon-blue), 0 0 100px var(--neon-blue), inset 0 0 30px var(--neon-glow);
@@ -113,10 +114,10 @@
         .portal-loading span:nth-child(2) { animation-delay: 0.2s; }
         .portal-loading span:nth-child(3) { animation-delay: 0.4s; }
 
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.05); opacity: 0.8; } }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; will-change: transform, opacity; } 50% { transform: scale(1.05); opacity: 0.8; } }
+        @keyframes rotate { from { transform: rotate(0deg); will-change: transform; } to { transform: rotate(360deg); } }
         @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px) translateZ(0); will-change: transform, opacity; } to { opacity: 1; transform: translateY(0) translateZ(0); } }
 
         .header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -207,7 +208,7 @@
 
         .sources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-lg); }
         
-        .source-card {
+        .source-card { will-change: transform, box-shadow;
             background: var(--bg-card); border: 1px solid rgba(0, 212, 255, 0.1);
             border-radius: 12px; padding: var(--space-md); transition: all var(--transition-normal);
             position: relative; overflow: hidden; animation: fadeIn 0.5s ease forwards;
